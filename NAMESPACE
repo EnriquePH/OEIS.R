@@ -2,9 +2,12 @@
 
 export(OEIS_bfile_url)
 export(OEIS_description)
-export(OEIS_html)
+export(OEIS_terms)
 export(OEIS_url)
+export(OEIS_web_url)
+export(OEIS_xml2)
 importFrom(magrittr,"%>%")
 importFrom(magrittr,extract2)
 importFrom(rvest,html_nodes)
+importFrom(rvest,html_text)
 importFrom(xml2,read_html)

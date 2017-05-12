@@ -1,4 +1,16 @@
-OEIS_server_url <- "https://oeis.org/"
+
+
+#' OEIS_web_url: Get OEIS web main page url
+#'
+#' @return A string with the OEIS web url
+#' @export
+#'
+#' @examples
+#' OEIS_web_url()
+OEIS_web_url <- function() {
+  "https://oeis.org/"
+}
+
 
 #' OEIS_url:  Get sequence url
 #'
@@ -10,7 +22,7 @@ OEIS_server_url <- "https://oeis.org/"
 #' @examples
 #' OEIS_url("A000055")
 OEIS_url <- function(ID) {
-  paste0(OEIS_server_url, ID, "/")
+  paste0(OEIS_web_url(), ID, "/")
 }
 
 
@@ -37,17 +49,19 @@ OEIS_bfile_url <- function(ID, URL = FALSE) {
 }
 
 
-#' OEIS_html: Get sequence contect from OEIS web
+#' OEIS_xml2: Get sequence content from OEIS web
 #'
 #' @param ID A string with the OEIS sequence ID
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom xml2 read_html
-#' @return xml_document from an OEIS web with sequence content
+#' @return \code{xml_document} from OEIS web with the sequence content
 #' @export
 #'
 #' @examples
-OEIS_html <- function(ID) {
+#'  id <- "A000156"
+#'  test_seq_html <- OEIS_xml2(id)
+OEIS_xml2 <- function(ID) {
   . <- NULL
   ID %>%
     OEIS_url %>%
@@ -55,7 +69,7 @@ OEIS_html <- function(ID) {
 }
 
 
-#' OEIS_description:
+#' OEIS_description: Get OEIS sequence description from xml2 data
 #'
 #' @param seq_xml A xml_document from an OEIS sequence
 #'
@@ -63,12 +77,12 @@ OEIS_html <- function(ID) {
 #' @importFrom magrittr extract2
 #' @importFrom rvest html_nodes
 #'
-#' @return
+#' @return A string with the OEIS sequence description
 #' @export
 #'
 #' @examples
 #' id <- "A000056"
-#' test_seq_xml <- OEIS_html(id)
+#' test_seq_xml <- OEIS_xml2(id)
 #' OEIS_description(test_seq_xml)
 OEIS_description <- function(seq_xml) {
   . <- NULL
@@ -79,22 +93,44 @@ OEIS_description <- function(seq_xml) {
     trimws
 }
 
+
+#' OEIS_terms: Get OEIS sequence terms from xml2 data
+#'
+#' @param seq_xml A xml_document from an OEIS sequence
+#'
+#' @importFrom magrittr "%>%"
+#' @importFrom magrittr extract2
+#' @importFrom rvest html_text
+#' @importFrom rvest html_nodes
+#'
+#' @return A character list with the OEIS sequence terms
+#' @export
+#'
+#' @examples
+#' id <- "A000056"
+#' test_seq_html <- OEIS_xml2(id)
+#' OEIS_terms(test_seq_html)
+OEIS_terms <- function(seq_xml) {
+  . <- NULL
+  seq_xml %>%
+  rvest::html_nodes(. , xpath = "//tt/text()") %>%
+  magrittr::extract2(1) %>%
+  rvest::html_text(.) %>%
+  strsplit(., ",") %>%
+  lapply(., trimws) %>%
+  unlist
+}
+
+
 # library(xml2)
 # library(rvest)
 # library(magrittr)
 #
 # id <- "A000056"
 #
-# test_seq_html <- OEIS_html(id)
+# test_seq_html <- OEIS_xml2(id)
 #
 # OEIS_description(test_seq_html)
 #
-#
-# test_seq_html %>%
-#   rvest::html_nodes(. , xpath = "//tt/text()") %>%
-#   magrittr::extract2(1) %>%
-#   rvest::html_text(.) %>%
-#   strsplit(., ",") %>%
-#   lapply(., trimws) %>%
-#   unlist
+# OEIS_terms(test_seq_html)
 
