@@ -1,0 +1,14 @@
+Package: OEIS.R
+Title: Data from The On-Line Encyclopedia of Integer Sequences in R
+Version: 0.0.0.1
+Authors@R: person("Enrique", "Pérez Herrero", email = "psychgeometry@gmail.com", role = c("aut", "cre"))
+Description: What the package does (one paragraph).
+Depends: R (>= 3.4.0)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Imports:
+   xml2,
+   rvest,
+   magrittr
