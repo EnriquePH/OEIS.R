@@ -122,11 +122,43 @@ OEIS_terms <- function(seq_xml) {
 }
 
 
+#' OEIS_bfile: Class constructor
+#'
+#' @inheritParams OEIS_url
+#'
+#' @importFrom  utils read.table
+#' @return An object of the class \code{OEIS_bfile}
+#' @export
+#'
+#' @examples
+OEIS_bfile <- function(ID) {
+  bfile_url <- OEIS_bfile_url(ID, TRUE)
+  lines <- readLines(bfile_url)
+  match_comments <- grepl("#", lines)
+  if(identical(match_comments, integer(0))) {
+    match_comments <- FALSE
+    comments <- NULL
+    data <- lines
+  } else {
+    comments <- lines[match_comments]
+    data <- lines[!match_comments]
+  }
+
+  data <- utils::read.table(text = data, stringsAsFactors = FALSE)
+  names(data) <- c("n", ID)
+  structure(list(bfile_name = OEIS_bfile_url(ID),
+                 bfile_url = OEIS_bfile_url(ID, TRUE),
+                 comments = comments,
+                 data = data),
+            class = c("OEIS_bfile"))
+}
+
+
 #' OEIS_sequence: Class constructor
 #'
 #' @inheritParams OEIS_url
 #'
-#' @return An object of the class \code{OEIS_Sequence}
+#' @return An object of the class \code{OEIS_sequence}
 #' @export
 #'
 #' @examples
@@ -138,24 +170,27 @@ OEIS_sequence <- function(ID){
   structure(list(ID = ID,
                  description = OEIS_description(seq_xml),
                  url = OEIS_url(ID),
-                 bfile_name = OEIS_bfile_url(ID),
-                 bfile_url = OEIS_bfile_url(ID, TRUE),
+                 bfile = OEIS_bfile(ID),
                  terms = OEIS_terms(seq_xml),
                  seq_xml = seq_xml),
             class = c("OEIS_sequence"))
 }
 
 
-# library(xml2)
-# library(rvest)
-# library(magrittr)
-#
-# id <- "A000056"
+library(xml2)
+library(rvest)
+library(magrittr)
+
+id <- "A000056"
 #
 # test_seq_html <- OEIS_xml2(id)
 #
 # OEIS_description(test_seq_html)
 # OEIS_terms(test_seq_html)
-# id <- "A003456"
-# x <- OEIS_sequence(id)
-# x
+id <- "A003456"
+x <- OEIS_sequence(id)
+
+
+plot(x$bfile$data)
+
+
