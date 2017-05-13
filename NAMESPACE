@@ -2,6 +2,7 @@
 
 export(OEIS_bfile_url)
 export(OEIS_description)
+export(OEIS_sequence)
 export(OEIS_terms)
 export(OEIS_url)
 export(OEIS_web_url)

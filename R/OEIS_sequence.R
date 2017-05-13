@@ -51,7 +51,7 @@ OEIS_bfile_url <- function(ID, URL = FALSE) {
 
 #' OEIS_xml2: Get sequence content from OEIS web
 #'
-#' @param ID A string with the OEIS sequence ID
+#' @inheritParams OEIS_url
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom xml2 read_html
@@ -122,6 +122,30 @@ OEIS_terms <- function(seq_xml) {
 }
 
 
+#' OEIS_sequence: Class constructor
+#'
+#' @inheritParams OEIS_url
+#'
+#' @return An object of the class \code{OEIS_Sequence}
+#' @export
+#'
+#' @examples
+#' id <- "A003456"
+#' x <- OEIS_sequence(id)
+#' x
+OEIS_sequence <- function(ID){
+  seq_xml = OEIS_xml2(ID)
+  structure(list(ID = ID,
+                 description = OEIS_description(seq_xml),
+                 url = OEIS_url(ID),
+                 bfile_name = OEIS_bfile_url(ID),
+                 bfile_url = OEIS_bfile_url(ID, TRUE),
+                 terms = OEIS_terms(seq_xml),
+                 seq_xml = seq_xml),
+            class = c("OEIS_sequence"))
+}
+
+
 # library(xml2)
 # library(rvest)
 # library(magrittr)
@@ -131,6 +155,7 @@ OEIS_terms <- function(seq_xml) {
 # test_seq_html <- OEIS_xml2(id)
 #
 # OEIS_description(test_seq_html)
-#
 # OEIS_terms(test_seq_html)
-
+# id <- "A003456"
+# x <- OEIS_sequence(id)
+# x
