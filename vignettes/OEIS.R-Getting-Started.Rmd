@@ -1,0 +1,23 @@
+---
+title: "Getting Started OEIS.R"
+author: "Enrique Pérez Herrero"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+library(OEIS.R)
+```
+
+
+```{r}
+id <- "A003456"
+x <- OEIS_sequence(id)
+x
+```
+
+

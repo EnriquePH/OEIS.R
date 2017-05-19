@@ -9,10 +9,11 @@ OEIS_bfile_url(ID, URL = FALSE)
 \arguments{
 \item{ID}{A string with the OEIS sequence ID}
 
-\item{URL}{A logical that}
+\item{URL}{A logical that selects if the output is the complete url or
+just the bfile file name.}
 }
 \value{
-A string with the sequence bfile url
+A string with the sequence bfile url of the bfile file name
 }
 \description{
 OEIS_bfile_url: Get bfile url

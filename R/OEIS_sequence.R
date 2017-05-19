@@ -12,9 +12,25 @@ OEIS_web_url <- function() {
 }
 
 
-#' OEIS_url:  Get sequence url
+#' OEIS_check: OEIS ID Validation
 #'
 #' @param ID A string with the OEIS sequence ID
+#'
+#' @return NULL or an error if ID is not valid
+#' @export
+#'
+#' @examples
+#' OEIS_check("A002000")
+OEIS_check <- function(ID) {
+  if(!grepl("^A\\d{6}$", ID)) {
+    stop(paste0("\"", ID, "\" is not an OEIS valid ID"))
+  }
+}
+
+
+#' OEIS_url:  Get sequence url
+#'
+#' @inheritParams OEIS_check
 #'
 #' @return A string with the sequence url
 #' @export
@@ -22,18 +38,20 @@ OEIS_web_url <- function() {
 #' @examples
 #' OEIS_url("A000055")
 OEIS_url <- function(ID) {
+  OEIS_check(ID)
   paste0(OEIS_web_url(), ID, "/")
 }
 
 
 #' OEIS_bfile_url: Get bfile url
 #'
-#' @param ID A string with the OEIS sequence ID
-#' @param URL A logical that
+#' @inheritParams OEIS_check
+#' @param URL A logical that selects if the output is the complete url or
+#'  just the bfile file name.
 #'
 #' @importFrom magrittr "%>%"
 #'
-#' @return A string with the sequence bfile url
+#' @return A string with the sequence bfile url of the bfile file name
 #' @export
 #'
 #' @examples
@@ -42,6 +60,7 @@ OEIS_url <- function(ID) {
 #' OEIS_bfile_url(id, TRUE)
 OEIS_bfile_url <- function(ID, URL = FALSE) {
   . <- NULL
+  OEIS_check(ID)
   URL <- ifelse(URL, OEIS_url(ID), "")
   ID %>%
     gsub("A", "b", .) %>%
@@ -51,7 +70,7 @@ OEIS_bfile_url <- function(ID, URL = FALSE) {
 
 #' OEIS_xml2: Get sequence content from OEIS web
 #'
-#' @inheritParams OEIS_url
+#' @inheritParams OEIS_check
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom xml2 read_html
@@ -63,6 +82,7 @@ OEIS_bfile_url <- function(ID, URL = FALSE) {
 #'  test_seq_html <- OEIS_xml2(id)
 OEIS_xml2 <- function(ID) {
   . <- NULL
+  OEIS_check(ID)
   ID %>%
     OEIS_url %>%
     xml2::read_html(.)
@@ -124,25 +144,25 @@ OEIS_terms <- function(seq_xml) {
 
 #' OEIS_bfile: Class constructor
 #'
-#' @inheritParams OEIS_url
+#' @inheritParams OEIS_check
 #'
 #' @importFrom  utils read.table
 #' @return An object of the class \code{OEIS_bfile}
 #' @export
 #'
 #' @examples
+#' id <- "A000056"
+#' OEIS_bfile(id)
 OEIS_bfile <- function(ID) {
+  OEIS_check(ID)
   bfile_url <- OEIS_bfile_url(ID, TRUE)
   lines <- readLines(bfile_url)
   match_comments <- grepl("#", lines)
-  if(identical(match_comments, integer(0))) {
-    match_comments <- FALSE
+  comments <- lines[match_comments]
+  data <- lines[!match_comments]
+  if(identical(comments, character(0))) {
     comments <- NULL
-    data <- lines
-  } else {
-    comments <- lines[match_comments]
-    data <- lines[!match_comments]
-  }
+    }
 
   data <- utils::read.table(text = data, stringsAsFactors = FALSE)
   names(data) <- c("n", ID)
@@ -156,7 +176,7 @@ OEIS_bfile <- function(ID) {
 
 #' OEIS_sequence: Class constructor
 #'
-#' @inheritParams OEIS_url
+#' @inheritParams OEIS_check
 #'
 #' @return An object of the class \code{OEIS_sequence}
 #' @export
@@ -177,20 +197,26 @@ OEIS_sequence <- function(ID){
 }
 
 
-library(xml2)
-library(rvest)
-library(magrittr)
-
-id <- "A000056"
+# library(xml2)
+# library(rvest)
+# library(magrittr)
 #
-# test_seq_html <- OEIS_xml2(id)
+# id <- "A000056"
+# #
+# # test_seq_html <- OEIS_xml2(id)
+# #
+# # OEIS_description(test_seq_html)
+# # OEIS_terms(test_seq_html)
+# id <- "A001456"
+# x <- OEIS_sequence(id)
 #
-# OEIS_description(test_seq_html)
-# OEIS_terms(test_seq_html)
-id <- "A003456"
-x <- OEIS_sequence(id)
+# x$url
+#
+# x$description
+# x$bfile$comments
+# x$bfile$data
 
-
-plot(x$bfile$data)
-
-
+# plot(x$bfile$data)
+#
+#
+# grepl("^A\\d{6}$", "A000056")

@@ -13,3 +13,7 @@ Imports:
    rvest,
    magrittr,
    utils
+Suggests: knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
