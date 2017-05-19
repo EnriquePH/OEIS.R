@@ -3,7 +3,7 @@ Title: Data from The On-Line Encyclopedia of Integer Sequences in R
 Version: 0.0.0.1
 Authors@R: person("Enrique", "Pérez Herrero", email = "psychgeometry@gmail.com", role = c("aut", "cre"))
 Description: Use data from OEIS, "https://oeis.org/".
-Depends: R (>= 3.4.0)
+Depends: R (>= 3.3.3)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
