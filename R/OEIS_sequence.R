@@ -18,7 +18,7 @@ OEIS_web_url <- function() {
 #' The A-number or sequence \code{ID} is the absolute catalogue number of the
 #' sequence. It consists of A followed by 6 digits
 #'
-#' @return NULL or an error if ID is not valid
+#' @return \code{NULL} or an error if \code{ID} is not valid
 #' @export
 #'
 #' @examples
@@ -117,6 +117,46 @@ OEIS_description <- function(seq_xml) {
     gsub("\n", "", .) %>%
     trimws
 }
+
+#  OEIS_formerly
+#' Get OEIS sequence former ID from xml2 data
+#'
+#' Some sequences also have a 4-digit M-number, such as M1459, which is the
+#' number they carried in "The Encyclopedia of Integer Sequences" by N.J.A.
+#' Sloane and S. Plouffe, Academic Press, San Diego, CA, 1995. 'Some older
+#' sequences also have a 4-digit N-number, such as N0577, which is the number
+#' they carried in the "Handbook of Integer Sequences", by N. J. A. Sloane,
+#' Academic Press, NY, 1973
+#'
+#' @inheritParams OEIS_description
+#'
+#' @importFrom magrittr "%>%"
+#' @importFrom magrittr extract2
+#' @importFrom rvest html_nodes
+#'
+#' @return A string with the OEIS former \code{ID} or \code{NULL} if there is no
+#'   former sequence designation
+#' @seealso \code{\link{OEIS_description}}
+#' @export
+#'
+#' @examples
+#' id <- "A000056"
+#' test_seq_xml <- OEIS_xml2(id)
+#' OEIS_formerly(test_seq_xml)
+OEIS_formerly <- function(seq_xml) {
+  . <- NULL
+  formerly <- seq_xml %>%
+    rvest::html_nodes(., xpath = "//td/font/text()") %>%
+    rvest::html_text(.) %>%
+    magrittr::extract2(5) %>%
+    regmatches(., gregexpr("(\\w\\d{4})", .)) %>%
+    unlist
+  if(identical(formerly, character(0))) {
+    formerly <- NULL
+  }
+  formerly
+}
+
 
 #  OEIS_terms
 #' Get OEIS sequence terms from xml2 data
@@ -232,6 +272,7 @@ OEIS_sequence <- function(ID){
   seq_xml = OEIS_xml2(ID)
   structure(list(ID = ID,
                  description = OEIS_description(seq_xml),
+                 formerly = OEIS_formerly(seq_xml),
                  url = OEIS_url(ID),
                  bfile = OEIS_bfile(ID),
                  terms = OEIS_terms(seq_xml),

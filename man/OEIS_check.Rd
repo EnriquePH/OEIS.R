@@ -12,7 +12,7 @@ The A-number or sequence \code{ID} is the absolute catalogue number of the
 sequence. It consists of A followed by 6 digits}
 }
 \value{
-NULL or an error if ID is not valid
+\code{NULL} or an error if \code{ID} is not valid
 }
 \description{
 OEIS ID Validation
