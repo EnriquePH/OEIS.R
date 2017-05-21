@@ -2,18 +2,20 @@
 % Please edit documentation in R/OEIS_sequence.R
 \name{OEIS_xml2}
 \alias{OEIS_xml2}
-\title{OEIS_xml2: Get sequence content from OEIS web}
+\title{Get sequence content from OEIS web}
 \usage{
 OEIS_xml2(ID)
 }
 \arguments{
-\item{ID}{A string with the OEIS sequence ID}
+\item{ID}{A string with the OEIS sequence \code{ID} Number
+The A-number or sequence \code{ID} is the absolute catalogue number of the
+sequence. It consists of A followed by 6 digits}
 }
 \value{
 \code{xml_document} from OEIS web with the sequence content
 }
 \description{
-OEIS_xml2: Get sequence content from OEIS web
+Get sequence content from OEIS web
 }
 \examples{
  id <- "A000156"
