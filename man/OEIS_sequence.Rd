@@ -22,3 +22,6 @@ id <- "A003456"
 x <- OEIS_sequence(id)
 x
 }
+\seealso{
+\code{\link{OEIS_bfile}}
+}

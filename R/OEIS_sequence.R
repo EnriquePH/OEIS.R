@@ -1,6 +1,6 @@
 
 #  OEIS_web_url
-#' Get OEIS web main page url
+#' OEIS web main page url
 #'
 #' @return A string with the OEIS web url
 #' @export
@@ -30,7 +30,7 @@ OEIS_check <- function(ID) {
 }
 
 #  OEIS_url
-#' OEIS_url:  Get sequence url
+#' Get sequence url
 #'
 #' @inheritParams OEIS_check
 #'
@@ -46,7 +46,7 @@ OEIS_url <- function(ID) {
 
 
 #  OEIS_bfile_url
-#' Get bfile url
+#' Get \code{bfile} url
 #'
 #' @inheritParams OEIS_check
 #' @param URL A logical that selects if the output is the complete url, or just
@@ -56,6 +56,7 @@ OEIS_url <- function(ID) {
 #'
 #' @return A string with the sequence \code{bfile} url, or the \code{bfile} file
 #'   name
+#' @seealso \code{\link{OEIS_url}}
 #' @export
 #'
 #' @examples
@@ -147,7 +148,7 @@ OEIS_terms <- function(seq_xml) {
 
 
 #  OEIS_offset
-#' Get OEIS sequence offset from xml2 data
+#' OEIS sequence offset from \code{xml2} data
 #'
 #' @inheritParams OEIS_description
 #'
@@ -186,6 +187,9 @@ OEIS_offset <- function(seq_xml) {
 #'
 #' @importFrom  utils read.table
 #' @return An object of the class \code{OEIS_bfile}
+#'
+#' @seealso \code{\link{OEIS_bfile_url}}
+#' @seealso \code{\link{OEIS_sequence}}
 #' @export
 #'
 #' @examples
@@ -217,6 +221,7 @@ OEIS_bfile <- function(ID) {
 #' @inheritParams OEIS_check
 #'
 #' @return An object of the class \code{OEIS_sequence}
+#' @seealso \code{\link{OEIS_bfile}}
 #' @export
 #'
 #' @examples

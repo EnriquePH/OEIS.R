@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_sequence.R
 \name{OEIS_offset}
 \alias{OEIS_offset}
-\title{Get OEIS sequence offset from xml2 data}
+\title{OEIS sequence offset from \code{xml2} data}
 \usage{
 OEIS_offset(seq_xml)
 }
@@ -13,7 +13,7 @@ OEIS_offset(seq_xml)
 A numeric vector with the OEIS sequence distinct offsets
 }
 \description{
-Get OEIS sequence offset from xml2 data
+OEIS sequence offset from \code{xml2} data
 }
 \examples{
 id <- "A000023"

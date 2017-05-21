@@ -15,10 +15,16 @@ sequence. It consists of A followed by 6 digits}
 An object of the class \code{OEIS_bfile}
 }
 \description{
-A \code{bfile} provide many more terms of a sequence than the typical fifty to
-eighty terms that can be shown in the main sequence entry.
+A \code{bfile} is a text formatted file that provides many more terms of a
+sequence than the typical fifty to eighty terms that can be shown in the main
+sequence entry.
 }
 \examples{
 id <- "A000056"
 OEIS_bfile(id)
+}
+\seealso{
+\code{\link{OEIS_bfile_url}}
+
+\code{\link{OEIS_sequence}}
 }

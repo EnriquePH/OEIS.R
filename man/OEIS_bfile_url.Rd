@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_sequence.R
 \name{OEIS_bfile_url}
 \alias{OEIS_bfile_url}
-\title{Get bfile url}
+\title{Get \code{bfile} url}
 \usage{
 OEIS_bfile_url(ID, URL = FALSE)
 }
@@ -19,10 +19,13 @@ A string with the sequence \code{bfile} url, or the \code{bfile} file
   name
 }
 \description{
-Get bfile url
+Get \code{bfile} url
 }
 \examples{
 id <- "A000056"
 OEIS_bfile_url(id, FALSE)
 OEIS_bfile_url(id, TRUE)
+}
+\seealso{
+\code{\link{OEIS_url}}
 }

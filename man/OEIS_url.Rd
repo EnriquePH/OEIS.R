@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_sequence.R
 \name{OEIS_url}
 \alias{OEIS_url}
-\title{OEIS_url:  Get sequence url}
+\title{Get sequence url}
 \usage{
 OEIS_url(ID)
 }
@@ -15,7 +15,7 @@ sequence. It consists of A followed by 6 digits}
 A string with the sequence url
 }
 \description{
-OEIS_url:  Get sequence url
+Get sequence url
 }
 \examples{
 OEIS_url("A000055")
