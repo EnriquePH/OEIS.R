@@ -13,6 +13,7 @@ sequence. It consists of A followed by 6 digits}
 }
 \value{
 A string with the sequence url
+\code{\link{OEIS_check}}
 }
 \description{
 Get sequence url

@@ -15,3 +15,4 @@ devtools::install_github("EnriquePH/OEIS.R")
 
 # Links:
 * [OEIS: Explanation of Terms](https://oeis.org/eishelp2.html)
+* [THE OEIS TERMS OF USE AGREEMENT](https://oeis.org/OEISTermsOfUse.pdf)

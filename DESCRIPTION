@@ -1,7 +1,7 @@
 Package: OEIS.R
 Title: Data from The On-Line Encyclopedia of Integer Sequences in R
-Version: 0.0.0.2
-Authors@R: person("Enrique", "Pérez Herrero", email = "psychgeometry@gmail.com", role = c("aut", "cre"))
+Version: 0.0.0.3
+Authors@R: person("Enrique", "Pérez Herrero", email = "eph.project1500@gmail.com", role = c("aut", "cre"))
 Description: Use data from OEIS, "https://oeis.org/".
 Depends: R (>= 3.3.3)
 License: file LICENSE
@@ -12,7 +12,8 @@ Imports:
    xml2,
    rvest,
    magrittr,
-   utils
+   utils,
+   lubridate
 Suggests: knitr,
     rmarkdown,
     testthat

@@ -1,3 +1,13 @@
+#  ----------------------------------------------------------------------------
+#  OIES.R PACKAGE
+#  Data from The On-Line Encyclopedia of Integer Sequences in R
+#  File: OEIS_sequence.R
+#  (c) 2017 - Enrique Pérez Herrero
+#  email: eph.project1500@gmail.com
+#  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
+#  Start: 18/May/2017
+#  End:   21/May/2017
+#  ---------------------------------------------------------------------------
 
 #  OEIS_web_url
 #' OEIS web main page url
@@ -35,6 +45,7 @@ OEIS_check <- function(ID) {
 #' @inheritParams OEIS_check
 #'
 #' @return A string with the sequence url
+#' \code{\link{OEIS_check}}
 #' @export
 #'
 #' @examples
@@ -187,6 +198,27 @@ OEIS_terms <- function(seq_xml) {
 }
 
 
+# OEIS_df
+#' Get OEIS sequence terms from xml2 data
+#'
+#' @inheritParams OEIS_description
+#' @importFrom magrittr "%>%"
+#' @importFrom rvest html_table
+#' @importFrom rvest html_nodes
+#' @return A data.frame with sequence content
+#' @export
+OEIS_df <- function(seq_xml) {
+  . <- NULL
+  seq_df <- seq_xml %>%
+    rvest::html_nodes(. , xpath = "//tr[5]/td/table") %>%
+    rvest::html_table(., fill = FALSE) %>%
+    .[[1]]
+  seq_df$X1 <- NULL
+  names(seq_df) <- c("Line", "Description")
+  seq_df
+}
+
+
 #  OEIS_offset
 #' OEIS sequence offset from \code{xml2} data
 #'
@@ -216,9 +248,8 @@ OEIS_offset <- function(seq_xml) {
   seq_xml %>%
     rvest::html_nodes(., xpath = "//tt/text()") %>%
     magrittr::extract2(2) %>%
-    rvest::html_text(.) %>%
+    rvest::html_text(., trim = TRUE) %>%
     strsplit(., ",") %>%
-    lapply(., trimws) %>%
     unlist %>%
     as.numeric
 }
@@ -248,6 +279,186 @@ OEIS_keywords <- function(seq_xml) {
   seq_xml %>%
     rvest::html_nodes(. , xpath = "//tt/span") %>%
     rvest::html_text(.)
+}
+
+
+# OEIS_author
+#' OEIS sequence author from \code{seq_df} data.frame
+#'
+#' @param seq_df A data.frame with sequence content
+#'
+#' @importFrom magrittr "%>%"
+#'
+#' @return A character vector with the OEIS sequence author
+#' @export
+#'
+#' @examples
+#' id <- "A000108"
+#' test_seq_html <- OEIS_xml2(id)
+#' seq_df <- OEIS_df(test_seq_html)
+#' OEIS_author(seq_df)
+OEIS_author <- function(seq_df) {
+  . <- NULL
+  author <- seq_df[seq_df$Line == "AUTHOR", ]$Description %>%
+    strsplit(., ",") %>%
+    unlist %>%
+    .[[1]]
+  # 'dead' sequences has no author
+  if(identical(author, character(0))) {
+    author <- NULL
+  }
+  author
+}
+
+# OEIS_date
+#' OEIS sequence date from \code{seq_df} data.frame
+#'
+#' @inheritParams OEIS_author
+#'
+#' @importFrom magrittr "%>%"
+#' @importFrom lubridate mdy
+#'
+#' @return A \code{Date} object with the OEIS sequence date or NULL if it is not
+#'   found
+#' @export
+#'
+#' @examples
+#' id <- "A221863"
+#' test_seq_html <- OEIS_xml2(id)
+#' seq_df <- OEIS_df(test_seq_html)
+#' OEIS_date(seq_df)
+OEIS_date <- function(seq_df) {
+  . <- NULL
+  date <- seq_df[seq_df$Line == "AUTHOR", ]$Description %>%
+    strsplit(., ",") %>%
+    unlist
+  if(length(date) == 1) {
+    date <- NULL
+  } else {
+    date <- date[[2]] %>%
+      trimws %>%
+      lubridate::mdy(., locale = "en_US.utf8")
+  }
+  date
+}
+
+# OEIS_cf
+#' OEIS sequence linked cross references from \code{seq_df} data.frame
+#'
+#' @inheritParams OEIS_author
+#'
+#' @importFrom magrittr "%>%"
+#'
+#' @return A character vector with OEIS sequences linked cross references IDs
+#' @export
+#'
+#' @examples
+#' id <- "A240106"
+#' test_seq_html <- OEIS_xml2(id)
+#' seq_df <- OEIS_df(test_seq_html)
+#' OEIS_cf(seq_df)
+OEIS_cf <- function(seq_df) {
+  . <- NULL
+  seq_df[seq_df == "CROSSREFS", ]$Description %>%
+  strsplit(., "Sequence") %>%
+  unlist %>%
+  .[[1]] %>%
+  regmatches(., gregexpr("(A\\d{6})", .)) %>%
+  unlist
+}
+
+
+#  OEIS_seqs_in_context
+#' OEIS Sequences in context from \code{xml2} data
+#'
+#' Related sequences IDs in OEIS
+#' @inheritParams OEIS_description
+#'
+#' @importFrom magrittr "%>%"
+#' @importFrom rvest html_text
+#' @importFrom rvest html_nodes
+#'
+#' @return A character vector OEIS sequences in context IDs
+#' @seealso \code{\link{OEIS_seqs_adjacent}}
+#' @seealso \code{\link{OEIS_crossrefs}}
+#' @export
+#'
+#' @examples
+#' id <- "A000112"
+#' test_seq_html <- OEIS_xml2(id)
+#' OEIS_seqs_in_context(test_seq_html)
+OEIS_seqs_in_context <- function(seq_xml) {
+  . <- NULL
+  seq_xml %>%
+    rvest::html_nodes(. , xpath = "//tt") %>%
+    rvest::html_text(.) %>%
+    .[grep("Sequence in context:*", .)] %>%
+    regmatches(., gregexpr("(A\\d{6})", .)) %>%
+    unlist
+}
+
+
+#  OEIS_seqs_adjacent
+#' OEIS Adjacent sequences from \code{xml2} data
+#'
+#' Adjacent sequences IDs in OEIS
+#' @inheritParams OEIS_description
+#'
+#' @importFrom magrittr "%>%"
+#' @importFrom rvest html_text
+#' @importFrom rvest html_nodes
+#'
+#' @return A character vector OEIS sequences in context IDs
+#' @seealso \code{\link{OEIS_seqs_in_context}}
+#' @seealso \code{\link{OEIS_crossrefs}}
+#' @export
+#'
+#' @examples
+#' id <- "A000112"
+#' test_seq_html <- OEIS_xml2(id)
+#' OEIS_seqs_adjacent(test_seq_html)
+OEIS_seqs_adjacent <- function(seq_xml) {
+  . <- NULL
+  seq_xml %>%
+    rvest::html_nodes(. , xpath = "//tt") %>%
+    rvest::html_text(.) %>%
+    .[grep("Adjacent sequences:*", .)] %>%
+    regmatches(., gregexpr("(A\\d{6})", .)) %>%
+    unlist
+}
+
+#
+
+#  OEIS_crossrefs
+#' OEIS Cross references from \code{xml2} data
+#'
+#' Cross references IDs
+#' @inheritParams OEIS_description
+#'
+#' @importFrom magrittr "%>%"
+#' @importFrom rvest html_text
+#' @importFrom rvest html_nodes
+#'
+#' @return An object of the class \code{OEIS_crossrefs} with sequences in
+#'  context and adjacent sequences
+#' @seealso \code{\link{OEIS_seqs_in_context}}
+#' @seealso \code{\link{OEIS_seqs_adjacent}}
+#' @export
+#'
+#' @examples
+#' id <- "A000112"
+#' test_seq_html <- OEIS_xml2(id)
+#' OEIS_crossrefs(test_seq_html)
+OEIS_crossrefs <- function(seq_xml) {
+  seq_df <- OEIS_df(seq_xml)
+  structure(
+    list(
+      cf = OEIS_cf(seq_df),
+      seqs_in_context = OEIS_seqs_in_context(seq_xml),
+      seqs_adjacent = OEIS_seqs_adjacent(seq_xml)
+    ),
+    class = c("OEIS_crossrefs")
+  )
 }
 
 
@@ -303,7 +514,8 @@ OEIS_bfile <- function(ID) {
 #' A003456 <- OEIS_sequence(id)
 #' A003456
 OEIS_sequence <- function(ID){
-  seq_xml = OEIS_xml2(ID)
+  seq_xml <- OEIS_xml2(ID)
+  seq_df <- OEIS_df(seq_xml)
   structure(list(ID = ID,
                  description = OEIS_description(seq_xml),
                  formerly = OEIS_formerly(seq_xml),
@@ -311,7 +523,10 @@ OEIS_sequence <- function(ID){
                  bfile = OEIS_bfile(ID),
                  terms = OEIS_terms(seq_xml),
                  offset = OEIS_offset(seq_xml),
+                 crossrefs = OEIS_crossrefs(seq_xml),
                  keywords = OEIS_keywords(seq_xml),
+                 author = OEIS_author(seq_df),
+                 date = OEIS_date(seq_df),
                  seq_xml = seq_xml),
             class = c("OEIS_sequence"))
 }
