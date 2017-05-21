@@ -9,6 +9,15 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+## Install from Github
+
+```{r, eval=FALSE}
+library(devtools)
+devtools::install_github("EnriquePH/OEIS.R")
+```
+
+## Load Package
+
 ```{r}
 library(OEIS.R)
 ```
@@ -16,8 +25,8 @@ library(OEIS.R)
 
 ```{r}
 id <- "A003456"
-x <- OEIS_sequence(id)
-x
+A003456 <- OEIS_sequence(id)
+A003456
 ```
 
 

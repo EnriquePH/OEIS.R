@@ -5,5 +5,13 @@
 Data from [The On-Line Encyclopedia of Integer Sequences](https://oeis.org/)
 in R
 
+
+# Installation:
+
+```
+library(devtools)
+devtools::install_github("EnriquePH/OEIS.R")
+```
+
 # Links:
 * [OEIS: Explanation of Terms](https://oeis.org/eishelp2.html)

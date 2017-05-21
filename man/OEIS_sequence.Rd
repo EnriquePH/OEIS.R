@@ -19,8 +19,8 @@ Class constructor for \code{OEIS_sequence}
 }
 \examples{
 id <- "A003456"
-x <- OEIS_sequence(id)
-x
+A003456 <- OEIS_sequence(id)
+A003456
 }
 \seealso{
 \code{\link{OEIS_bfile}}

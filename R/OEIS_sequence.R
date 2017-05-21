@@ -190,6 +190,13 @@ OEIS_terms <- function(seq_xml) {
 #  OEIS_offset
 #' OEIS sequence offset from \code{xml2} data
 #'
+#' This line usually gives the subscript of the first term in the sequence. If
+#' the sequence gives the decimal expansion of a constant, the offset is the
+#' number of digits before the decimal point. In the OEIS web internal format,
+#' there is a second offset, which says which term (counting from the left, and
+#' starting with 1), first exceeds 1 in absolute value. This is set to 1 if all
+#' the terms are 0 or +-1
+#'
 #' @inheritParams OEIS_description
 #'
 #' @importFrom magrittr "%>%"
@@ -214,6 +221,33 @@ OEIS_offset <- function(seq_xml) {
     lapply(., trimws) %>%
     unlist %>%
     as.numeric
+}
+
+#  OEIS_keywords
+#' OEIS sequence keywords from \code{xml2} data
+#'
+#' These lines give keywords describing the sequence.
+#' The actual keywords in use can be found at:
+#' \href{https://oeis.org/eishelp2.html}{Explanation of Terms Used}
+#'
+#' @inheritParams OEIS_description
+#'
+#' @importFrom magrittr "%>%"
+#' @importFrom rvest html_text
+#' @importFrom rvest html_nodes
+#'
+#' @return A character vector with the OEIS sequence keywords
+#' @export
+#'
+#' @examples
+#' id <- "A000012"
+#' test_seq_html <- OEIS_xml2(id)
+#' OEIS_keywords(test_seq_html)
+OEIS_keywords <- function(seq_xml) {
+  . <- NULL
+  seq_xml %>%
+    rvest::html_nodes(. , xpath = "//tt/span") %>%
+    rvest::html_text(.)
 }
 
 
@@ -266,8 +300,8 @@ OEIS_bfile <- function(ID) {
 #'
 #' @examples
 #' id <- "A003456"
-#' x <- OEIS_sequence(id)
-#' x
+#' A003456 <- OEIS_sequence(id)
+#' A003456
 OEIS_sequence <- function(ID){
   seq_xml = OEIS_xml2(ID)
   structure(list(ID = ID,
@@ -277,6 +311,7 @@ OEIS_sequence <- function(ID){
                  bfile = OEIS_bfile(ID),
                  terms = OEIS_terms(seq_xml),
                  offset = OEIS_offset(seq_xml),
+                 keywords = OEIS_keywords(seq_xml),
                  seq_xml = seq_xml),
             class = c("OEIS_sequence"))
 }

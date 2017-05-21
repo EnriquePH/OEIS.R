@@ -13,7 +13,12 @@ OEIS_offset(seq_xml)
 A numeric vector with the OEIS sequence distinct offsets
 }
 \description{
-OEIS sequence offset from \code{xml2} data
+This line usually gives the subscript of the first term in the sequence. If
+the sequence gives the decimal expansion of a constant, the offset is the
+number of digits before the decimal point. In the OEIS web internal format,
+there is a second offset, which says which term (counting from the left, and
+starting with 1), first exceeds 1 in absolute value. This is set to 1 if all
+the terms are 0 or +-1
 }
 \examples{
 id <- "A000023"
