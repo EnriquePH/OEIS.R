@@ -7,7 +7,9 @@
 OEIS_url(ID)
 }
 \arguments{
-\item{ID}{A string with the OEIS sequence ID}
+\item{ID}{A string with the OEIS sequence \code{ID} Number
+The A-number or sequence \code{ID} is the absolute catalogue number of the
+sequence. It consists of A followed by 6 digits}
 }
 \value{
 A string with the sequence url

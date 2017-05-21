@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_sequence.R
 \name{OEIS_web_url}
 \alias{OEIS_web_url}
-\title{OEIS_web_url: Get OEIS web main page url}
+\title{Get OEIS web main page url}
 \usage{
 OEIS_web_url()
 }
@@ -10,7 +10,7 @@ OEIS_web_url()
 A string with the OEIS web url
 }
 \description{
-OEIS_web_url: Get OEIS web main page url
+Get OEIS web main page url
 }
 \examples{
 OEIS_web_url()

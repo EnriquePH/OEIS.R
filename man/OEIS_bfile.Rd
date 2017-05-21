@@ -2,18 +2,21 @@
 % Please edit documentation in R/OEIS_sequence.R
 \name{OEIS_bfile}
 \alias{OEIS_bfile}
-\title{OEIS_bfile: Class constructor}
+\title{Class constructor for \code{bfile} data}
 \usage{
 OEIS_bfile(ID)
 }
 \arguments{
-\item{ID}{A string with the OEIS sequence ID}
+\item{ID}{A string with the OEIS sequence \code{ID} Number
+The A-number or sequence \code{ID} is the absolute catalogue number of the
+sequence. It consists of A followed by 6 digits}
 }
 \value{
 An object of the class \code{OEIS_bfile}
 }
 \description{
-OEIS_bfile: Class constructor
+A \code{bfile} provide many more terms of a sequence than the typical fifty to
+eighty terms that can be shown in the main sequence entry.
 }
 \examples{
 id <- "A000056"

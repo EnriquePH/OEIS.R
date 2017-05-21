@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_sequence.R
 \name{OEIS_terms}
 \alias{OEIS_terms}
-\title{OEIS_terms: Get OEIS sequence terms from xml2 data}
+\title{Get OEIS sequence terms from xml2 data}
 \usage{
 OEIS_terms(seq_xml)
 }
@@ -13,7 +13,7 @@ OEIS_terms(seq_xml)
 A character list with the OEIS sequence terms
 }
 \description{
-OEIS_terms: Get OEIS sequence terms from xml2 data
+Get OEIS sequence terms from xml2 data
 }
 \examples{
 id <- "A000056"

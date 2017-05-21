@@ -1,6 +1,6 @@
 
-
-#' OEIS_web_url: Get OEIS web main page url
+#  OEIS_web_url
+#' Get OEIS web main page url
 #'
 #' @return A string with the OEIS web url
 #' @export
@@ -11,10 +11,12 @@ OEIS_web_url <- function() {
   "https://oeis.org/"
 }
 
-
-#' OEIS_check: OEIS ID Validation
+#  OEIS_check
+#' OEIS ID Validation
 #'
-#' @param ID A string with the OEIS sequence ID
+#' @param ID A string with the OEIS sequence \code{ID} Number
+#' The A-number or sequence \code{ID} is the absolute catalogue number of the
+#' sequence. It consists of A followed by 6 digits
 #'
 #' @return NULL or an error if ID is not valid
 #' @export
@@ -27,7 +29,7 @@ OEIS_check <- function(ID) {
   }
 }
 
-
+#  OEIS_url
 #' OEIS_url:  Get sequence url
 #'
 #' @inheritParams OEIS_check
@@ -43,15 +45,17 @@ OEIS_url <- function(ID) {
 }
 
 
-#' OEIS_bfile_url: Get bfile url
+#  OEIS_bfile_url
+#' Get bfile url
 #'
 #' @inheritParams OEIS_check
-#' @param URL A logical that selects if the output is the complete url or
-#'  just the bfile file name.
+#' @param URL A logical that selects if the output is the complete url, or just
+#'   the \code{bfile} file name.
 #'
 #' @importFrom magrittr "%>%"
 #'
-#' @return A string with the sequence bfile url of the bfile file name
+#' @return A string with the sequence \code{bfile} url, or the \code{bfile} file
+#'   name
 #' @export
 #'
 #' @examples
@@ -67,8 +71,8 @@ OEIS_bfile_url <- function(ID, URL = FALSE) {
     paste0(URL, . , ".txt" )
 }
 
-
-#' OEIS_xml2: Get sequence content from OEIS web
+#  OEIS_xml2
+#' Get sequence content from OEIS web
 #'
 #' @inheritParams OEIS_check
 #'
@@ -88,8 +92,8 @@ OEIS_xml2 <- function(ID) {
     xml2::read_html(.)
 }
 
-
-#' OEIS_description: Get OEIS sequence description from xml2 data
+#  OEIS_description
+#' Get OEIS sequence description from xml2 data
 #'
 #' @param seq_xml A xml_document from an OEIS sequence
 #'
@@ -113,10 +117,10 @@ OEIS_description <- function(seq_xml) {
     trimws
 }
 
-
-#' OEIS_terms: Get OEIS sequence terms from xml2 data
+#  OEIS_terms
+#' Get OEIS sequence terms from xml2 data
 #'
-#' @param seq_xml A xml_document from an OEIS sequence
+#' @inheritParams OEIS_description
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr extract2
@@ -142,8 +146,42 @@ OEIS_terms <- function(seq_xml) {
 }
 
 
-#' OEIS_bfile: Class constructor
+#  OEIS_offset
+#' Get OEIS sequence offset from xml2 data
 #'
+#' @inheritParams OEIS_description
+#'
+#' @importFrom magrittr "%>%"
+#' @importFrom magrittr extract2
+#' @importFrom rvest html_text
+#' @importFrom rvest html_nodes
+#'
+#' @return A numeric vector with the OEIS sequence distinct offsets
+#' @export
+#'
+#' @examples
+#' id <- "A000023"
+#' test_seq_html <- OEIS_xml2(id)
+#' OEIS_offset(test_seq_html)
+OEIS_offset <- function(seq_xml) {
+  . <- NULL
+  seq_xml %>%
+    rvest::html_nodes(., xpath = "//tt/text()") %>%
+    magrittr::extract2(2) %>%
+    rvest::html_text(.) %>%
+    strsplit(., ",") %>%
+    lapply(., trimws) %>%
+    unlist %>%
+    as.numeric
+}
+
+
+#  OEIS_bfile
+#' Class constructor for \code{bfile} data
+#'
+#' A \code{bfile} is a text formatted file that provides many more terms of a
+#' sequence than the typical fifty to eighty terms that can be shown in the main
+#' sequence entry.
 #' @inheritParams OEIS_check
 #'
 #' @importFrom  utils read.table
@@ -173,8 +211,8 @@ OEIS_bfile <- function(ID) {
             class = c("OEIS_bfile"))
 }
 
-
-#' OEIS_sequence: Class constructor
+#  OEIS_sequence
+#' Class constructor for \code{OEIS_sequence}
 #'
 #' @inheritParams OEIS_check
 #'
@@ -192,31 +230,7 @@ OEIS_sequence <- function(ID){
                  url = OEIS_url(ID),
                  bfile = OEIS_bfile(ID),
                  terms = OEIS_terms(seq_xml),
+                 offset = OEIS_offset(seq_xml),
                  seq_xml = seq_xml),
             class = c("OEIS_sequence"))
 }
-
-
-# library(xml2)
-# library(rvest)
-# library(magrittr)
-#
-# id <- "A000056"
-# #
-# # test_seq_html <- OEIS_xml2(id)
-# #
-# # OEIS_description(test_seq_html)
-# # OEIS_terms(test_seq_html)
-# id <- "A001456"
-# x <- OEIS_sequence(id)
-#
-# x$url
-#
-# x$description
-# x$bfile$comments
-# x$bfile$data
-
-# plot(x$bfile$data)
-#
-#
-# grepl("^A\\d{6}$", "A000056")

@@ -2,18 +2,20 @@
 % Please edit documentation in R/OEIS_sequence.R
 \name{OEIS_sequence}
 \alias{OEIS_sequence}
-\title{OEIS_sequence: Class constructor}
+\title{Class constructor for \code{OEIS_sequence}}
 \usage{
 OEIS_sequence(ID)
 }
 \arguments{
-\item{ID}{A string with the OEIS sequence ID}
+\item{ID}{A string with the OEIS sequence \code{ID} Number
+The A-number or sequence \code{ID} is the absolute catalogue number of the
+sequence. It consists of A followed by 6 digits}
 }
 \value{
 An object of the class \code{OEIS_sequence}
 }
 \description{
-OEIS_sequence: Class constructor
+Class constructor for \code{OEIS_sequence}
 }
 \examples{
 id <- "A003456"

@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_sequence.R
 \name{OEIS_description}
 \alias{OEIS_description}
-\title{OEIS_description: Get OEIS sequence description from xml2 data}
+\title{Get OEIS sequence description from xml2 data}
 \usage{
 OEIS_description(seq_xml)
 }
@@ -13,7 +13,7 @@ OEIS_description(seq_xml)
 A string with the OEIS sequence description
 }
 \description{
-OEIS_description: Get OEIS sequence description from xml2 data
+Get OEIS sequence description from xml2 data
 }
 \examples{
 id <- "A000056"

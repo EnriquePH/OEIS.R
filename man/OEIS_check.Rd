@@ -2,18 +2,20 @@
 % Please edit documentation in R/OEIS_sequence.R
 \name{OEIS_check}
 \alias{OEIS_check}
-\title{OEIS_check: OEIS ID Validation}
+\title{OEIS ID Validation}
 \usage{
 OEIS_check(ID)
 }
 \arguments{
-\item{ID}{A string with the OEIS sequence ID}
+\item{ID}{A string with the OEIS sequence \code{ID} Number
+The A-number or sequence \code{ID} is the absolute catalogue number of the
+sequence. It consists of A followed by 6 digits}
 }
 \value{
 NULL or an error if ID is not valid
 }
 \description{
-OEIS_check: OEIS ID Validation
+OEIS ID Validation
 }
 \examples{
 OEIS_check("A002000")

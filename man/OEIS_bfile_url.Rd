@@ -2,21 +2,24 @@
 % Please edit documentation in R/OEIS_sequence.R
 \name{OEIS_bfile_url}
 \alias{OEIS_bfile_url}
-\title{OEIS_bfile_url: Get bfile url}
+\title{Get bfile url}
 \usage{
 OEIS_bfile_url(ID, URL = FALSE)
 }
 \arguments{
-\item{ID}{A string with the OEIS sequence ID}
+\item{ID}{A string with the OEIS sequence \code{ID} Number
+The A-number or sequence \code{ID} is the absolute catalogue number of the
+sequence. It consists of A followed by 6 digits}
 
-\item{URL}{A logical that selects if the output is the complete url or
-just the bfile file name.}
+\item{URL}{A logical that selects if the output is the complete url, or just
+the \code{bfile} file name.}
 }
 \value{
-A string with the sequence bfile url of the bfile file name
+A string with the sequence \code{bfile} url, or the \code{bfile} file
+  name
 }
 \description{
-OEIS_bfile_url: Get bfile url
+Get bfile url
 }
 \examples{
 id <- "A000056"
