@@ -9,7 +9,7 @@ OEIS_sequence(ID)
 \arguments{
 \item{ID}{A string with the OEIS sequence \code{ID} Number
 The A-number or sequence \code{ID} is the absolute catalogue number of the
-sequence. It consists of A followed by 6 digits}
+sequence. It consists of "A" followed by 6 digits}
 }
 \value{
 An object of the class \code{OEIS_sequence}
