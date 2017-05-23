@@ -11,22 +11,38 @@ vignette: >
 
 ## Install from Github
 
+Github repository: https://github.com/EnriquePH/OEIS.R
+
 ```{r, eval=FALSE}
 library(devtools)
 devtools::install_github("EnriquePH/OEIS.R")
 ```
 
-## Load Package
+## Load `OEIS.R` Package
 
 ```{r}
 library(OEIS.R)
 ```
 
+## S3 Class `OEIS_sequence`
 
 ```{r}
 id <- "A003456"
 A003456 <- OEIS_sequence(id)
-A003456
+class(A003456)
 ```
+
+```{r}
+A003456$ID
+A003456$description
+A003456$formerly
+A003456$url
+```
+
+
+```{r}
+plot(A003456$terms)
+```
+
 
 

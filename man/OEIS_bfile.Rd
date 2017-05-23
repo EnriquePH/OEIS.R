@@ -2,17 +2,18 @@
 % Please edit documentation in R/OEIS_bfile.R
 \name{OEIS_bfile}
 \alias{OEIS_bfile}
-\title{Class constructor for \code{bfile} data}
+\title{S3 class constructor for \code{bfile} data}
 \usage{
 OEIS_bfile(ID)
 }
 \arguments{
-\item{ID}{A string with the OEIS sequence \code{ID} Number
+\item{ID}{A string with the OEIS sequence \code{ID} number.
 The A-number or sequence \code{ID} is the absolute catalogue number of the
-sequence. It consists of "A" followed by 6 digits}
+sequence.
+It consists of "A" followed by 6 digits.}
 }
 \value{
-An object of the class \code{OEIS_bfile}
+A S3 object of the class \code{OEIS_bfile}
 }
 \description{
 A \code{bfile} is a text formatted file that provides many more terms of a

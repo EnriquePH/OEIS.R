@@ -7,9 +7,10 @@
 OEIS_bfile_url(ID, URL = FALSE)
 }
 \arguments{
-\item{ID}{A string with the OEIS sequence \code{ID} Number
+\item{ID}{A string with the OEIS sequence \code{ID} number.
 The A-number or sequence \code{ID} is the absolute catalogue number of the
-sequence. It consists of "A" followed by 6 digits}
+sequence.
+It consists of "A" followed by 6 digits.}
 
 \item{URL}{A logical that selects if the output is the complete url, or just
 the \code{bfile} file name.}

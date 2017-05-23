@@ -5,10 +5,7 @@
 #  (c) 2017 - Enrique Pérez Herrero
 #  email: eph.project1500@gmail.com
 #  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
-#  Start: 18/May/2017
-#  End:   22/May/2017
 #  ---------------------------------------------------------------------------
-
 
 #  OEIS_cf
 #' OEIS sequence linked cross references from sequence information
@@ -68,7 +65,7 @@ OEIS_cf <- function(seq_df) {
 OEIS_seqs_in_context <- function(seq_xml) {
   . <- NULL
   seq_xml %>%
-    rvest::html_nodes(. , xpath = "//tt") %>%
+    rvest::html_nodes(., xpath = "//tt") %>%
     rvest::html_text(.) %>%
     .[grep("Sequence in context:*", .)] %>%
     regmatches(., gregexpr("(A\\d{6})", .)) %>%
@@ -101,7 +98,7 @@ OEIS_seqs_in_context <- function(seq_xml) {
 OEIS_seqs_adjacent <- function(seq_xml) {
   . <- NULL
   seq_xml %>%
-    rvest::html_nodes(. , xpath = "//tt") %>%
+    rvest::html_nodes(., xpath = "//tt") %>%
     rvest::html_text(.) %>%
     .[grep("Adjacent sequences:*", .)] %>%
     regmatches(., gregexpr("(A\\d{6})", .)) %>%

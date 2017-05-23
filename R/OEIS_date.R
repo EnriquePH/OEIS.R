@@ -5,8 +5,6 @@
 #  (c) 2017 - Enrique Pérez Herrero
 #  email: eph.project1500@gmail.com
 #  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
-#  Start: 18/May/2017
-#  End:   22/May/2017
 #  ---------------------------------------------------------------------------
 
 
@@ -31,7 +29,7 @@
 #' OEIS_date(seq_df)
 OEIS_date <- function(seq_df) {
   . <- NULL
-  date <- seq_df[seq_df$Line == "AUTHOR",]$Description %>%
+  date <- seq_df[seq_df$Line == "AUTHOR", ]$Description %>%
     strsplit(., ",") %>%
     unlist
   if (length(date) == 1) {

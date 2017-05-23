@@ -5,8 +5,6 @@
 #  (c) 2017 - Enrique Pérez Herrero
 #  email: eph.project1500@gmail.com
 #  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
-#  Start: 18/May/2017
-#  End:   22/May/2017
 #  ---------------------------------------------------------------------------
 
 #  OEIS_df
@@ -25,7 +23,7 @@
 OEIS_df <- function(seq_xml) {
   . <- NULL
   seq_df <- seq_xml %>%
-    rvest::html_nodes(. , xpath = "//tr[5]/td/table") %>%
+    rvest::html_nodes(., xpath = "//tr[5]/td/table") %>%
     rvest::html_table(., fill = FALSE) %>%
     magrittr::extract2(1)
   seq_df$X1 <- NULL

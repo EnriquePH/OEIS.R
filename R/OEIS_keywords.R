@@ -5,10 +5,7 @@
 #  (c) 2017 - Enrique Pérez Herrero
 #  email: eph.project1500@gmail.com
 #  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
-#  Start: 18/May/2017
-#  End:   22/May/2017
 #  ---------------------------------------------------------------------------
-
 
 #  OEIS_keywords
 #' OEIS sequence keywords from XML document
@@ -33,6 +30,6 @@
 OEIS_keywords <- function(seq_xml) {
   . <- NULL
   seq_xml %>%
-    rvest::html_nodes(. , xpath = "//tt/span") %>%
+    rvest::html_nodes(., xpath = "//tt/span") %>%
     rvest::html_text(.)
 }

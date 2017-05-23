@@ -5,12 +5,10 @@
 #  (c) 2017 - Enrique Pérez Herrero
 #  email: eph.project1500@gmail.com
 #  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
-#  Start: 18/May/2017
-#  End:   22/May/2017
 #  ---------------------------------------------------------------------------
 
 #  OEIS_terms
-#' Get OEIS sequence terms from xml2 document.
+#' Get OEIS sequence terms from XML document.
 #'
 #' This is the data included in the sequence. These lines give the beginning of
 #' the sequence. Ideally the entry gives enough terms to fill about three lines
@@ -36,7 +34,7 @@
 OEIS_terms <- function(seq_xml) {
   . <- NULL
   seq_xml %>%
-    rvest::html_nodes(. , xpath = "//tt/text()") %>%
+    rvest::html_nodes(., xpath = "//tt/text()") %>%
     magrittr::extract2(1) %>%
     rvest::html_text(.) %>%
     strsplit(., ",") %>%

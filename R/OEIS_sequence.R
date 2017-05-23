@@ -5,23 +5,28 @@
 #  (c) 2017 - Enrique Pérez Herrero
 #  email: eph.project1500@gmail.com
 #  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
-#  Start: 18/May/2017
-#  End:   22/May/2017
 #  ----------------------------------------------------------------------------
 
 #  OEIS_sequence
-#' Class constructor for \code{OEIS_sequence}
+#' S3 class constructor for \code{OEIS_sequence}
 #'
 #' @inheritParams OEIS_check
 #'
-#' @return An object of the class \code{OEIS_sequence}
+#' @return An object of the S3 class \code{OEIS_sequence}
 #' @seealso \code{\link{OEIS_bfile}}
+#' @seealso \code{\link{OEIS_check}}
+#' @seealso \code{\link{OEIS_description}}
+#' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_df}}
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A003456"
 #' A003456 <- OEIS_sequence(id)
+#' class(A003456)
 #' A003456
+#' }
 OEIS_sequence <- function(ID){
   OEIS_check(ID)
   seq_xml <- OEIS_xml2(ID)

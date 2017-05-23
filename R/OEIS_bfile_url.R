@@ -5,8 +5,6 @@
 #  (c) 2017 - Enrique Pérez Herrero
 #  email: eph.project1500@gmail.com
 #  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
-#  Start: 18/May/2017
-#  End:   22/May/2017
 #  ---------------------------------------------------------------------------
 
 #  OEIS_bfile_url
@@ -38,5 +36,5 @@ OEIS_bfile_url <- function(ID, URL = FALSE) {
   URL <- ifelse(URL, OEIS_url(ID), "")
   ID %>%
     gsub("A", "b", .) %>%
-    paste0(URL, . , ".txt" )
+    paste0(URL, ., ".txt")
 }

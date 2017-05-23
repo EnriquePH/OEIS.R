@@ -5,8 +5,6 @@
 #  (c) 2017 - Enrique Pérez Herrero
 #  email: eph.project1500@gmail.com
 #  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
-#  Start: 18/May/2017
-#  End:   22/May/2017
 #  ---------------------------------------------------------------------------
 
 
@@ -44,7 +42,7 @@ OEIS_formerly <- function(seq_xml) {
     magrittr::extract2(5) %>%
     regmatches(., gregexpr("(\\w\\d{4})", .)) %>%
     unlist
-  if(identical(formerly, character(0))) {
+  if (identical(formerly, character(0))) {
     formerly <- NULL
   }
   formerly

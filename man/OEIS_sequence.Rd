@@ -2,26 +2,38 @@
 % Please edit documentation in R/OEIS_sequence.R
 \name{OEIS_sequence}
 \alias{OEIS_sequence}
-\title{Class constructor for \code{OEIS_sequence}}
+\title{S3 class constructor for \code{OEIS_sequence}}
 \usage{
 OEIS_sequence(ID)
 }
 \arguments{
-\item{ID}{A string with the OEIS sequence \code{ID} Number
+\item{ID}{A string with the OEIS sequence \code{ID} number.
 The A-number or sequence \code{ID} is the absolute catalogue number of the
-sequence. It consists of "A" followed by 6 digits}
+sequence.
+It consists of "A" followed by 6 digits.}
 }
 \value{
-An object of the class \code{OEIS_sequence}
+An object of the S3 class \code{OEIS_sequence}
 }
 \description{
-Class constructor for \code{OEIS_sequence}
+S3 class constructor for \code{OEIS_sequence}
 }
 \examples{
+\dontrun{
 id <- "A003456"
 A003456 <- OEIS_sequence(id)
+class(A003456)
 A003456
+}
 }
 \seealso{
 \code{\link{OEIS_bfile}}
+
+\code{\link{OEIS_check}}
+
+\code{\link{OEIS_description}}
+
+\code{\link{OEIS_xml2}}
+
+\code{\link{OEIS_df}}
 }

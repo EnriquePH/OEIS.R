@@ -5,8 +5,6 @@
 #  (c) 2017 - Enrique Pérez Herrero
 #  email: eph.project1500@gmail.com
 #  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
-#  Start: 18/May/2017
-#  End:   22/May/2017
 #  ---------------------------------------------------------------------------
 
 #  OEIS_status
@@ -30,5 +28,5 @@
 #' OEIS_status(seq_df)
 #' }
 OEIS_status <- function(seq_df) {
-  seq_df[seq_df$Line == "STATUS",]$Description
+  seq_df[seq_df$Line == "STATUS", ]$Description
 }
