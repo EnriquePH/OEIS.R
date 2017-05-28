@@ -32,17 +32,20 @@ OEIS_sequence <- function(ID){
   seq_xml <- OEIS_xml2(ID)
   seq_df <- OEIS_df(seq_xml)
   structure(list(ID = ID,
+                 url = OEIS_url(ID),
                  description = OEIS_description(seq_xml),
                  formerly = OEIS_formerly(seq_xml),
-                 url = OEIS_url(ID),
                  bfile = OEIS_bfile(ID),
                  terms = OEIS_terms(seq_xml),
                  offset = OEIS_offset(seq_xml),
+                 example = OEIS_example(seq_df),
+                 formula = OEIS_formula(seq_df),
                  crossrefs = OEIS_crossrefs(seq_xml),
                  keywords = OEIS_keywords(seq_xml),
                  author = OEIS_author(seq_df),
                  date = OEIS_date(seq_df),
                  status = OEIS_status(seq_df),
+                 seq_df = seq_df,
                  seq_xml = seq_xml),
             class = c("OEIS_sequence"))
 }
