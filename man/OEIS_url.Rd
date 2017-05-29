@@ -4,16 +4,19 @@
 \alias{OEIS_url}
 \title{Get sequence url}
 \usage{
-OEIS_url(ID)
+OEIS_url(ID, text = FALSE)
 }
 \arguments{
 \item{ID}{A string with the OEIS sequence \code{ID} number.
 The A-number or sequence \code{ID} is the absolute catalogue number of the
 sequence.
 It consists of "A" followed by 6 digits.}
+
+\item{text}{A logical if \code{TRUE} the function returns the internal format
+url, if \code{FALSE} it returns full sequence url.}
 }
 \value{
-A string with the full sequence url
+A string with the full sequence url or the internal format url.
 \code{\link{OEIS_check}}
 }
 \description{
@@ -21,6 +24,10 @@ Get sequence url
 }
 \examples{
 OEIS_url("A000055")
+OEIS_url("A000055", text = TRUE)
+}
+\references{
+\url{https://oeis.org/eishelp1.html}
 }
 \seealso{
 \code{\link{OEIS_web_url}}

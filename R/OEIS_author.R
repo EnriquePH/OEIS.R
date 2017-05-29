@@ -20,7 +20,7 @@
 #' @seealso \code{\link{OEIS_df}}
 #' @seealso \code{\link{OEIS_xml2}}
 #'
-#' @return A character vector with the OEIS sequence author
+#' @return A character vector with the OEIS sequence authors
 #' @export
 #'
 #' @examples
@@ -32,9 +32,12 @@ OEIS_author <- function(seq_df) {
   . <- NULL
   author <- seq_df[seq_df$Line == "AUTHOR", ]$Description %>%
     strsplit(., ",") %>%
-    unlist %>%
-    magrittr::extract2(1)
-  # 'dead' sequences has no author
+    magrittr::extract2(1) %>%
+    trimws %>%
+    # Remove dates
+    gsub("(\\w{3} \\d{2} \\d{4})", "", .) %>%
+    .[. != ""]
+  # 'dead' sequences have no author
   if (identical(author, character(0))) {
     author <- NULL
   }

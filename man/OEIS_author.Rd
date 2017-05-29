@@ -10,7 +10,7 @@ OEIS_author(seq_df)
 \item{seq_df}{A \code{data.frame} with sequence content}
 }
 \value{
-A character vector with the OEIS sequence author
+A character vector with the OEIS sequence authors
 }
 \description{
 This function gives the name of the person or persons who contributed the

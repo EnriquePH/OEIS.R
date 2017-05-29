@@ -11,15 +11,24 @@
 #' Get sequence url
 #'
 #' @inheritParams OEIS_check
+#' @param text A logical if \code{TRUE} the function returns the internal format
+#'   url, if \code{FALSE} it returns full sequence url.
 #'
 #' @seealso \code{\link{OEIS_web_url}}
-#' @return A string with the full sequence url
+#' @return A string with the full sequence url or the internal format url.
 #' \code{\link{OEIS_check}}
+#'
+#' @references \url{https://oeis.org/eishelp1.html}
+#'
 #' @export
 #'
 #' @examples
 #' OEIS_url("A000055")
-OEIS_url <- function(ID) {
+#' OEIS_url("A000055", text = TRUE)
+OEIS_url <- function(ID, text = FALSE) {
   OEIS_check(ID)
-  paste0(OEIS_web_url(), ID, "/")
-}
+  ifelse(text,
+         paste0(OEIS_web_url(), "search?q=id:", ID, "&fmt=text"),
+         paste0(OEIS_web_url(), ID, "/")
+         )
+    }
