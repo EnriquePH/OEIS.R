@@ -9,34 +9,26 @@
 
 
 #  OEIS_description
-#' Get OEIS sequence description from XML document
+#' Get OEIS sequence description from \strong{internal format}
 #'
 #' Sequence description gives a brief definition of the sequence. In the
 #' description, a(n) usually denotes the n-th term of the sequence, and n is a
 #' typical subscript. In some cases however n denotes a typical term in the
 #' sequence.
 #'
-#' @param seq_xml A xml_document from an OEIS sequence
+#' @param internal_format A character with the sequence internal format.
 #'
-#' @importFrom magrittr "%>%"
-#' @importFrom magrittr extract2
-#' @importFrom rvest html_nodes
-#'
-#' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_internal_format}}
+#' @seealso \code{\link{OEIS_sequence}}
 #' @return A string with the OEIS sequence description
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A000056"
-#' test_seq_xml <- OEIS_xml2(id)
-#' OEIS_description(test_seq_xml)
-OEIS_description <- function(seq_xml) {
-  . <- NULL
-  seq_xml %>%
-    rvest::html_nodes(., xpath = "//td/text()") %>%
-    magrittr::extract2(16) %>%
-    gsub("\n", "", .) %>%
-    gsub("&lt;", "<", .) %>%
-    gsub("&gt;", ">", .) %>%
-    trimws
+#' internal_format <- OEIS_internal_format(id)
+#' OEIS_description(internal_format)
+#' }
+OEIS_description <- function(internal_format) {
+  internal_format[internal_format$tag == "%N", ]$line
 }

@@ -17,6 +17,7 @@
 #' @seealso \code{\link{OEIS_check}}
 #' @seealso \code{\link{OEIS_description}}
 #' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_internal_format}}
 #' @seealso \code{\link{OEIS_df}}
 #' @export
 #'
@@ -31,20 +32,22 @@ OEIS_sequence <- function(ID){
   OEIS_check(ID)
   seq_xml <- OEIS_xml2(ID)
   seq_df <- OEIS_df(seq_xml)
+  internal_format <- OEIS_internal_format(ID)
   structure(list(ID = ID,
                  url = OEIS_url(ID),
-                 description = OEIS_description(seq_xml),
-                 formerly = OEIS_formerly(seq_xml),
+                 description = OEIS_description(internal_format),
+                 formerly = OEIS_formerly(internal_format),
                  bfile = OEIS_bfile(ID),
-                 terms = OEIS_terms(seq_xml),
-                 offset = OEIS_offset(seq_xml),
-                 example = OEIS_example(seq_df),
-                 formula = OEIS_formula(seq_df),
+                 terms = OEIS_terms(internal_format),
+                 offset = OEIS_offset(internal_format),
+                 example = OEIS_example(internal_format),
+                 formula = OEIS_formula(internal_format),
                  crossrefs = OEIS_crossrefs(seq_xml),
-                 keywords = OEIS_keywords(seq_xml),
-                 author = OEIS_author(seq_df),
+                 keywords = OEIS_keywords(internal_format),
+                 author = OEIS_author(internal_format, email = FALSE),
                  date = OEIS_date(seq_df),
                  status = OEIS_status(seq_df),
+                 internal_format = internal_format,
                  seq_df = seq_df,
                  seq_xml = seq_xml),
             class = c("OEIS_sequence"))

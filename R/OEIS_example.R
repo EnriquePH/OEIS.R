@@ -8,38 +8,35 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_example
-#' OEIS sequence example from \code{seq_df} \code{data.frame}
+#' OEIS sequence example lines from sequence \code{internal_format}
 #'
 #' These lines give expanded information or examples to illustrate the initial
 #' terms of the sequence.
-#' @inheritParams OEIS_status
+#' @inheritParams OEIS_description
 #'
-#' @seealso \code{\link{OEIS_df}}
-#' @seealso \code{\link{OEIS_xml2}}
 #' @importFrom magrittr "%>%"
-#' @return A character string with the OEIS sequence examples or \code{NULL} if
-#'   there are no examples.
+#'
+#' @seealso \code{\link{OEIS_description}}
+#' @seealso \code{\link{OEIS_internal_format}}
+#' @seealso \code{\link{OEIS_formula}}
+#' @seealso \code{\link{OEIS_sequence}}
+#' @return A character string with the OEIS sequence lines of examples or
+#'   \code{NULL} if there are no examples.
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#' id <- "A000108"
-#' test_seq_html <- OEIS_xml2(id)
-#' seq_df <- OEIS_df(test_seq_html)
-#' example <- OEIS_example(seq_df)
-#' cat(example)
+#' id <- "A105805"
+#' internal_format <- OEIS_internal_format(id)
+#' example <- OEIS_example(internal_format)
+#' cat(example, sep = "\n")
 #' }
-OEIS_example <- function(seq_df) {
+OEIS_example <- function(internal_format) {
   . <- NULL
-  seq_df <- seq_df[seq_df$Line == "EXAMPLE", ]$Description
-  if (identical(seq_df, character(0))) {
-    seq_df <- NULL
-  } else {
-    seq_df %>%
-    strsplit(., "\n") %>%
-    sapply(., trimws, USE.NAMES = FALSE) %>%
-    .[. != ""] %>%
-    paste0(., collapse = "\n")
+  example <- internal_format[internal_format$tag == "%e",]$line %>%
+    gsub("_", "", .)
+  if (identical(example, character(0))) {
+    example <- NULL
   }
-  seq_df
+  example
 }

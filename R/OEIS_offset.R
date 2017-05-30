@@ -21,26 +21,23 @@
 #' @inheritParams OEIS_description
 #'
 #' @importFrom magrittr "%>%"
-#' @importFrom magrittr extract2
-#' @importFrom rvest html_text
-#' @importFrom rvest html_nodes
-#' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_internal_format}}
+#' @seealso \code{\link{OEIS_description}}
+#' @seealso \code{\link{OEIS_sequence}}
 #' @references \url{https://oeis.org/eishelp2.html#RS}
 #'
-#' @return A numeric vector with the OEIS sequence distinct offsets
+#' @return A character vector with the OEIS sequence distinct offsets
 #' @export
 #'
 #' @examples
-#' id <- "A000023"
-#' test_seq_html <- OEIS_xml2(id)
-#' OEIS_offset(test_seq_html)
-OEIS_offset <- function(seq_xml) {
+#' \dontrun{
+#' id <- "A000056"
+#' internal_format <- OEIS_internal_format(id)
+#' OEIS_offset(internal_format)
+#' }
+OEIS_offset <- function(internal_format) {
   . <- NULL
-  seq_xml %>%
-    rvest::html_nodes(., xpath = "//tt/text()") %>%
-    magrittr::extract2(2) %>%
-    rvest::html_text(., trim = TRUE) %>%
+  internal_format[internal_format$tag == "%O",]$line %>%
     strsplit(., ",") %>%
-    unlist %>%
-    as.numeric
+    unlist
 }

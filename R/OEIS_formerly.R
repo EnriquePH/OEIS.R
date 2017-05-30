@@ -20,29 +20,28 @@
 #'
 #' @inheritParams OEIS_description
 #'
-#' @importFrom magrittr "%>%"
-#' @importFrom magrittr extract2
-#' @importFrom rvest html_nodes
-#'
 #' @return A string with the OEIS former \code{ID} or \code{NULL}, if there is
 #'   no former sequence designation.
+#'
+#' @importFrom magrittr "%>%"
+#'
 #' @seealso \code{\link{OEIS_description}}
-#' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_internal_format}}
+#' @seealso \code{\link{OEIS_sequence}}
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A000056"
-#' test_seq_xml <- OEIS_xml2(id)
-#' OEIS_formerly(test_seq_xml)
-OEIS_formerly <- function(seq_xml) {
+#' internal_format <- OEIS_internal_format(id)
+#' OEIS_formerly(internal_format)
+#' }
+OEIS_formerly <- function(internal_format) {
   . <- NULL
-  formerly <- seq_xml %>%
-    rvest::html_nodes(., xpath = "//td/font/text()") %>%
-    rvest::html_text(.) %>%
-    magrittr::extract2(5) %>%
-    regmatches(., gregexpr("(\\w\\d{4})", .)) %>%
+  formerly <- internal_format[internal_format$tag == "%I", ]$line %>%
+    strsplit(., " ") %>%
     unlist
-  if (identical(formerly, character(0))) {
+  if(identical(formerly, character(0))) {
     formerly <- NULL
   }
   formerly

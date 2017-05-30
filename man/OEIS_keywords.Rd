@@ -2,12 +2,12 @@
 % Please edit documentation in R/OEIS_keywords.R
 \name{OEIS_keywords}
 \alias{OEIS_keywords}
-\title{OEIS sequence keywords from XML document}
+\title{OEIS sequence keywords from sequence \code{internal_format}}
 \usage{
-OEIS_keywords(seq_xml)
+OEIS_keywords(internal_format)
 }
 \arguments{
-\item{seq_xml}{A xml_document from an OEIS sequence}
+\item{internal_format}{A character with the sequence internal format.}
 }
 \value{
 A character vector with the OEIS sequence keywords
@@ -18,10 +18,16 @@ The actual keywords in use can be found at:
 \href{https://oeis.org/eishelp2.html}{Explanation of Terms Used}
 }
 \examples{
+\dontrun{
 id <- "A000012"
-test_seq_html <- OEIS_xml2(id)
-OEIS_keywords(test_seq_html)
+internal_format <- OEIS_internal_format(id)
+OEIS_keywords(internal_format)
+}
 }
 \seealso{
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_author}}
+
+\code{\link{OEIS_sequence}}
+
+\code{\link{OEIS_internal_format}}
 }

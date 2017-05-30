@@ -4,13 +4,13 @@
 \alias{OEIS_offset}
 \title{OEIS sequence offset from \code{xml2} data}
 \usage{
-OEIS_offset(seq_xml)
+OEIS_offset(internal_format)
 }
 \arguments{
-\item{seq_xml}{A xml_document from an OEIS sequence}
+\item{internal_format}{A character with the sequence internal format.}
 }
 \value{
-A numeric vector with the OEIS sequence distinct offsets
+A character vector with the OEIS sequence distinct offsets
 }
 \description{
 This line usually gives the subscript of the first term in the sequence. If
@@ -21,13 +21,19 @@ starting with 1), first exceeds 1 in absolute value. This is set to 1 if all
 the terms are 0 or +-1
 }
 \examples{
-id <- "A000023"
-test_seq_html <- OEIS_xml2(id)
-OEIS_offset(test_seq_html)
+\dontrun{
+id <- "A000056"
+internal_format <- OEIS_internal_format(id)
+OEIS_offset(internal_format)
+}
 }
 \references{
 \url{https://oeis.org/eishelp2.html#RS}
 }
 \seealso{
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_internal_format}}
+
+\code{\link{OEIS_description}}
+
+\code{\link{OEIS_sequence}}
 }

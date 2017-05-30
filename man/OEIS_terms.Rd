@@ -4,10 +4,10 @@
 \alias{OEIS_terms}
 \title{Get OEIS sequence terms from XML document.}
 \usage{
-OEIS_terms(seq_xml)
+OEIS_terms(internal_format)
 }
 \arguments{
-\item{seq_xml}{A xml_document from an OEIS sequence}
+\item{internal_format}{A character with the sequence internal format.}
 }
 \value{
 A character list with the OEIS sequence terms.
@@ -21,10 +21,15 @@ the Keyword "frac", and with links connecting the two sequences. Only
 sequences that are well-defined and of general interest are included
 }
 \examples{
-id <- "A000056"
-test_seq_html <- OEIS_xml2(id)
-OEIS_terms(test_seq_html)
+\dontrun{
+# Wieferich primes: primes p such that p^2 divides 2^(p-1) - 1.
+id <- "A001220"
+internal_format <- OEIS_internal_format(id)
+OEIS_terms(internal_format)
+}
 }
 \seealso{
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_internal_format}}
+
+\code{\link{OEIS_sequence}}
 }

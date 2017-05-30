@@ -11,7 +11,7 @@
 #' OEIS sequence linked cross references from sequence information
 #' \code{data.frame}
 #'
-#' @inheritParams OEIS_author
+#' @inheritParams OEIS_status
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr extract2
@@ -45,7 +45,7 @@ OEIS_cf <- function(seq_df) {
 #'
 #' This line show the three sequences \code{ID}s immediately before and after
 #' the sequence in the lexicographic listing.
-#' @inheritParams OEIS_description
+#' @inheritParams OEIS_df
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom rvest html_text
@@ -78,7 +78,7 @@ OEIS_seqs_in_context <- function(seq_xml) {
 #'
 #' Adjacent sequences IDs in OEIS. These are the three sequences whose A-numbers
 #' are immediately before and after the A-number of the sequence.
-#' @inheritParams OEIS_description
+#' @inheritParams OEIS_df
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom rvest html_text
@@ -110,7 +110,7 @@ OEIS_seqs_adjacent <- function(seq_xml) {
 #' OEIS Cross references from XML document
 #'
 #' Cross references IDs
-#' @inheritParams OEIS_description
+#' @inheritParams OEIS_df
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom rvest html_text

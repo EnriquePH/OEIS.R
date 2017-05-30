@@ -35,5 +35,7 @@ A003456
 
 \code{\link{OEIS_xml2}}
 
+\code{\link{OEIS_internal_format}}
+
 \code{\link{OEIS_df}}
 }

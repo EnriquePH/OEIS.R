@@ -29,7 +29,7 @@
 #' OEIS_bfile(id)
 OEIS_bfile <- function(ID) {
   OEIS_check(ID)
-  bfile_url <- OEIS_bfile_url(ID, TRUE)
+  bfile_url <- OEIS_bfile_url(ID, URL = TRUE)
   lines <- readLines(bfile_url)
   match_comments <- grepl("#", lines)
   comments <- lines[match_comments]
@@ -39,7 +39,9 @@ OEIS_bfile <- function(ID) {
     comments <- NULL
   }
 
-  data <- utils::read.table(text = data, stringsAsFactors = FALSE)
+  data <- utils::read.table(text = data,
+                            colClasses = c("integer", "character"),
+                            stringsAsFactors = FALSE)
   names(data) <- c("n", ID)
   # S3 class
   structure(list(bfile_name = OEIS_bfile_url(ID),

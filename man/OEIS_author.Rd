@@ -2,28 +2,31 @@
 % Please edit documentation in R/OEIS_author.R
 \name{OEIS_author}
 \alias{OEIS_author}
-\title{OEIS sequence author from \code{seq_df} \code{data.frame}}
+\title{OEIS sequence authors from sequence\code{internal_format}}
 \usage{
-OEIS_author(seq_df)
+OEIS_author(internal_format, email = FALSE)
 }
 \arguments{
-\item{seq_df}{A \code{data.frame} with sequence content}
+\item{internal_format}{A character with the sequence internal format.}
+
+\item{email}{A logical if yes author email is returned if present.}
 }
 \value{
-A character vector with the OEIS sequence authors
+A character vector with the OEIS sequence authors and emails
 }
 \description{
-This function gives the name of the person or persons who contributed the
-sequence.
+This function gives the name of the person, or persons, who contributed the
+sequence and their email if present and selected.
 }
 \examples{
-id <- "A000108"
-test_seq_html <- OEIS_xml2(id)
-seq_df <- OEIS_df(test_seq_html)
-OEIS_author(seq_df)
+\dontrun{
+id <- "A169890"
+internal_format <- OEIS_internal_format(id)
+OEIS_author(internal_format, email = TRUE)
+}
 }
 \seealso{
-\code{\link{OEIS_df}}
+\code{\link{OEIS_description}}
 
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_internal_format}}
 }

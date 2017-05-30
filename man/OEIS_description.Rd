@@ -2,12 +2,12 @@
 % Please edit documentation in R/OEIS_description.R
 \name{OEIS_description}
 \alias{OEIS_description}
-\title{Get OEIS sequence description from XML document}
+\title{Get OEIS sequence description from \strong{internal format}}
 \usage{
-OEIS_description(seq_xml)
+OEIS_description(internal_format)
 }
 \arguments{
-\item{seq_xml}{A xml_document from an OEIS sequence}
+\item{internal_format}{A character with the sequence internal format.}
 }
 \value{
 A string with the OEIS sequence description
@@ -19,10 +19,14 @@ typical subscript. In some cases however n denotes a typical term in the
 sequence.
 }
 \examples{
+\dontrun{
 id <- "A000056"
-test_seq_xml <- OEIS_xml2(id)
-OEIS_description(test_seq_xml)
+internal_format <- OEIS_internal_format(id)
+OEIS_description(internal_format)
+}
 }
 \seealso{
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_internal_format}}
+
+\code{\link{OEIS_sequence}}
 }

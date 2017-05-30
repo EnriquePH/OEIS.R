@@ -7,7 +7,7 @@
 OEIS_date(seq_df)
 }
 \arguments{
-\item{seq_df}{A \code{data.frame} with sequence content}
+\item{seq_df}{A \code{data.frame} with sequence content.}
 }
 \value{
 A \code{Date} object with the OEIS sequence date or \code{NULL} if it

@@ -18,6 +18,7 @@
 #' @inheritParams OEIS_check
 #'
 #' @importFrom magrittr "%>%"
+#' @importFrom magrittr set_colnames
 #' @importFrom rvest html_text
 #' @importFrom rvest html_nodes
 #' @importFrom xml2 read_html
@@ -51,7 +52,8 @@ OEIS_internal_format <- function(ID) {
   unlist %>%
   utils::tail(., -5L) %>%
   utils::head(., -2L) %>%
-  gsub("(%\\w)\\s(A\\d{6})", "\\1\t", . ) %>%
-  utils::read.delim(text = ., header = FALSE)
+  gsub("(%\\w{1})\\s(A\\d{6})\\s?", "\\1\t", . ) %>%
+  utils::read.delim(text = ., stringsAsFactors = FALSE, header = FALSE) %>%
+  magrittr::set_colnames(c("tag", "line"))
 }
 

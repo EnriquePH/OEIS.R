@@ -20,24 +20,26 @@
 #' @inheritParams OEIS_description
 #'
 #' @importFrom magrittr "%>%"
-#' @importFrom magrittr extract2
-#' @importFrom rvest html_text
-#' @importFrom rvest html_nodes
-#' @seealso \code{\link{OEIS_xml2}}
+
+#' @seealso \code{\link{OEIS_internal_format}}
+#' @seealso \code{\link{OEIS_sequence}}
 #' @return A character list with the OEIS sequence terms.
 #' @export
 #'
 #' @examples
-#' id <- "A000056"
-#' test_seq_html <- OEIS_xml2(id)
-#' OEIS_terms(test_seq_html)
-OEIS_terms <- function(seq_xml) {
+#' \dontrun{
+#' # Wieferich primes: primes p such that p^2 divides 2^(p-1) - 1.
+#' id <- "A001220"
+#' internal_format <- OEIS_internal_format(id)
+#' OEIS_terms(internal_format)
+#' }
+OEIS_terms <- function(internal_format) {
   . <- NULL
-  seq_xml %>%
-    rvest::html_nodes(., xpath = "//tt/text()") %>%
-    magrittr::extract2(1) %>%
-    rvest::html_text(.) %>%
+  tags <- c("%S", "%T", "%U")
+  sapply(tags, function(x)
+    internal_format[internal_format$tag == x, ]$line) %>%
+    unlist %>%
+    paste0(., collapse = "") %>%
     strsplit(., ",") %>%
-    lapply(., trimws) %>%
     unlist
 }

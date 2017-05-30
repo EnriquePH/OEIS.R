@@ -8,7 +8,7 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_keywords
-#' OEIS sequence keywords from XML document
+#' OEIS sequence keywords from sequence \code{internal_format}
 #'
 #' These lines give keywords describing the sequence.
 #' The actual keywords in use can be found at:
@@ -17,19 +17,21 @@
 #' @inheritParams OEIS_description
 #'
 #' @importFrom magrittr "%>%"
-#' @importFrom rvest html_text
-#' @importFrom rvest html_nodes
-#' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_author}}
+#' @seealso \code{\link{OEIS_sequence}}
+#' @seealso \code{\link{OEIS_internal_format}}
 #' @return A character vector with the OEIS sequence keywords
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A000012"
-#' test_seq_html <- OEIS_xml2(id)
-#' OEIS_keywords(test_seq_html)
-OEIS_keywords <- function(seq_xml) {
+#' internal_format <- OEIS_internal_format(id)
+#' OEIS_keywords(internal_format)
+#' }
+OEIS_keywords <- function(internal_format) {
   . <- NULL
-  seq_xml %>%
-    rvest::html_nodes(., xpath = "//tt/span") %>%
-    rvest::html_text(.)
+  internal_format[internal_format$tag == "%K",]$line %>%
+    strsplit(., ",") %>%
+    unlist
 }

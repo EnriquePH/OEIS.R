@@ -8,41 +8,36 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_formula
-#' OEIS sequence formula from \code{seq_df} \code{data.frame}
+#' OEIS sequence formula lines from sequence \code{internal_format}
 #'
 #' These lines give formulae, recurrences, generating functions, etc. for the
 #' sequence.
 #' \strong{a(n)} usually denotes the n-th term of the sequence, and \strong{n}
 #' is a typical subscript.
-#' @inheritParams OEIS_status
+#' @inheritParams OEIS_description
 #'
-#' @seealso \code{\link{OEIS_df}}
-#' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_description}}
+#' @seealso \code{\link{OEIS_internal_format}}
+#' @seealso \code{\link{OEIS_sequence}}
 #' @seealso \code{\link{OEIS_example}}
 #' @importFrom magrittr "%>%"
-#' @return A character string with the OEIS sequence formula or \code{NULL} if
-#'   there are no formula.
+#' @return A character string with the OEIS sequence formula lines or
+#'   \code{NULL} if there are no formulae.
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#' id <- "A010108"
-#' test_seq_html <- OEIS_xml2(id)
-#' seq_df <- OEIS_df(test_seq_html)
-#' example <- OEIS_formula(seq_df)
-#' cat(example)
+#' id <- "A105805"
+#' internal_format <- OEIS_internal_format(id)
+#' formula <- OEIS_formula(internal_format)
+#' cat(formula, sep = "\n")
 #' }
-OEIS_formula <- function(seq_df) {
+OEIS_formula <- function(internal_format) {
   . <- NULL
-  seq_df <- seq_df[seq_df$Line == "FORMULA", ]$Description
-  if (identical(seq_df, character(0))) {
-    seq_df <- NULL
-  } else {
-    seq_df %>%
-    strsplit(., "\n") %>%
-    sapply(., trimws, USE.NAMES = FALSE) %>%
-    .[. != ""] %>%
-    paste0(., collapse = "\n")
+  formula <- internal_format[internal_format$tag == "%F",]$line %>%
+    gsub("_", "", .)
+  if (identical(formula, character(0))) {
+    formula <- NULL
   }
-  seq_df
+  formula
 }

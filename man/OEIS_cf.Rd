@@ -8,7 +8,7 @@
 OEIS_cf(seq_df)
 }
 \arguments{
-\item{seq_df}{A \code{data.frame} with sequence content}
+\item{seq_df}{A \code{data.frame} with sequence content.}
 }
 \value{
 A character vector with OEIS sequence linked cross references

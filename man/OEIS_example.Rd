@@ -2,16 +2,16 @@
 % Please edit documentation in R/OEIS_example.R
 \name{OEIS_example}
 \alias{OEIS_example}
-\title{OEIS sequence example from \code{seq_df} \code{data.frame}}
+\title{OEIS sequence example lines from sequence \code{internal_format}}
 \usage{
-OEIS_example(seq_df)
+OEIS_example(internal_format)
 }
 \arguments{
-\item{seq_df}{A \code{data.frame} with sequence content.}
+\item{internal_format}{A character with the sequence internal format.}
 }
 \value{
-A character string with the OEIS sequence examples or \code{NULL} if
-  there are no examples.
+A character string with the OEIS sequence lines of examples or
+  \code{NULL} if there are no examples.
 }
 \description{
 These lines give expanded information or examples to illustrate the initial
@@ -19,15 +19,18 @@ terms of the sequence.
 }
 \examples{
 \dontrun{
-id <- "A000108"
-test_seq_html <- OEIS_xml2(id)
-seq_df <- OEIS_df(test_seq_html)
-example <- OEIS_example(seq_df)
-cat(example)
+id <- "A105805"
+internal_format <- OEIS_internal_format(id)
+example <- OEIS_example(internal_format)
+cat(example, sep = "\\n")
 }
 }
 \seealso{
-\code{\link{OEIS_df}}
+\code{\link{OEIS_description}}
 
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_internal_format}}
+
+\code{\link{OEIS_formula}}
+
+\code{\link{OEIS_sequence}}
 }

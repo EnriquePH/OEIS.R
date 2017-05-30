@@ -12,7 +12,7 @@
 #' OEIS sequence date from \code{data.frame}
 #'
 #' Sequence creation date.
-#' @inheritParams OEIS_author
+#' @inheritParams OEIS_status
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr extract2

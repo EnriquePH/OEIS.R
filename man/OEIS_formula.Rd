@@ -2,16 +2,16 @@
 % Please edit documentation in R/OEIS_formula.R
 \name{OEIS_formula}
 \alias{OEIS_formula}
-\title{OEIS sequence formula from \code{seq_df} \code{data.frame}}
+\title{OEIS sequence formula lines from sequence \code{internal_format}}
 \usage{
-OEIS_formula(seq_df)
+OEIS_formula(internal_format)
 }
 \arguments{
-\item{seq_df}{A \code{data.frame} with sequence content.}
+\item{internal_format}{A character with the sequence internal format.}
 }
 \value{
-A character string with the OEIS sequence formula or \code{NULL} if
-  there are no formula.
+A character string with the OEIS sequence formula lines or
+  \code{NULL} if there are no formulae.
 }
 \description{
 These lines give formulae, recurrences, generating functions, etc. for the
@@ -21,17 +21,18 @@ is a typical subscript.
 }
 \examples{
 \dontrun{
-id <- "A010108"
-test_seq_html <- OEIS_xml2(id)
-seq_df <- OEIS_df(test_seq_html)
-example <- OEIS_formula(seq_df)
-cat(example)
+id <- "A105805"
+internal_format <- OEIS_internal_format(id)
+formula <- OEIS_formula(internal_format)
+cat(formula, sep = "\\n")
 }
 }
 \seealso{
-\code{\link{OEIS_df}}
+\code{\link{OEIS_description}}
 
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_internal_format}}
+
+\code{\link{OEIS_sequence}}
 
 \code{\link{OEIS_example}}
 }

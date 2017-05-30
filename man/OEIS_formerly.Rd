@@ -4,10 +4,10 @@
 \alias{OEIS_formerly}
 \title{Get OEIS sequence former \code{ID} from \code{xml2} data}
 \usage{
-OEIS_formerly(seq_xml)
+OEIS_formerly(internal_format)
 }
 \arguments{
-\item{seq_xml}{A xml_document from an OEIS sequence}
+\item{internal_format}{A character with the sequence internal format.}
 }
 \value{
 A string with the OEIS former \code{ID} or \code{NULL}, if there is
@@ -22,12 +22,16 @@ N-number, such as N0577, which is the number they carried in the "Handbook of
 Integer Sequences", by N. J. A. Sloane, Academic Press, NY, 1973
 }
 \examples{
+\dontrun{
 id <- "A000056"
-test_seq_xml <- OEIS_xml2(id)
-OEIS_formerly(test_seq_xml)
+internal_format <- OEIS_internal_format(id)
+OEIS_formerly(internal_format)
+}
 }
 \seealso{
 \code{\link{OEIS_description}}
 
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_internal_format}}
+
+\code{\link{OEIS_sequence}}
 }
