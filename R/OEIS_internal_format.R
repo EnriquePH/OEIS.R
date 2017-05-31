@@ -18,6 +18,7 @@
 #' @inheritParams OEIS_check
 #'
 #' @importFrom magrittr "%>%"
+#' @importFrom magrittr "%<>%"
 #' @importFrom magrittr set_colnames
 #' @importFrom rvest html_text
 #' @importFrom rvest html_nodes
@@ -28,7 +29,8 @@
 #'
 #' @seealso \code{\link{OEIS_url}}
 #' @seealso \code{\link{OEIS_xml2}}
-#' @return A string with the full sequence text internal format.
+#' @return An object of the classes \code{"data.frame"} and
+#'   \code{"OEIS_internal"} with the full sequence text internal format.
 #' \code{\link{OEIS_check}}
 #'
 #' @references \url{https://oeis.org/eishelp1.html}
@@ -43,17 +45,22 @@
 OEIS_internal_format <- function(ID) {
   . <- NULL
   OEIS_check(ID)
-  ID  %>%
-  OEIS_url(., text = TRUE) %>%
-  xml2::read_html(.) %>%
-  rvest::html_nodes(., xpath = "//body") %>%
-  rvest::html_text(.) %>%
-  strsplit(., "\n") %>%
-  unlist %>%
-  utils::tail(., -5L) %>%
-  utils::head(., -2L) %>%
-  gsub("(%\\w{1})\\s(A\\d{6})\\s?", "\\1\t", . ) %>%
-  utils::read.delim(text = ., stringsAsFactors = FALSE, header = FALSE) %>%
-  magrittr::set_colnames(c("tag", "line"))
+  internal_format <-
+    ID  %>%
+    OEIS_url(., text = TRUE) %>%
+    xml2::read_html(.) %>%
+    rvest::html_nodes(., xpath = "//body") %>%
+    rvest::html_text(.) %>%
+    strsplit(., "\n") %>%
+    unlist %>%
+    utils::tail(.,-5L) %>%
+    utils::head(.,-2L) %>%
+    gsub("(%\\w{1})\\s(A\\d{6})\\s?", "\\1\t", .) %>%
+    utils::read.delim(text = .,
+                      stringsAsFactors = FALSE,
+                      header = FALSE) %>%
+    magrittr::set_colnames(c("tag", "line"))
+  class(internal_format) <- append(class(internal_format), "OEIS_internal")
+  internal_format
 }
 

@@ -4,10 +4,10 @@
 \alias{OEIS_description}
 \title{Get OEIS sequence description from \strong{internal format}}
 \usage{
-OEIS_description(internal_format)
+OEIS_description(x)
 }
 \arguments{
-\item{internal_format}{A character with the sequence internal format.}
+\item{x}{This is a param}
 }
 \value{
 A string with the OEIS sequence description
@@ -21,8 +21,7 @@ sequence.
 \examples{
 \dontrun{
 id <- "A000056"
-internal_format <- OEIS_internal_format(id)
-OEIS_description(internal_format)
+OEIS_description(id)
 }
 }
 \seealso{

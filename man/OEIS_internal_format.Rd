@@ -13,7 +13,8 @@ sequence.
 It consists of "A" followed by 6 digits.}
 }
 \value{
-A string with the full sequence text internal format.
+An object of the classes \code{"data.frame"} and
+  \code{"OEIS_internal"} with the full sequence text internal format.
 \code{\link{OEIS_check}}
 }
 \description{

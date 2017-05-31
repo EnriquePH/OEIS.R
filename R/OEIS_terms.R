@@ -17,7 +17,7 @@
 #' the Keyword "frac", and with links connecting the two sequences. Only
 #' sequences that are well-defined and of general interest are included
 #'
-#' @inheritParams OEIS_description
+#' @inheritParams OEIS_author
 #'
 #' @importFrom magrittr "%>%"
 

@@ -14,7 +14,7 @@
 #' sequence.
 #' \strong{a(n)} usually denotes the n-th term of the sequence, and \strong{n}
 #' is a typical subscript.
-#' @inheritParams OEIS_description
+#' @inheritParams OEIS_author
 #'
 #' @seealso \code{\link{OEIS_description}}
 #' @seealso \code{\link{OEIS_internal_format}}

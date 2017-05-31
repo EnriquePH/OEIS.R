@@ -18,7 +18,7 @@
 #' starting with 1), first exceeds 1 in absolute value. This is set to 1 if all
 #' the terms are 0 or +-1
 #'
-#' @inheritParams OEIS_description
+#' @inheritParams OEIS_author
 #'
 #' @importFrom magrittr "%>%"
 #' @seealso \code{\link{OEIS_internal_format}}

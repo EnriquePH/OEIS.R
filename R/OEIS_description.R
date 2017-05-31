@@ -16,19 +16,35 @@
 #' typical subscript. In some cases however n denotes a typical term in the
 #' sequence.
 #'
-#' @param internal_format A character with the sequence internal format.
-#'
+#' @param x This is a param
 #' @seealso \code{\link{OEIS_internal_format}}
 #' @seealso \code{\link{OEIS_sequence}}
+#'
 #' @return A string with the OEIS sequence description
-#' @export
 #'
 #' @examples
 #' \dontrun{
 #' id <- "A000056"
-#' internal_format <- OEIS_internal_format(id)
-#' OEIS_description(internal_format)
+#' OEIS_description(id)
 #' }
-OEIS_description <- function(internal_format) {
-  internal_format[internal_format$tag == "%N", ]$line
+#' @export
+OEIS_description <- function(x) {
+    UseMethod("OEIS_description", x)
+}
+
+
+#' @method OEIS_description character
+#' @export
+OEIS_description.character <- function(x) {
+  . <- NULL
+  OEIS_check(x)
+  x %>%
+    OEIS_internal_format %>%
+    OEIS_description
+}
+
+#' @method OEIS_description OEIS_internal
+#' @export
+OEIS_description.OEIS_internal <- function(x) {
+  x[x$tag == "%N", ]$line
 }

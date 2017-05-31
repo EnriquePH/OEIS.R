@@ -12,7 +12,7 @@
 #'
 #' These lines give expanded information or examples to illustrate the initial
 #' terms of the sequence.
-#' @inheritParams OEIS_description
+#' @inheritParams OEIS_author
 #'
 #' @importFrom magrittr "%>%"
 #'

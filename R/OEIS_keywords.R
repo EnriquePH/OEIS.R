@@ -14,7 +14,7 @@
 #' The actual keywords in use can be found at:
 #' \href{https://oeis.org/eishelp2.html}{Explanation of Terms Used}
 #'
-#' @inheritParams OEIS_description
+#' @inheritParams OEIS_author
 #'
 #' @importFrom magrittr "%>%"
 #' @seealso \code{\link{OEIS_author}}

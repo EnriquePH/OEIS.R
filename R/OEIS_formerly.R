@@ -18,7 +18,7 @@
 #' N-number, such as N0577, which is the number they carried in the "Handbook of
 #' Integer Sequences", by N. J. A. Sloane, Academic Press, NY, 1973
 #'
-#' @inheritParams OEIS_description
+#' @inheritParams OEIS_author
 #'
 #' @return A string with the OEIS former \code{ID} or \code{NULL}, if there is
 #'   no former sequence designation.

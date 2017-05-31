@@ -12,7 +12,8 @@
 #'
 #' This function gives the name of the person, or persons, who contributed the
 #' sequence and their email if present and selected.
-#' @inheritParams OEIS_description
+#' @param internal_format A S3 object of the class \code{OEIS_internal} with the
+#'   sequence internal format.
 #' @param email A logical if yes author email is returned if present.
 #'
 #' @importFrom magrittr "%>%"
