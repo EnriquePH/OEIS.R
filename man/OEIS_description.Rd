@@ -2,26 +2,34 @@
 % Please edit documentation in R/OEIS_description.R
 \name{OEIS_description}
 \alias{OEIS_description}
-\title{Get OEIS sequence description from \strong{internal format}}
+\title{OEIS sequence description from \code{internal format}, or from the sequence
+\code{ID}.}
 \usage{
 OEIS_description(x)
 }
 \arguments{
-\item{x}{This is a param}
+\item{x}{A character string with sequence \code{ID}, or a object of the S3
+class \code{"OEIS_internal"}, with the sequence internal format.}
 }
 \value{
 A string with the OEIS sequence description
 }
 \description{
-Sequence description gives a brief definition of the sequence. In the
-description, a(n) usually denotes the n-th term of the sequence, and n is a
-typical subscript. In some cases however n denotes a typical term in the
-sequence.
+Sequence description gives a brief definition of the sequence.
+In the description, \emph{a(n)} usually denotes the n-th term of the
+sequence, and \emph{n} is a typical subscript.
+In some cases however \emph{n} denotes a typical term in the sequence.
 }
 \examples{
 \dontrun{
+# Sequence description from ID
 id <- "A000056"
 OEIS_description(id)
+
+# Alternate example using internal format
+id <- "A003400"
+internal_format <- OEIS_internal_format(id)
+OEIS_description(internal_format)
 }
 }
 \seealso{

@@ -6,10 +6,6 @@
 \usage{
 OEIS_formula(internal_format)
 }
-\arguments{
-\item{internal_format}{A S3 object of the class \code{OEIS_internal} with the
-sequence internal format.}
-}
 \value{
 A character string with the OEIS sequence formula lines or
   \code{NULL} if there are no formulae.

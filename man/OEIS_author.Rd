@@ -2,28 +2,30 @@
 % Please edit documentation in R/OEIS_author.R
 \name{OEIS_author}
 \alias{OEIS_author}
-\title{OEIS sequence authors from sequence\code{internal_format}}
+\title{OEIS sequence authors from \code{internal format}, or from the sequence
+\code{ID}.}
 \usage{
-OEIS_author(internal_format, email = FALSE)
+OEIS_author(x, email = FALSE)
 }
 \arguments{
-\item{internal_format}{A S3 object of the class \code{OEIS_internal} with the
-sequence internal format.}
+\item{x}{A character string with sequence \code{ID}, or a object of the S3
+class \code{"OEIS_internal"}, with the sequence internal format.}
 
-\item{email}{A logical if yes author email is returned if present.}
+\item{email}{A logical, by specifying \code{email = TRUE}, author's email is
+returned if it is present together with author's name. The default value of
+\code{email} is \code{FALSE}.}
 }
 \value{
 A character vector with the OEIS sequence authors and emails
 }
 \description{
 This function gives the name of the person, or persons, who contributed the
-sequence and their email if present and selected.
+sequence and their email, if it's present and selected.
 }
 \examples{
 \dontrun{
 id <- "A169890"
-internal_format <- OEIS_internal_format(id)
-OEIS_author(internal_format, email = TRUE)
+OEIS_author(id, email = TRUE)
 }
 }
 \seealso{

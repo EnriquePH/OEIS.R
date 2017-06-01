@@ -8,13 +8,15 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_author
-#' OEIS sequence authors from sequence\code{internal_format}
+#' OEIS sequence authors from \code{internal format}, or from the sequence
+#' \code{ID}.
 #'
 #' This function gives the name of the person, or persons, who contributed the
-#' sequence and their email if present and selected.
-#' @param internal_format A S3 object of the class \code{OEIS_internal} with the
-#'   sequence internal format.
-#' @param email A logical if yes author email is returned if present.
+#' sequence and their email, if it's present and selected.
+#' @inheritParams OEIS_description
+#' @param email A logical, by specifying: \code{email = TRUE}, author's email is
+#'   returned, if it is present, together with author's name. The default value
+#'   of \code{email} is \code{FALSE}.
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr "%<>%"
@@ -22,6 +24,8 @@
 #'
 #' @seealso \code{\link{OEIS_description}}
 #' @seealso \code{\link{OEIS_internal_format}}
+#' @seealso \code{\link{OEIS_sequence}}
+#' @seealso \code{\link{OEIS_check}}
 #'
 #' @return A character vector with the OEIS sequence authors and emails
 #' @export
@@ -29,33 +33,51 @@
 #' @examples
 #' \dontrun{
 #' id <- "A169890"
-#' internal_format <- OEIS_internal_format(id)
-#' OEIS_author(internal_format, email = TRUE)
+#' OEIS_author(id, email = TRUE)
 #' }
-OEIS_author <- function(internal_format, email = FALSE) {
-  . <- NULL
-  author <- internal_format[internal_format$tag == "%A",]$line %>%
-    gsub(" and ", ",", .) %>%
-    strsplit(., ",") %>%
-    magrittr::extract2(1) %>%
-    trimws %>%
-    # Remove dates
-    gsub("(\\w{3} \\d{2} \\d{4})", "", .) %>%
-    # Remove year if date is not complete
-    gsub("(\\d{4})", "", .) %>%
-    .[. != ""] %>%
-    gsub("_", "", .) %>%
-    gsub("\\(AT\\)", "@", .)
-
-  if(email == FALSE) {
-    author %<>%
-      gsub("(\\(.*\\))", "", .) %>%
-      trimws
-  }
-
-  if (identical(author, character(0))) {
-    # 'dead' sequences have no author
-    author <- NULL
-  }
-  author
+OEIS_author <- function(x, email = FALSE) {
+  UseMethod("OEIS_author")
 }
+
+#' @method OEIS_author character
+#' @export
+OEIS_author.character <- function(x, email = FALSE) {
+  . <- NULL
+  OEIS_check(x)
+  x %>%
+    OEIS_internal_format %>%
+    OEIS_author(., email)
+}
+
+#' @method OEIS_author OEIS_internal
+#' @export
+OEIS_author.OEIS_internal <- function(x, email = FALSE) {
+    . <- NULL
+    author <- x[x$tag == "%A",]$line %>%
+      gsub(" and ", ",", .) %>%
+      strsplit(., ",") %>%
+      magrittr::extract2(1) %>%
+      trimws %>%
+      # Remove dates
+      gsub("(\\w{3} \\d{2} \\d{4})", "", .) %>%
+      # Remove year if date is not complete
+      gsub("(\\d{4})", "", .) %>%
+      .[. != ""] %>%
+      gsub("_", "", .) %>%
+      gsub("\\(AT\\)", "@", .)
+
+    if(email == FALSE) {
+      author %<>%
+        gsub("(\\(.*\\))", "", .) %>%
+        trimws
+    }
+
+    if (identical(author, character(0))) {
+      # 'dead' sequences have no author
+      author <- NULL
+    }
+    author
+  }
+
+
+

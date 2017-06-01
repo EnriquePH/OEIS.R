@@ -9,14 +9,16 @@
 
 
 #  OEIS_description
-#' Get OEIS sequence description from \strong{internal format}
+#' OEIS sequence description from \code{internal format}, or from the sequence
+#' \code{ID}.
 #'
-#' Sequence description gives a brief definition of the sequence. In the
-#' description, a(n) usually denotes the n-th term of the sequence, and n is a
-#' typical subscript. In some cases however n denotes a typical term in the
-#' sequence.
+#' Sequence description gives a brief definition of the sequence.
+#' In the description, \emph{a(n)} usually denotes the n-th term of the
+#' sequence, and \emph{n} is a typical subscript.
+#' In some cases however \emph{n} denotes a typical term in the sequence.
 #'
-#' @param x This is a param
+#' @param x A character string with sequence \code{ID}, or a object of the S3
+#'   class \code{"OEIS_internal"}, with the sequence internal format.
 #' @seealso \code{\link{OEIS_internal_format}}
 #' @seealso \code{\link{OEIS_sequence}}
 #'
@@ -24,8 +26,14 @@
 #'
 #' @examples
 #' \dontrun{
+#' # Sequence description from ID
 #' id <- "A000056"
 #' OEIS_description(id)
+#'
+#' # Alternate example using internal format
+#' id <- "A003400"
+#' internal_format <- OEIS_internal_format(id)
+#' OEIS_description(internal_format)
 #' }
 #' @export
 OEIS_description <- function(x) {

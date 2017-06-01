@@ -6,10 +6,6 @@
 \usage{
 OEIS_example(internal_format)
 }
-\arguments{
-\item{internal_format}{A S3 object of the class \code{OEIS_internal} with the
-sequence internal format.}
-}
 \value{
 A character string with the OEIS sequence lines of examples or
   \code{NULL} if there are no examples.

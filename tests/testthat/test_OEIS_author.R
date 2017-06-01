@@ -7,3 +7,10 @@
 # Babois_.
 
 
+id <- "A169890"
+
+test_that("OEIS sequence A169890 has three authors", {
+  testthat::expect_equal(id %>%
+                           OEIS_author %>%
+                           length, 3)
+})
