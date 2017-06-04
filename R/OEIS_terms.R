@@ -33,11 +33,11 @@
 #' internal_format <- OEIS_internal_format(id)
 #' OEIS_terms(internal_format)
 #' }
-OEIS_terms <- function(internal_format) {
+OEIS_terms <- function(x) {
   . <- NULL
   tags <- c("%S", "%T", "%U")
-  sapply(tags, function(x)
-    internal_format[internal_format$tag == x, ]$line) %>%
+  sapply(tags, function(tag)
+    x[x$tag == tag, ]$line) %>%
     unlist %>%
     paste0(., collapse = "") %>%
     strsplit(., ",") %>%

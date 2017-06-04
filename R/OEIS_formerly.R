@@ -36,9 +36,9 @@
 #' internal_format <- OEIS_internal_format(id)
 #' OEIS_formerly(internal_format)
 #' }
-OEIS_formerly <- function(internal_format) {
+OEIS_formerly <- function(x) {
   . <- NULL
-  formerly <- internal_format[internal_format$tag == "%I", ]$line %>%
+  formerly <- x[x$tag == "%I", ]$line %>%
     strsplit(., " ") %>%
     unlist
   if(identical(formerly, character(0))) {

@@ -35,9 +35,9 @@
 #' internal_format <- OEIS_internal_format(id)
 #' OEIS_offset(internal_format)
 #' }
-OEIS_offset <- function(internal_format) {
+OEIS_offset <- function(x) {
   . <- NULL
-  internal_format[internal_format$tag == "%O",]$line %>%
+  x[x$tag == "%O",]$line %>%
     strsplit(., ",") %>%
     unlist
 }

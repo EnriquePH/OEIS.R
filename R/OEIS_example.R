@@ -31,9 +31,9 @@
 #' example <- OEIS_example(internal_format)
 #' cat(example, sep = "\n")
 #' }
-OEIS_example <- function(internal_format) {
+OEIS_example <- function(x) {
   . <- NULL
-  example <- internal_format[internal_format$tag == "%e",]$line %>%
+  example <- x[x$tag == "%e",]$line %>%
     gsub("_", "", .)
   if (identical(example, character(0))) {
     example <- NULL

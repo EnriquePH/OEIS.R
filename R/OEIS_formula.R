@@ -32,9 +32,9 @@
 #' formula <- OEIS_formula(internal_format)
 #' cat(formula, sep = "\n")
 #' }
-OEIS_formula <- function(internal_format) {
+OEIS_formula <- function(x) {
   . <- NULL
-  formula <- internal_format[internal_format$tag == "%F",]$line %>%
+  formula <- x[x$tag == "%F",]$line %>%
     gsub("_", "", .)
   if (identical(formula, character(0))) {
     formula <- NULL

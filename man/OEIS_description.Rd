@@ -2,17 +2,24 @@
 % Please edit documentation in R/OEIS_description.R
 \name{OEIS_description}
 \alias{OEIS_description}
-\title{OEIS sequence description from \code{internal format}, or from the sequence
-\code{ID}.}
+\title{Get OEIS sequence description}
 \usage{
 OEIS_description(x)
 }
 \arguments{
-\item{x}{A character string with sequence \code{ID}, or a object of the S3
-class \code{"OEIS_internal"}, with the sequence internal format.}
+\item{x}{Can be one of the following:
+\itemize{
+\item A character string with sequence \code{ID}.
+\item A \code{"OEIS_internal"} S3 class object, with the sequence internal
+format.
+\item A object of the S3 classes object\code{"OEIS_xml"} and
+\code{"xml_document"}, with the sequence content from OEIS web.
+\item An object of the \code{"OEIS_sequence"} class, with that contains all
+sequence related data.
+}}
 }
 \value{
-A string with the OEIS sequence description
+A string with the OEIS sequence description.
 }
 \description{
 Sequence description gives a brief definition of the sequence.
@@ -30,10 +37,19 @@ OEIS_description(id)
 id <- "A003400"
 internal_format <- OEIS_internal_format(id)
 OEIS_description(internal_format)
-}
+
+# Sequence description from "OEIS_sequence" class
+ id <- "A002315"
+ seq <- OEIS_sequence(id)
+ OEIS_description(seq)
+ }
 }
 \seealso{
 \code{\link{OEIS_internal_format}}
 
 \code{\link{OEIS_sequence}}
+
+\code{\link{OEIS_xml2}}
+
+\code{\link{OEIS_check}}
 }

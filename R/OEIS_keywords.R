@@ -29,9 +29,9 @@
 #' internal_format <- OEIS_internal_format(id)
 #' OEIS_keywords(internal_format)
 #' }
-OEIS_keywords <- function(internal_format) {
+OEIS_keywords <- function(x) {
   . <- NULL
-  internal_format[internal_format$tag == "%K",]$line %>%
+  x[x$tag == "%K",]$line %>%
     strsplit(., ",") %>%
     unlist
 }

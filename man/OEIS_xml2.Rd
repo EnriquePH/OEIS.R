@@ -13,15 +13,19 @@ sequence.
 It consists of "A" followed by 6 digits.}
 }
 \value{
-\code{xml_document} from OEIS web with the sequence content
+An \code{"OEIS_xml"} S3 class and \code{"xml_document"} from OEIS web
+  with the sequence content.
 }
 \description{
 The XML document contains all the information from the OEIS web related to
 the sequence.
 }
 \examples{
+\dontrun{
  id <- "A000156"
- test_seq_html <- OEIS_xml2(id)
+ test_seq_xml <- OEIS_xml2(id)
+ class(test_seq_xml)
+}
 }
 \seealso{
 \code{\link{OEIS_url}}

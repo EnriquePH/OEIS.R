@@ -8,12 +8,20 @@
 OEIS_author(x, email = FALSE)
 }
 \arguments{
-\item{x}{A character string with sequence \code{ID}, or a object of the S3
-class \code{"OEIS_internal"}, with the sequence internal format.}
+\item{x}{Can be one of the following:
+\itemize{
+\item A character string with sequence \code{ID}.
+\item A \code{"OEIS_internal"} S3 class object, with the sequence internal
+format.
+\item A object of the S3 classes object\code{"OEIS_xml"} and
+\code{"xml_document"}, with the sequence content from OEIS web.
+\item An object of the \code{"OEIS_sequence"} class, with that contains all
+sequence related data.
+}}
 
-\item{email}{A logical, by specifying \code{email = TRUE}, author's email is
-returned if it is present together with author's name. The default value of
-\code{email} is \code{FALSE}.}
+\item{email}{A logical, by specifying: \code{email = TRUE}, author's email is
+returned, if it is present, together with author's name. The default value
+of \code{email} is \code{FALSE}.}
 }
 \value{
 A character vector with the OEIS sequence authors and emails
@@ -32,4 +40,8 @@ OEIS_author(id, email = TRUE)
 \code{\link{OEIS_description}}
 
 \code{\link{OEIS_internal_format}}
+
+\code{\link{OEIS_sequence}}
+
+\code{\link{OEIS_check}}
 }

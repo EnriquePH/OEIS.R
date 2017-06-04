@@ -18,16 +18,23 @@
 #' @importFrom xml2 read_html
 #' @seealso \code{\link{OEIS_url}}
 #' @seealso \code{\link{OEIS_check}}
-#' @return \code{xml_document} from OEIS web with the sequence content
+#' @return An \code{"OEIS_xml"} S3 class and \code{"xml_document"} from OEIS web
+#'   with the sequence content.
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #'  id <- "A000156"
-#'  test_seq_html <- OEIS_xml2(id)
+#'  test_seq_xml <- OEIS_xml2(id)
+#'  class(test_seq_xml)
+#' }
 OEIS_xml2 <- function(ID) {
   . <- NULL
   OEIS_check(ID)
-  ID %>%
+  seq_xml <- ID %>%
     OEIS_url %>%
     xml2::read_html(.)
+  # S3 class "OEIS_xml"
+  class(seq_xml) <- append(class(seq_xml), "OEIS_xml")
+  seq_xml
 }

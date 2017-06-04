@@ -79,5 +79,40 @@ OEIS_author.OEIS_internal <- function(x, email = FALSE) {
     author
   }
 
+#' @method OEIS_author OEIS_xml
+#' @export
+OEIS_author.OEIS_xml <- function(x, email = FALSE) {
+  . <- NULL
+  seq_df <- OEIS_df(x)
+  author <- seq_df[seq_df$Line == "AUTHOR", ]$Description %>%
+    strsplit(., ",") %>%
+    unlist %>%
+    magrittr::extract2(1) %>%
+    trimws %>%
+    # Remove dates
+    gsub("(\\w{3} \\d{2} \\d{4})", "", .) %>%
+    # Remove year if date is not complete
+    gsub("(\\d{4})", "", .) %>%
+    .[. != ""] %>%
+    gsub("_", "", .) %>%
+    gsub("\\(AT\\)", "@", .)
 
+  if(email == FALSE) {
+    author %<>%
+      gsub("(\\(.*\\))", "", .) %>%
+      trimws
+  }
+
+  if (identical(author, character(0))) {
+    # 'dead' sequences have no author
+    author <- NULL
+  }
+  author
+}
+
+#' @method OEIS_author OEIS_sequence
+#' @export
+OEIS_author.OEIS_sequence <- function(x, email = FALSE) {
+  x$author
+}
 

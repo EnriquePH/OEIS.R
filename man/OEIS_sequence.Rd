@@ -4,15 +4,13 @@
 \alias{OEIS_sequence}
 \title{S3 class constructor for \code{OEIS_sequence}}
 \usage{
-OEIS_sequence(ID, ...)
+OEIS_sequence(ID)
 }
 \arguments{
 \item{ID}{A string with the OEIS sequence \code{ID} number.
 The A-number or sequence \code{ID} is the absolute catalogue number of the
 sequence.
 It consists of "A" followed by 6 digits.}
-
-\item{...}{Numeric, complex, or logical vectors.}
 }
 \value{
 An object of the S3 class \code{OEIS_sequence}

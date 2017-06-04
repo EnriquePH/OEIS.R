@@ -11,7 +11,6 @@
 #' S3 class constructor for \code{OEIS_sequence}
 #'
 #' @inheritParams OEIS_check
-#' @param ... Numeric, complex, or logical vectors.
 #'
 #' @return An object of the S3 class \code{OEIS_sequence}
 #' @seealso \code{\link{OEIS_bfile}}
@@ -29,7 +28,7 @@
 #' class(A003456)
 #' A003456
 #' }
-OEIS_sequence <- function(ID, ...){
+OEIS_sequence <- function(ID){
   OEIS_check(ID)
   seq_xml <- OEIS_xml2(ID)
   seq_df <- OEIS_df(seq_xml)
@@ -45,7 +44,7 @@ OEIS_sequence <- function(ID, ...){
                  formula = OEIS_formula(internal_format),
                  crossrefs = OEIS_crossrefs(seq_xml),
                  keywords = OEIS_keywords(internal_format),
-                 author = OEIS_author(internal_format, email = ...),
+                 author = OEIS_author(internal_format, email = TRUE),
                  date = OEIS_date(seq_df),
                  status = OEIS_status(seq_df),
                  internal_format = internal_format,

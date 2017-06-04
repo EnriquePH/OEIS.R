@@ -4,7 +4,19 @@
 \alias{OEIS_terms}
 \title{Get OEIS sequence terms from XML document.}
 \usage{
-OEIS_terms(internal_format)
+OEIS_terms(x)
+}
+\arguments{
+\item{x}{Can be one of the following:
+\itemize{
+\item A character string with sequence \code{ID}.
+\item A \code{"OEIS_internal"} S3 class object, with the sequence internal
+format.
+\item A object of the S3 classes object\code{"OEIS_xml"} and
+\code{"xml_document"}, with the sequence content from OEIS web.
+\item An object of the \code{"OEIS_sequence"} class, with that contains all
+sequence related data.
+}}
 }
 \value{
 A character list with the OEIS sequence terms.

@@ -30,7 +30,7 @@
 OEIS_bfile <- function(ID) {
   OEIS_check(ID)
   bfile_url <- OEIS_bfile_url(ID, URL = TRUE)
-  lines <- readLines(bfile_url)
+  lines <- readLines(bfile_url, warn = FALSE)
   match_comments <- grepl("#", lines)
   comments <- lines[match_comments]
   data <- lines[!match_comments]
