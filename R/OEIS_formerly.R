@@ -9,7 +9,7 @@
 
 
 #  OEIS_formerly
-#' Get OEIS sequence former \code{ID} from \code{xml2} data
+#' Get OEIS sequence former \code{ID}
 #'
 #' This is an alternate \code{ID} for some sequences that also have a 4-digit
 #' M-number, such as M1459, which is the number they carried in "The
@@ -18,7 +18,7 @@
 #' N-number, such as N0577, which is the number they carried in the "Handbook of
 #' Integer Sequences", by N. J. A. Sloane, Academic Press, NY, 1973
 #'
-#' @inheritParams OEIS_author
+#' @inheritParams OEIS_description
 #'
 #' @return A string with the OEIS former \code{ID} or \code{NULL}, if there is
 #'   no former sequence designation.
@@ -28,6 +28,7 @@
 #' @seealso \code{\link{OEIS_description}}
 #' @seealso \code{\link{OEIS_internal_format}}
 #' @seealso \code{\link{OEIS_sequence}}
+#' @seealso \code{\link{OEIS_xml2}}
 #' @export
 #'
 #' @examples
@@ -37,6 +38,22 @@
 #' OEIS_formerly(internal_format)
 #' }
 OEIS_formerly <- function(x) {
+  UseMethod("OEIS_formerly")
+}
+
+#' @method OEIS_formerly character
+#' @export
+OEIS_formerly.character <- function(x) {
+. <- NULL
+OEIS_check(x)
+x %>%
+  OEIS_internal_format %>%
+  OEIS_formerly
+}
+
+#' @method OEIS_formerly OEIS_internal
+#' @export
+OEIS_formerly.OEIS_internal <- function(x) {
   . <- NULL
   formerly <- x[x$tag == "%I", ]$line %>%
     strsplit(., " ") %>%
@@ -45,4 +62,26 @@ OEIS_formerly <- function(x) {
     formerly <- NULL
   }
   formerly
+}
+
+#' @method OEIS_formerly OEIS_xml
+#' @export
+OEIS_formerly.OEIS_xml <- function(x) {
+  . <- NULL
+  formerly <- x %>%
+    rvest::html_nodes(., xpath = "//td/font/text()") %>%
+    rvest::html_text(.) %>%
+    magrittr::extract2(5) %>%
+    regmatches(., gregexpr("(\\w\\d{4})", .)) %>%
+    unlist
+  if (identical(formerly, character(0))) {
+    formerly <- NULL
+  }
+  formerly
+}
+
+#' @method OEIS_formerly OEIS_sequence
+#' @export
+OEIS_formerly.OEIS_sequence <- function(x) {
+  x$formerly
 }

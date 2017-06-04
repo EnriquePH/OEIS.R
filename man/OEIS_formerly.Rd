@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_formerly.R
 \name{OEIS_formerly}
 \alias{OEIS_formerly}
-\title{Get OEIS sequence former \code{ID} from \code{xml2} data}
+\title{Get OEIS sequence former \code{ID}}
 \usage{
 OEIS_formerly(x)
 }
@@ -43,4 +43,6 @@ OEIS_formerly(internal_format)
 \code{\link{OEIS_internal_format}}
 
 \code{\link{OEIS_sequence}}
+
+\code{\link{OEIS_xml2}}
 }
