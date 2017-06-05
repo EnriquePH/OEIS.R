@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  OIES.R PACKAGE
+#  OEIS.R PACKAGE
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_example.R
 #  (c) 2017 - Enrique Pérez Herrero
@@ -40,7 +40,6 @@ OEIS_example <- function(x) {
 #' @method OEIS_example character
 #' @export
 OEIS_example.character <- function(x) {
-  . <- NULL
   OEIS_check(x)
   example <- x %>%
     OEIS_internal_format %>%
@@ -56,7 +55,7 @@ OEIS_example.character <- function(x) {
 #' @export
 OEIS_example.OEIS_internal <- function(x) {
   . <- NULL
-  example <- x[x$tag == "%e",]$line %>%
+  example <- x[x$tag == "%e", ]$line %>%
     gsub("_", "", .)
   if (identical(example, character(0))) {
     example <- NULL
@@ -75,7 +74,7 @@ OEIS_example.OEIS_xml <- function(x) {
     .$Description %>%
     strsplit(., "\n") %>%
     sapply(., trimws) %>%
-    .[. != "",]
+    .[. != "", ]
   if (identical(example, character(0))) {
     example <- NULL
   }

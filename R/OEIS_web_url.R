@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  OIES.R PACKAGE
+#  OEIS.R PACKAGE
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_web_url.R
 #  (c) 2017 - Enrique Pérez Herrero

@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  OIES.R PACKAGE
+#  OEIS.R PACKAGE
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_df.R
 #  (c) 2017 - Enrique Pérez Herrero
@@ -20,7 +20,7 @@
 #'
 #' @seealso \code{\link{OEIS_xml2}}
 #' @references \url{https://oeis.org/eishelp2.html#RS}
-#' @return A \code{data.frame} with sequence information lines
+#' @return A \code{data.frame} with sequence information lines.
 #' @export
 OEIS_df <- function(seq_xml) {
   . <- NULL

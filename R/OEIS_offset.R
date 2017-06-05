@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  OIES.R PACKAGE
+#  OEIS.R PACKAGE
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_offset.R
 #  (c) 2017 - Enrique Pérez Herrero
@@ -37,7 +37,7 @@
 #' }
 OEIS_offset <- function(x) {
   . <- NULL
-  x[x$tag == "%O",]$line %>%
+  x[x$tag == "%O", ]$line %>%
     strsplit(., ",") %>%
     unlist
 }

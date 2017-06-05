@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  OIES.R PACKAGE
+#  OEIS.R PACKAGE
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_author.R
 #  (c) 2017 - Enrique Pérez Herrero
@@ -53,7 +53,7 @@ OEIS_author.character <- function(x, email = FALSE) {
 #' @export
 OEIS_author.OEIS_internal <- function(x, email = FALSE) {
     . <- NULL
-    author <- x[x$tag == "%A",]$line %>%
+    author <- x[x$tag == "%A", ]$line %>%
       gsub(" and ", ",", .) %>%
       strsplit(., ",") %>%
       magrittr::extract2(1) %>%
@@ -66,7 +66,7 @@ OEIS_author.OEIS_internal <- function(x, email = FALSE) {
       gsub("_", "", .) %>%
       gsub("\\(AT\\)", "@", .)
 
-    if(email == FALSE) {
+    if (email == FALSE) {
       author %<>%
         gsub("(\\(.*\\))", "", .) %>%
         trimws
@@ -97,7 +97,7 @@ OEIS_author.OEIS_xml <- function(x, email = FALSE) {
     gsub("_", "", .) %>%
     gsub("\\(AT\\)", "@", .)
 
-  if(email == FALSE) {
+  if (email == FALSE) {
     author %<>%
       gsub("(\\(.*\\))", "", .) %>%
       trimws
@@ -115,4 +115,3 @@ OEIS_author.OEIS_xml <- function(x, email = FALSE) {
 OEIS_author.OEIS_sequence <- function(x, email = FALSE) {
   x$author
 }
-

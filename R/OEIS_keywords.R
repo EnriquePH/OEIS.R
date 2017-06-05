@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  OIES.R PACKAGE
+#  OEIS.R PACKAGE
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_keywords.R
 #  (c) 2017 - Enrique Pérez Herrero
@@ -31,7 +31,7 @@
 #' }
 OEIS_keywords <- function(x) {
   . <- NULL
-  x[x$tag == "%K",]$line %>%
+  x[x$tag == "%K", ]$line %>%
     strsplit(., ",") %>%
     unlist
 }

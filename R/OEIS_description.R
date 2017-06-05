@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  OIES.R PACKAGE
+#  OEIS.R PACKAGE
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_description.R
 #  (c) 2017 - Enrique Pérez Herrero
@@ -56,7 +56,6 @@ OEIS_description <- function(x) {
 #' @method OEIS_description character
 #' @export
 OEIS_description.character <- function(x) {
-  . <- NULL
   OEIS_check(x)
   x %>%
     OEIS_internal_format %>%
@@ -87,4 +86,3 @@ OEIS_description.OEIS_xml <- function(x) {
 OEIS_description.OEIS_sequence <- function(x) {
   x$description
 }
-

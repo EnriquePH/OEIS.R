@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  OIES.R PACKAGE
+#  OEIS.R PACKAGE
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_formula.R
 #  (c) 2017 - Enrique Pérez Herrero
@@ -34,7 +34,7 @@
 #' }
 OEIS_formula <- function(x) {
   . <- NULL
-  formula <- x[x$tag == "%F",]$line %>%
+  formula <- x[x$tag == "%F", ]$line %>%
     gsub("_", "", .)
   if (identical(formula, character(0))) {
     formula <- NULL

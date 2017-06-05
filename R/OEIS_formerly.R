@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  OIES.R PACKAGE
+#  OEIS.R PACKAGE
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_formerly.R
 #  (c) 2017 - Enrique Pérez Herrero
@@ -44,11 +44,10 @@ OEIS_formerly <- function(x) {
 #' @method OEIS_formerly character
 #' @export
 OEIS_formerly.character <- function(x) {
-. <- NULL
-OEIS_check(x)
-x %>%
-  OEIS_internal_format %>%
-  OEIS_formerly
+  OEIS_check(x)
+  x %>%
+    OEIS_internal_format %>%
+    OEIS_formerly
 }
 
 #' @method OEIS_formerly OEIS_internal
@@ -58,7 +57,7 @@ OEIS_formerly.OEIS_internal <- function(x) {
   formerly <- x[x$tag == "%I", ]$line %>%
     strsplit(., " ") %>%
     unlist
-  if(identical(formerly, character(0))) {
+  if (identical(formerly, character(0))) {
     formerly <- NULL
   }
   formerly

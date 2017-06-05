@@ -1,5 +1,5 @@
 #  ----------------------------------------------------------------------------
-#  OIES.R PACKAGE
+#  OEIS.R PACKAGE
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_internal_format.R
 #  (c) 2017 - Enrique Pérez Herrero
@@ -53,8 +53,8 @@ OEIS_internal_format <- function(ID) {
     rvest::html_text(.) %>%
     strsplit(., "\n") %>%
     unlist %>%
-    utils::tail(.,-5L) %>%
-    utils::head(.,-2L) %>%
+    utils::tail(., -5L) %>%
+    utils::head(., -2L) %>%
     gsub("(%\\w{1})\\s(A\\d{6})\\s?", "\\1\t", .) %>%
     utils::read.delim(text = .,
                       stringsAsFactors = FALSE,
@@ -63,4 +63,3 @@ OEIS_internal_format <- function(ID) {
   class(internal_format) <- append(class(internal_format), "OEIS_internal")
   internal_format
 }
-
