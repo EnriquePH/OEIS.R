@@ -5,4 +5,4 @@ sudo: false
 cache: packages
 before_install:
   - tlmgr install index
-  - tlmgr install enumitem
+  - tlmgr install texlive-latex-extra
