@@ -5,3 +5,6 @@ sudo: false
 cache: packages
 before_install:
   - tlmgr install index
+
+script:
+    - latex report
