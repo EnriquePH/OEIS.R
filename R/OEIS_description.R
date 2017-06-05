@@ -17,12 +17,12 @@
 #'
 #' @param x Can be one of the following:
 #' * A character string with sequence \code{ID}.
-#' * A \code{"OEIS_internal"} S3 class object, with the sequence internal
-#' format.
-#' * A object of the S3 classes object\code{"OEIS_xml"} and
-#' \code{"xml_document"}, with the sequence content from OEIS web.
-#' * An object of the \code{"OEIS_sequence"} class, with that contains all
-#' sequence related data.
+#' * A \code{"OEIS_internal"} S3 class object, with sequence internal format.
+#' * A S3 classes object \code{"OEIS_xml"} and \code{"xml_document"}, with
+#' sequence content from OEIS web.
+#' * An object of \code{"OEIS_sequence"} class, that contains all sequence
+#' related data.
+#' @md
 #'
 #' @seealso \code{\link{OEIS_internal_format}}
 #' @seealso \code{\link{OEIS_sequence}}

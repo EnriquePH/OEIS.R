@@ -2,8 +2,5 @@
 id_no_examples <- "A100623"
 
 test_that("OEIS_example returns NULL in a sequence without examples", {
-  testthat::expect_equal(id_no_examples %>%
-                           OEIS_xml2 %>%
-                           OEIS_df %>%
-                           OEIS_example, NULL)
+  testthat::expect_equal(id_no_examples %>% OEIS_example, NULL)
 })
