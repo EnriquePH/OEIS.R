@@ -5,7 +5,4 @@ sudo: false
 cache: packages
 before_install:
   - tlmgr install index
-  - tlmgr update --self
-
-script:
-    - latex report
+  - tlmgr install enumitem
