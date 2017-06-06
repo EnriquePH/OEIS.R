@@ -23,11 +23,11 @@ returned, if it is present, together with author's name. The default value
 of \code{email} is \code{FALSE}.}
 }
 \value{
-A character vector with the OEIS sequence authors and emails
+A character vector with the OEIS sequence authors and emails.
 }
 \description{
 This function gives the name of the person, or persons, who contributed the
-sequence and their email, if it's present and selected.
+sequence and their emails, if they are present and selected.
 }
 \examples{
 \dontrun{

@@ -88,7 +88,3 @@ OEIS_formula.OEIS_xml <- function(x) {
 OEIS_formula.OEIS_sequence <- function(x) {
   x$formula
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 8c448eafc581cd25fd6bf2de93e77a5b1f58806c

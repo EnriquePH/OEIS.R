@@ -52,12 +52,7 @@ OEIS_author.character <- function(x, email = FALSE) {
 #' @export
 OEIS_author.OEIS_internal <- function(x, email = FALSE) {
   . <- NULL
-<<<<<<< HEAD
   author <- x[x$tag == "%A", ]$line
-=======
-  author <- x[x$tag == "%A",]$line
->>>>>>> 8c448eafc581cd25fd6bf2de93e77a5b1f58806c
-
   if (identical(author, character(0))) {
     # 'dead' sequences have no author
     author <- NULL
