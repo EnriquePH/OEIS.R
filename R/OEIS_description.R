@@ -52,7 +52,6 @@ OEIS_description <- function(x) {
     UseMethod("OEIS_description", x)
 }
 
-
 #' @method OEIS_description character
 #' @export
 OEIS_description.character <- function(x) {

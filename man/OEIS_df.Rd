@@ -7,7 +7,7 @@
 OEIS_df(seq_xml)
 }
 \arguments{
-\item{seq_xml}{A xml_document from an OEIS sequence}
+\item{seq_xml}{A \code{xml_document} from an OEIS sequence.}
 }
 \value{
 A \code{data.frame} with sequence information lines.

@@ -7,7 +7,7 @@
 OEIS_crossrefs(seq_xml)
 }
 \arguments{
-\item{seq_xml}{A xml_document from an OEIS sequence}
+\item{seq_xml}{A \code{xml_document} from an OEIS sequence.}
 }
 \value{
 An object of the class \code{OEIS_crossrefs} including referenced
