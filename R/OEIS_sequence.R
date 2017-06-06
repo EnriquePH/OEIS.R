@@ -45,7 +45,7 @@ OEIS_sequence <- function(ID){
                  crossrefs = OEIS_crossrefs(seq_xml),
                  keywords = OEIS_keywords(internal_format),
                  author = OEIS_author(internal_format, email = TRUE),
-                 date = OEIS_date(seq_df),
+                 date = OEIS_date(internal_format),
                  status = OEIS_status(seq_df),
                  internal_format = internal_format,
                  seq_df = seq_df,

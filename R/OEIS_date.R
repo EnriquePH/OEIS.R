@@ -9,36 +9,88 @@
 
 
 #  OEIS_date
-#' OEIS sequence date from \code{data.frame}
+#' OEIS sequence creation date from \code{data.frame}
 #'
 #' Sequence creation date.
-#' @inheritParams OEIS_status
+#' @inheritParams OEIS_description
 #'
 #' @importFrom magrittr "%>%"
-#' @importFrom magrittr extract2
+#' @importFrom magrittr "%<>%"
 #' @importFrom lubridate mdy
 #'
-#' @return A \code{Date} object with the OEIS sequence date or \code{NULL} if it
-#'   is not found.
-#' @export
+#' @return A \code{Date} object with the OEIS sequence creation date, or
+#'   \code{NULL} if it's not found.
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A221863"
-#' test_seq_html <- OEIS_xml2(id)
-#' seq_df <- OEIS_df(test_seq_html)
-#' OEIS_date(seq_df)
-OEIS_date <- function(seq_df) {
+#' OEIS_date(id)
+#'}
+#' @export
+OEIS_date <- function(x) {
+  UseMethod("OEIS_date", x)
+}
+
+#' @method OEIS_date character
+#' @export
+OEIS_date.character <- function(x) {
   . <- NULL
-  date <- seq_df[seq_df$Line == "AUTHOR", ]$Description %>%
-    strsplit(., ",") %>%
-    unlist
-  if (length(date) == 1) {
+  OEIS_check(x)
+  x %>%
+    OEIS_internal_format %>%
+    OEIS_date
+}
+
+#' @method OEIS_date OEIS_internal
+#' @export
+OEIS_date.OEIS_internal <- function(x) {
+  . <- NULL
+  date <- x[x$tag == "%A", ]$line
+  if (identical(date, character(0))) {
+    # 'dead' sequences have no author and no date
     date <- NULL
   } else {
-    date <- date %>%
-      magrittr::extract2(2) %>%
+    date %<>%
+      gsub(" and ", ",", .) %>%
+      strsplit(., ",") %>%
+      unlist %>%
       trimws %>%
+      # Select date as mmm dd yyyy
+      .[grep("(\\w{3} \\d{2} \\d{4})", .)]
+    if (length(date) == 0) {
+      date <- NULL
+    } else {
+      date %<>%
+        lubridate::mdy(., locale = "en_US.utf8")
+    }
+  }
+  date
+}
+
+#' @method OEIS_date OEIS_xml
+#' @export
+OEIS_date.OEIS_xml <- function(x) {
+  . <- NULL
+  seq_df <- OEIS_df(x)
+  date <- seq_df[seq_df$Line == "AUTHOR", ]$Description %>%
+    strsplit(., ",") %>%
+    unlist %>%
+    trimws %>%
+    # Select date as mmm dd yyyy
+    .[grep("(\\w{3} \\d{2} \\d{4})", .)]
+
+  if (length(date) == 0) {
+    date <- NULL
+  } else {
+    date %<>%
       lubridate::mdy(., locale = "en_US.utf8")
   }
   date
 }
+
+#' @method OEIS_date OEIS_sequence
+#' @export
+OEIS_date.OEIS_sequence <- function(x) {
+  x$date
+}
+
