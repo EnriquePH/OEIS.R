@@ -18,7 +18,7 @@ related data.
 }}
 }
 \value{
-A character vector with the OEIS sequence keywords
+A character vector with the OEIS sequence keywords.
 }
 \description{
 These lines give keywords describing the sequence.

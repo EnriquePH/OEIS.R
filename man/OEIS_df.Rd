@@ -10,7 +10,7 @@ OEIS_df(seq_xml)
 \item{seq_xml}{A xml_document from an OEIS sequence}
 }
 \value{
-A \code{data.frame} with sequence information lines
+A \code{data.frame} with sequence information lines.
 }
 \description{
 This lines are useful to get all the sequence format data.

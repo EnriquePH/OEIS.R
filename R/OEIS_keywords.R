@@ -17,11 +17,13 @@
 #' @inheritParams OEIS_author
 #'
 #' @importFrom magrittr "%>%"
+#' @importFrom rvest html_nodes
+#' @importFrom rvest html_text
+#'
 #' @seealso \code{\link{OEIS_author}}
 #' @seealso \code{\link{OEIS_sequence}}
 #' @seealso \code{\link{OEIS_internal_format}}
-#' @return A character vector with the OEIS sequence keywords
-#' @export
+#' @return A character vector with the OEIS sequence keywords.
 #'
 #' @examples
 #' \dontrun{
@@ -29,9 +31,40 @@
 #' internal_format <- OEIS_internal_format(id)
 #' OEIS_keywords(internal_format)
 #' }
+#' @export
 OEIS_keywords <- function(x) {
+  UseMethod("OEIS_keywords", x)
+}
+
+#' @method OEIS_keywords character
+#' @export
+OEIS_keywords.character <- function(x) {
+  OEIS_check(x)
+  x %>%
+    OEIS_internal_format %>%
+    OEIS_keywords
+}
+
+#' @method OEIS_keywords OEIS_internal
+#' @export
+OEIS_keywords.OEIS_internal <- function(x) {
   . <- NULL
   x[x$tag == "%K", ]$line %>%
     strsplit(., ",") %>%
     unlist
+}
+
+#' @method OEIS_keywords OEIS_xml
+#' @export
+OEIS_keywords.OEIS_xml <- function(x) {
+  . <- NULL
+  x %>%
+    rvest::html_nodes(., xpath = "//tt/span") %>%
+    rvest::html_text(.)
+}
+
+#' @method OEIS_keywords OEIS_sequence
+#' @export
+OEIS_keywords.OEIS_sequence <- function(x) {
+  x$keywords
 }
