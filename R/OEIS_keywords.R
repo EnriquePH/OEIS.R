@@ -23,13 +23,23 @@
 #' @seealso \code{\link{OEIS_author}}
 #' @seealso \code{\link{OEIS_sequence}}
 #' @seealso \code{\link{OEIS_internal_format}}
+#' @seealso \code{\link{OEIS_xml2}}
 #' @return A character vector with the OEIS sequence keywords.
 #'
 #' @examples
 #' \dontrun{
-#' id <- "A000012"
-#' internal_format <- OEIS_internal_format(id)
-#' OEIS_keywords(internal_format)
+#' id <- "A049323"
+#' seq <- OEIS_sequence(id)
+#' xml <- OEIS_xml2(id)
+#' frmt <- OEIS_internal_format(id)
+#  # Keywords from sequence ID
+#' OEIS_keywords(id)
+#' # Keywords from "OEIS_sequence" class
+#' OEIS_keywords(seq)
+#' # Keywords from "OEIS_xml"
+#' OEIS_keywords(xml)
+#' # Keywords from internal format: "OEIS_internal" class
+#' OEIS_keywords(frmt)
 #' }
 #' @export
 OEIS_keywords <- function(x) {

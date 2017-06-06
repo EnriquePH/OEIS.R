@@ -21,6 +21,7 @@
 #' @seealso \code{\link{OEIS_internal_format}}
 #' @seealso \code{\link{OEIS_formula}}
 #' @seealso \code{\link{OEIS_sequence}}
+#' @seealso \code{\link{OEIS_xml2}}
 #' @return A character string with the OEIS sequence lines of examples or
 #'   \code{NULL} if there are no examples.
 #'
@@ -36,7 +37,6 @@ OEIS_example <- function(x) {
   UseMethod("OEIS_example", x)
 }
 
-
 #' @method OEIS_example character
 #' @export
 OEIS_example.character <- function(x) {
@@ -50,7 +50,6 @@ OEIS_example.character <- function(x) {
   example
 }
 
-
 #' @method OEIS_example OEIS_internal
 #' @export
 OEIS_example.OEIS_internal <- function(x) {
@@ -63,7 +62,6 @@ OEIS_example.OEIS_internal <- function(x) {
   example
 }
 
-
 #' @method OEIS_example OEIS_xml
 #' @export
 OEIS_example.OEIS_xml <- function(x) {
@@ -71,16 +69,17 @@ OEIS_example.OEIS_xml <- function(x) {
   example <- x %>%
     OEIS_df %>%
     .[. == "EXAMPLE", ] %>%
-    .$Description %>%
-    strsplit(., "\n") %>%
-    sapply(., trimws) %>%
-    .[. != "", ]
+    .$Description
   if (identical(example, character(0))) {
     example <- NULL
+  } else {
+    example %<>%
+      strsplit(., "\n") %>%
+      sapply(., trimws) %>%
+      .[. != "", ]
   }
   example
 }
-
 
 #' @method OEIS_example OEIS_sequence
 #' @export

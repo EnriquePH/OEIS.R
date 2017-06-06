@@ -14,13 +14,15 @@
 #' sequence.
 #' \strong{a(n)} usually denotes the n-th term of the sequence, and \strong{n}
 #' is a typical subscript.
-#' @inheritParams OEIS_author
+#' @inheritParams OEIS_description
 #'
 #' @seealso \code{\link{OEIS_description}}
 #' @seealso \code{\link{OEIS_internal_format}}
 #' @seealso \code{\link{OEIS_sequence}}
 #' @seealso \code{\link{OEIS_example}}
 #' @importFrom magrittr "%>%"
+#' @importFrom magrittr "%<>%"
+#'
 #' @return A character string with the OEIS sequence formula lines or
 #'   \code{NULL} if there are no formulae.
 #' @export
@@ -32,7 +34,27 @@
 #' formula <- OEIS_formula(internal_format)
 #' cat(formula, sep = "\n")
 #' }
+
 OEIS_formula <- function(x) {
+  UseMethod("OEIS_formula", x)
+}
+
+#' @method OEIS_formula character
+#' @export
+OEIS_formula.character <- function(x) {
+  OEIS_check(x)
+  formula <- x %>%
+    OEIS_internal_format %>%
+    OEIS_formula
+  if (identical(formula, character(0))) {
+    formula <- NULL
+  }
+  formula
+}
+
+#' @method OEIS_formula OEIS_internal
+#' @export
+OEIS_formula.OEIS_internal <- function(x) {
   . <- NULL
   formula <- x[x$tag == "%F", ]$line %>%
     gsub("_", "", .)
@@ -41,3 +63,29 @@ OEIS_formula <- function(x) {
   }
   formula
 }
+
+#' @method OEIS_formula OEIS_xml
+#' @export
+OEIS_formula.OEIS_xml <- function(x) {
+  . <- NULL
+  formula <- x %>%
+    OEIS_df %>%
+    .[. == "FORMULA", ] %>%
+    .$Description
+  if (identical(formula, character(0))) {
+    formula <- NULL
+  } else {
+    formula %<>%
+    strsplit(., "\n") %>%
+    sapply(., trimws) %>%
+    .[. != "", ]
+  }
+  formula
+}
+
+#' @method OEIS_formula OEIS_sequence
+#' @export
+OEIS_formula.OEIS_sequence <- function(x) {
+  x$formula
+}
+

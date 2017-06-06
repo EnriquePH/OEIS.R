@@ -20,7 +20,6 @@
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr "%<>%"
-#' @importFrom magrittr extract2
 #'
 #' @seealso \code{\link{OEIS_description}}
 #' @seealso \code{\link{OEIS_internal_format}}
@@ -52,11 +51,17 @@ OEIS_author.character <- function(x, email = FALSE) {
 #' @method OEIS_author OEIS_internal
 #' @export
 OEIS_author.OEIS_internal <- function(x, email = FALSE) {
-    . <- NULL
-    author <- x[x$tag == "%A", ]$line %>%
+  . <- NULL
+  author <- x[x$tag == "%A",]$line
+
+  if (identical(author, character(0))) {
+    # 'dead' sequences have no author
+    author <- NULL
+  } else {
+    author    %<>%
       gsub(" and ", ",", .) %>%
       strsplit(., ",") %>%
-      magrittr::extract2(1) %>%
+      unlist %>%
       trimws %>%
       # Remove dates
       gsub("(\\w{3} \\d{2} \\d{4})", "", .) %>%
@@ -71,13 +76,9 @@ OEIS_author.OEIS_internal <- function(x, email = FALSE) {
         gsub("(\\(.*\\))", "", .) %>%
         trimws
     }
-
-    if (identical(author, character(0))) {
-      # 'dead' sequences have no author
-      author <- NULL
-    }
-    author
   }
+  author
+}
 
 #' @method OEIS_author OEIS_xml
 #' @export
@@ -85,9 +86,9 @@ OEIS_author.OEIS_xml <- function(x, email = FALSE) {
   . <- NULL
   seq_df <- OEIS_df(x)
   author <- seq_df[seq_df$Line == "AUTHOR", ]$Description %>%
+    gsub(" and ", ",", .) %>%
     strsplit(., ",") %>%
     unlist %>%
-    magrittr::extract2(1) %>%
     trimws %>%
     # Remove dates
     gsub("(\\w{3} \\d{2} \\d{4})", "", .) %>%
@@ -113,5 +114,12 @@ OEIS_author.OEIS_xml <- function(x, email = FALSE) {
 #' @method OEIS_author OEIS_sequence
 #' @export
 OEIS_author.OEIS_sequence <- function(x, email = FALSE) {
-  x$author
+  . <- NULL
+  author <- x$author
+  if (email == FALSE) {
+    author %<>%
+      gsub("(\\(.*\\))", "", .) %>%
+      trimws
+  }
+  author
 }
