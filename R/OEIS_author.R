@@ -12,7 +12,7 @@
 #' \code{ID}.
 #'
 #' This function gives the name of the person, or persons, who contributed the
-#' sequence and their emails, if it's present and selected.
+#' sequence and their emails, if they are present and selected.
 #' @inheritParams OEIS_description
 #' @param email A logical, by specifying: \code{email = TRUE}, author's email is
 #'   returned, if it is present, together with author's name. The default value
