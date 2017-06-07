@@ -7,10 +7,11 @@
 OEIS_df(seq_xml)
 }
 \arguments{
-\item{seq_xml}{A \code{xml_document} from an OEIS sequence.}
+\item{seq_xml}{A class \code{"xml_document"} from an OEIS sequence.}
 }
 \value{
-A \code{data.frame} with sequence information lines.
+A \code{"data.frame"} and \code{"OEIS_df"} S3 class with sequence
+  information lines.
 }
 \description{
 This lines are useful to get all the sequence format data.

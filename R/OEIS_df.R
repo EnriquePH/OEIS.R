@@ -11,7 +11,7 @@
 #' Get OEIS sequence information lines from XML document data
 #'
 #' This lines are useful to get all the sequence format data.
-#' @param seq_xml A \code{xml_document} from an OEIS sequence.
+#' @param seq_xml A class \code{"xml_document"} from an OEIS sequence.
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr extract2
@@ -20,7 +20,8 @@
 #'
 #' @seealso \code{\link{OEIS_xml2}}
 #' @references \url{https://oeis.org/eishelp2.html#RS}
-#' @return A \code{data.frame} with sequence information lines.
+#' @return A \code{"data.frame"} and \code{"OEIS_df"} S3 class with sequence
+#'   information lines.
 #' @export
 OEIS_df <- function(seq_xml) {
   . <- NULL
@@ -30,5 +31,7 @@ OEIS_df <- function(seq_xml) {
     magrittr::extract2(1)
   seq_df$X1 <- NULL
   names(seq_df) <- c("Line", "Description")
+  # S3 class "OEIS_df"
+  #class(seq_df) <- append(class(seq_xml), "OEIS_df")
   seq_df
 }

@@ -12,14 +12,17 @@
 #'
 #' @inheritParams OEIS_check
 #'
-#' @return An object of the S3 class \code{OEIS_sequence}
-#' @seealso \code{\link{OEIS_bfile}}
+#' @return An object of the S3 class \code{"OEIS_sequence"}.
 #' @seealso \code{\link{OEIS_check}}
+#' @seealso \code{\link{OEIS_url}}
 #' @seealso \code{\link{OEIS_description}}
+#' @seealso \code{\link{OEIS_formerly}}
+#' @seealso \code{\link{OEIS_bfile}}
+#' @seealso \code{\link{OEIS_terms}}
 #' @seealso \code{\link{OEIS_xml2}}
 #' @seealso \code{\link{OEIS_internal_format}}
 #' @seealso \code{\link{OEIS_df}}
-#' @export
+#' @references \url{https://oeis.org/eishelp2.html#RS}
 #'
 #' @examples
 #' \dontrun{
@@ -28,6 +31,7 @@
 #' class(A003456)
 #' A003456
 #' }
+#' @export
 OEIS_sequence <- function(ID){
   OEIS_check(ID)
   seq_xml <- OEIS_xml2(ID)
@@ -46,7 +50,7 @@ OEIS_sequence <- function(ID){
                  keywords = OEIS_keywords(internal_format),
                  author = OEIS_author(internal_format, email = TRUE),
                  date = OEIS_date(internal_format),
-                 status = OEIS_status(seq_df),
+                 status = OEIS_status(seq_xml),
                  internal_format = internal_format,
                  seq_df = seq_df,
                  seq_xml = seq_xml),

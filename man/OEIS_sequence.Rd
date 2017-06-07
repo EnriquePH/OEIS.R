@@ -13,7 +13,7 @@ sequence.
 It consists of "A" followed by 6 digits.}
 }
 \value{
-An object of the S3 class \code{OEIS_sequence}
+An object of the S3 class \code{"OEIS_sequence"}.
 }
 \description{
 S3 class constructor for \code{OEIS_sequence}
@@ -26,12 +26,21 @@ class(A003456)
 A003456
 }
 }
+\references{
+\url{https://oeis.org/eishelp2.html#RS}
+}
 \seealso{
-\code{\link{OEIS_bfile}}
-
 \code{\link{OEIS_check}}
 
+\code{\link{OEIS_url}}
+
 \code{\link{OEIS_description}}
+
+\code{\link{OEIS_formerly}}
+
+\code{\link{OEIS_bfile}}
+
+\code{\link{OEIS_terms}}
 
 \code{\link{OEIS_xml2}}
 

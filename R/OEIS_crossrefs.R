@@ -11,7 +11,7 @@
 #' OEIS sequence linked cross references from sequence information
 #' \code{data.frame}
 #'
-#' @inheritParams OEIS_status
+#' @param seq_df A \code{data.frame} with sequence content.
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr extract2

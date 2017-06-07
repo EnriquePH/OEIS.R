@@ -8,17 +8,23 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_status
-#' OEIS sequence status from \code{seq_df} \code{data.frame}
+#' Get OEIS sequence status
 #'
 #' Status depends on sequence information updates.
-#' @param seq_df A \code{data.frame} with sequence content.
+#' @param x Can be one of the following:
+#' * A character string with sequence \code{ID}.
+#' * A S3 classes object \code{"OEIS_xml"} and \code{"xml_document"}, with
+#' sequence content from OEIS web.
+#' * An object of \code{"OEIS_sequence"} class, that contains all sequence
+#' related data.
+#' @md
 #'
 #' @seealso \code{\link{OEIS_df}}
 #' @seealso \code{\link{OEIS_xml2}}
 #'
-#' @return A character string with the OEIS sequence status
-#' @note status can be: "approved", "editing", "proposed" or "reviewed"
-#' @export
+#' @return A character string with the OEIS sequence status.
+#' @note status can be: "approved", "editing", "proposed" or "reviewed".
+#' @note status can not be obtained from \code{"OEIS_internal"} class.
 #'
 #' @examples
 #' \dontrun{
@@ -27,6 +33,31 @@
 #' seq_df <- OEIS_df(test_seq_html)
 #' OEIS_status(seq_df)
 #' }
-OEIS_status <- function(seq_df) {
+#' @export
+OEIS_status <- function(x) {
+  UseMethod("OEIS_status")
+}
+
+#' @method OEIS_status character
+#' @export
+OEIS_status.character <- function(x) {
+  . <- NULL
+  OEIS_check(x)
+  x %>%
+    OEIS_xml2 %>%
+    OEIS_status
+}
+
+#' @method OEIS_status OEIS_xml
+#' @export
+OEIS_status.OEIS_xml <- function(x) {
+  . <- NULL
+  seq_df <- OEIS_df(x)
   seq_df[seq_df$Line == "STATUS", ]$Description
+}
+
+#' @method OEIS_status OEIS_sequence
+#' @export
+OEIS_status.OEIS_sequence <- function(x) {
+  x$status
 }

@@ -2,21 +2,30 @@
 % Please edit documentation in R/OEIS_status.R
 \name{OEIS_status}
 \alias{OEIS_status}
-\title{OEIS sequence status from \code{seq_df} \code{data.frame}}
+\title{Get OEIS sequence status}
 \usage{
-OEIS_status(seq_df)
+OEIS_status(x)
 }
 \arguments{
-\item{seq_df}{A \code{data.frame} with sequence content.}
+\item{x}{Can be one of the following:
+\itemize{
+\item A character string with sequence \code{ID}.
+\item A S3 classes object \code{"OEIS_xml"} and \code{"xml_document"}, with
+sequence content from OEIS web.
+\item An object of \code{"OEIS_sequence"} class, that contains all sequence
+related data.
+}}
 }
 \value{
-A character string with the OEIS sequence status
+A character string with the OEIS sequence status.
 }
 \description{
 Status depends on sequence information updates.
 }
 \note{
-status can be: "approved", "editing", "proposed" or "reviewed"
+status can be: "approved", "editing", "proposed" or "reviewed".
+
+status can not be obtained from \code{"OEIS_internal"} class.
 }
 \examples{
 \dontrun{

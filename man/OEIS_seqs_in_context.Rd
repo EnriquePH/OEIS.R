@@ -7,7 +7,7 @@
 OEIS_seqs_in_context(seq_xml)
 }
 \arguments{
-\item{seq_xml}{A \code{xml_document} from an OEIS sequence.}
+\item{seq_xml}{A class \code{"xml_document"} from an OEIS sequence.}
 }
 \value{
 A character vector OEIS sequences in context IDs
