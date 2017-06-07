@@ -34,7 +34,6 @@ OEIS_date <- function(x) {
 #' @method OEIS_date character
 #' @export
 OEIS_date.character <- function(x) {
-  . <- NULL
   OEIS_check(x)
   x %>%
     OEIS_internal_format %>%
@@ -93,4 +92,3 @@ OEIS_date.OEIS_xml <- function(x) {
 OEIS_date.OEIS_sequence <- function(x) {
   x$date
 }
-

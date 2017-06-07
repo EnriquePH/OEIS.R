@@ -41,7 +41,6 @@ OEIS_status <- function(x) {
 #' @method OEIS_status character
 #' @export
 OEIS_status.character <- function(x) {
-  . <- NULL
   OEIS_check(x)
   x %>%
     OEIS_xml2 %>%
@@ -51,7 +50,6 @@ OEIS_status.character <- function(x) {
 #' @method OEIS_status OEIS_xml
 #' @export
 OEIS_status.OEIS_xml <- function(x) {
-  . <- NULL
   seq_df <- OEIS_df(x)
   seq_df[seq_df$Line == "STATUS", ]$Description
 }
