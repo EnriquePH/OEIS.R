@@ -29,6 +29,7 @@
 #'
 #' @seealso \code{\link{OEIS_url}}
 #' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_ID}}
 #' @return An object of the classes \code{"data.frame"} and
 #'   \code{"OEIS_internal"} with the full sequence text internal format.
 #' \code{\link{OEIS_check}}
@@ -60,6 +61,8 @@ OEIS_internal_format <- function(ID) {
                       stringsAsFactors = FALSE,
                       header = FALSE) %>%
     magrittr::set_colnames(c("tag", "line"))
+  # Add sequence ID
+  internal_format[internal_format$tag == "%I", ]$line <- ID
   class(internal_format) <- append(class(internal_format), "OEIS_internal")
   internal_format
 }

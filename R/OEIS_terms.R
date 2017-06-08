@@ -26,6 +26,7 @@
 #' @seealso \code{\link{OEIS_internal_format}}
 #' @seealso \code{\link{OEIS_sequence}}
 #' @seealso \code{\link{OEIS_bfile}}
+#' @seealso \code{\link{OEIS_xml2}}
 #' @return A character list with the OEIS sequence terms.
 #'
 #' @note For more terms see \code{\link{OEIS_bfile}}.
@@ -63,13 +64,12 @@ OEIS_terms.OEIS_internal <- function(x) {
     unlist
 }
 
-
 #' @method OEIS_terms OEIS_xml
 #' @export
 OEIS_terms.OEIS_xml <- function(x) {
     . <- NULL
     x %>%
-      rvest::html_nodes(. , xpath = "//tt/text()") %>%
+      rvest::html_nodes(., xpath = "//tt/text()") %>%
       magrittr::extract2(1) %>%
       rvest::html_text(.) %>%
       strsplit(., ",") %>%

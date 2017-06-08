@@ -45,4 +45,6 @@ OEIS_terms(internal_format)
 \code{\link{OEIS_sequence}}
 
 \code{\link{OEIS_bfile}}
+
+\code{\link{OEIS_xml2}}
 }
