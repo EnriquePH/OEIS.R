@@ -17,15 +17,18 @@
 #' the Keyword "frac", and with links connecting the two sequences. Only
 #' sequences that are well-defined and of general interest are included
 #'
-#' @inheritParams OEIS_author
+#' @inheritParams OEIS_description
 #'
 #' @importFrom magrittr "%>%"
-
+#' @importFrom magrittr extract2
+#' @importFrom rvest html_nodes
+#' @importFrom rvest html_text
 #' @seealso \code{\link{OEIS_internal_format}}
 #' @seealso \code{\link{OEIS_sequence}}
+#' @seealso \code{\link{OEIS_bfile}}
 #' @return A character list with the OEIS sequence terms.
-#' @export
 #'
+#' @note For more terms see \code{\link{OEIS_bfile}}.
 #' @examples
 #' \dontrun{
 #' # Wieferich primes: primes p such that p^2 divides 2^(p-1) - 1.
@@ -33,7 +36,23 @@
 #' internal_format <- OEIS_internal_format(id)
 #' OEIS_terms(internal_format)
 #' }
+#' @export
 OEIS_terms <- function(x) {
+  UseMethod("OEIS_terms", x)
+}
+
+#' @method OEIS_terms character
+#' @export
+OEIS_terms.character <- function(x) {
+  OEIS_check(x)
+  x %>%
+    OEIS_internal_format %>%
+    OEIS_terms
+}
+
+#' @method OEIS_terms OEIS_internal
+#' @export
+OEIS_terms.OEIS_internal <- function(x) {
   . <- NULL
   tags <- c("%S", "%T", "%U")
   sapply(tags, function(tag)
@@ -42,4 +61,24 @@ OEIS_terms <- function(x) {
     paste0(., collapse = "") %>%
     strsplit(., ",") %>%
     unlist
+}
+
+
+#' @method OEIS_terms OEIS_xml
+#' @export
+OEIS_terms.OEIS_xml <- function(x) {
+    . <- NULL
+    x %>%
+      rvest::html_nodes(. , xpath = "//tt/text()") %>%
+      magrittr::extract2(1) %>%
+      rvest::html_text(.) %>%
+      strsplit(., ",") %>%
+      lapply(., trimws) %>%
+      unlist
+}
+
+#' @method OEIS_terms OEIS_sequence
+#' @export
+OEIS_terms.OEIS_sequence <- function(x) {
+  x$terms
 }

@@ -18,7 +18,7 @@ related data.
 }}
 }
 \value{
-A character vector with the OEIS sequence distinct offsets
+A character vector with the OEIS sequence offsets.
 }
 \description{
 This line usually gives the subscript of the first term in the sequence. If
@@ -42,6 +42,8 @@ OEIS_offset(internal_format)
 \code{\link{OEIS_internal_format}}
 
 \code{\link{OEIS_description}}
+
+\code{\link{OEIS_xml2}}
 
 \code{\link{OEIS_sequence}}
 }

@@ -26,10 +26,11 @@
 #' @importFrom rvest html_text
 #' @seealso \code{\link{OEIS_internal_format}}
 #' @seealso \code{\link{OEIS_description}}
+#' @seealso \code{\link{OEIS_xml2}}
 #' @seealso \code{\link{OEIS_sequence}}
 #' @references \url{https://oeis.org/eishelp2.html#RS}
 #'
-#' @return A character vector with the OEIS sequence distinct offsets
+#' @return A character vector with the OEIS sequence offsets.
 #'
 #' @examples
 #' \dontrun{

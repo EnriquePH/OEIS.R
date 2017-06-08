@@ -28,6 +28,9 @@ the numerators and denominators appear as separate sequences, labeled with
 the Keyword "frac", and with links connecting the two sequences. Only
 sequences that are well-defined and of general interest are included
 }
+\note{
+For more terms see \code{\link{OEIS_bfile}}.
+}
 \examples{
 \dontrun{
 # Wieferich primes: primes p such that p^2 divides 2^(p-1) - 1.
@@ -40,4 +43,6 @@ OEIS_terms(internal_format)
 \code{\link{OEIS_internal_format}}
 
 \code{\link{OEIS_sequence}}
+
+\code{\link{OEIS_bfile}}
 }
