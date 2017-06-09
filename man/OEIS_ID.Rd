@@ -16,6 +16,7 @@ OEIS_ID(x)
 sequence content from OEIS web.
 \item An object of \code{"OEIS_sequence"} class, that contains all sequence
 related data.
+\item An object of \code{"OEIS_bfile"} class.
 }}
 }
 \value{

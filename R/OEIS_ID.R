@@ -13,7 +13,15 @@
 #'
 #' This function gives the name of the person, or persons, who contributed the
 #' sequence and their emails, if they are present and selected.
-#' @inheritParams OEIS_description
+#' @param x Can be one of the following:
+#' * A character string with sequence \code{ID}.
+#' * A \code{"OEIS_internal"} S3 class object, with sequence internal format.
+#' * A S3 classes object \code{"OEIS_xml"} and \code{"xml_document"}, with
+#' sequence content from OEIS web.
+#' * An object of \code{"OEIS_sequence"} class, that contains all sequence
+#' related data.
+#' * An object of \code{"OEIS_bfile"} class.
+#' @md
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr "%<>%"
@@ -49,7 +57,8 @@ OEIS_ID.OEIS_internal <- function(x) {
 }
 
 #' @method OEIS_ID OEIS_xml
-#' @export
+#' @export#' * An object of \code{"OEIS_sequence"} class, that contains all sequence
+#' related data.
 OEIS_ID.OEIS_xml <- function(x) {
   . <- NULL
   x %>%
@@ -65,4 +74,12 @@ OEIS_ID.OEIS_xml <- function(x) {
 #' @export
 OEIS_ID.OEIS_sequence <- function(x) {
   x$ID
+}
+
+#' @method OEIS_ID OEIS_bfile
+#' @export
+OEIS_ID.OEIS_bfile <- function(x) {
+  . <- NULL
+  x$bfile$bfile_url %>%
+    gsub(".*(A\\d{6}).*", "\\1", .)
 }

@@ -36,4 +36,6 @@ OEIS_internal_format(id)
 \code{\link{OEIS_url}}
 
 \code{\link{OEIS_xml2}}
+
+\code{\link{OEIS_ID}}
 }
