@@ -11,7 +11,7 @@
 #' OEIS sequence linked cross references from sequence information
 #' \code{data.frame}
 #'
-#' @param seq_df A \code{data.frame} with sequence content.
+#' @inheritParams OEIS_description
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr extract2
@@ -22,24 +22,59 @@
 #'
 #' @return A character vector with OEIS sequence linked cross references
 #'   \code{ID}s
-#' @export
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A240106"
 #' test_seq_html <- OEIS_xml2(id)
 #' seq_df <- OEIS_df(test_seq_html)
 #' OEIS_cf(seq_df)
-OEIS_cf <- function(seq_df) {
+#' }
+#' @export
+OEIS_cf <- function(x) {
+  UseMethod("OEIS_cf", x)
+}
+
+#' @method OEIS_cf character
+#' @export
+OEIS_cf.character <- function(x) {
+  OEIS_check(x)
+  x %>%
+    OEIS_internal_format %>%
+    OEIS_cf
+}
+
+#' @method OEIS_cf OEIS_internal
+#' @export
+OEIS_cf.OEIS_internal <- function(x) {
   . <- NULL
+  x[x$tag == "%Y", ]$line %>%
+    regmatches(., gregexpr("(A\\d{6})", .)) %>%
+    unlist %>%
+    unique
+}
+
+#' @method OEIS_cf OEIS_xml
+#' @export
+OEIS_cf.OEIS_xml <- function(x) {
+  . <- NULL
+  seq_df <- OEIS_df(x)
   seq_df[seq_df == "CROSSREFS", ]$Description %>%
     strsplit(., "Sequence") %>%
     unlist %>%
     magrittr::extract2(1) %>%
     regmatches(., gregexpr("(A\\d{6})", .)) %>%
-    unlist
+    unlist %>%
+    unique
 }
 
+#' @method OEIS_cf OEIS_sequence
+#' @export
+OEIS_cf.OEIS_sequence <- function(x) {
+  x$crossrefs$cf
+}
 
+#-------------------------------------------------------------------------------
 #  OEIS_seqs_in_context
 #' OEIS Sequences in context from from XML document
 #'
@@ -72,7 +107,7 @@ OEIS_seqs_in_context <- function(seq_xml) {
     unlist
 }
 
-
+#-------------------------------------------------------------------------------
 #  OEIS_seqs_adjacent
 #' OEIS Adjacent sequences from XML document
 #'
@@ -105,7 +140,7 @@ OEIS_seqs_adjacent <- function(seq_xml) {
     unlist
 }
 
-
+#-------------------------------------------------------------------------------
 #  OEIS_crossrefs
 #' OEIS Cross references from XML document
 #'
@@ -130,10 +165,9 @@ OEIS_seqs_adjacent <- function(seq_xml) {
 #' test_seq_html <- OEIS_xml2(id)
 #' OEIS_crossrefs(test_seq_html)
 OEIS_crossrefs <- function(seq_xml) {
-  seq_df <- OEIS_df(seq_xml)
   structure(
     list(
-      cf = OEIS_cf(seq_df),
+      cf = OEIS_cf(seq_xml),
       seqs_in_context = OEIS_seqs_in_context(seq_xml),
       seqs_adjacent = OEIS_seqs_adjacent(seq_xml)
     ),

@@ -5,10 +5,18 @@
 \title{OEIS sequence linked cross references from sequence information
 \code{data.frame}}
 \usage{
-OEIS_cf(seq_df)
+OEIS_cf(x)
 }
 \arguments{
-\item{seq_df}{A \code{data.frame} with sequence content.}
+\item{x}{Can be one of the following:
+\itemize{
+\item A character string with sequence \code{ID}.
+\item A \code{"OEIS_internal"} S3 class object, with sequence internal format.
+\item A S3 classes object \code{"OEIS_xml"} and \code{"xml_document"}, with
+sequence content from OEIS web.
+\item An object of \code{"OEIS_sequence"} class, that contains all sequence
+related data.
+}}
 }
 \value{
 A character vector with OEIS sequence linked cross references
@@ -19,10 +27,12 @@ OEIS sequence linked cross references from sequence information
 \code{data.frame}
 }
 \examples{
+\dontrun{
 id <- "A240106"
 test_seq_html <- OEIS_xml2(id)
 seq_df <- OEIS_df(test_seq_html)
 OEIS_cf(seq_df)
+}
 }
 \seealso{
 \code{\link{OEIS_seqs_adjacent}}

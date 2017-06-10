@@ -24,7 +24,6 @@
 #' @md
 #'
 #' @importFrom magrittr "%>%"
-#' @importFrom magrittr "%<>%"
 #' @importFrom magrittr add
 #'
 #' @seealso \code{\link{OEIS_description}}
