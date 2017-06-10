@@ -25,6 +25,7 @@
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr "%<>%"
+#' @importFrom magrittr add
 #'
 #' @seealso \code{\link{OEIS_description}}
 #' @seealso \code{\link{OEIS_internal_format}}
@@ -57,8 +58,7 @@ OEIS_ID.OEIS_internal <- function(x) {
 }
 
 #' @method OEIS_ID OEIS_xml
-#' @export#' * An object of \code{"OEIS_sequence"} class, that contains all sequence
-#' related data.
+#' @export
 OEIS_ID.OEIS_xml <- function(x) {
   . <- NULL
   x %>%
@@ -80,6 +80,6 @@ OEIS_ID.OEIS_sequence <- function(x) {
 #' @export
 OEIS_ID.OEIS_bfile <- function(x) {
   . <- NULL
-  x$bfile$bfile_url %>%
+  x$bfile_url %>%
     gsub(".*(A\\d{6}).*", "\\1", .)
 }
