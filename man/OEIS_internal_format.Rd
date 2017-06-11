@@ -35,7 +35,7 @@ OEIS_internal_format(id)
 \seealso{
 \code{\link{OEIS_url}}
 
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_xml}}
 
 \code{\link{OEIS_ID}}
 }

@@ -29,7 +29,7 @@ OEIS sequence linked cross references from sequence information
 \examples{
 \dontrun{
 id <- "A240106"
-test_seq_html <- OEIS_xml2(id)
+test_seq_html <- OEIS_xml(id)
 seq_df <- OEIS_df(test_seq_html)
 OEIS_cf(seq_df)
 }
@@ -39,7 +39,7 @@ OEIS_cf(seq_df)
 
 \code{\link{OEIS_crossrefs}}
 
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_xml}}
 
 \code{\link{OEIS_df}}
 }

@@ -23,14 +23,14 @@
 #' @seealso \code{\link{OEIS_author}}
 #' @seealso \code{\link{OEIS_sequence}}
 #' @seealso \code{\link{OEIS_internal_format}}
-#' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_xml}}
 #' @return A character vector with the OEIS sequence keywords.
 #'
 #' @examples
 #' \dontrun{
 #' id <- "A049323"
 #' seq <- OEIS_sequence(id)
-#' xml <- OEIS_xml2(id)
+#' xml <- OEIS_xml(id)
 #' frmt <- OEIS_internal_format(id)
 #  # Keywords from sequence ID
 #' OEIS_keywords(id)

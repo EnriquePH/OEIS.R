@@ -18,7 +18,7 @@
 #' @importFrom rvest html_table
 #' @importFrom rvest html_nodes
 #'
-#' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_xml}}
 #' @references \url{https://oeis.org/eishelp2.html#RS}
 #' @return A \code{"data.frame"} and \code{"OEIS_df"} S3 class with sequence
 #'   information lines.

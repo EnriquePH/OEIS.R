@@ -43,7 +43,7 @@ OEIS_offset(internal_format)
 
 \code{\link{OEIS_description}}
 
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_xml}}
 
 \code{\link{OEIS_sequence}}
 }

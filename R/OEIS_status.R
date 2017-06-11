@@ -20,7 +20,7 @@
 #' @md
 #'
 #' @seealso \code{\link{OEIS_df}}
-#' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_xml}}
 #'
 #' @return A character string with the OEIS sequence status.
 #' @note status can be: "approved", "editing", "proposed" or "reviewed".
@@ -29,7 +29,7 @@
 #' @examples
 #' \dontrun{
 #' id <- "A000108"
-#' test_seq_html <- OEIS_xml2(id)
+#' test_seq_html <- OEIS_xml(id)
 #' seq_df <- OEIS_df(test_seq_html)
 #' OEIS_status(seq_df)
 #' }
@@ -43,7 +43,7 @@ OEIS_status <- function(x) {
 OEIS_status.character <- function(x) {
   OEIS_check(x)
   x %>%
-    OEIS_xml2 %>%
+    OEIS_xml %>%
     OEIS_status
 }
 

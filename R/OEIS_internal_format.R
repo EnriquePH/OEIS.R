@@ -28,7 +28,7 @@
 #' @importFrom utils head
 #'
 #' @seealso \code{\link{OEIS_url}}
-#' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_xml}}
 #' @seealso \code{\link{OEIS_ID}}
 #' @return An object of the classes \code{"data.frame"} and
 #'   \code{"OEIS_internal"} with the full sequence text internal format.

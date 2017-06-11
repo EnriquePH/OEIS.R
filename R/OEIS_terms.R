@@ -26,7 +26,7 @@
 #' @seealso \code{\link{OEIS_internal_format}}
 #' @seealso \code{\link{OEIS_sequence}}
 #' @seealso \code{\link{OEIS_bfile}}
-#' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_xml}}
 #' @return A character list with the OEIS sequence terms.
 #'
 #' @note For more terms see \code{\link{OEIS_bfile}}.

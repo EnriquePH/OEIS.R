@@ -4,10 +4,18 @@
 \alias{OEIS_seqs_in_context}
 \title{OEIS Sequences in context from from XML document}
 \usage{
-OEIS_seqs_in_context(seq_xml)
+OEIS_seqs_in_context(x)
 }
 \arguments{
-\item{seq_xml}{A class \code{"xml_document"} from an OEIS sequence.}
+\item{x}{Can be one of the following:
+\itemize{
+\item A character string with sequence \code{ID}.
+\item A \code{"OEIS_internal"} S3 class object, with sequence internal format.
+\item A S3 classes object \code{"OEIS_xml"} and \code{"xml_document"}, with
+sequence content from OEIS web.
+\item An object of \code{"OEIS_sequence"} class, that contains all sequence
+related data.
+}}
 }
 \value{
 A character vector OEIS sequences in context IDs
@@ -17,16 +25,22 @@ This line show the three sequences \code{ID}s immediately before and after
 the sequence in the lexicographic listing.
 }
 \examples{
+\dontrun{
 id <- "A000112"
-test_seq_html <- OEIS_xml2(id)
-OEIS_seqs_in_context(test_seq_html)
+seq_xml <- OEIS_xml(id)
+OEIS_seqs_in_context(seq_xml)
+}
 }
 \seealso{
 \code{\link{OEIS_seqs_adjacent}}
 
 \code{\link{OEIS_crossrefs}}
 
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_cf}}
+
+\code{\link{OEIS_xml}}
 
 \code{\link{OEIS_df}}
+
+\code{\link{OEIS_ID}}
 }

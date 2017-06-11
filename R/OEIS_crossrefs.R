@@ -17,7 +17,7 @@
 #' @importFrom magrittr extract2
 #' @seealso \code{\link{OEIS_seqs_adjacent}}
 #' @seealso \code{\link{OEIS_crossrefs}}
-#' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_xml}}
 #' @seealso \code{\link{OEIS_df}}
 #'
 #' @return A character vector with OEIS sequence linked cross references
@@ -26,7 +26,7 @@
 #' @examples
 #' \dontrun{
 #' id <- "A240106"
-#' test_seq_html <- OEIS_xml2(id)
+#' test_seq_html <- OEIS_xml(id)
 #' seq_df <- OEIS_df(test_seq_html)
 #' OEIS_cf(seq_df)
 #' }
@@ -80,7 +80,7 @@ OEIS_cf.OEIS_sequence <- function(x) {
 #'
 #' This line show the three sequences \code{ID}s immediately before and after
 #' the sequence in the lexicographic listing.
-#' @inheritParams OEIS_df
+#' @inheritParams OEIS_cf
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom rvest html_text
@@ -89,22 +89,55 @@ OEIS_cf.OEIS_sequence <- function(x) {
 #' @return A character vector OEIS sequences in context IDs
 #' @seealso \code{\link{OEIS_seqs_adjacent}}
 #' @seealso \code{\link{OEIS_crossrefs}}
-#' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_cf}}
+#' @seealso \code{\link{OEIS_xml}}
 #' @seealso \code{\link{OEIS_df}}
-#' @export
+#' @seealso \code{\link{OEIS_ID}}
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A000112"
-#' test_seq_html <- OEIS_xml2(id)
-#' OEIS_seqs_in_context(test_seq_html)
-OEIS_seqs_in_context <- function(seq_xml) {
+#' seq_xml <- OEIS_xml(id)
+#' OEIS_seqs_in_context(seq_xml)
+#' }
+#' @export
+OEIS_seqs_in_context <- function(x) {
+  UseMethod("OEIS_seqs_in_context", x)
+}
+
+#' @method OEIS_seqs_in_context character
+#' @export
+OEIS_seqs_in_context.character <- function(x) {
+  OEIS_check(x)
+  x %>%
+    OEIS_xml %>%
+    OEIS_seqs_in_context
+}
+
+#' @method OEIS_seqs_in_context OEIS_internal
+#' @export
+OEIS_seqs_in_context.OEIS_internal <- function(x) {
+  x %>%
+    OEIS_ID %>%
+    OEIS_seqs_in_context
+}
+
+#' @method OEIS_seqs_in_context OEIS_xml
+#' @export
+OEIS_seqs_in_context.OEIS_xml <- function(x) {
   . <- NULL
-  seq_xml %>%
+  x %>%
     rvest::html_nodes(., xpath = "//tt") %>%
     rvest::html_text(.) %>%
     .[grep("Sequence in context:*", .)] %>%
     regmatches(., gregexpr("(A\\d{6})", .)) %>%
     unlist
+}
+
+#' @method OEIS_seqs_in_context OEIS_sequence
+#' @export
+OEIS_seqs_in_context.OEIS_sequence <- function(x) {
+  x$crossrefs$seqs_in_context
 }
 
 #-------------------------------------------------------------------------------
@@ -123,12 +156,12 @@ OEIS_seqs_in_context <- function(seq_xml) {
 #' @seealso \code{\link{OEIS_seqs_in_context}}
 #' @seealso \code{\link{OEIS_crossrefs}}
 #' @seealso \code{\link{OEIS_cf}}
-#' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_xml}}
 #' @export
 #'
 #' @examples
 #' id <- "A000112"
-#' test_seq_html <- OEIS_xml2(id)
+#' test_seq_html <- OEIS_xml(id)
 #' OEIS_seqs_adjacent(test_seq_html)
 OEIS_seqs_adjacent <- function(seq_xml) {
   . <- NULL
@@ -157,12 +190,12 @@ OEIS_seqs_adjacent <- function(seq_xml) {
 #' @seealso \code{\link{OEIS_seqs_adjacent}}
 #' @seealso \code{\link{OEIS_cf}}
 #' @seealso \code{\link{OEIS_df}}
-#' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_xml}}
 #' @export
 #'
 #' @examples
 #' id <- "A000112"
-#' test_seq_html <- OEIS_xml2(id)
+#' test_seq_html <- OEIS_xml(id)
 #' OEIS_crossrefs(test_seq_html)
 OEIS_crossrefs <- function(seq_xml) {
   structure(

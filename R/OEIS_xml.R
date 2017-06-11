@@ -1,13 +1,13 @@
 #  ----------------------------------------------------------------------------
 #  OEIS.R PACKAGE
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
-#  File: OEIS_xml2.R
+#  File: OEIS_xml.R
 #  (c) 2017 - Enrique Pérez Herrero
 #  email: eph.project1500@gmail.com
 #  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
 #  ---------------------------------------------------------------------------
 
-#  OEIS_xml2
+#  OEIS_xml
 #' Get sequence content from OEIS web as an XML document
 #'
 #' The XML document contains all the information from the OEIS web related to
@@ -25,10 +25,10 @@
 #' @examples
 #' \dontrun{
 #'  id <- "A000156"
-#'  test_seq_xml <- OEIS_xml2(id)
+#'  test_seq_xml <- OEIS_xml(id)
 #'  class(test_seq_xml)
 #' }
-OEIS_xml2 <- function(ID) {
+OEIS_xml <- function(ID) {
   . <- NULL
   OEIS_check(ID)
   seq_xml <- ID %>%

@@ -44,5 +44,5 @@ cat(example, sep = "\\n")
 
 \code{\link{OEIS_sequence}}
 
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_xml}}
 }

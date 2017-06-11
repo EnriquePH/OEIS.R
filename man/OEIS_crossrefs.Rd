@@ -18,7 +18,7 @@ Cross references IDs
 }
 \examples{
 id <- "A000112"
-test_seq_html <- OEIS_xml2(id)
+test_seq_html <- OEIS_xml(id)
 OEIS_crossrefs(test_seq_html)
 }
 \seealso{
@@ -30,5 +30,5 @@ OEIS_crossrefs(test_seq_html)
 
 \code{\link{OEIS_df}}
 
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_xml}}
 }

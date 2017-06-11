@@ -30,7 +30,7 @@ status can not be obtained from \code{"OEIS_internal"} class.
 \examples{
 \dontrun{
 id <- "A000108"
-test_seq_html <- OEIS_xml2(id)
+test_seq_html <- OEIS_xml(id)
 seq_df <- OEIS_df(test_seq_html)
 OEIS_status(seq_df)
 }
@@ -38,5 +38,5 @@ OEIS_status(seq_df)
 \seealso{
 \code{\link{OEIS_df}}
 
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_xml}}
 }

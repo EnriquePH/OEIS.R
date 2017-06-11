@@ -20,5 +20,5 @@ This lines are useful to get all the sequence format data.
 \url{https://oeis.org/eishelp2.html#RS}
 }
 \seealso{
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_xml}}
 }

@@ -42,7 +42,7 @@ A003456
 
 \code{\link{OEIS_terms}}
 
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_xml}}
 
 \code{\link{OEIS_internal_format}}
 

@@ -46,5 +46,5 @@ OEIS_terms(internal_format)
 
 \code{\link{OEIS_bfile}}
 
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_xml}}
 }

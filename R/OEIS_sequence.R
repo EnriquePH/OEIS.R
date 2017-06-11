@@ -19,7 +19,7 @@
 #' @seealso \code{\link{OEIS_formerly}}
 #' @seealso \code{\link{OEIS_bfile}}
 #' @seealso \code{\link{OEIS_terms}}
-#' @seealso \code{\link{OEIS_xml2}}
+#' @seealso \code{\link{OEIS_xml}}
 #' @seealso \code{\link{OEIS_internal_format}}
 #' @seealso \code{\link{OEIS_df}}
 #' @references \url{https://oeis.org/eishelp2.html#RS}
@@ -34,7 +34,7 @@
 #' @export
 OEIS_sequence <- function(ID){
   OEIS_check(ID)
-  seq_xml <- OEIS_xml2(ID)
+  seq_xml <- OEIS_xml(ID)
   seq_df <- OEIS_df(seq_xml)
   internal_format <- OEIS_internal_format(ID)
   structure(list(ID = ID,

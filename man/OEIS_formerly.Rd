@@ -43,5 +43,5 @@ OEIS_formerly(internal_format)
 
 \code{\link{OEIS_sequence}}
 
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_xml}}
 }

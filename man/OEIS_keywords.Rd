@@ -29,7 +29,7 @@ The actual keywords in use can be found at:
 \dontrun{
 id <- "A049323"
 seq <- OEIS_sequence(id)
-xml <- OEIS_xml2(id)
+xml <- OEIS_xml(id)
 frmt <- OEIS_internal_format(id)
 OEIS_keywords(id)
 # Keywords from "OEIS_sequence" class
@@ -47,5 +47,5 @@ OEIS_keywords(frmt)
 
 \code{\link{OEIS_internal_format}}
 
-\code{\link{OEIS_xml2}}
+\code{\link{OEIS_xml}}
 }
