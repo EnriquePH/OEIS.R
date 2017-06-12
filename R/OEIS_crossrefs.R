@@ -21,13 +21,13 @@
 #' @seealso \code{\link{OEIS_df}}
 #'
 #' @return A character vector with OEIS sequence linked cross references
-#'   \code{ID}s
+#'   \code{ID}s.
 #'
 #' @examples
 #' \dontrun{
 #' id <- "A240106"
-#' test_seq_html <- OEIS_xml(id)
-#' seq_df <- OEIS_df(test_seq_html)
+#' seq_html <- OEIS_xml(id)
+#' seq_df <- OEIS_df(seq_html)
 #' OEIS_cf(seq_df)
 #' }
 #' @export
@@ -146,7 +146,7 @@ OEIS_seqs_in_context.OEIS_sequence <- function(x) {
 #'
 #' Adjacent sequences IDs in OEIS. These are the three sequences whose A-numbers
 #' are immediately before and after the A-number of the sequence.
-#' @inheritParams OEIS_df
+#' @inheritParams OEIS_description
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom rvest html_text
@@ -157,20 +157,51 @@ OEIS_seqs_in_context.OEIS_sequence <- function(x) {
 #' @seealso \code{\link{OEIS_crossrefs}}
 #' @seealso \code{\link{OEIS_cf}}
 #' @seealso \code{\link{OEIS_xml}}
-#' @export
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A000112"
-#' test_seq_html <- OEIS_xml(id)
-#' OEIS_seqs_adjacent(test_seq_html)
-OEIS_seqs_adjacent <- function(seq_xml) {
+#' seq_html <- OEIS_xml(id)
+#' OEIS_seqs_adjacent(seq_html)
+#' }
+#' @export
+OEIS_seqs_adjacent <- function(x) {
+  UseMethod("OEIS_seqs_adjacent", x)
+}
+
+#' @method OEIS_seqs_adjacent character
+#' @export
+OEIS_seqs_adjacent.character <- function(x) {
+  OEIS_check(x)
+  x %>%
+    OEIS_xml %>%
+    OEIS_seqs_adjacent
+}
+
+#' @method OEIS_seqs_adjacent OEIS_internal
+#' @export
+OEIS_seqs_adjacent.OEIS_internal <- function(x) {
+  x %>%
+    OEIS_ID %>%
+    OEIS_seqs_adjacent
+}
+
+#' @method OEIS_seqs_adjacent OEIS_xml
+#' @export
+OEIS_seqs_adjacent.OEIS_xml <- function(x) {
   . <- NULL
-  seq_xml %>%
+  x %>%
     rvest::html_nodes(., xpath = "//tt") %>%
     rvest::html_text(.) %>%
     .[grep("Adjacent sequences:*", .)] %>%
     regmatches(., gregexpr("(A\\d{6})", .)) %>%
     unlist
+}
+
+#' @method OEIS_seqs_adjacent OEIS_sequence
+#' @export
+OEIS_seqs_adjacent.OEIS_sequence <- function(x) {
+  x$crossrefs$seqs_adjacent
 }
 
 #-------------------------------------------------------------------------------
@@ -185,7 +216,7 @@ OEIS_seqs_adjacent <- function(seq_xml) {
 #' @importFrom rvest html_nodes
 #'
 #' @return An object of the class \code{OEIS_crossrefs} including referenced
-#'   sequences, sequences in context and adjacent sequences
+#'   sequences, sequences in context and adjacent sequences.
 #' @seealso \code{\link{OEIS_seqs_in_context}}
 #' @seealso \code{\link{OEIS_seqs_adjacent}}
 #' @seealso \code{\link{OEIS_cf}}
@@ -194,9 +225,11 @@ OEIS_seqs_adjacent <- function(seq_xml) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A000112"
-#' test_seq_html <- OEIS_xml(id)
-#' OEIS_crossrefs(test_seq_html)
+#' seq_html <- OEIS_xml(id)
+#' OEIS_crossrefs(seq_html)
+#' }
 OEIS_crossrefs <- function(seq_xml) {
   structure(
     list(

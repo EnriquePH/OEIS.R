@@ -20,7 +20,7 @@ related data.
 }
 \value{
 A character vector with OEIS sequence linked cross references
-  \code{ID}s
+  \code{ID}s.
 }
 \description{
 OEIS sequence linked cross references from sequence information
@@ -29,8 +29,8 @@ OEIS sequence linked cross references from sequence information
 \examples{
 \dontrun{
 id <- "A240106"
-test_seq_html <- OEIS_xml(id)
-seq_df <- OEIS_df(test_seq_html)
+seq_html <- OEIS_xml(id)
+seq_df <- OEIS_df(seq_html)
 OEIS_cf(seq_df)
 }
 }

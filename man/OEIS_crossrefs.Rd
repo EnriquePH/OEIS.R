@@ -11,15 +11,17 @@ OEIS_crossrefs(seq_xml)
 }
 \value{
 An object of the class \code{OEIS_crossrefs} including referenced
-  sequences, sequences in context and adjacent sequences
+  sequences, sequences in context and adjacent sequences.
 }
 \description{
 Cross references IDs
 }
 \examples{
+\dontrun{
 id <- "A000112"
-test_seq_html <- OEIS_xml(id)
-OEIS_crossrefs(test_seq_html)
+seq_html <- OEIS_xml(id)
+OEIS_crossrefs(seq_html)
+}
 }
 \seealso{
 \code{\link{OEIS_seqs_in_context}}

@@ -4,10 +4,18 @@
 \alias{OEIS_seqs_adjacent}
 \title{OEIS Adjacent sequences from XML document}
 \usage{
-OEIS_seqs_adjacent(seq_xml)
+OEIS_seqs_adjacent(x)
 }
 \arguments{
-\item{seq_xml}{A class \code{"xml_document"} from an OEIS sequence.}
+\item{x}{Can be one of the following:
+\itemize{
+\item A character string with sequence \code{ID}.
+\item A \code{"OEIS_internal"} S3 class object, with sequence internal format.
+\item A S3 classes object \code{"OEIS_xml"} and \code{"xml_document"}, with
+sequence content from OEIS web.
+\item An object of \code{"OEIS_sequence"} class, that contains all sequence
+related data.
+}}
 }
 \value{
 A character vector OEIS sequences in context IDs
@@ -17,9 +25,11 @@ Adjacent sequences IDs in OEIS. These are the three sequences whose A-numbers
 are immediately before and after the A-number of the sequence.
 }
 \examples{
+\dontrun{
 id <- "A000112"
-test_seq_html <- OEIS_xml(id)
-OEIS_seqs_adjacent(test_seq_html)
+seq_html <- OEIS_xml(id)
+OEIS_seqs_adjacent(seq_html)
+}
 }
 \seealso{
 \code{\link{OEIS_seqs_in_context}}
