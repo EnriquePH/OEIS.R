@@ -2,12 +2,20 @@
 % Please edit documentation in R/OEIS_crossrefs.R
 \name{OEIS_crossrefs}
 \alias{OEIS_crossrefs}
-\title{OEIS Cross references from XML document}
+\title{OEIS Cross references}
 \usage{
-OEIS_crossrefs(seq_xml)
+OEIS_crossrefs(x)
 }
 \arguments{
-\item{seq_xml}{A class \code{"xml_document"} from an OEIS sequence.}
+\item{x}{Can be one of the following:
+\itemize{
+\item A character string with sequence \code{ID}.
+\item A \code{"OEIS_internal"} S3 class object, with sequence internal format.
+\item A S3 classes object \code{"OEIS_xml"} and \code{"xml_document"}, with
+sequence content from OEIS web.
+\item An object of \code{"OEIS_sequence"} class, that contains all sequence
+related data.
+}}
 }
 \value{
 An object of the class \code{OEIS_crossrefs} including referenced

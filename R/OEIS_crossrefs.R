@@ -206,14 +206,11 @@ OEIS_seqs_adjacent.OEIS_sequence <- function(x) {
 
 #-------------------------------------------------------------------------------
 #  OEIS_crossrefs
-#' OEIS Cross references from XML document
+#' OEIS Cross references
 #'
 #' Cross references IDs
-#' @inheritParams OEIS_df
+#' @inheritParams OEIS_description
 #'
-#' @importFrom magrittr "%>%"
-#' @importFrom rvest html_text
-#' @importFrom rvest html_nodes
 #'
 #' @return An object of the class \code{OEIS_crossrefs} including referenced
 #'   sequences, sequences in context and adjacent sequences.
@@ -222,7 +219,6 @@ OEIS_seqs_adjacent.OEIS_sequence <- function(x) {
 #' @seealso \code{\link{OEIS_cf}}
 #' @seealso \code{\link{OEIS_df}}
 #' @seealso \code{\link{OEIS_xml}}
-#' @export
 #'
 #' @examples
 #' \dontrun{
@@ -230,13 +226,21 @@ OEIS_seqs_adjacent.OEIS_sequence <- function(x) {
 #' seq_html <- OEIS_xml(id)
 #' OEIS_crossrefs(seq_html)
 #' }
-OEIS_crossrefs <- function(seq_xml) {
+#' @export
+OEIS_crossrefs <- function(x) {
+  UseMethod("OEIS_crossrefs", x)
+}
+
+#' @method OEIS_crossrefs default
+#' @export
+OEIS_crossrefs.default <- function(x) {
   structure(
     list(
-      cf = OEIS_cf(seq_xml),
-      seqs_in_context = OEIS_seqs_in_context(seq_xml),
-      seqs_adjacent = OEIS_seqs_adjacent(seq_xml)
+      cf = OEIS_cf(x),
+      seqs_in_context = OEIS_seqs_in_context(x),
+      seqs_adjacent = OEIS_seqs_adjacent(x)
     ),
     class = c("OEIS_crossrefs")
   )
 }
+
