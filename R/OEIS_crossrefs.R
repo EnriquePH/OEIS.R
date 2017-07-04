@@ -243,4 +243,3 @@ OEIS_crossrefs.default <- function(x) {
     class = c("OEIS_crossrefs")
   )
 }
-

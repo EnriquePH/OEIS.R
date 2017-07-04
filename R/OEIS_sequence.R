@@ -51,6 +51,7 @@ OEIS_sequence <- function(ID){
                  keywords = OEIS_keywords(internal_format),
                  author = OEIS_author(internal_format, email = TRUE),
                  date = OEIS_date(internal_format),
+                 extensions = OEIS_extensions(internal_format),
                  status = OEIS_status(seq_xml),
                  internal_format = internal_format,
                  seq_df = seq_df,
