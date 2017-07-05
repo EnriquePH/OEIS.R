@@ -24,9 +24,11 @@ dedekind_psi <- A001615$bfile$data[1:200, ]
     # Font size for package name.
     p_size = 20,
     s_x = 1,
-    s_y = .75,
-    s_width = 1.3,
+    s_y = 1,
+    s_width = 1.5,
     s_height = 1,
+    # y position for package name.
+    p_y = 1.5,
     # Color to fill hexagon.
     h_fill = "steelblue4",
     # Color for hexagon border.
