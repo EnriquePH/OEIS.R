@@ -5,6 +5,8 @@
 Data from [The On-Line Encyclopedia of Integer Sequences](https://oeis.org/)
 in R
 
+<a href="https://raw.githubusercontent.com/EnriquePH/OEIS.R/master/sticker/OEIS.R-sticker.png" rel="OEIS.R-sticker">![OEIS.R-sticker](https://raw.githubusercontent.com/EnriquePH/OEIS.R/master/sticker/OEIS.R-sticker.png)]</a>
+
 
 # Installation:
 
