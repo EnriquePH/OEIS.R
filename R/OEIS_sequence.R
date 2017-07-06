@@ -47,6 +47,7 @@ OEIS_sequence <- function(ID){
                  comments = OEIS_comments(internal_format),
                  example = OEIS_example(internal_format),
                  formula = OEIS_formula(internal_format),
+                 mathematica = OEIS_mathematica(internal_format),
                  crossrefs = OEIS_crossrefs(seq_xml),
                  keywords = OEIS_keywords(internal_format),
                  author = OEIS_author(internal_format, email = TRUE),
