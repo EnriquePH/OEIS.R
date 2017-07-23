@@ -59,3 +59,25 @@ OEIS_sequence <- function(ID){
                  seq_xml = seq_xml),
             class = c("OEIS_sequence"))
 }
+
+
+#' Plot class OEIS_Sequence
+#'
+#' @param x An object of the S3 class \code{"OEIS_sequence"}
+#' @param ... other arguments
+#' @importFrom graphics plot.default
+#' @return A plot of sequence terms
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' id <- "A008406"
+#' x <- OEIS_sequence(id)
+#' plot(x)
+#' }
+plot.OEIS_sequence <- function(x, ...) {
+  graphics::plot.default(x$terms,
+       xlab = "n",
+       ylab = x$ID,
+       ...)
+}
