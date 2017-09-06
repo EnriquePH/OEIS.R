@@ -4,7 +4,7 @@
 #  File: OEIS_bfile.R
 #  (c) 2017 - Enrique Pérez Herrero
 #  email: eph.project1500@gmail.com
-#  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
+#  The MIT License (MIT)
 #  ---------------------------------------------------------------------------
 
 
@@ -50,3 +50,4 @@ OEIS_bfile <- function(ID) {
                  data = data),
             class = c("OEIS_bfile"))
 }
+

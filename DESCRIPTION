@@ -1,9 +1,14 @@
 Package: OEIS.R
 Title: Data from The On-Line Encyclopedia of Integer Sequences in R
 Version: 0.0.2.4
-Date: 2017-09-18
-Authors@R: person("Enrique", "Pérez Herrero", email = "eph.project1500@gmail.com", role = c("aut", "cre"))
-Description: Use data from OEIS, "https://oeis.org/".
+Date: 2017-09-06
+Authors@R: person("Enrique", "Pérez Herrero",
+    email = "eph.project1500@gmail.com",
+    role = c("aut", "cre", "cph"))
+Description: Integer sequences from OEIS in R.
+    The On-Line Encyclopedia of Integer Sequences (OEIS), "https://oeis.org/",
+    is an online database of integer sequences. This packages provides classes,
+    and functions to work with information from OEIS in R.
 Depends: R (>= 3.3.3)
 License: file LICENSE
 Encoding: UTF-8

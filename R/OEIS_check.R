@@ -4,7 +4,7 @@
 #  File: OEIS_check.R
 #  (c) 2017 - Enrique Pérez Herrero
 #  email: eph.project1500@gmail.com
-#  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
+#  The MIT License (MIT)
 #  ---------------------------------------------------------------------------
 
 #  OEIS_check
