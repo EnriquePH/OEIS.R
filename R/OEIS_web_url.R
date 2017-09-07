@@ -4,13 +4,13 @@
 #  File: OEIS_web_url.R
 #  (c) 2017 - Enrique Pérez Herrero
 #  email: eph.project1500@gmail.com
-#  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
+#  The MIT License (MIT)
 #  ---------------------------------------------------------------------------
 
 #  OEIS_web_url
-#' OEIS web main page url
+#' OEIS main url web page
 #'
-#' @return A string with the OEIS web url
+#' @return A string with the main OEIS url: \url{https://oeis.org/}
 #' @export
 #'
 #' @examples

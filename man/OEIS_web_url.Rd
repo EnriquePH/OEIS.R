@@ -2,15 +2,15 @@
 % Please edit documentation in R/OEIS_web_url.R
 \name{OEIS_web_url}
 \alias{OEIS_web_url}
-\title{OEIS web main page url}
+\title{OEIS main url web page}
 \usage{
 OEIS_web_url()
 }
 \value{
-A string with the OEIS web url
+A string with the main OEIS url: \url{https://oeis.org/}
 }
 \description{
-OEIS web main page url
+OEIS main url web page
 }
 \examples{
 OEIS_web_url()
