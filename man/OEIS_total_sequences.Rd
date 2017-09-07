@@ -13,5 +13,5 @@ An integer with the total number of sequences in the Encyclopedia.
 Total Number of sequences in OEIS
 }
 \examples{
-OEIS_total_sequences()
+#  The MIT License (MIT)()
 }

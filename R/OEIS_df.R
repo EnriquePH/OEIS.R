@@ -4,7 +4,7 @@
 #  File: OEIS_df.R
 #  (c) 2017 - Enrique Pérez Herrero
 #  email: eph.project1500@gmail.com
-#  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
+#  The MIT License (MIT)
 #  ---------------------------------------------------------------------------
 
 #  OEIS_df
@@ -31,7 +31,5 @@ OEIS_df <- function(seq_xml) {
     magrittr::extract2(1)
   seq_df$X1 <- NULL
   names(seq_df) <- c("Line", "Description")
-  # S3 class "OEIS_df"
-  #class(seq_df) <- append(class(seq_xml), "OEIS_df")
   seq_df
 }

@@ -1,4 +1,4 @@
-#  ----------------------------------------------------------------------------
+#  The MIT License (MIT)#  ----------------------------------------------------------------------------
 #  OEIS.R PACKAGE
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_total_sequences.R
@@ -13,12 +13,12 @@
 #' @export
 #'
 #' @examples
-#' OEIS_total_sequences()
+#' #  The MIT License (MIT)()
 OEIS_total_sequences <- function() {
   . <- NULL
   OEIS_web_url() %>%
     xml2::read_html(.) %>%
-    rvest::html_nodes(., xpath = "/html/body/center[5]/font") %>%
+    rvest::html_nodes(., xpath = "//html/body/center[5]/font") %>%
     rvest::html_text(.) %>%
     sub(".* Contains ([0-9]*) sequences.", "\\1", .) %>%
     as.numeric(.)

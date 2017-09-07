@@ -53,7 +53,7 @@ OEIS_ID.character <- function(x) {
 #' @method OEIS_ID OEIS_internal
 #' @export
 OEIS_ID.OEIS_internal <- function(x) {
-  x[x$tag == "%I", ]$line
+  x[x$tag == "ID", ]$line
 }
 
 #' @method OEIS_ID OEIS_xml

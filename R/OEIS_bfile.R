@@ -50,4 +50,3 @@ OEIS_bfile <- function(ID) {
                  data = data),
             class = c("OEIS_bfile"))
 }
-

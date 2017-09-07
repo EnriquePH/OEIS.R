@@ -4,7 +4,7 @@
 #  File: OEIS_internal_format.R
 #  (c) 2017 - Enrique Pérez Herrero
 #  email: eph.project1500@gmail.com
-#  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
+#  The MIT License (MIT)
 #  ---------------------------------------------------------------------------
 
 #  OEIS_internal_format
@@ -62,7 +62,7 @@ OEIS_internal_format <- function(ID) {
                       header = FALSE) %>%
     magrittr::set_colnames(c("tag", "line"))
   # Add sequence ID
-  internal_format[internal_format$tag == "%I", ]$line <- ID
+  internal_format <- rbind(c("ID", ID), internal_format)
   class(internal_format) <- append(class(internal_format), "OEIS_internal")
   internal_format
 }
