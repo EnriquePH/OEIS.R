@@ -9,7 +9,7 @@
 
 #' Getting authors list from author vectors
 #'
-#' @param x An character list with the authors
+#' @param x A character list with sequence authors
 #'
 #' @return A character with the author list properly joined with commas and the
 #' conjunction "and"
