@@ -1,6 +1,6 @@
 Package: OEIS.R
 Title: Data from The On-Line Encyclopedia of Integer Sequences in R
-Version: 0.0.2.4
+Version: 0.0.2.5
 Date: 2017-09-06
 Authors@R: person("Enrique", "Pérez Herrero",
     email = "eph.project1500@gmail.com",

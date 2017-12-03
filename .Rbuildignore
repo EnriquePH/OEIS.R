@@ -5,3 +5,4 @@
 ^appveyor\.yml$
 ^draft_file.R$
 ^sticker$
+^deprecated$

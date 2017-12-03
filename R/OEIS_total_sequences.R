@@ -1,4 +1,4 @@
-#  The MIT License (MIT)#  ----------------------------------------------------------------------------
+#  ----------------------------------------------------------------------------
 #  OEIS.R PACKAGE
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_total_sequences.R
@@ -13,7 +13,7 @@
 #' @export
 #'
 #' @examples
-#' #  The MIT License (MIT)()
+#' OEIS_total_sequences()
 OEIS_total_sequences <- function() {
   . <- NULL
   OEIS_web_url() %>%

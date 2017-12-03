@@ -9,6 +9,8 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+# Introduction
+
 ## Install from Github
 
 Github repository: https://github.com/EnriquePH/OEIS.R
@@ -18,11 +20,30 @@ library(devtools)
 devtools::install_github("EnriquePH/OEIS.R")
 ```
 
-## Load `OEIS.R` Package
+## Loading `OEIS.R` Package
 
 ```{r}
 library(OEIS.R)
 ```
+
+
+## Getting OEIS url
+
+```{r}
+OEIS_web_url()
+```
+
+
+```{r}
+OEIS_total_sequences()
+```
+
+## Number of sequences in the encyclopedia
+
+```{r}
+OEIS_total_sequences()
+```
+
 
 ## S3 Class `OEIS_sequence`
 
