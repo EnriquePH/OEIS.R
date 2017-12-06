@@ -7,7 +7,7 @@
 author_list(x)
 }
 \arguments{
-\item{x}{An character list with the authors}
+\item{x}{A character list with sequence authors}
 }
 \value{
 A character with the author list properly joined with commas and the

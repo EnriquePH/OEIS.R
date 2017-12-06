@@ -77,7 +77,8 @@ OEIS_sequence <- function(ID){
 #' }
 plot.OEIS_sequence <- function(x, ...) {
   graphics::plot.default(x$terms,
-       xlab = "n",
-       ylab = x$ID,
-       ...)
+                         main = x$ID,
+                         xlab = "",
+                         ylab = "",
+                         ...)
 }

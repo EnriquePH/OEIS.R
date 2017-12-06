@@ -11,7 +11,9 @@ vignette: >
 
 # Introduction
 
-## Install from Github
+# Installing and loading `OEIS.R` package 
+
+## Installing package from Github
 
 Github repository: https://github.com/EnriquePH/OEIS.R
 
@@ -26,16 +28,10 @@ devtools::install_github("EnriquePH/OEIS.R")
 library(OEIS.R)
 ```
 
-
 ## Getting OEIS url
 
 ```{r}
 OEIS_web_url()
-```
-
-
-```{r}
-OEIS_total_sequences()
 ```
 
 ## Number of sequences in the encyclopedia
@@ -44,25 +40,40 @@ OEIS_total_sequences()
 OEIS_total_sequences()
 ```
 
+# Loading a sequence
 
 ## S3 Class `OEIS_sequence`
 
 ```{r}
-id <- "A003456"
-A003456 <- OEIS_sequence(id)
-class(A003456)
+id <- "A001615"
+A001615 <- OEIS_sequence(id)
+class(A001615)
+```
+
+## Basic sequence information 
+
+```{r}
+A001615$ID
+A001615$description
+A001615$formerly
+A001615$url
+```
+
+## Plotting the sequence
+
+```{r}
+plot(A001615)
 ```
 
 ```{r}
-A003456$ID
-A003456$description
-A003456$formerly
-A003456$url
+A001615$author
 ```
 
 
+## Sequence's $Bib\TeX$ reference
 ```{r}
-plot(A003456$terms)
+bib <- OEIS_bibtex(A001615)
+cat(bib)
 ```
 
 
