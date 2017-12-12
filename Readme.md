@@ -8,14 +8,21 @@ Sequences data from [The On-Line Encyclopedia of Integer Sequences](https://oeis
 
 <img src="https://raw.githubusercontent.com/EnriquePH/OEIS.R/master/sticker/OEIS.R-sticker.png" rel="OEIS.R-sticker" width="172" height="200">
 
+The On-Line Encyclopedia of Integer Sequences (OEIS) is an online database of
+integer sequences. OEIS records information on integer sequences of interest to
+both professional mathematicians and amateurs, and is widely cited.
 
-# Installation:
+# Package installation:
 
 ```
 library(devtools)
 devtools::install_github("EnriquePH/OEIS.R")
 ```
+# OEIS App
+This a `shiny` application that makes use of OEIS.R package. 
+[shiny OEIS App](https://kikesoft.shinyapps.io/OEIS/)
 
 # Links:
 * [OEIS: Explanation of Terms](https://oeis.org/eishelp2.html)
 * [THE OEIS TERMS OF USE AGREEMENT](https://oeis.org/OEISTermsOfUse.pdf)
+* [Wikipedia: On-Line Encyclopedia of Integer Sequences](https://en.wikipedia.org/wiki/On-Line_Encyclopedia_of_Integer_Sequences)

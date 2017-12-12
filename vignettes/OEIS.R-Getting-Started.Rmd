@@ -72,8 +72,8 @@ A001615$author
 
 ## Sequence's $Bib\TeX$ reference
 ```{r}
-bib <- OEIS_bibtex(A001615)
-cat(bib)
+bref <- OEIS_bibtex(A001615)
+print(bref, style = "Bibtex")
 ```
 
 

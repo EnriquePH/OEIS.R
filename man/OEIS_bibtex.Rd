@@ -4,26 +4,26 @@
 \alias{OEIS_bibtex}
 \title{Getting BibTeX citation from OEIS sequence}
 \usage{
-OEIS_bibtex(x, use_tab = TRUE)
+OEIS_bibtex(x)
 }
 \arguments{
-\item{x}{An object of the \code{OEIS_sequence} class}
-
-\item{use_tab}{A logical if \code{TRUE} adds a tabulator to BibTeX tags}
+\item{x}{An object of class \code{OEIS_sequence}}
 }
 \value{
-A character with the BibTeX citation, the function populates a
-MISC entry type, for use when nothing else fits, with the following
-fields:
+An object of class \code{bibentry} with the citation, the function
+populates a \code{Misc} entry type, for use when nothing else fits, with
+the following fields:
 \itemize{
-\item AUTHOR: The name(s) of the author(s) (in the case of more than one author,
-separated by and).
-\item TITLE:  The {O}n-{L}ine {E}ncyclopedia of {I}nteger {S}equences.
-\item HOWPUBLISHED: Link to sequence in OEIS.
-\item YEAR: The year of publication (or, if unpublished, the year of creation).
-\item MONTH: The month of publication (or, if unpublished, the month
+\item \strong{key}: a character string giving the citation key for the OEIS sequence.
+\item \strong{author}: The name(s) of the author(s) (in the case of more than one
+author, separated by \code{and}).
+\item \strong{title}:  The {O}n-{L}ine {E}ncyclopedia of {I}nteger {S}equences.
+\item \strong{url}: Link to sequence in OEIS.
+\item \strong{year}: The year of publication (or, if unpublished, the year of
+creation).
+\item \strong{month}: The month of publication (or, if unpublished, the month
 of creation).
-\item NOTE: Sequence description.
+\item \strong{note}: Sequence description.
 }
 }
 \description{
@@ -33,12 +33,16 @@ Getting BibTeX citation from OEIS sequence
 Fields tags are separated by commas. The last tag finishs with a comma,
 although is not necessarily. The tag's name is not case-sensitive but
 caps are used.
+
+For more help on \code{bibentry} class, see: \code{\link[utils]{bibentry}}
 }
 \examples{
 \dontrun{
 x <- OEIS_sequence("A170401")
-bib <- OEIS_bibtex(x)
-cat(bib, sep = "\\n")
+bref <- OEIS_bibtex(x)
+# BibTeX and citation.
+print(bref, style = "Bibtex")
+print(bref, style = "citation")
 }
 }
 \references{
@@ -48,4 +52,11 @@ cat(bib, sep = "\\n")
 \item \url{https://github.com/Psychedelic-Geometry/OEIS-Mathematica/wiki}
 \item \url{https://en.wikipedia.org/wiki/BibTeX}
 }
+}
+\seealso{
+\code{\link[utils]{person}}
+
+\code{\link[utils]{toBibtex}}
+
+\code{\link{OEIS_author}}
 }

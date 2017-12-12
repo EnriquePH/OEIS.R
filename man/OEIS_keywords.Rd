@@ -22,7 +22,7 @@ A character vector with the OEIS sequence keywords.
 }
 \description{
 These lines give keywords describing the sequence.
-The actual keywords in use can be found at:
+The actual keywords, in use, can be found at:
 \href{https://oeis.org/eishelp2.html}{Explanation of Terms Used}
 }
 \examples{

@@ -11,7 +11,7 @@
 #' OEIS sequence keywords from sequence \code{internal_format}
 #'
 #' These lines give keywords describing the sequence.
-#' The actual keywords in use can be found at:
+#' The actual keywords, in use, can be found at:
 #' \href{https://oeis.org/eishelp2.html}{Explanation of Terms Used}
 #'
 #' @inheritParams OEIS_author

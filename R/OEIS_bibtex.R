@@ -35,23 +35,30 @@ author_list <- function(x) {
 
 #' Getting BibTeX citation from OEIS sequence
 #'
-#' @param x An object of the \code{OEIS_sequence} class
-#' @param use_tab A logical if \code{TRUE} adds a tabulator to BibTeX tags
+#' @param x An object of class \code{OEIS_sequence}
+#' @importFrom utils person
+#' @importFrom utils bibentry
 #' @md
-#' @return A character with the BibTeX citation, the function populates a
-#' MISC entry type, for use when nothing else fits, with the following
-#' fields:
-#' * AUTHOR: The name(s) of the author(s) (in the case of more than one author,
-#' separated by and).
-#' * TITLE:  The {O}n-{L}ine {E}ncyclopedia of {I}nteger {S}equences.
-#' * HOWPUBLISHED: Link to sequence in OEIS.
-#' * YEAR: The year of publication (or, if unpublished, the year of creation).
-#' * MONTH: The month of publication (or, if unpublished, the month
+#' @return An object of class `bibentry` with the citation, the function
+#' populates a `Misc` entry type, for use when nothing else fits, with
+#' the following fields:
+#' * __key__: a character string giving the citation key for the OEIS sequence.
+#' * __author__: The name(s) of the author(s) (in the case of more than one
+#'  author, separated by `and`).
+#' * __title__:  The {O}n-{L}ine {E}ncyclopedia of {I}nteger {S}equences.
+#' * __url__: Link to sequence in OEIS.
+#' * __year__: The year of publication (or, if unpublished, the year of
+#'  creation).
+#' * __month__: The month of publication (or, if unpublished, the month
 #'  of creation).
-#' * NOTE: Sequence description.
+#' * __note__: Sequence description.
 #' @note Fields tags are separated by commas. The last tag finishs with a comma,
 #' although is not necessarily. The tag's name is not case-sensitive but
 #' caps are used.
+#' @note For more help on `bibentry` class, see: \code{\link[utils]{bibentry}}
+#' @seealso \code{\link[utils]{person}}
+#' @seealso \code{\link[utils]{toBibtex}}
+#' @seealso \code{\link{OEIS_author}}
 #' @references
 #' * \url{http://www.bibtex.org/Format/}
 #' * \url{http://psychedelic-geometry.blogspot.com.es/2010/02/bibtex-automatic-oeis-citations.html}
@@ -62,45 +69,43 @@ author_list <- function(x) {
 #' @examples
 #' \dontrun{
 #' x <- OEIS_sequence("A170401")
-#' bib <- OEIS_bibtex(x)
-#' cat(bib, sep = "\n")
+#' bref <- OEIS_bibtex(x)
+#' # BibTeX and citation.
+#' print(bref, style = "Bibtex")
+#' print(bref, style = "citation")
 #' }
-OEIS_bibtex <- function(x, use_tab = TRUE) {
+OEIS_bibtex <- function(x) {
   UseMethod("OEIS_bibtex")
 }
 
 #' @method OEIS_bibtex OEIS_sequence
 #' @export
-OEIS_bibtex.OEIS_sequence <- function(x, use_tab = TRUE) {
-  # tabulate tags
-  t <- ifelse(use_tab, "\t", "")
-  MISC <- paste0("@MISC{oeis", x$ID, ",")
-  AUTHOR <- author_list(x$author)
-  AUTHOR <- paste0(t, "AUTHOR = {", AUTHOR, "},")
-  TITLE <-
-    paste0(t,
-           "TITLE = {The {O}n-{L}ine {E}ncyclopedia of {I}nteger {S}equences},"
-    )
-  HOWPUBLISHED <- paste0(t, "HOWPUBLISHED = {\\href{", x$url, "{", x$ID, "}},")
+OEIS_bibtex.OEIS_sequence <- function(x) {
+  BIBTYPE <- "Misc"
+  KEY <- paste0("oeis", x$ID)
+  AUTHOR <- unlist(lapply(x$author, function(x) utils::person(x)))
+  TITLE <- "The {O}n-{L}ine {E}ncyclopedia of {I}nteger {S}equences"
+  NOTE <- paste0(x$ID, ": ", x$description)
+  URL <- x$url
+
   if (is.null(x$date)) {
+    # Date is not present.
     MONTH <- ""
     YEAR <- ""
   } else {
     MONTH <- format(x$date, "%b")
     YEAR <- format(x$date, "%Y")
   }
-  MONTH <- paste0(t, "MONTH = {", MONTH, "},")
-  YEAR <- paste0(t, "YEAR = {", YEAR, "},")
-  NOTE <- paste0(t, "NOTE = {", x$description, "},")
-
-  bib <- paste(MISC,
-               AUTHOR,
-               TITLE,
-               HOWPUBLISHED,
-               MONTH,
-               YEAR,
-               NOTE,
-               "}",
-               sep = "\n")
-  bib
+  # Bibliography Entries
+  bref <- utils::bibentry(
+    bibtype = BIBTYPE,
+    key = KEY,
+    author = AUTHOR,
+    title = TITLE,
+    note = NOTE,
+    url = URL,
+    month = MONTH,
+    year = YEAR
+  )
+  bref
 }

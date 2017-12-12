@@ -10,8 +10,8 @@ OEIS_status(x)
 \item{x}{Can be one of the following:
 \itemize{
 \item A character string with sequence \code{ID}.
-\item A S3 classes object \code{"OEIS_xml"} and \code{"xml_document"}, with
-sequence content from OEIS web.
+\item A S3 object of classes \code{"OEIS_xml"} and \code{"xml_document"}, with
+the sequence content from OEIS web.
 \item An object of \code{"OEIS_sequence"} class, that contains all sequence
 related data.
 }}
@@ -23,7 +23,13 @@ A character string with the OEIS sequence status.
 Status depends on sequence information updates.
 }
 \note{
-status can be: "approved", "editing", "proposed" or "reviewed".
+Possible status can be:
+\itemize{
+\item "approved"
+\item "editing"
+\item "proposed"
+\item "reviewed".
+}
 
 status can not be obtained from \code{"OEIS_internal"} class.
 }
@@ -36,6 +42,8 @@ OEIS_status(seq_df)
 }
 }
 \seealso{
+\code{\link{OEIS_check}}
+
 \code{\link{OEIS_df}}
 
 \code{\link{OEIS_xml}}
