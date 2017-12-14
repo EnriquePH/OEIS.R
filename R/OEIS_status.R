@@ -4,7 +4,7 @@
 #  File: OEIS_status.R
 #  (c) 2017 - Enrique Pérez Herrero
 #  email: eph.project1500@gmail.com
-#  The MIT License (MIT)007
+#  The MIT License (MIT)
 #  ---------------------------------------------------------------------------
 
 #  OEIS_status

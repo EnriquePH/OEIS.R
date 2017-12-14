@@ -1,7 +1,7 @@
 Package: OEIS.R
 Title: Data from The On-Line Encyclopedia of Integer Sequences in R
-Version: 0.0.2.7
-Date: 2017-12-10
+Version: 0.0.2.8
+Date: 2017-12-14
 Authors@R: person("Enrique", "Pérez Herrero",
     email = "eph.project1500@gmail.com",
     role = c("aut", "cre", "cph"))
@@ -19,7 +19,8 @@ Imports:
    rvest,
    magrittr,
    utils,
-   lubridate
+   lubridate,
+   ggplot2
 Suggests: knitr,
     rmarkdown,
     testthat
