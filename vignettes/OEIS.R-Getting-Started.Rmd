@@ -76,5 +76,20 @@ bref <- OEIS_bibtex(A001615)
 print(bref, style = "Bibtex")
 ```
 
+## Access $Bib\TeX$ fields
+
+```{r}
+bref$note
+```
+
+## Plotting with `ggplot2`
+
+```{r}
+library(ggplot2)
+OEIS_ggplot(A001615) + 
+  geom_line()
+```
+
+
 
 

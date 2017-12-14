@@ -24,7 +24,13 @@
 #' OEIS_ggplot(x)
 #' }
 #' @export
-OEIS_ggplot  <- function(x) {
+OEIS_ggplot <- function(x) {
+UseMethod("OEIS_ggplot", x)
+}
+
+#' @method OEIS_ggplot OEIS_sequence
+#' @export
+OEIS_ggplot.OEIS_sequence  <- function(x) {
   df <- x$bfile$data
   df[[2]] <- as.numeric(df[[2]])
   plot_title <- paste0(strwrap(OEIS_bibtex(x)$note, 70), collapse = "\n")
