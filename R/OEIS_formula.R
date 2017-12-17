@@ -23,6 +23,8 @@
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr "%<>%"
 #'
+#' @references \url{https://oeis.org/FAQ.html#Z08}
+#'
 #' @return A character string with the OEIS sequence formula lines or
 #'   \code{NULL} if there are no formulae.
 #' @export
@@ -42,26 +44,26 @@ OEIS_formula <- function(x) {
 #' @method OEIS_formula character
 #' @export
 OEIS_formula.character <- function(x) {
-  OEIS_check(x)
-  formula <- x %>%
-    OEIS_internal_format %>%
+  OEIS_check(x) %>%
     OEIS_formula
-  if (identical(formula, character(0))) {
-    formula <- NULL
-  }
-  formula
+}
+
+#' @method OEIS_formula OEIS_ID
+#' @export
+OEIS_formula.OEIS_ID <- function(x) {
+  x %>%
+    OEIS_internal_format %>%
+    OEIS_formula %>%
+    char0toNULL
 }
 
 #' @method OEIS_formula OEIS_internal
 #' @export
 OEIS_formula.OEIS_internal <- function(x) {
   . <- NULL
-  formula <- x[x$tag == "%F", ]$line %>%
-    gsub("_", "", .)
-  if (identical(formula, character(0))) {
-    formula <- NULL
-  }
-  formula
+  x[x$tag == "%F", ]$line %>%
+    gsub("_", "", .) %>%
+    char0toNULL
 }
 
 #' @method OEIS_formula OEIS_xml

@@ -10,12 +10,13 @@
 #  OEIS_check
 #' OEIS ID Validation
 #'
-#' @param ID A string with the OEIS sequence \code{ID} number.
+#' @param ID A string with the OEIS sequence identifer \code{ID} number.
 #' The A-number or sequence \code{ID} is the absolute catalogue number of the
 #' sequence.
 #' It consists of "A" followed by 6 digits.
 #'
-#' @return \code{NULL} or an error if \code{ID} is not valid
+#' @return An object of class \code{"OEIS_ID"} or an error if \code{ID} is not
+#'   an OEIS valid ID
 #' @export
 #'
 #' @examples
@@ -23,5 +24,8 @@
 OEIS_check <- function(ID) {
   if (!grepl("^A\\d{6}$", ID)) {
     stop(paste0("\"", ID, "\" is not an OEIS valid ID"))
+  } else {
+    class(ID) <- "OEIS_ID"
+    ID
   }
 }

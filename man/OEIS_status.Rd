@@ -14,6 +14,7 @@ OEIS_status(x)
 the sequence content from OEIS web.
 \item An object of \code{"OEIS_sequence"} class, that contains all sequence
 related data.
+\item An object of \code{"OEIS_ID"} class.
 }}
 }
 \value{
@@ -30,8 +31,6 @@ Possible status can be:
 \item "proposed"
 \item "reviewed".
 }
-
-status can not be obtained from \code{"OEIS_internal"} class.
 }
 \examples{
 \dontrun{

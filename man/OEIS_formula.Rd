@@ -35,6 +35,9 @@ formula <- OEIS_formula(internal_format)
 cat(formula, sep = "\\n")
 }
 }
+\references{
+\url{https://oeis.org/FAQ.html#Z08}
+}
 \seealso{
 \code{\link{OEIS_description}}
 

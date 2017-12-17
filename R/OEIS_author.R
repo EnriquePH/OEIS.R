@@ -102,12 +102,8 @@ OEIS_author.OEIS_xml <- function(x, email = FALSE) {
       gsub("(\\(.*\\))", "", .) %>%
       trimws
   }
-
-  if (identical(author, character(0))) {
-    # 'dead' sequences have no author
-    author <- NULL
-  }
-  author
+  # 'dead' sequences have no author
+  char0toNULL(author)
 }
 
 #' @method OEIS_author OEIS_sequence

@@ -51,6 +51,7 @@ print(bref, style = "citation")
 \item \url{http://psychedelic-geometry.blogspot.com.es/2010/02/bibtex-automatic-oeis-citations.html}
 \item \url{https://github.com/Psychedelic-Geometry/OEIS-Mathematica/wiki}
 \item \url{https://en.wikipedia.org/wiki/BibTeX}
+\item \url{https://oeis.org/wiki/Welcome#reference}
 }
 }
 \seealso{

@@ -9,7 +9,7 @@
 
 
 #  OEIS_offset
-#' OEIS sequence offset from \code{xml2} data
+#' OEIS sequence offset from \code{xml2} data.
 #'
 #' This line usually gives the subscript of the first term in the sequence. If
 #' the sequence gives the decimal expansion of a constant, the offset is the
@@ -29,6 +29,14 @@
 #' @seealso \code{\link{OEIS_xml}}
 #' @seealso \code{\link{OEIS_sequence}}
 #' @references \url{https://oeis.org/eishelp2.html#RS}
+#' @references \url{https://oeis.org/FAQ.html#Z23}
+#'
+#' @note In the internal format for a sequence the offset line (the %O line)
+#'   contains two numbers. The first is the offset as just defined. The second
+#'   gives the position of first entry greater than or equal to 2 in magnitude
+#'   in the sequence (or 1 if no such entry exists), starting counting at 1. The
+#'   second offset is used to determine the position of the sequence in the
+#'   lexicographic order in the database.
 #'
 #' @return A character vector with the OEIS sequence offsets.
 #'
@@ -55,7 +63,13 @@ OEIS_offset.OEIS_internal <- function(x) {
 #' @method OEIS_offset character
 #' @export
 OEIS_offset.character <- function(x) {
-  OEIS_check(x)
+  OEIS_check(x) %>%
+    OEIS_offset
+}
+
+#' @method OEIS_offset OEIS_ID
+#' @export
+OEIS_offset.OEIS_ID <- function(x) {
   x %>%
     OEIS_internal_format %>%
     OEIS_offset

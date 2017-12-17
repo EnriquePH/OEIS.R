@@ -17,6 +17,7 @@
 #' the sequence content from OEIS web.
 #' * An object of \code{"OEIS_sequence"} class, that contains all sequence
 #' related data.
+#' * An object of \code{"OEIS_ID"} class.
 #' @md
 #'
 #' @seealso \code{\link{OEIS_check}}
@@ -29,7 +30,6 @@
 #' * "editing"
 #' * "proposed"
 #' * "reviewed".
-#' @note status can not be obtained from \code{"OEIS_internal"} class.
 #'
 #' @examples
 #' \dontrun{
@@ -46,9 +46,23 @@ OEIS_status <- function(x) {
 #' @method OEIS_status character
 #' @export
 OEIS_status.character <- function(x) {
-  OEIS_check(x)
+  OEIS_check(x) %>%
+    OEIS_status
+}
+
+#' @method OEIS_status OEIS_ID
+#' @export
+OEIS_status.OEIS_ID <- function(x) {
   x %>%
     OEIS_xml %>%
+    OEIS_status
+}
+
+#' @method OEIS_ID OEIS_internal
+#' @export
+OEIS_status.OEIS_internal <- function(x) {
+  x %>%
+  OEIS_ID %>%
     OEIS_status
 }
 

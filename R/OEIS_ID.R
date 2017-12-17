@@ -47,7 +47,6 @@ OEIS_ID <- function(x) {
 #' @export
 OEIS_ID.character <- function(x) {
   OEIS_check(x)
-  x
 }
 
 #' @method OEIS_ID OEIS_internal

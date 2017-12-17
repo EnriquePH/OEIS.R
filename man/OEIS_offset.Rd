@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_offset.R
 \name{OEIS_offset}
 \alias{OEIS_offset}
-\title{OEIS sequence offset from \code{xml2} data}
+\title{OEIS sequence offset from \code{xml2} data.}
 \usage{
 OEIS_offset(x)
 }
@@ -28,6 +28,14 @@ there is a second offset, which says which term (counting from the left, and
 starting with 1), first exceeds 1 in absolute value. This is set to 1 if all
 the terms are 0 or +-1
 }
+\note{
+In the internal format for a sequence the offset line (the %O line)
+  contains two numbers. The first is the offset as just defined. The second
+  gives the position of first entry greater than or equal to 2 in magnitude
+  in the sequence (or 1 if no such entry exists), starting counting at 1. The
+  second offset is used to determine the position of the sequence in the
+  lexicographic order in the database.
+}
 \examples{
 \dontrun{
 id <- "A000056"
@@ -37,6 +45,8 @@ OEIS_offset(internal_format)
 }
 \references{
 \url{https://oeis.org/eishelp2.html#RS}
+
+\url{https://oeis.org/FAQ.html#Z23}
 }
 \seealso{
 \code{\link{OEIS_internal_format}}
