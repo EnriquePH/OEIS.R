@@ -39,26 +39,26 @@ OEIS_mathematica <- function(x) {
 #' @method OEIS_mathematica character
 #' @export
 OEIS_mathematica.character <- function(x) {
-  OEIS_check(x)
-  mathematica <- x %>%
-    OEIS_internal_format %>%
+  OEIS_check(x) %>%
     OEIS_mathematica
-  if (identical(mathematica, character(0))) {
-    mathematica <- NULL
-  }
-  mathematica
+}
+
+#' @method OEIS_mathematica OEIS_ID
+#' @export
+OEIS_mathematica.OEIS_ID <- function(x) {
+  x %>%
+    OEIS_internal_format %>%
+    OEIS_mathematica %>%
+    char0toNULL
 }
 
 #' @method OEIS_mathematica OEIS_internal
 #' @export
 OEIS_mathematica.OEIS_internal <- function(x) {
   . <- NULL
-  mathematica <- x[x$tag == "%t", ]$line %>%
-    gsub("_", "", .)
-  if (identical(mathematica, character(0))) {
-    mathematica <- NULL
-  }
-  mathematica
+  x[x$tag == "%t", ]$line %>%
+    gsub("_", "", .) %>%
+    char0toNULL
 }
 
 #' @method OEIS_mathematica OEIS_xml

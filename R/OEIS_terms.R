@@ -8,7 +8,7 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_terms
-#' Get OEIS sequence terms from XML document.
+#' Get OEIS sequence terms from `XML`` document.
 #'
 #' This is the data included in the sequence. These lines give the beginning of
 #' the sequence. Ideally the entry gives enough terms to fill about three lines
@@ -45,7 +45,13 @@ OEIS_terms <- function(x) {
 #' @method OEIS_terms character
 #' @export
 OEIS_terms.character <- function(x) {
-  OEIS_check(x)
+  OEIS_check(x) %>%
+    OEIS_terms
+}
+
+#' @method OEIS_terms OEIS_ID
+#' @export
+OEIS_terms.OEIS_ID <- function(x) {
   x %>%
     OEIS_internal_format %>%
     OEIS_terms

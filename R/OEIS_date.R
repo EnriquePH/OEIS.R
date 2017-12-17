@@ -19,7 +19,7 @@
 #' @importFrom lubridate mdy
 #'
 #' @return A \code{Date} object with the OEIS sequence creation date, or
-#'   \code{NULL} if it's not found.
+#'   \code{NULL} if no date is found.
 #'
 #' @examples
 #' \dontrun{
@@ -34,7 +34,13 @@ OEIS_date <- function(x) {
 #' @method OEIS_date character
 #' @export
 OEIS_date.character <- function(x) {
-  OEIS_check(x)
+  OEIS_check(x) %>%
+    OEIS_date
+}
+
+#' @method OEIS_date OEIS_ID
+#' @export
+OEIS_date.OEIS_ID <- function(x) {
   x %>%
     OEIS_internal_format %>%
     OEIS_date

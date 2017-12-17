@@ -29,6 +29,9 @@
 #' @seealso \code{\link{OEIS_xml}}
 #' @seealso \code{\link{OEIS_check}}
 #'
+#' @importFrom magrittr "%>%" extract2
+#' @importFrom rvest html_table
+#'
 #' @return A string with the OEIS sequence description.
 #'
 #' @examples
@@ -55,7 +58,13 @@ OEIS_description <- function(x) {
 #' @method OEIS_description character
 #' @export
 OEIS_description.character <- function(x) {
-  OEIS_check(x)
+  OEIS_check(x) %>%
+    OEIS_description
+}
+
+#' @method OEIS_description OEIS_ID
+#' @export
+OEIS_description.OEIS_ID <- function(x) {
   x %>%
     OEIS_internal_format %>%
     OEIS_description
@@ -72,9 +81,12 @@ OEIS_description.OEIS_internal <- function(x) {
 OEIS_description.OEIS_xml <- function(x) {
   . <- NULL
   x %>%
-    rvest::html_nodes(., xpath = "//td/text()") %>%
-    magrittr::extract2(16) %>%
-    gsub("\n", "", .) %>%
+    rvest::html_table(., fill = TRUE) %>%
+    magrittr::extract2(6) %>% # Donations open?
+    magrittr::extract2(3) %>%
+    strsplit(., "\n") %>%
+    unlist %>%
+    magrittr::extract2(1) %>%
     gsub("&lt;", "<", .) %>%
     gsub("&gt;", ">", .) %>%
     trimws

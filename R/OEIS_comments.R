@@ -40,26 +40,27 @@ OEIS_comments <- function(x) {
 #' @method OEIS_comments character
 #' @export
 OEIS_comments.character <- function(x) {
-  OEIS_check(x)
-  example <- x %>%
-    OEIS_internal_format %>%
+  OEIS_check(x) %>%
     OEIS_comments
-  if (identical(example, character(0))) {
-    example <- NULL
-  }
-  example
 }
+
+#' @method OEIS_comments OEIS_ID
+#' @export
+OEIS_comments.OEIS_ID <- function(x) {
+  x %>%
+    OEIS_internal_format %>%
+    OEIS_comments %>%
+    char0toNULL
+}
+
 
 #' @method OEIS_comments OEIS_internal
 #' @export
 OEIS_comments.OEIS_internal <- function(x) {
   . <- NULL
-  example <- x[x$tag == "%C", ]$line %>%
-    gsub("_", "", .)
-  if (identical(example, character(0))) {
-    example <- NULL
-  }
-  example
+  x[x$tag == "%C", ]$line %>%
+    gsub("_", "", .) %>%
+    char0toNULL
 }
 
 #' @method OEIS_comments OEIS_xml

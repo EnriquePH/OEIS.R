@@ -42,7 +42,14 @@ OEIS_author <- function(x, email = FALSE) {
 #' @export
 OEIS_author.character <- function(x, email = FALSE) {
   . <- NULL
-  OEIS_check(x)
+  OEIS_check(x) %>%
+    OEIS_author(., email)
+}
+
+#' @method OEIS_author OEIS_ID
+#' @export
+OEIS_author.OEIS_ID <- function(x, email = FALSE) {
+  . <- NULL
   x %>%
     OEIS_internal_format %>%
     OEIS_author(., email)

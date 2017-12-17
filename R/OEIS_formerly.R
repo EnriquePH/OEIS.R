@@ -44,7 +44,13 @@ OEIS_formerly <- function(x) {
 #' @method OEIS_formerly character
 #' @export
 OEIS_formerly.character <- function(x) {
-  OEIS_check(x)
+  OEIS_check(x) %>%
+    OEIS_formerly
+}
+
+#' @method OEIS_formerly OEIS_ID
+#' @export
+OEIS_formerly.OEIS_ID <- function(x) {
   x %>%
     OEIS_internal_format %>%
     OEIS_formerly
@@ -54,29 +60,23 @@ OEIS_formerly.character <- function(x) {
 #' @export
 OEIS_formerly.OEIS_internal <- function(x) {
   . <- NULL
-  formerly <- x[x$tag == "%I", ]$line %>%
+  x[x$tag == "%I", ]$line %>%
     strsplit(., " ") %>%
-    unlist
-  if (identical(formerly, character(0))) {
-    formerly <- NULL
-  }
-  formerly
+    unlist %>%
+    char0toNULL
 }
 
 #' @method OEIS_formerly OEIS_xml
 #' @export
 OEIS_formerly.OEIS_xml <- function(x) {
   . <- NULL
-  formerly <- x %>%
+  x %>%
     rvest::html_nodes(., xpath = "//td/font/text()") %>%
     rvest::html_text(.) %>%
     magrittr::extract2(5) %>%
     regmatches(., gregexpr("(\\w\\d{4})", .)) %>%
-    unlist
-  if (identical(formerly, character(0))) {
-    formerly <- NULL
-  }
-  formerly
+    unlist %>%
+    char0toNULL
 }
 
 #' @method OEIS_formerly OEIS_sequence
