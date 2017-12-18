@@ -16,7 +16,8 @@
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr "%<>%"
-#' @importFrom lubridate mdy
+#' @importFrom magrittr extract
+#' @importFrom lubridate parse_date_time
 #'
 #' @return A \code{Date} object with the OEIS sequence creation date, or
 #'   \code{NULL} if no date is found.
@@ -56,17 +57,17 @@ OEIS_date.OEIS_internal <- function(x) {
     date <- NULL
   } else {
     date %<>%
-      gsub(" and ", ",", .) %>%
       strsplit(., ",") %>%
       unlist %>%
       trimws %>%
-      # Select date as mmm dd yyyy
-      .[grep("(\\w{3} \\d{2} \\d{4})", .)]
-    if (length(date) == 0) {
+      extract(-1)
+    if (identical(date, character(0))) {
       date <- NULL
     } else {
       date %<>%
-        lubridate::mdy(., locale = "en_US.utf8")
+        # Parse complete dates or just year.
+        lubridate::parse_date_time(., c("mdY", "Y"), locale = "en_US.utf8") %>%
+        as.Date(.)
     }
   }
   date
@@ -77,18 +78,23 @@ OEIS_date.OEIS_internal <- function(x) {
 OEIS_date.OEIS_xml <- function(x) {
   . <- NULL
   seq_df <- OEIS_df(x)
-  date <- seq_df[seq_df$Line == "AUTHOR", ]$Description %>%
-    strsplit(., ",") %>%
-    unlist %>%
-    trimws %>%
-    # Select date as mmm dd yyyy
-    .[grep("(\\w{3} \\d{2} \\d{4})", .)]
-
-  if (length(date) == 0) {
+  date <- seq_df[seq_df$Line == "AUTHOR", ]$Description
+  if (identical(date, character(0))) {
+    # 'dead' sequences have no author and no date
     date <- NULL
   } else {
     date %<>%
-      lubridate::mdy(., locale = "en_US.utf8")
+      strsplit(., ",") %>%
+      unlist %>%
+      trimws %>%
+      extract(-1)
+    if (identical(date, character(0))) {
+      date <- NULL
+    } else {
+      date %<>%
+        lubridate::parse_date_time(., c("mdY", "Y"), locale = "en_US.utf8") %>%
+        as.Date(.)
+    }
   }
   date
 }

@@ -84,7 +84,8 @@ OEIS_bibtex <- function(x) {
 OEIS_bibtex.OEIS_sequence <- function(x) {
   BIBTYPE <- "Misc"
   KEY <- paste0("oeis", x$ID)
-  AUTHOR <- unlist(lapply(x$author, function(x) utils::person(x)))
+  AUTHOR <- OEIS_author(x, email = FALSE)
+  AUTHOR <- unlist(lapply(AUTHOR, function(x) utils::person(x)))
   TITLE <- "The {O}n-{L}ine {E}ncyclopedia of {I}nteger {S}equences"
   NOTE <- paste0(x$ID, ": ", x$description)
   URL <- x$url
