@@ -25,6 +25,7 @@
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr add
+#' @importFrom magrittr add extract2
 #'
 #' @seealso \code{\link{OEIS_description}}
 #' @seealso \code{\link{OEIS_internal_format}}

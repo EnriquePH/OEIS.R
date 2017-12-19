@@ -49,7 +49,13 @@ OEIS_keywords <- function(x) {
 #' @method OEIS_keywords character
 #' @export
 OEIS_keywords.character <- function(x) {
-  OEIS_check(x)
+  OEIS_check(x) %>%
+    OEIS_keywords
+}
+
+#' @method OEIS_keywords OEIS_ID
+#' @export
+OEIS_keywords.OEIS_ID <- function(x) {
   x %>%
     OEIS_internal_format %>%
     OEIS_keywords
