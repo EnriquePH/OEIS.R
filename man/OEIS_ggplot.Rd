@@ -19,6 +19,7 @@ Plot OEIS sequence with ggplot
 }
 \examples{
 \dontrun{
+# A123456: Ludwig van Beethoven, Bagatelle No. 25, Für Elise.
 id <- "A123456"
 x <- OEIS_sequence(id)
 OEIS_ggplot(x)

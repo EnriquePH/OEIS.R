@@ -13,12 +13,13 @@
 #' @param x An object of class \code{OEIS_sequence}
 #'
 #' @importFrom ggplot2 ggplot aes xlab ylab ggtitle geom_point
-#'
+#' @importFrom ggplot2 scale_y_continuous
 #' @return A graphic object of the classes `gg` and `ggplot`
 #'
 #' @seealso \code{\link{OEIS_bibtex}}
 #' @examples
 #' \dontrun{
+#' # A123456: Ludwig van Beethoven, Bagatelle No. 25, Für Elise.
 #' id <- "A123456"
 #' x <- OEIS_sequence(id)
 #' OEIS_ggplot(x)
@@ -38,5 +39,7 @@ OEIS_ggplot.OEIS_sequence  <- function(x) {
     ggplot2::ggtitle(plot_title) +
     ggplot2::xlab("n") +
     ggplot2::ylab("a(n)") +
-    ggplot2::geom_point(size = 0.1)
+    ggplot2::geom_point(size = 0.1) +
+    # https://github.com/tidyverse/ggplot2/issues/1957
+    ggplot2::scale_y_continuous(breaks = NULL)
 }
