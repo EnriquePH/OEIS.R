@@ -1,5 +1,6 @@
 [![Travis-CI Build Status](https://travis-ci.org/EnriquePH/OEIS.R.svg?branch=master)](https://travis-ci.org/EnriquePH/OEIS.R) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/EnriquePH/OEIS.R?branch=master&svg=true)](https://ci.appveyor.com/project/EnriquePH/OEIS.R)
-![License](https://img.shields.io/:license-mit-blue.svg)[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QMR7L28X52GN2)
+![License](https://img.shields.io/:license-mit-blue.svg)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QMR7L28X52GN2)
 
 
 # OEIS.R Package
@@ -56,7 +57,7 @@ OEIS_ggplot(x) +
  geom_line() +
  geom_point(size = 0.5, color = "green")
 ```
-
+![](https://raw.githubusercontent.com/EnriquePH/OEIS.R/master/img/A001615.png)
 
 ## OEIS.R App
 This a `shiny` application that makes use of OEIS.R package. 
