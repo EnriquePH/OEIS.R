@@ -22,15 +22,15 @@ is widely cited.
 Due to OEIS, many new mathematical truth has been found, more than 6000 articles
 are actually referencing OEIS.
 
-On the other hand, R is an _open source programming language and software
+On the other hand, `R` is an _open source programming language and software
 environment for statistical computing and graphics_, that is supported by the [R
 Foundation for Statistical Computing](https://www.r-project.org/foundation/).
-The R language is widely used among statisticians, data scientists, and data
+The `R language` is widely used among statisticians, data scientists, and data
 miners for developing statistical software and data analysis.
 
 This extension for `R` helps to include organized data from the [The On-Line
-Encyclopedia of Integer Sequences](https://oeis.org/) in your code, and can be
-used to find, visualize and test, new mathematical hypothesis and also can be
+Encyclopedia of Integer Sequences](https://oeis.org/) in your code, and it can
+be used to find, visualize and test, new mathematical hypothesis and also can be
 used to improve the content of the data in OEIS.
 
 
