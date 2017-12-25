@@ -20,8 +20,7 @@
 #' @seealso \code{\link{OEIS_internal_format}}
 #' @seealso \code{\link{OEIS_sequence}}
 #' @seealso \code{\link{OEIS_example}}
-#' @importFrom magrittr "%>%"
-#' @importFrom magrittr "%<>%"
+#' @importFrom magrittr "%>%" "%<>%"
 #'
 #' @note http://oeis.org/wiki/Style_Sheet
 #' @return A character string with the OEIS sequence extensions lines or

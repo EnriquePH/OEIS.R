@@ -8,7 +8,7 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_bfile_url
-#' Get \strong{bfile} url
+#' Get sequence data url in \code{bfile} format.
 #'
 #' A \strong{bfile} is a text formatted file that provides many more terms of a
 #' sequence than the typical fifty to eighty terms that can be shown in the main

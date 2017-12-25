@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_bfile_url.R
 \name{OEIS_bfile_url}
 \alias{OEIS_bfile_url}
-\title{Get \strong{bfile} url}
+\title{Get sequence data url in \code{bfile} format.}
 \usage{
 OEIS_bfile_url(ID, URL = FALSE)
 }
