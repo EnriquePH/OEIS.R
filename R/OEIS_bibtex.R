@@ -13,6 +13,7 @@
 #'
 #' @return A character with the author list properly joined with commas and the
 #' conjunction "and"
+#' @importFrom utils head tail
 #' @export
 #'
 #' @examples
@@ -25,8 +26,8 @@ author_list <- function(x) {
   if (n == 1) {
     lst <- x
   } else {
-    lst_head <- paste(head(x, n = -1), collapse = ", ")
-    lst_tail <- tail(x, n = 1)
+    lst_head <- paste(utils::head(x, n = -1), collapse = ", ")
+    lst_tail <- utils::tail(x, n = 1)
     lst <- paste(lst_head, "and", lst_tail)
   }
   lst

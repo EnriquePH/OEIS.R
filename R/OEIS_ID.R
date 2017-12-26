@@ -50,10 +50,17 @@ OEIS_ID.character <- function(x) {
   OEIS_check(x)
 }
 
+#' @method OEIS_ID OEIS_ID
+#' @export
+OEIS_ID.OEIS_ID <- function(x) {
+  x
+}
+
 #' @method OEIS_ID OEIS_internal
 #' @export
 OEIS_ID.OEIS_internal <- function(x) {
-  x[x$tag == "ID", ]$line
+  x[x$tag == "ID", ]$line %>%
+    OEIS_check
 }
 
 #' @method OEIS_ID OEIS_xml
@@ -66,7 +73,8 @@ OEIS_ID.OEIS_xml <- function(x) {
     as.numeric %>%
     magrittr::extract2(3) %>%
     magrittr::add(., 1) %>%
-    sprintf("A%06d", .)
+    sprintf("A%06d", .) %>%
+    OEIS_check
 }
 
 #' @method OEIS_ID OEIS_sequence
@@ -80,5 +88,6 @@ OEIS_ID.OEIS_sequence <- function(x) {
 OEIS_ID.OEIS_bfile <- function(x) {
   . <- NULL
   x$bfile_url %>%
-    gsub(".*(A\\d{6}).*", "\\1", .)
+    gsub(".*(A\\d{6}).*", "\\1", .) %>%
+    OEIS_check
 }

@@ -23,13 +23,13 @@
 #' @return A string with the OEIS former \code{ID} or \code{NULL}, if there is
 #'   no former sequence designation.
 #'
-#' @importFrom magrittr "%>%"
+#' @importFrom magrittr "%>%" extract2
+#' @importFrom rvest html_nodes html_text
 #'
 #' @seealso \code{\link{OEIS_description}}
 #' @seealso \code{\link{OEIS_internal_format}}
 #' @seealso \code{\link{OEIS_sequence}}
 #' @seealso \code{\link{OEIS_xml}}
-#' @export
 #'
 #' @examples
 #' \dontrun{
@@ -37,6 +37,7 @@
 #' internal_format <- OEIS_internal_format(id)
 #' OEIS_formerly(internal_format)
 #' }
+#' @export
 OEIS_formerly <- function(x) {
   UseMethod("OEIS_formerly")
 }
@@ -60,10 +61,15 @@ OEIS_formerly.OEIS_ID <- function(x) {
 #' @export
 OEIS_formerly.OEIS_internal <- function(x) {
   . <- NULL
-  x[x$tag == "%I", ]$line %>%
+  formerly <- x[x$tag == "%I", ]$line %>%
     strsplit(., " ") %>%
     unlist %>%
     char0toNULL
+    # Detect wrong ID in formerly label: sequence A050055
+    if ("%I" %in% formerly) {
+      formerly <- NULL
+    }
+  formerly
 }
 
 #' @method OEIS_formerly OEIS_xml

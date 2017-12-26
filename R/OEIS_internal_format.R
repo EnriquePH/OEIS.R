@@ -18,14 +18,10 @@
 #' @inheritParams OEIS_check
 #'
 #' @importFrom magrittr "%>%"
-#' @importFrom magrittr "%<>%"
+#' @importFrom magrittr inset
 #' @importFrom magrittr set_colnames
-#' @importFrom rvest html_text
-#' @importFrom rvest html_nodes
-#' @importFrom xml2 read_html
+#' @importFrom magrittr extract2
 #' @importFrom utils read.delim
-#' @importFrom utils tail
-#' @importFrom utils head
 #'
 #' @seealso \code{\link{OEIS_url}}
 #' @seealso \code{\link{OEIS_xml}}
@@ -36,33 +32,56 @@
 #'
 #' @references \url{https://oeis.org/eishelp1.html}
 #'
-#' @export
-#'
 #' @examples
 #' \dontrun{
 #' id <- "A000055"
 #' OEIS_internal_format(id)
 #' }
+#' @export
 OEIS_internal_format <- function(ID) {
+  UseMethod("OEIS_internal_format", ID)
+}
+
+#' @method OEIS_internal_format character
+#' @export
+OEIS_internal_format.character <- function(ID) {
+  ID %>%
+    OEIS_check %>%
+    OEIS_internal_format
+}
+
+#' @method OEIS_internal_format OEIS_ID
+#' @export
+OEIS_internal_format.OEIS_ID <- function(ID) {
   . <- NULL
-  OEIS_check(ID)
+  header_lines <- 5L
   internal_format <-
-    ID  %>%
+    ID %>%
+    OEIS_check %>%
     OEIS_url(., text = TRUE) %>%
-    xml2::read_html(.) %>%
-    rvest::html_nodes(., xpath = "//body") %>%
-    rvest::html_text(.) %>%
-    strsplit(., "\n") %>%
-    unlist %>%
-    utils::tail(., -5L) %>%
-    utils::head(., -2L) %>%
-    gsub("(%\\w{1})\\s(A\\d{6})\\s?", "\\1\t", .) %>%
-    utils::read.delim(text = .,
-                      stringsAsFactors = FALSE,
-                      header = FALSE) %>%
-    magrittr::set_colnames(c("tag", "line"))
-  # Add sequence ID
-  internal_format <- rbind(c("ID", ID), internal_format)
-  class(internal_format) <- append(class(internal_format), "OEIS_internal")
+    utils::read.delim(.,
+                      header = FALSE,
+                      skip = header_lines) %>%
+    magrittr::set_colnames(., c("data")) %>%
+    # Extract and append tag
+    magrittr::inset("tag",
+                    value = gsub("(%\\w{1})*.",
+                                 "\\1",
+                                 magrittr::extract2(., "data"))) %>%
+    # Extract and append line
+    magrittr::inset("line",
+                    value = gsub(
+                      "%\\w{1}\\sA\\d{6}\\s(*.)",
+                      "\\1",
+                      magrittr::extract2(., "data")
+                    )) %>%
+    # Delete data column
+    magrittr::inset("data", value = NULL) %>%
+    # Add sequence ID
+    rbind(c("ID", ID), .) %>%
+    head(-1) # Remove OEIS End-User License Agreement link
+
+  class(internal_format) <-
+    append(class(internal_format), "OEIS_internal")
   internal_format
 }
