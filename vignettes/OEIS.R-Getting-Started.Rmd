@@ -92,5 +92,12 @@ OEIS_ggplot(A001615) +
 ```
 
 
+## Links
+
+```{r}
+library(knitr)
+
+kable(data.frame(A001615$links))
+```
 
 

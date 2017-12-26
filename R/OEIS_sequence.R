@@ -45,6 +45,7 @@ OEIS_sequence <- function(ID){
                  terms = OEIS_terms(internal_format),
                  offset = OEIS_offset(internal_format),
                  comments = OEIS_comments(internal_format),
+                 links = OEIS_links(internal_format),
                  example = OEIS_example(internal_format),
                  formula = OEIS_formula(internal_format),
                  mathematica = OEIS_mathematica(internal_format),
