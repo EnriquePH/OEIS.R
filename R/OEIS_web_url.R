@@ -8,13 +8,17 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_web_url
-#' OEIS main url web page
-#'
-#' @return A string with the main OEIS url: \url{https://oeis.org/}
+#' OEIS server main web page url
+#' @param license A logical \code{FALSE} as default
+#' @return A string with the main OEIS url: \url{https://oeis.org/}, or the _OEIS End-User License Agreement_ url, if parameter \code{license} is \code{TRUE}
 #' @export
 #'
 #' @examples
 #' OEIS_web_url()
-OEIS_web_url <- function() {
-  "https://oeis.org/"
+#' # Show license url
+#' OEIS_web_url(license = TRUE)
+OEIS_web_url <- function(license = FALSE) {
+  url <- "https://oeis.org/"
+  license <- ifelse(license, "LICENSE", "")
+  paste0(url, license)
 }

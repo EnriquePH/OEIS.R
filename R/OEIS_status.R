@@ -18,6 +18,7 @@
 #' * An object of \code{"OEIS_sequence"} class, that contains all sequence
 #' related data.
 #' * An object of \code{"OEIS_ID"} class.
+#' @importFrom magrittr "%>%"
 #' @md
 #'
 #' @seealso \code{\link{OEIS_check}}

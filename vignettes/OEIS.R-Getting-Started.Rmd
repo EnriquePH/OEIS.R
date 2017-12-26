@@ -32,6 +32,7 @@ library(OEIS.R)
 
 ```{r}
 OEIS_web_url()
+OEIS_web_url(license = TRUE)
 ```
 
 ## Number of sequences in the encyclopedia

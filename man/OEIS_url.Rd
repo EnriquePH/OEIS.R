@@ -2,9 +2,9 @@
 % Please edit documentation in R/OEIS_url.R
 \name{OEIS_url}
 \alias{OEIS_url}
-\title{Get sequence url}
+\title{Get sequence url in the OEIS server}
 \usage{
-OEIS_url(ID, text = FALSE)
+OEIS_url(ID, text)
 }
 \arguments{
 \item{ID}{A string with the OEIS sequence identifer \code{ID} number.
@@ -16,15 +16,17 @@ It consists of "A" followed by 6 digits.}
 url, if \code{FALSE} it returns full sequence url.}
 }
 \value{
-A string with the full sequence url or the internal format url.
+A string with the full sequence url, or the internal format url.
 \code{\link{OEIS_check}}
 }
 \description{
-Get sequence url
+Get sequence url in the OEIS server
 }
 \examples{
+\dontrun{
 OEIS_url("A000055")
 OEIS_url("A000055", text = TRUE)
+}
 }
 \references{
 \url{https://oeis.org/eishelp1.html}

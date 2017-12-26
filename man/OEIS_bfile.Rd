@@ -17,8 +17,8 @@ A S3 object of the class \code{OEIS_bfile} with the following structure:
 \item \strong{min_n}:  Minimum \code{n} position of the first term for available values of the sequence.
 \item \strong{max_n}:  Maximum \code{n} position of the last term for available values of the sequence.
 \item \strong{comments}: Text comments included into the \code{bfile}
-\item \emph{data}_: A data frame including all data within the \code{bfile} with two
-colums: \strong{n} and other named as the sequence \code{ID} including sequence values for \code{a(n)}.
+\item \strong{data}: A data frame including all data within the \code{bfile} with two
+colums: \strong{n} and other named as the sequence \code{ID} including sequence values for \strong{a(n)}.
 }
 }
 \description{

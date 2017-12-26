@@ -5,7 +5,8 @@
 
 # OEIS.R Package
 
-Data from [The On-Line Encyclopedia of Integer Sequences](https://oeis.org/) in R
+Data from [The On-Line Encyclopedia of Integer Sequences](https://oeis.org/) in
+R
 
 <img src="https://raw.githubusercontent.com/EnriquePH/OEIS.R/master/sticker/OEIS.R-sticker.png" rel="OEIS.R-sticker" width="172" height="200">
 
@@ -22,13 +23,13 @@ is widely cited.
 Due to OEIS, many new mathematical truth has been found, more than 6000 articles
 are actually referencing OEIS.
 
-On the other hand, `R` is an _open source programming language and software
+On the other hand, _R_ is an _open source programming language and software
 environment for statistical computing and graphics_, that is supported by the [R
 Foundation for Statistical Computing](https://www.r-project.org/foundation/).
-The `R language` is widely used among statisticians, data scientists, and data
+_R language_ is widely used among statisticians, data scientists, and data
 miners for developing statistical software and data analysis.
 
-This extension for `R` helps to include organized data from the [The On-Line
+This extension for _R_ helps to include organized data from the [The On-Line
 Encyclopedia of Integer Sequences](https://oeis.org/) in your code, and it can
 be used to find, visualize and test, new mathematical hypothesis and also can be
 used to improve the content of the data in OEIS.
@@ -37,6 +38,7 @@ used to improve the content of the data in OEIS.
 ## Package installation:
 
 ```r
+# install.packages("devtools")
 library(devtools)
 devtools::install_github("EnriquePH/OEIS.R")
 ```
@@ -67,4 +69,5 @@ This a `shiny` application that makes use of OEIS.R package.
 * [OEIS: Explanation of Terms](https://oeis.org/eishelp2.html)
 * [THE OEIS TERMS OF USE AGREEMENT](https://oeis.org/OEISTermsOfUse.pdf)
 * [Wikipedia: On-Line Encyclopedia of Integer Sequences](https://en.wikipedia.org/wiki/On-Line_Encyclopedia_of_Integer_Sequences)
+* [The OEIS Foundation Inc](http://oeisf.org/)
 

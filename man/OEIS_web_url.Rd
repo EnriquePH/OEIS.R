@@ -2,16 +2,21 @@
 % Please edit documentation in R/OEIS_web_url.R
 \name{OEIS_web_url}
 \alias{OEIS_web_url}
-\title{OEIS main url web page}
+\title{OEIS server main web page url}
 \usage{
-OEIS_web_url()
+OEIS_web_url(license = FALSE)
+}
+\arguments{
+\item{license}{A logical \code{FALSE} as default}
 }
 \value{
-A string with the main OEIS url: \url{https://oeis.org/}
+A string with the main OEIS url: \url{https://oeis.org/}, or the _OEIS End-User License Agreement_ url, if parameter \code{license} is \code{TRUE}
 }
 \description{
-OEIS main url web page
+OEIS server main web page url
 }
 \examples{
 OEIS_web_url()
+# Show license url
+OEIS_web_url(license = TRUE)
 }
