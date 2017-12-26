@@ -4,7 +4,7 @@
 \alias{OEIS_bfile_url}
 \title{Get sequence data url in \code{bfile} format.}
 \usage{
-OEIS_bfile_url(ID, URL = FALSE)
+OEIS_bfile_url(ID, URL)
 }
 \arguments{
 \item{ID}{A string with the OEIS sequence identifer \code{ID} number.
@@ -26,8 +26,8 @@ sequence entry.
 }
 \examples{
 id <- "A000056"
-OEIS_bfile_url(id, FALSE)
-OEIS_bfile_url(id, TRUE)
+OEIS_bfile_url(id, URL = FALSE)
+OEIS_bfile_url(id, URL = TRUE)
 }
 \seealso{
 \code{\link{OEIS_url}}

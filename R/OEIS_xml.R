@@ -8,7 +8,7 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_xml
-#' Get sequence content from OEIS web as an XML document
+#' Retrieves content from OEIS web as an XML document
 #'
 #' The XML document contains all the information from the OEIS web related to
 #' the sequence.
@@ -20,7 +20,6 @@
 #' @seealso \code{\link{OEIS_check}}
 #' @return An \code{"OEIS_xml"} S3 class and \code{"xml_document"} from OEIS web
 #'   with the sequence content.
-#' @export
 #'
 #' @examples
 #' \dontrun{
@@ -28,9 +27,23 @@
 #'  test_seq_xml <- OEIS_xml(id)
 #'  class(test_seq_xml)
 #' }
+#' @export
 OEIS_xml <- function(ID) {
+  UseMethod("OEIS_xml")
+}
+
+#' @method OEIS_xml character
+#' @export
+OEIS_xml.character <- function(ID) {
+  ID %>%
+    OEIS_check %>%
+    OEIS_xml
+}
+
+#' @method OEIS_xml OEIS_ID
+#' @export
+OEIS_xml.OEIS_ID <- function(ID) {
   . <- NULL
-  OEIS_check(ID)
   seq_xml <- ID %>%
     OEIS_url %>%
     xml2::read_html(.)

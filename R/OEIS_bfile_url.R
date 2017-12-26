@@ -28,12 +28,26 @@
 #'
 #' @examples
 #' id <- "A000056"
-#' OEIS_bfile_url(id, FALSE)
-#' OEIS_bfile_url(id, TRUE)
-OEIS_bfile_url <- function(ID, URL = FALSE) {
+#' OEIS_bfile_url(id, URL = FALSE)
+#' OEIS_bfile_url(id, URL = TRUE)
+#' @export
+OEIS_bfile_url <- function(ID, URL) {
+  UseMethod("OEIS_bfile_url")
+}
+
+#' @method OEIS_bfile_url character
+#' @export
+OEIS_bfile_url.character <- function(ID, URL = FALSE) {
   . <- NULL
-  OEIS_check(ID)
-  URL <- ifelse(URL, OEIS_url(ID), "")
+  OEIS_check(ID) %>%
+    OEIS_bfile_url(., URL)
+}
+
+#' @method OEIS_bfile_url OEIS_ID
+#' @export
+OEIS_bfile_url.OEIS_ID <- function(ID, URL = FALSE) {
+  . <- NULL
+  URL <- ifelse(URL, OEIS_url(ID, text = FALSE), "")
   ID %>%
     gsub("A", "b", .) %>%
     paste0(URL, ., ".txt")

@@ -45,7 +45,8 @@ OEIS_terms <- function(x) {
 #' @method OEIS_terms character
 #' @export
 OEIS_terms.character <- function(x) {
-  OEIS_check(x) %>%
+  x %>%
+    OEIS_check %>%
     OEIS_terms
 }
 

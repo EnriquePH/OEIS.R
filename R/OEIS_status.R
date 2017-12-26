@@ -47,7 +47,8 @@ OEIS_status <- function(x) {
 #' @method OEIS_status character
 #' @export
 OEIS_status.character <- function(x) {
-  OEIS_check(x) %>%
+  x %>%
+    OEIS_check %>%
     OEIS_status
 }
 

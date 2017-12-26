@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_xml.R
 \name{OEIS_xml}
 \alias{OEIS_xml}
-\title{Get sequence content from OEIS web as an XML document}
+\title{Retrieves content from OEIS web as an XML document}
 \usage{
 OEIS_xml(ID)
 }

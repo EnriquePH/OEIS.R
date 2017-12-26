@@ -63,7 +63,8 @@ OEIS_offset.OEIS_internal <- function(x) {
 #' @method OEIS_offset character
 #' @export
 OEIS_offset.character <- function(x) {
-  OEIS_check(x) %>%
+  x %>%
+    OEIS_check %>%
     OEIS_offset
 }
 
