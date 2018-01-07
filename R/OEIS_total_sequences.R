@@ -10,6 +10,12 @@
 #' Total Number of sequences in OEIS
 #'
 #' @return An integer with the total number of sequences in the Encyclopedia.
+#'
+#' @importFrom xml2 read_html
+#' @importFrom rvest html_nodes
+#' @importFrom rvest html_text
+#' @importFrom magrittr "%>%"
+#'
 #' @export
 #'
 #' @examples
@@ -21,5 +27,5 @@ OEIS_total_sequences <- function() {
     rvest::html_nodes(., xpath = "//html/body/center[5]/font") %>%
     rvest::html_text(.) %>%
     sub(".* Contains ([0-9]*) sequences.", "\\1", .) %>%
-    as.numeric(.)
+    as.numeric
 }
