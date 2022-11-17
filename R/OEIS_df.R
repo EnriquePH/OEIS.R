@@ -39,7 +39,7 @@ OEIS_df.OEIS_xml <- function(seq_xml) {
   . <- NULL
   seq_df <- seq_xml %>%
     rvest::html_nodes(., xpath = "//tr[5]/td/table") %>%
-    rvest::html_table(., fill = FALSE) %>%
+    rvest::html_table(.) %>%
     magrittr::extract2(1)
   seq_df$X1 <- NULL
   names(seq_df) <- c("Line", "Description")

@@ -26,6 +26,6 @@ OEIS_total_sequences <- function() {
     xml2::read_html(.) %>%
     rvest::html_nodes(., xpath = "//html/body/center[5]/font") %>%
     rvest::html_text(.) %>%
-    sub(".* Contains ([0-9]*) sequences.", "\\1", .) %>%
+    sub(".* Contains ([0-9]*) sequences.*", "\\1", .) %>%
     as.numeric
 }

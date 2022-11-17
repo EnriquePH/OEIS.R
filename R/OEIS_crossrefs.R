@@ -59,7 +59,7 @@ OEIS_cf.OEIS_internal <- function(x) {
 OEIS_cf.OEIS_xml <- function(x) {
   . <- NULL
   seq_df <- OEIS_df(x)
-  seq_df[seq_df == "CROSSREFS", ]$Description %>%
+  seq_df[seq_df$Line == "CROSSREFS", ]$Description %>%
     strsplit(., "Sequence") %>%
     unlist %>%
     magrittr::extract2(1) %>%

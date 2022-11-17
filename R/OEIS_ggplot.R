@@ -35,7 +35,8 @@ OEIS_ggplot.OEIS_sequence  <- function(x) {
   df <- x$bfile$data
   df[[2]] <- as.numeric(df[[2]])
   plot_title <- paste0(strwrap(OEIS_bibtex(x)$note, 70), collapse = "\n")
-  ggplot2::ggplot(df, ggplot2::aes(x = df[[1]], y = df[[2]])) +
+  ggplot2::ggplot(df, ggplot2::aes_string(x = names(df)[[1]],
+                                          y = names(df)[[2]])) +
     ggplot2::ggtitle(plot_title) +
     ggplot2::xlab("n") +
     ggplot2::ylab("a(n)") +
