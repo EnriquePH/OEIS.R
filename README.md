@@ -1,6 +1,6 @@
-[![R-CMD-check](https://github.com/EnriquePH/OEIS.R/actions/workflows/R-CMD-check.yaml/badge.svg?branch=master)](https://github.com/EnriquePH/OEIS.R/actions/workflows/R-CMD-check.yaml) [![Travis-CI Build Status](https://travis-ci.org/EnriquePH/OEIS.R.svg?branch=master)](https://travis-ci.org/EnriquePH/OEIS.R) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/EnriquePH/OEIS.R?branch=master&svg=true)](https://ci.appveyor.com/project/EnriquePH/OEIS.R)
-![License](https://img.shields.io/:license-mit-blue.svg)
-
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/EnriquePH/OEIS.R/actions/workflows/R-CMD-check.yaml/badge.svg?branch=master)](https://github.com/EnriquePH/OEIS.R/actions/workflows/R-CMD-check.yaml) [![Travis-CI Build Status](https://travis-ci.org/EnriquePH/OEIS.R.svg?branch=master)](https://travis-ci.org/EnriquePH/OEIS.R) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/EnriquePH/OEIS.R?branch=master&svg=true)](https://ci.appveyor.com/project/EnriquePH/OEIS.R) [![Codecov test coverage](https://codecov.io/gh/EnriquePH/OEIS.R/branch/master/graph/badge.svg)](https://app.codecov.io/gh/EnriquePH/OEIS.R?branch=master) ![License](https://img.shields.io/:license-mit-blue.svg)
+ <!-- badges: end -->
 
 # OEIS.R Package
 
