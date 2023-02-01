@@ -32,7 +32,7 @@ is a typical subscript.
 id <- "A105805"
 internal_format <- OEIS_internal_format(id)
 formula <- OEIS_formula(internal_format)
-cat(formula, sep = "\\n")
+cat(formula, sep = "\n")
 }
 }
 \references{

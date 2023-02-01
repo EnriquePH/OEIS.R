@@ -36,7 +36,7 @@ http://oeis.org/wiki/Style_Sheet
 id <- "A008406"
 internal_format <- OEIS_internal_format(id)
 extensions <- OEIS_extensions(internal_format)
-cat(extensions, sep = "\\n")
+cat(extensions, sep = "\n")
 }
 }
 \seealso{

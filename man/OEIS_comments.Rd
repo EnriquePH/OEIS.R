@@ -30,7 +30,7 @@ terms of the sequence.
 id <- "A105805"
 internal_format <- OEIS_internal_format(id)
 example <- OEIS_comments(internal_format)
-cat(example, sep = "\\n")
+cat(example, sep = "\n")
 }
 }
 \seealso{

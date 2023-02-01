@@ -29,7 +29,7 @@ These lines give Mathematica code to produce the sequence.
 id <- "A105805"
 internal_format <- OEIS_internal_format(id)
 mathematica <- OEIS_mathematica(internal_format)
-cat(mathematica, sep = "\\n")
+cat(mathematica, sep = "\n")
 }
 }
 \seealso{
