@@ -12,7 +12,6 @@ Description: Integer sequences from OEIS in R.
 Depends: R (>= 3.3.3)
 License: file LICENSE
 Encoding: UTF-8
-LazyData: true
 RoxygenNote: 7.2.3
 Imports:
    xml2,
