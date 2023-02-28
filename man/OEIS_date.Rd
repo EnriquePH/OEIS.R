@@ -19,7 +19,7 @@ related data.
 }
 \value{
 A \code{Date} object with the OEIS sequence creation date, or
-  \code{NULL} if no date is found.
+  \code{NA} if no date is found.
 }
 \description{
 Sequence creation date.

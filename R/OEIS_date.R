@@ -7,7 +7,6 @@
 #  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
 #  ---------------------------------------------------------------------------
 
-
 #  OEIS_date
 #' OEIS sequence creation date from \code{data.frame}
 #'
@@ -20,7 +19,7 @@
 #' @importFrom lubridate parse_date_time
 #'
 #' @return A \code{Date} object with the OEIS sequence creation date, or
-#'   \code{NULL} if no date is found.
+#'   \code{NA} if no date is found.
 #'
 #' @examples
 #' \dontrun{
@@ -51,26 +50,28 @@ OEIS_date.OEIS_ID <- function(x) {
 #' @export
 OEIS_date.OEIS_internal <- function(x) {
   . <- NULL
-  date <- x[x$tag == "%A", ]$line
-  if (identical(date, character(0))) {
+  seq_date <- x[x$tag == "%A",]$line
+  if (identical(seq_date, character(0))) {
     # 'dead' sequences have no author and no date
-    date <- NULL
+    seq_date <- NULL
   } else {
-    date %<>%
+    seq_date %<>%
       strsplit(., ",") %>%
       unlist %>%
       trimws %>%
       extract(-1)
-    if (identical(date, character(0))) {
-      date <- NULL
+    if (identical(seq_date, character(0))) {
+      seq_date <- NULL
     } else {
-      date %<>%
+      seq_date %<>%
         # Parse complete dates or just year.
-        lubridate::parse_date_time(., c("mdY", "Y"), locale = "C") %>%
+        lubridate::parse_date_time(., c("mdY", "Y"),
+                                   quiet = TRUE,
+                                   locale = "C") %>%
         as.Date(.)
     }
   }
-  date
+  seq_date
 }
 
 #' @method OEIS_date OEIS_xml
@@ -78,25 +79,28 @@ OEIS_date.OEIS_internal <- function(x) {
 OEIS_date.OEIS_xml <- function(x) {
   . <- NULL
   seq_df <- OEIS_df(x)
-  date <- seq_df[seq_df$Line == "AUTHOR", ]$Description
-  if (identical(date, character(0))) {
+  seq_date <- seq_df[seq_df$Line == "AUTHOR", ]$Description
+  if (identical(seq_date, character(0))) {
     # 'dead' sequences have no author and no date
-    date <- NULL
+    seq_date <- NULL
   } else {
-    date %<>%
+    seq_date %<>%
       strsplit(., ",") %>%
       unlist %>%
       trimws %>%
       extract(-1)
-    if (identical(date, character(0))) {
-      date <- NULL
+    if (identical(seq_date, character(0))) {
+      seq_date <- NULL
     } else {
-      date %<>%
-        lubridate::parse_date_time(., c("mdY", "Y"), locale = "en_US.utf8") %>%
+      seq_date %<>%
+        lubridate::parse_date_time(.,
+                                   c("mdY", "Y"),
+                                   quiet = TRUE,
+                                   locale = "C") %>%
         as.Date(.)
     }
   }
-  date
+  seq_date
 }
 
 #' @method OEIS_date OEIS_sequence
