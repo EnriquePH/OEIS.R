@@ -66,7 +66,7 @@ OEIS_date.OEIS_internal <- function(x) {
     } else {
       date %<>%
         # Parse complete dates or just year.
-        lubridate::parse_date_time(., c("mdY", "Y"), locale = "en_US.utf8") %>%
+        lubridate::parse_date_time(., c("mdY", "Y"), locale = "C") %>%
         as.Date(.)
     }
   }
