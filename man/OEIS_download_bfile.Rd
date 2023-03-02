@@ -7,15 +7,15 @@
 OEIS_download_bfile(ID, destpath, ...)
 }
 \arguments{
-\item{ID}{A string with the OEIS sequence identifer \code{ID} number.
-The A-number or sequence \code{ID} is the absolute catalogue number of the
+\item{ID}{A string with the OEIS sequence identifier \code{ID} number.
+The A-number or sequence \code{ID} is the absolute catalog number of the
 sequence.
 It consists of "A" followed by 6 digits.}
 
 \item{destpath}{A character string with the name where the downloaded
 \code{bfile} is saved}
 
-\item{...}{Aditional parameters (see \link[utils]{download.file})}
+\item{...}{Additional parameters (see \link[utils]{download.file})}
 }
 \value{
 An (invisible) integer code, 0 for success and non-zero for failure.

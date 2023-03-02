@@ -30,8 +30,8 @@ of creation).
 Getting BibTeX citation from OEIS sequence
 }
 \note{
-Fields tags are separated by commas. The last tag finishs with a comma,
-although is not necessarily. The tag's name is not case-sensitive but
+Fields tags are separated by commas. The last tag finishes with a comma
+, although is not necessarily. The tag's name is not case-sensitive but
 caps are used.
 
 For more help on \code{bibentry} class, see: \code{\link[utils]{bibentry}}

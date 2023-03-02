@@ -10,3 +10,4 @@
 ^img$
 ^\.github$
 ^codecov\.yml$
+^LICENSE\.md$

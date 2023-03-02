@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_terms.R
 \name{OEIS_terms}
 \alias{OEIS_terms}
-\title{Get OEIS sequence terms from `XML`` document.}
+\title{Get OEIS sequence terms from `XML` document.}
 \usage{
 OEIS_terms(x)
 }

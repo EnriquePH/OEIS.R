@@ -12,7 +12,7 @@
 #'
 #' In OEIS \strong{internal format}, each sequence, is described by about 10
 #' lines, each line beginning %x Aabcdef where x is a letter (I,
-#' S, T, N, etc.) and abcdef is the 6-digit identification number (or catalogue
+#' S, T, N, etc.) and abcdef is the 6-digit identification number (or catalog
 #' number) of the sequence. Each sequence gets a unique A-number.
 #'
 #' @inheritParams OEIS_check

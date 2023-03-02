@@ -8,9 +8,9 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_xml
-#' Retrieves content from OEIS web as an XML document
+#' Retrieves content from OEIS web as an `XML` document
 #'
-#' The XML document contains all the information from the OEIS web related to
+#' The `XML` document contains all the information from the OEIS web related to
 #' the sequence.
 #' @inheritParams OEIS_check
 #'

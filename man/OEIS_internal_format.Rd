@@ -7,8 +7,8 @@
 OEIS_internal_format(ID)
 }
 \arguments{
-\item{ID}{A string with the OEIS sequence identifer \code{ID} number.
-The A-number or sequence \code{ID} is the absolute catalogue number of the
+\item{ID}{A string with the OEIS sequence identifier \code{ID} number.
+The A-number or sequence \code{ID} is the absolute catalog number of the
 sequence.
 It consists of "A" followed by 6 digits.}
 }
@@ -20,7 +20,7 @@ An object of the classes \code{"data.frame"} and
 \description{
 In OEIS \strong{internal format}, each sequence, is described by about 10
 lines, each line beginning %x Aabcdef where x is a letter (I,
-S, T, N, etc.) and abcdef is the 6-digit identification number (or catalogue
+S, T, N, etc.) and abcdef is the 6-digit identification number (or catalog
 number) of the sequence. Each sequence gets a unique A-number.
 }
 \examples{

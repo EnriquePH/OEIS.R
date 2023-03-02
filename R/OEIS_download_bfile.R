@@ -13,7 +13,7 @@
 #' @inheritParams OEIS_check
 #' @param destpath A character string with the name where the downloaded
 #' \code{bfile} is saved
-#' @param ... Aditional parameters (see \link[utils]{download.file})
+#' @param ... Additional parameters (see \link[utils]{download.file})
 #'
 #' @return An (invisible) integer code, 0 for success and non-zero for failure.
 #' @export

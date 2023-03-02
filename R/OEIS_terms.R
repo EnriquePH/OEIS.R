@@ -8,7 +8,7 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_terms
-#' Get OEIS sequence terms from `XML`` document.
+#' Get OEIS sequence terms from `XML` document.
 #'
 #' This is the data included in the sequence. These lines give the beginning of
 #' the sequence. Ideally the entry gives enough terms to fill about three lines

@@ -25,7 +25,7 @@
 #' * __max_n__:  Maximum `n` position of the last term for available values of the sequence.
 #' * __comments__: Text comments included into the `bfile`
 #' * __data__: A data frame including all data within the `bfile` with two
-#'  colums: __n__ and other named as the sequence `ID` including sequence values for __a(n)__.
+#'  columns: __n__ and other named as the sequence `ID` including sequence values for __a(n)__.
 #' @seealso \code{\link{OEIS_bfile_url}}
 #' @seealso \code{\link{OEIS_sequence}}
 #' @seealso \code{\link{OEIS_check}}

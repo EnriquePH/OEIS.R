@@ -2,13 +2,13 @@
 % Please edit documentation in R/OEIS_xml.R
 \name{OEIS_xml}
 \alias{OEIS_xml}
-\title{Retrieves content from OEIS web as an XML document}
+\title{Retrieves content from OEIS web as an `XML` document}
 \usage{
 OEIS_xml(ID)
 }
 \arguments{
-\item{ID}{A string with the OEIS sequence identifer \code{ID} number.
-The A-number or sequence \code{ID} is the absolute catalogue number of the
+\item{ID}{A string with the OEIS sequence identifier \code{ID} number.
+The A-number or sequence \code{ID} is the absolute catalog number of the
 sequence.
 It consists of "A" followed by 6 digits.}
 }
@@ -17,7 +17,7 @@ An \code{"OEIS_xml"} S3 class and \code{"xml_document"} from OEIS web
   with the sequence content.
 }
 \description{
-The XML document contains all the information from the OEIS web related to
+The `XML` document contains all the information from the OEIS web related to
 the sequence.
 }
 \examples{

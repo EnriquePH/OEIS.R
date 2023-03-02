@@ -53,8 +53,8 @@ author_list <- function(x) {
 #' * __month__: The month of publication (or, if unpublished, the month
 #'  of creation).
 #' * __note__: Sequence description.
-#' @note Fields tags are separated by commas. The last tag finishs with a comma,
-#' although is not necessarily. The tag's name is not case-sensitive but
+#' @note Fields tags are separated by commas. The last tag finishes with a comma
+#' , although is not necessarily. The tag's name is not case-sensitive but
 #' caps are used.
 #' @note For more help on `bibentry` class, see: \code{\link[utils]{bibentry}}
 #' @seealso \code{\link[utils]{person}}

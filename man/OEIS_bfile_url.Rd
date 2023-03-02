@@ -7,8 +7,8 @@
 OEIS_bfile_url(ID, URL)
 }
 \arguments{
-\item{ID}{A string with the OEIS sequence identifer \code{ID} number.
-The A-number or sequence \code{ID} is the absolute catalogue number of the
+\item{ID}{A string with the OEIS sequence identifier \code{ID} number.
+The A-number or sequence \code{ID} is the absolute catalog number of the
 sequence.
 It consists of "A" followed by 6 digits.}
 
