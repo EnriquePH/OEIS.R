@@ -8,10 +8,10 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_comments
-#' OEIS sequence example lines from sequence \code{internal_format}
+#' OEIS sequence comments lines from sequence \code{internal_format}
 #'
-#' These lines give expanded information or examples to illustrate the initial
-#' terms of the sequence.
+#' The comments field in OEIS sequence entries is for information that does
+#' not quite fit in other fields.
 #' @inheritParams OEIS_description
 #'
 #' @importFrom magrittr "%>%"
@@ -22,8 +22,8 @@
 #' @seealso \code{\link{OEIS_formula}}
 #' @seealso \code{\link{OEIS_sequence}}
 #' @seealso \code{\link{OEIS_xml}}
-#' @return A character string with the OEIS sequence lines of examples or
-#'   \code{NULL} if there are no examples.
+#' @return A character string with the OEIS sequence comments lines from the
+#'    sequence or \code{NULL} if there are no comments.
 #'
 #' @examples
 #' \dontrun{
@@ -52,7 +52,6 @@ OEIS_comments.OEIS_ID <- function(x) {
     OEIS_comments %>%
     char0toNULL
 }
-
 
 #' @method OEIS_comments OEIS_internal
 #' @export

@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_comments.R
 \name{OEIS_comments}
 \alias{OEIS_comments}
-\title{OEIS sequence example lines from sequence \code{internal_format}}
+\title{OEIS sequence comments lines from sequence \code{internal_format}}
 \usage{
 OEIS_comments(x)
 }
@@ -18,12 +18,12 @@ related data.
 }}
 }
 \value{
-A character string with the OEIS sequence lines of examples or
-  \code{NULL} if there are no examples.
+A character string with the OEIS sequence comments lines from the
+   sequence or \code{NULL} if there are no comments.
 }
 \description{
-These lines give expanded information or examples to illustrate the initial
-terms of the sequence.
+The comments field in OEIS sequence entries is for information that does
+not quite fit in other fields.
 }
 \examples{
 \dontrun{
