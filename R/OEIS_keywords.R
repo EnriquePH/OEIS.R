@@ -20,14 +20,13 @@
 #' @importFrom rvest html_nodes
 #' @importFrom rvest html_text
 #'
-#' @seealso \code{\link{OEIS_author}}
-#' @seealso \code{\link{OEIS_sequence}}
-#' @seealso \code{\link{OEIS_internal_format}}
-#' @seealso \code{\link{OEIS_xml}}
+#' @seealso * \code{\link{OEIS_author}}
+#' @seealso * \code{\link{OEIS_sequence}}
+#' @seealso * \code{\link{OEIS_internal_format}}
+#' @seealso * \code{\link{OEIS_xml}}
 #' @return A character vector with the OEIS sequence keywords.
 #'
 #' @examples
-#' \dontrun{
 #' id <- "A049323"
 #' seq <- OEIS_sequence(id)
 #' xml <- OEIS_xml(id)
@@ -40,7 +39,7 @@
 #' OEIS_keywords(xml)
 #' # Keywords from internal format: "OEIS_internal" class
 #' OEIS_keywords(frmt)
-#' }
+#'
 #' @export
 OEIS_keywords <- function(x) {
   UseMethod("OEIS_keywords", x)

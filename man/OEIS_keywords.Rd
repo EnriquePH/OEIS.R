@@ -26,7 +26,6 @@ The actual keywords, in use, can be found at:
 \href{https://oeis.org/eishelp2.html}{Explanation of Terms Used}
 }
 \examples{
-\dontrun{
 id <- "A049323"
 seq <- OEIS_sequence(id)
 xml <- OEIS_xml(id)
@@ -38,14 +37,14 @@ OEIS_keywords(seq)
 OEIS_keywords(xml)
 # Keywords from internal format: "OEIS_internal" class
 OEIS_keywords(frmt)
-}
+
 }
 \seealso{
-\code{\link{OEIS_author}}
+* \code{\link{OEIS_author}}
 
-\code{\link{OEIS_sequence}}
+* \code{\link{OEIS_sequence}}
 
-\code{\link{OEIS_internal_format}}
+* \code{\link{OEIS_internal_format}}
 
-\code{\link{OEIS_xml}}
+* \code{\link{OEIS_xml}}
 }
