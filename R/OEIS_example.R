@@ -23,7 +23,7 @@
 #' @seealso \code{\link{OEIS_sequence}}
 #' @seealso \code{\link{OEIS_xml}}
 #' @return A character string with the OEIS sequence lines of examples or
-#'   \code{NULL} if there are no examples.
+#'   \code{NULL} where no examples are available.
 #'
 #' @examples
 #' \dontrun{

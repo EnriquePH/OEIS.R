@@ -22,15 +22,15 @@
 #' @seealso \code{\link{OEIS_xml}}
 #' @seealso \code{\link{OEIS_internal_format}}
 #' @seealso \code{\link{OEIS_df}}
-#' @references \url{https://oeis.org/eishelp2.html#RS}
+#' @references \url{https://oeis.org/eishelp2.html#RS}{Explanation of Terms Used
+#'   in Reply From}
 #'
 #' @examples
-#' \dontrun{
 #' id <- "A003456"
 #' A003456 <- OEIS_sequence(id)
 #' class(A003456)
 #' A003456
-#' }
+#'
 #' @export
 OEIS_sequence <- function(ID){
   ID <- OEIS_check(ID)

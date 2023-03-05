@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_links.R
 \name{OEIS_links}
 \alias{OEIS_links}
-\title{Links from sequence data-}
+\title{Links from sequence data}
 \usage{
 OEIS_links(x)
 }
@@ -22,15 +22,14 @@ A character string with the OEIS sequence lines of links or
   \code{NULL} if there are no links
 }
 \description{
-These lines give Mathematica code to produce the sequence.
+These lines give `Mathematica` code to produce the sequence.
 }
 \examples{
-\dontrun{
 id <- "A105805"
 internal_format <- OEIS_internal_format(id)
 lnks <- OEIS_links(internal_format)
 cat(lnks, sep = "\n")
-}
+
 }
 \seealso{
 \code{\link{OEIS_description}}

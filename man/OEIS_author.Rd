@@ -18,9 +18,9 @@ sequence content from OEIS web.
 related data.
 }}
 
-\item{email}{A logical, by specifying: \code{email = TRUE}, author's email is
-returned, if it is present, together with author's name. The default value
-of \code{email} is \code{FALSE}.}
+\item{email}{A logical, by specifying: \code{email = TRUE}, the author's
+email is returned, if present, with the author's name. The default value of
+\code{email} is \code{FALSE}.}
 }
 \value{
 A character vector with the OEIS sequence authors and emails.
@@ -30,10 +30,9 @@ This function gives the name of the person, or persons, who contributed the
 sequence and their emails, if they are present and selected.
 }
 \examples{
-\dontrun{
 id <- "A169890"
 OEIS_author(id, email = TRUE)
-}
+
 }
 \seealso{
 \code{\link{OEIS_description}}

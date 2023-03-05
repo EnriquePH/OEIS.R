@@ -8,9 +8,9 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_links
-#' Links from sequence data-
+#' Links from sequence data
 #'
-#' These lines give Mathematica code to produce the sequence.
+#' These lines give `Mathematica` code to produce the sequence.
 #' @inheritParams OEIS_description
 #'
 #' @importFrom magrittr "%>%"
@@ -25,12 +25,11 @@
 #'   \code{NULL} if there are no links
 #'
 #' @examples
-#' \dontrun{
 #' id <- "A105805"
 #' internal_format <- OEIS_internal_format(id)
 #' lnks <- OEIS_links(internal_format)
 #' cat(lnks, sep = "\n")
-#' }
+#'
 #' @export
 OEIS_links <- function(x) {
   UseMethod("OEIS_links", x)

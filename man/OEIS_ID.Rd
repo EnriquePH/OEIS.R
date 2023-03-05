@@ -8,36 +8,43 @@
 OEIS_ID(x)
 }
 \arguments{
-\item{x}{Can be one of the following:
+\item{Where}{\code{x} can be one of the following:
 \itemize{
 \item A character string with sequence \code{ID}.
-\item A \code{"OEIS_internal"} S3 class object, with sequence internal format.
-\item A S3 classes object \code{"OEIS_xml"} and \code{"xml_document"}, with
+\item A \code{OEIS_internal} S3 class object, with sequence internal format.
+\item A S3 classes object \code{OEIS_xml} and \code{xml_document}, with
 sequence content from OEIS web.
-\item An object of \code{"OEIS_sequence"} class, that contains all sequence
+\item An object of \code{OEIS_sequence} class, that contains all sequence
 related data.
-\item An object of \code{"OEIS_bfile"} class.
+\item An object of \code{OEIS_bfile} class.
 }}
 }
 \value{
-A character string with OEIS sequence ID.
+A character string with the OEIS sequence \code{ID}.
 }
 \description{
 This function gives the name of the person, or persons, who contributed the
 sequence and their emails, if they are present and selected.
 }
 \examples{
-\dontrun{
 id <- "A169890"
 OEIS_ID(id)
-}
+
 }
 \seealso{
-\code{\link{OEIS_description}}
+\itemize{
+\item \code{\link{OEIS_description}}
+}
 
-\code{\link{OEIS_internal_format}}
+\itemize{
+\item \code{\link{OEIS_internal_format}}
+}
 
-\code{\link{OEIS_sequence}}
+\itemize{
+\item \code{\link{OEIS_sequence}}
+}
 
-\code{\link{OEIS_check}}
+\itemize{
+\item \code{\link{OEIS_check}}
+}
 }

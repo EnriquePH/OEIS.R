@@ -61,21 +61,20 @@ author_list <- function(x) {
 #' @seealso \code{\link[utils]{toBibtex}}
 #' @seealso \code{\link{OEIS_author}}
 #' @references
-#' * \url{http://www.bibtex.org/Format/}
-#' * \url{http://psychedelic-geometry.blogspot.com.es/2010/02/bibtex-automatic-oeis-citations.html}
-#' * \url{https://github.com/Psychedelic-Geometry/OEIS-Mathematica/wiki}
-#' * \url{https://en.wikipedia.org/wiki/BibTeX}
-#' * \url{https://oeis.org/wiki/Welcome#reference}
+#' * \href{http://www.bibtex.org/Format/}{BibTeX Format Description}
+#' * \href{http://psychedelic-geometry.blogspot.com.es/2010/02/bibtex-automatic-oeis-citations.html}{BibTeX AUTOMATIC OEIS CITATIONS}
+#' * \href{https://github.com/Psychedelic-Geometry/OEIS-Mathematica/wiki}{Mathematica OEIS Package}
+#' * \href{https://en.wikipedia.org/wiki/BibTeX}{Wikipedia: BibTex}
+#' * \href{https://oeis.org/wiki/Welcome#reference}{Referencing a Particular Sequence}
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' x <- OEIS_sequence("A170401")
 #' bref <- OEIS_bibtex(x)
 #' # BibTeX and citation.
 #' print(bref, style = "Bibtex")
 #' print(bref, style = "citation")
-#' }
+#'
 OEIS_bibtex <- function(x) {
   UseMethod("OEIS_bibtex")
 }

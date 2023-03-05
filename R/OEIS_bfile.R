@@ -29,12 +29,12 @@
 #' @seealso \code{\link{OEIS_bfile_url}}
 #' @seealso \code{\link{OEIS_sequence}}
 #' @seealso \code{\link{OEIS_check}}
+#' @seealso \code{\link{OEIS_download_bfile}}
 #'
 #' @examples
-#' \dontrun{
 #' id <- "A000056"
 #' OEIS_bfile(id)
-#' }
+#'
 #' @export
 OEIS_bfile <- function(ID) {
   UseMethod("OEIS_bfile", ID)

@@ -22,3 +22,8 @@ OEIS ID Validation
 \examples{
 OEIS_check("A002000")
 }
+\seealso{
+\code{\link{OEIS_url}}
+
+\code{\link{OEIS_ID}}
+}

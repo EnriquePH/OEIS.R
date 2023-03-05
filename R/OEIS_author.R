@@ -14,9 +14,9 @@
 #' This function gives the name of the person, or persons, who contributed the
 #' sequence and their emails, if they are present and selected.
 #' @inheritParams OEIS_description
-#' @param email A logical, by specifying: \code{email = TRUE}, author's email is
-#'   returned, if it is present, together with author's name. The default value
-#'   of \code{email} is \code{FALSE}.
+#' @param email A logical, by specifying: \code{email = TRUE}, the author's
+#' email is returned, if present, with the author's name. The default value of
+#' \code{email} is \code{FALSE}.
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr "%<>%"
@@ -29,10 +29,9 @@
 #' @return A character vector with the OEIS sequence authors and emails.
 #'
 #' @examples
-#' \dontrun{
 #' id <- "A169890"
 #' OEIS_author(id, email = TRUE)
-#' }
+#'
 #' @export
 OEIS_author <- function(x, email = FALSE) {
   UseMethod("OEIS_author")

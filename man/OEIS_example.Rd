@@ -19,7 +19,7 @@ related data.
 }
 \value{
 A character string with the OEIS sequence lines of examples or
-  \code{NULL} if there are no examples.
+  \code{NULL} where no examples are available.
 }
 \description{
 These lines give expanded information or examples to illustrate the initial

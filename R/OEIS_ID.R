@@ -13,32 +13,31 @@
 #'
 #' This function gives the name of the person, or persons, who contributed the
 #' sequence and their emails, if they are present and selected.
-#' @param x Can be one of the following:
+#' @param Where `x` can be one of the following:
 #' * A character string with sequence \code{ID}.
-#' * A \code{"OEIS_internal"} S3 class object, with sequence internal format.
-#' * A S3 classes object \code{"OEIS_xml"} and \code{"xml_document"}, with
+#' * A \code{OEIS_internal} S3 class object, with sequence internal format.
+#' * A S3 classes object \code{OEIS_xml} and \code{xml_document}, with
 #' sequence content from OEIS web.
-#' * An object of \code{"OEIS_sequence"} class, that contains all sequence
+#' * An object of \code{OEIS_sequence} class, that contains all sequence
 #' related data.
-#' * An object of \code{"OEIS_bfile"} class.
+#' * An object of \code{OEIS_bfile} class.
 #' @md
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr add
 #' @importFrom magrittr add extract2
 #'
-#' @seealso \code{\link{OEIS_description}}
-#' @seealso \code{\link{OEIS_internal_format}}
-#' @seealso \code{\link{OEIS_sequence}}
-#' @seealso \code{\link{OEIS_check}}
+#' @seealso * \code{\link{OEIS_description}}
+#' @seealso * \code{\link{OEIS_internal_format}}
+#' @seealso * \code{\link{OEIS_sequence}}
+#' @seealso * \code{\link{OEIS_check}}
 #'
-#' @return A character string with OEIS sequence ID.
+#' @return A character string with the OEIS sequence \code{ID}.
 #'
 #' @examples
-#' \dontrun{
 #' id <- "A169890"
 #' OEIS_ID(id)
-#' }
+#'
 #' @export
 OEIS_ID <- function(x) {
   UseMethod("OEIS_ID")

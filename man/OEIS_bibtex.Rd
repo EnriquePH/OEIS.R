@@ -37,21 +37,20 @@ caps are used.
 For more help on \code{bibentry} class, see: \code{\link[utils]{bibentry}}
 }
 \examples{
-\dontrun{
 x <- OEIS_sequence("A170401")
 bref <- OEIS_bibtex(x)
 # BibTeX and citation.
 print(bref, style = "Bibtex")
 print(bref, style = "citation")
-}
+
 }
 \references{
 \itemize{
-\item \url{http://www.bibtex.org/Format/}
-\item \url{http://psychedelic-geometry.blogspot.com.es/2010/02/bibtex-automatic-oeis-citations.html}
-\item \url{https://github.com/Psychedelic-Geometry/OEIS-Mathematica/wiki}
-\item \url{https://en.wikipedia.org/wiki/BibTeX}
-\item \url{https://oeis.org/wiki/Welcome#reference}
+\item \href{http://www.bibtex.org/Format/}{BibTeX Format Description}
+\item \href{http://psychedelic-geometry.blogspot.com.es/2010/02/bibtex-automatic-oeis-citations.html}{BibTeX AUTOMATIC OEIS CITATIONS}
+\item \href{https://github.com/Psychedelic-Geometry/OEIS-Mathematica/wiki}{Mathematica OEIS Package}
+\item \href{https://en.wikipedia.org/wiki/BibTeX}{Wikipedia: BibTex}
+\item \href{https://oeis.org/wiki/Welcome#reference}{Referencing a Particular Sequence}
 }
 }
 \seealso{
