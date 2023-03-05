@@ -35,11 +35,11 @@ OEIS_cf(seq_df)
 }
 }
 \seealso{
-\code{\link{OEIS_seqs_adjacent}}
+* \code{\link{OEIS_seqs_adjacent}}
 
-\code{\link{OEIS_crossrefs}}
+* \code{\link{OEIS_crossrefs}}
 
-\code{\link{OEIS_xml}}
+* \code{\link{OEIS_xml}}
 
-\code{\link{OEIS_df}}
+* \code{\link{OEIS_df}}
 }

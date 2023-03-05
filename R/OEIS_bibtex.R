@@ -57,9 +57,10 @@ author_list <- function(x) {
 #' , although is not necessarily. The tag's name is not case-sensitive but
 #' caps are used.
 #' @note For more help on `bibentry` class, see: \code{\link[utils]{bibentry}}
-#' @seealso \code{\link[utils]{person}}
-#' @seealso \code{\link[utils]{toBibtex}}
-#' @seealso \code{\link{OEIS_author}}
+#'
+#' @seealso * \code{\link[utils]{person}}
+#' @seealso * \code{\link[utils]{toBibtex}}
+#' @seealso * \code{\link{OEIS_author}}
 #' @references
 #' * \href{http://www.bibtex.org/Format/}{BibTeX Format Description}
 #' * \href{http://psychedelic-geometry.blogspot.com.es/2010/02/bibtex-automatic-oeis-citations.html}{BibTeX AUTOMATIC OEIS CITATIONS}

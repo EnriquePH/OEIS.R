@@ -24,10 +24,10 @@
 #' related data.
 #' @md
 #'
-#' @seealso \code{\link{OEIS_internal_format}}
-#' @seealso \code{\link{OEIS_sequence}}
-#' @seealso \code{\link{OEIS_xml}}
-#' @seealso \code{\link{OEIS_check}}
+#' @seealso * \code{\link{OEIS_internal_format}}
+#' @seealso * \code{\link{OEIS_sequence}}
+#' @seealso * \code{\link{OEIS_xml}}
+#' @seealso * \code{\link{OEIS_check}}
 #'
 #' @importFrom magrittr "%>%" extract2
 #' @importFrom rvest html_table
@@ -35,7 +35,7 @@
 #' @return A string with the OEIS sequence description.
 #'
 #' @examples
-#' \dontrun{
+#'
 #' # Sequence description from ID
 #' id <- "A000056"
 #' OEIS_description(id)
@@ -49,7 +49,7 @@
 #'  id <- "A002315"
 #'  seq <- OEIS_sequence(id)
 #'  OEIS_description(seq)
-#'  }
+#'
 #' @export
 OEIS_description <- function(x) {
     UseMethod("OEIS_description")

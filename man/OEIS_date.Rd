@@ -25,8 +25,7 @@ A \code{Date} object with the OEIS sequence creation date, or
 Sequence creation date.
 }
 \examples{
-\dontrun{
 id <- "A221863"
 OEIS_date(id)
-}
+
 }

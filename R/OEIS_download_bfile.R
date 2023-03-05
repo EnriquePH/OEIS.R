@@ -16,6 +16,9 @@
 #' @param ... Additional parameters (see \link[utils]{download.file})
 #'
 #' @return An (invisible) integer code, 0 for success and non-zero for failure.
+#' @seealso * \code{\link{OEIS_bfile_url}}
+#' @seealso * \code{\link{OEIS_bfile}}
+#'
 #' @export
 #'
 #' @examples

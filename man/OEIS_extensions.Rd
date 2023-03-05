@@ -39,11 +39,11 @@ extensions <- OEIS_extensions(internal_format)
 cat(extensions, sep = "\n")
 }
 \seealso{
-\code{\link{OEIS_description}}
+* \code{\link{OEIS_description}}
 
-\code{\link{OEIS_internal_format}}
+* \code{\link{OEIS_internal_format}}
 
-\code{\link{OEIS_sequence}}
+* \code{\link{OEIS_sequence}}
 
-\code{\link{OEIS_example}}
+* \code{\link{OEIS_example}}
 }

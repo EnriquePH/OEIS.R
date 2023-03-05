@@ -22,8 +22,9 @@
 #'
 #' @return A string with the sequence \strong{bfile} url, or the \strong{bfile}
 #'   file name
-#' @seealso \code{\link{OEIS_url}}
-#' @seealso \code{\link{OEIS_check}}
+#'
+#' @seealso * \code{\link{OEIS_url}}
+#' @seealso * \code{\link{OEIS_check}}
 #' @export
 #'
 #' @examples

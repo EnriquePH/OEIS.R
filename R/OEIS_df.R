@@ -19,11 +19,10 @@
 #' @importFrom rvest html_table
 #' @importFrom rvest html_nodes
 #'
-#' @seealso \code{\link{OEIS_xml}}
-#' @seealso \code{\link{OEIS_sequence}}
-#' @references \url{https://oeis.org/eishelp2.html#RS}{Explanation of Terms Used
-#'   in Reply From}
-#' @return A \code{"data.frame"} with sequence information lines.
+#' @seealso * \code{\link{OEIS_xml}}
+#' @seealso * \code{\link{OEIS_sequence}}
+#' @references \url{https://oeis.org/eishelp2.html#RS}{Explanation of Terms Used in Reply From}
+#' @return A \code{data.frame} with the sequence information lines.
 #' @examples
 #'
 #' id <- "A008406"

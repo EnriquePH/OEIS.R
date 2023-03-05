@@ -13,7 +13,7 @@
 #'
 #' This function gives the name of the person, or persons, who contributed the
 #' sequence and their emails, if they are present and selected.
-#' @param Where `x` can be one of the following:
+#' @param x can be one of the following:
 #' * A character string with sequence \code{ID}.
 #' * A \code{OEIS_internal} S3 class object, with sequence internal format.
 #' * A S3 classes object \code{OEIS_xml} and \code{xml_document}, with

@@ -9,8 +9,7 @@ OEIS_download_bfile(ID, destpath, ...)
 \arguments{
 \item{ID}{A string with the OEIS sequence identifier \code{ID} number.
 The A-number or sequence \code{ID} is the absolute catalog number of the
-sequence.
-It consists of "A" followed by 6 digits.}
+sequence. It consists of "A" followed by 6 digits.}
 
 \item{destpath}{A character string with the name where the downloaded
 \code{bfile} is saved}
@@ -27,4 +26,9 @@ This function can be used to download a bfile from \url{https://oeis.org/}.
 \dontrun{
 OEIS_download_bfile("A102030", "tests", quiet = TRUE)
 }
+}
+\seealso{
+* \code{\link{OEIS_bfile_url}}
+
+* \code{\link{OEIS_bfile}}
 }

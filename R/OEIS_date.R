@@ -22,10 +22,9 @@
 #'   \code{NA} if no date is found.
 #'
 #' @examples
-#' \dontrun{
 #' id <- "A221863"
 #' OEIS_date(id)
-#'}
+#'
 #' @export
 OEIS_date <- function(x) {
   UseMethod("OEIS_date", x)

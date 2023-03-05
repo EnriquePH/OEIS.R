@@ -14,17 +14,17 @@
 #' This function gives the name of the person, or persons, who contributed the
 #' sequence and their emails, if they are present and selected.
 #' @inheritParams OEIS_description
-#' @param email A logical, by specifying: \code{email = TRUE}, the author's
-#' email is returned, if present, with the author's name. The default value of
-#' \code{email} is \code{FALSE}.
+#' @param email A logical, by specifying: \code{email = TRUE}, the
+#' author's email is returned, if present, with the author's name.
+#' The default value of \code{email} is \code{FALSE}.
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr "%<>%"
 #'
-#' @seealso \code{\link{OEIS_description}}
-#' @seealso \code{\link{OEIS_internal_format}}
-#' @seealso \code{\link{OEIS_sequence}}
-#' @seealso \code{\link{OEIS_check}}
+#' @seealso * \code{\link{OEIS_description}}
+#' @seealso * \code{\link{OEIS_internal_format}}
+#' @seealso * \code{\link{OEIS_sequence}}
+#' @seealso * \code{\link{OEIS_check}}
 #'
 #' @return A character vector with the OEIS sequence authors and emails.
 #'

@@ -9,8 +9,7 @@ OEIS_xml(ID)
 \arguments{
 \item{ID}{A string with the OEIS sequence identifier \code{ID} number.
 The A-number or sequence \code{ID} is the absolute catalog number of the
-sequence.
-It consists of "A" followed by 6 digits.}
+sequence. It consists of "A" followed by 6 digits.}
 }
 \value{
 An \code{"OEIS_xml"} S3 class and \code{"xml_document"} from OEIS web

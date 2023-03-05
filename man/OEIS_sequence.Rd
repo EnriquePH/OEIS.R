@@ -9,8 +9,7 @@ OEIS_sequence(ID)
 \arguments{
 \item{ID}{A string with the OEIS sequence identifier \code{ID} number.
 The A-number or sequence \code{ID} is the absolute catalog number of the
-sequence.
-It consists of "A" followed by 6 digits.}
+sequence. It consists of "A" followed by 6 digits.}
 }
 \value{
 An object of the S3 class \code{"OEIS_sequence"}.

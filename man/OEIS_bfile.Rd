@@ -32,11 +32,19 @@ OEIS_bfile(id)
 
 }
 \seealso{
-\code{\link{OEIS_bfile_url}}
+\itemize{
+\item \code{\link{OEIS_bfile_url}}
+}
 
-\code{\link{OEIS_sequence}}
+\itemize{
+\item \code{\link{OEIS_sequence}}
+}
 
-\code{\link{OEIS_check}}
+\itemize{
+\item \code{\link{OEIS_check}}
+}
 
-\code{\link{OEIS_download_bfile}}
+\itemize{
+\item \code{\link{OEIS_download_bfile}}
+}
 }

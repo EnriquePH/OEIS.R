@@ -15,10 +15,10 @@
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr extract2
-#' @seealso \code{\link{OEIS_seqs_adjacent}}
-#' @seealso \code{\link{OEIS_crossrefs}}
-#' @seealso \code{\link{OEIS_xml}}
-#' @seealso \code{\link{OEIS_df}}
+#' @seealso * \code{\link{OEIS_seqs_adjacent}}
+#' @seealso * \code{\link{OEIS_crossrefs}}
+#' @seealso * \code{\link{OEIS_xml}}
+#' @seealso * \code{\link{OEIS_df}}
 #'
 #' @return A character vector with OEIS sequence linked cross references
 #'   \code{ID}s.

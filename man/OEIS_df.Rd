@@ -11,7 +11,7 @@ OEIS_df(seq_xml)
 sequence.}
 }
 \value{
-A \code{"data.frame"} with sequence information lines.
+A \code{data.frame} with the sequence information lines.
 }
 \description{
 This lines are useful to get all the sequence format data.
@@ -25,11 +25,10 @@ df
 
 }
 \references{
-\url{https://oeis.org/eishelp2.html#RS}{Explanation of Terms Used
-  in Reply From}
+\url{https://oeis.org/eishelp2.html#RS}{Explanation of Terms Used in Reply From}
 }
 \seealso{
-\code{\link{OEIS_xml}}
+* \code{\link{OEIS_xml}}
 
-\code{\link{OEIS_sequence}}
+* \code{\link{OEIS_sequence}}
 }

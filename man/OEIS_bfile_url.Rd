@@ -9,8 +9,7 @@ OEIS_bfile_url(ID, URL)
 \arguments{
 \item{ID}{A string with the OEIS sequence identifier \code{ID} number.
 The A-number or sequence \code{ID} is the absolute catalog number of the
-sequence.
-It consists of "A" followed by 6 digits.}
+sequence. It consists of "A" followed by 6 digits.}
 
 \item{URL}{A logical that selects if the output is the complete url, or just
 the \code{bfile} file name.}
@@ -30,7 +29,7 @@ OEIS_bfile_url(id, URL = FALSE)
 OEIS_bfile_url(id, URL = TRUE)
 }
 \seealso{
-\code{\link{OEIS_url}}
+* \code{\link{OEIS_url}}
 
-\code{\link{OEIS_check}}
+* \code{\link{OEIS_check}}
 }

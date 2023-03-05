@@ -8,7 +8,7 @@
 OEIS_ID(x)
 }
 \arguments{
-\item{Where}{\code{x} can be one of the following:
+\item{x}{can be one of the following:
 \itemize{
 \item A character string with sequence \code{ID}.
 \item A \code{OEIS_internal} S3 class object, with sequence internal format.

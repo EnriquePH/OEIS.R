@@ -16,10 +16,10 @@
 #'
 #' @inheritParams OEIS_description
 #'
-#' @seealso \code{\link{OEIS_description}}
-#' @seealso \code{\link{OEIS_internal_format}}
-#' @seealso \code{\link{OEIS_sequence}}
-#' @seealso \code{\link{OEIS_example}}
+#' @seealso * \code{\link{OEIS_description}}
+#' @seealso * \code{\link{OEIS_internal_format}}
+#' @seealso * \code{\link{OEIS_sequence}}
+#' @seealso * \code{\link{OEIS_example}}
 #' @importFrom magrittr "%>%" "%<>%"
 #'
 #' @note \href{http://oeis.org/wiki/Style_Sheet}{OEIS Wiki: Style sheet for

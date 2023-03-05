@@ -9,8 +9,7 @@ OEIS_check(ID)
 \arguments{
 \item{ID}{A string with the OEIS sequence identifier \code{ID} number.
 The A-number or sequence \code{ID} is the absolute catalog number of the
-sequence.
-It consists of "A" followed by 6 digits.}
+sequence. It consists of "A" followed by 6 digits.}
 }
 \value{
 An object of class \code{"OEIS_ID"} or an error if \code{ID} is not
@@ -23,7 +22,7 @@ OEIS ID Validation
 OEIS_check("A002000")
 }
 \seealso{
-\code{\link{OEIS_url}}
+* \code{\link{OEIS_url}}
 
-\code{\link{OEIS_ID}}
+* \code{\link{OEIS_ID}}
 }

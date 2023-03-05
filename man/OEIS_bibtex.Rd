@@ -54,9 +54,15 @@ print(bref, style = "citation")
 }
 }
 \seealso{
-\code{\link[utils]{person}}
+\itemize{
+\item \code{\link[utils]{person}}
+}
 
-\code{\link[utils]{toBibtex}}
+\itemize{
+\item \code{\link[utils]{toBibtex}}
+}
 
-\code{\link{OEIS_author}}
+\itemize{
+\item \code{\link{OEIS_author}}
+}
 }

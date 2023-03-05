@@ -16,22 +16,21 @@
 #'
 #' @importFrom magrittr "%>%"
 #'
-#' @seealso \code{\link{OEIS_description}}
-#' @seealso \code{\link{OEIS_author}}
-#' @seealso \code{\link{OEIS_internal_format}}
-#' @seealso \code{\link{OEIS_formula}}
-#' @seealso \code{\link{OEIS_sequence}}
-#' @seealso \code{\link{OEIS_xml}}
+#' @seealso * \code{\link{OEIS_description}}
+#' @seealso * \code{\link{OEIS_author}}
+#' @seealso * \code{\link{OEIS_internal_format}}
+#' @seealso * \code{\link{OEIS_formula}}
+#' @seealso * \code{\link{OEIS_sequence}}
+#' @seealso * \code{\link{OEIS_xml}}
 #' @return A character string with the OEIS sequence lines of examples or
 #'   \code{NULL} where no examples are available.
 #'
 #' @examples
-#' \dontrun{
 #' id <- "A105805"
 #' internal_format <- OEIS_internal_format(id)
 #' example <- OEIS_example(internal_format)
 #' cat(example, sep = "\n")
-#' }
+#'
 #' @export
 OEIS_example <- function(x) {
   UseMethod("OEIS_example", x)
