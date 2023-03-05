@@ -33,15 +33,15 @@ cat(mathematica, sep = "\n")
 
 }
 \seealso{
-\code{\link{OEIS_description}}
+* \code{\link{OEIS_description}}
 
-\code{\link{OEIS_author}}
+* \code{\link{OEIS_author}}
 
-\code{\link{OEIS_internal_format}}
+* \code{\link{OEIS_internal_format}}
 
-\code{\link{OEIS_formula}}
+* \code{\link{OEIS_formula}}
 
-\code{\link{OEIS_sequence}}
+* \code{\link{OEIS_sequence}}
 
-\code{\link{OEIS_xml}}
+* \code{\link{OEIS_xml}}
 }

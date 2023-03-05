@@ -12,7 +12,7 @@
 #' Get OEIS sequence former \code{ID}
 #'
 #' This is an alternate \code{ID} for some sequences that also have a 4-digit
-#' M-number, such as M1459, which is the number they carried in "The
+#' M-number, such as \code{M1459}, which is the number they carried in "The
 #' Encyclopedia of Integer Sequences" by N.J.A. Sloane and S. Plouffe, Academic
 #' Press, San Diego, CA, 1995. 'Some older sequences also have a 4-digit
 #' N-number, such as N0577, which is the number they carried in the "Handbook of
@@ -26,17 +26,16 @@
 #' @importFrom magrittr "%>%" extract2
 #' @importFrom rvest html_nodes html_text
 #'
-#' @seealso \code{\link{OEIS_description}}
-#' @seealso \code{\link{OEIS_internal_format}}
-#' @seealso \code{\link{OEIS_sequence}}
-#' @seealso \code{\link{OEIS_xml}}
+#' @seealso * \code{\link{OEIS_description}}
+#' @seealso * \code{\link{OEIS_internal_format}}
+#' @seealso * \code{\link{OEIS_sequence}}
+#' @seealso * \code{\link{OEIS_xml}}
 #'
 #' @examples
-#' \dontrun{
 #' id <- "A000056"
 #' internal_format <- OEIS_internal_format(id)
 #' OEIS_formerly(internal_format)
-#' }
+#'
 #' @export
 OEIS_formerly <- function(x) {
   UseMethod("OEIS_formerly")
