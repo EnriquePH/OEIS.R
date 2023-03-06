@@ -15,3 +15,6 @@ Total Number of sequences in OEIS
 \examples{
 OEIS_total_sequences()
 }
+\seealso{
+* \code{\link{OEIS_sequence}}
+}

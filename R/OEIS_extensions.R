@@ -22,8 +22,7 @@
 #' @seealso * \code{\link{OEIS_example}}
 #' @importFrom magrittr "%>%" "%<>%"
 #'
-#' @note \href{http://oeis.org/wiki/Style_Sheet}{OEIS Wiki: Style sheet for
-#'   Style sheet for contributors}
+#' @note \href{http://oeis.org/wiki/Style_Sheet}{OEIS Wiki: Style sheet for Style sheet for contributors}
 #' @return A character string with the OEIS sequence extensions lines or
 #'   \code{NULL} if there are no extensions.
 #' @export

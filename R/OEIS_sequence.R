@@ -12,17 +12,17 @@
 #'
 #' @inheritParams OEIS_check
 #'
-#' @return An object of the S3 class \code{"OEIS_sequence"}.
-#' @seealso \code{\link{OEIS_check}}
-#' @seealso \code{\link{OEIS_url}}
-#' @seealso \code{\link{OEIS_description}}
-#' @seealso \code{\link{OEIS_formerly}}
-#' @seealso \code{\link{OEIS_bfile}}
-#' @seealso \code{\link{OEIS_terms}}
-#' @seealso \code{\link{OEIS_xml}}
-#' @seealso \code{\link{OEIS_internal_format}}
-#' @seealso \code{\link{OEIS_df}}
-#' @references \url{https://oeis.org/eishelp2.html#RS}{Explanation of Terms Used
+#' @return An object of the S3 class \code{OEIS_sequence}.
+#' @seealso * \code{\link{OEIS_check}}
+#' @seealso * \code{\link{OEIS_url}}
+#' @seealso * \code{\link{OEIS_description}}
+#' @seealso * \code{\link{OEIS_formerly}}
+#' @seealso * \code{\link{OEIS_bfile}}
+#' @seealso * \code{\link{OEIS_terms}}
+#' @seealso * \code{\link{OEIS_xml}}
+#' @seealso * \code{\link{OEIS_internal_format}}
+#' @seealso * \code{\link{OEIS_df}}
+#' @references \href{https://oeis.org/eishelp2.html#RS}{Explanation of Terms Used
 #'   in Reply From}
 #'
 #' @examples

@@ -22,7 +22,7 @@ A character string with the OEIS sequence lines of links or
   \code{NULL} if there are no links
 }
 \description{
-These lines give `Mathematica` code to produce the sequence.
+Links related to the sequence.
 }
 \examples{
 id <- "A105805"
@@ -32,15 +32,15 @@ cat(lnks, sep = "\n")
 
 }
 \seealso{
-\code{\link{OEIS_description}}
+* \code{\link{OEIS_description}}
 
-\code{\link{OEIS_author}}
+* \code{\link{OEIS_author}}
 
-\code{\link{OEIS_internal_format}}
+* \code{\link{OEIS_internal_format}}
 
-\code{\link{OEIS_formula}}
+* \code{\link{OEIS_formula}}
 
-\code{\link{OEIS_sequence}}
+* \code{\link{OEIS_sequence}}
 
-\code{\link{OEIS_xml}}
+* \code{\link{OEIS_xml}}
 }

@@ -23,20 +23,19 @@
 #' @importFrom magrittr extract2
 #' @importFrom utils read.delim
 #'
-#' @seealso \code{\link{OEIS_url}}
-#' @seealso \code{\link{OEIS_xml}}
-#' @seealso \code{\link{OEIS_ID}}
-#' @return An object of the classes \code{"data.frame"} and
-#'   \code{"OEIS_internal"} with the full sequence text internal format.
+#' @seealso * \code{\link{OEIS_url}}
+#' @seealso * \code{\link{OEIS_xml}}
+#' @seealso * \code{\link{OEIS_ID}}
+#' @return An object of the classes \code{data.frame} and
+#'   \code{OEIS_internal} with the full sequence text internal format.
 #' \code{\link{OEIS_check}}
 #'
-#' @references \url{https://oeis.org/eishelp1.html}
+#' @references \href{https://oeis.org/eishelp1.html}{Internal Format Used In}
 #'
 #' @examples
-#' \dontrun{
 #' id <- "A000055"
 #' OEIS_internal_format(id)
-#' }
+#'
 #' @export
 OEIS_internal_format <- function(ID) {
   UseMethod("OEIS_internal_format", ID)

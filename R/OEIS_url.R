@@ -14,18 +14,17 @@
 #' @param text A logical if \code{TRUE} the function returns the internal format
 #'   url, if \code{FALSE} it returns full sequence url.
 #'
-#' @seealso \code{\link{OEIS_web_url}}
+#' @seealso * \code{\link{OEIS_web_url}}
 #' @importFrom magrittr "%>%"
 #' @return A string with the full sequence url, or the internal format url.
 #' \code{\link{OEIS_check}}
 #'
-#' @references \url{https://oeis.org/eishelp1.html}
+#' @references \href{https://oeis.org/eishelp1.html}{Internal Format Used In}
 #'
 #' @examples
-#' \dontrun{
 #' OEIS_url("A000055")
 #' OEIS_url("A000055", text = TRUE)
-#' }
+#'
 #' @export
 OEIS_url <- function(ID, text) {
   UseMethod("OEIS_url")

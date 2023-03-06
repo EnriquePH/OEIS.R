@@ -10,7 +10,9 @@
 #  OEIS_web_url
 #' OEIS server main web page url
 #' @param license A logical \code{FALSE} as default
-#' @return A string with the main OEIS url: \url{https://oeis.org/}, or the _OEIS End-User License Agreement_ url, if parameter \code{license} is \code{TRUE}
+#' @return A string with the main OEIS url: \url{https://oeis.org/},
+#' or the _OEIS End-User License Agreement_ url, if parameter \code{license}
+#' is \code{TRUE}
 #' @export
 #'
 #' @examples

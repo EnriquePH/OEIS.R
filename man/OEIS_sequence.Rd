@@ -12,7 +12,7 @@ The A-number or sequence \code{ID} is the absolute catalog number of the
 sequence. It consists of "A" followed by 6 digits.}
 }
 \value{
-An object of the S3 class \code{"OEIS_sequence"}.
+An object of the S3 class \code{OEIS_sequence}.
 }
 \description{
 S3 class constructor for \code{OEIS_sequence}
@@ -25,25 +25,25 @@ A003456
 
 }
 \references{
-\url{https://oeis.org/eishelp2.html#RS}{Explanation of Terms Used
+\href{https://oeis.org/eishelp2.html#RS}{Explanation of Terms Used
   in Reply From}
 }
 \seealso{
-\code{\link{OEIS_check}}
+* \code{\link{OEIS_check}}
 
-\code{\link{OEIS_url}}
+* \code{\link{OEIS_url}}
 
-\code{\link{OEIS_description}}
+* \code{\link{OEIS_description}}
 
-\code{\link{OEIS_formerly}}
+* \code{\link{OEIS_formerly}}
 
-\code{\link{OEIS_bfile}}
+* \code{\link{OEIS_bfile}}
 
-\code{\link{OEIS_terms}}
+* \code{\link{OEIS_terms}}
 
-\code{\link{OEIS_xml}}
+* \code{\link{OEIS_xml}}
 
-\code{\link{OEIS_internal_format}}
+* \code{\link{OEIS_internal_format}}
 
-\code{\link{OEIS_df}}
+* \code{\link{OEIS_df}}
 }

@@ -16,17 +16,17 @@
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom xml2 read_html
-#' @seealso \code{\link{OEIS_url}}
-#' @seealso \code{\link{OEIS_check}}
-#' @return An \code{"OEIS_xml"} S3 class and \code{"xml_document"} from OEIS web
+#' @seealso * \code{\link{OEIS_url}}
+#' @seealso * \code{\link{OEIS_check}}
+#' @return An \code{OEIS_xml} S3 class and \code{xml_document} from OEIS web
 #'   with the sequence content.
 #'
 #' @examples
-#' \dontrun{
+#'
 #'  id <- "A000156"
 #'  test_seq_xml <- OEIS_xml(id)
 #'  class(test_seq_xml)
-#' }
+#'
 #' @export
 OEIS_xml <- function(ID) {
   UseMethod("OEIS_xml")

@@ -22,14 +22,13 @@ A string with the full sequence url, or the internal format url.
 Get sequence url in the OEIS server
 }
 \examples{
-\dontrun{
 OEIS_url("A000055")
 OEIS_url("A000055", text = TRUE)
-}
+
 }
 \references{
-\url{https://oeis.org/eishelp1.html}
+\href{https://oeis.org/eishelp1.html}{Internal Format Used In}
 }
 \seealso{
-\code{\link{OEIS_web_url}}
+* \code{\link{OEIS_web_url}}
 }

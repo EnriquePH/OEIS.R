@@ -10,17 +10,17 @@
 #  OEIS_links
 #' Links from sequence data
 #'
-#' These lines give `Mathematica` code to produce the sequence.
+#' Links related to the sequence.
 #' @inheritParams OEIS_description
 #'
 #' @importFrom magrittr "%>%"
 #'
-#' @seealso \code{\link{OEIS_description}}
-#' @seealso \code{\link{OEIS_author}}
-#' @seealso \code{\link{OEIS_internal_format}}
-#' @seealso \code{\link{OEIS_formula}}
-#' @seealso \code{\link{OEIS_sequence}}
-#' @seealso \code{\link{OEIS_xml}}
+#' @seealso * \code{\link{OEIS_description}}
+#' @seealso * \code{\link{OEIS_author}}
+#' @seealso * \code{\link{OEIS_internal_format}}
+#' @seealso * \code{\link{OEIS_formula}}
+#' @seealso * \code{\link{OEIS_sequence}}
+#' @seealso * \code{\link{OEIS_xml}}
 #' @return A character string with the OEIS sequence lines of links or
 #'   \code{NULL} if there are no links
 #'

@@ -13,7 +13,8 @@
 #'
 #' @return A string with the search url in OEIS
 #' @importFrom magrittr "%>%"
-#' @seealso \code{\link{OEIS_web_url}}
+#' @seealso * \code{\link{OEIS_web_url}}
+#' @seealso * \code{\link{OEIS_sequence}}
 #' @export
 #'
 #' @examples

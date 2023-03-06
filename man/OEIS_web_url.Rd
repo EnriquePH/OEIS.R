@@ -10,7 +10,9 @@ OEIS_web_url(license = FALSE)
 \item{license}{A logical \code{FALSE} as default}
 }
 \value{
-A string with the main OEIS url: \url{https://oeis.org/}, or the _OEIS End-User License Agreement_ url, if parameter \code{license} is \code{TRUE}
+A string with the main OEIS url: \url{https://oeis.org/},
+or the _OEIS End-User License Agreement_ url, if parameter \code{license}
+is \code{TRUE}
 }
 \description{
 OEIS server main web page url

@@ -12,7 +12,7 @@ The A-number or sequence \code{ID} is the absolute catalog number of the
 sequence. It consists of "A" followed by 6 digits.}
 }
 \value{
-An \code{"OEIS_xml"} S3 class and \code{"xml_document"} from OEIS web
+An \code{OEIS_xml} S3 class and \code{xml_document} from OEIS web
   with the sequence content.
 }
 \description{
@@ -20,14 +20,14 @@ The `XML` document contains all the information from the OEIS web related to
 the sequence.
 }
 \examples{
-\dontrun{
+
  id <- "A000156"
  test_seq_xml <- OEIS_xml(id)
  class(test_seq_xml)
-}
+
 }
 \seealso{
-\code{\link{OEIS_url}}
+* \code{\link{OEIS_url}}
 
-\code{\link{OEIS_check}}
+* \code{\link{OEIS_check}}
 }

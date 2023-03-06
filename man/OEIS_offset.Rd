@@ -44,16 +44,16 @@ OEIS_offset(internal_format)
 }
 }
 \references{
-\url{https://oeis.org/eishelp2.html#RS}
+\href{https://oeis.org/eishelp2.html#RS}{Explanation of the Different Lines}
 
-\url{https://oeis.org/FAQ.html#Z23}
+\href{https://oeis.org/FAQ.html#Z23}{What does the "offset" mean?}
 }
 \seealso{
-\code{\link{OEIS_internal_format}}
+* \code{\link{OEIS_internal_format}}
 
-\code{\link{OEIS_description}}
+* \code{\link{OEIS_description}}
 
-\code{\link{OEIS_xml}}
+* \code{\link{OEIS_xml}}
 
-\code{\link{OEIS_sequence}}
+* \code{\link{OEIS_sequence}}
 }

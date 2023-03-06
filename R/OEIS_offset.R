@@ -24,12 +24,12 @@
 #' @importFrom magrittr extract2
 #' @importFrom rvest html_nodes
 #' @importFrom rvest html_text
-#' @seealso \code{\link{OEIS_internal_format}}
-#' @seealso \code{\link{OEIS_description}}
-#' @seealso \code{\link{OEIS_xml}}
-#' @seealso \code{\link{OEIS_sequence}}
-#' @references \url{https://oeis.org/eishelp2.html#RS}
-#' @references \url{https://oeis.org/FAQ.html#Z23}
+#' @seealso * \code{\link{OEIS_internal_format}}
+#' @seealso * \code{\link{OEIS_description}}
+#' @seealso * \code{\link{OEIS_xml}}
+#' @seealso * \code{\link{OEIS_sequence}}
+#' @references \href{https://oeis.org/eishelp2.html#RS}{Explanation of the Different Lines}
+#' @references \href{https://oeis.org/FAQ.html#Z23}{What does the "offset" mean?}
 #'
 #' @note In the internal format for a sequence the offset line (the %O line)
 #'   contains two numbers. The first is the offset as just defined. The second

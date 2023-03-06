@@ -12,8 +12,8 @@ The A-number or sequence \code{ID} is the absolute catalog number of the
 sequence. It consists of "A" followed by 6 digits.}
 }
 \value{
-An object of the classes \code{"data.frame"} and
-  \code{"OEIS_internal"} with the full sequence text internal format.
+An object of the classes \code{data.frame} and
+  \code{OEIS_internal} with the full sequence text internal format.
 \code{\link{OEIS_check}}
 }
 \description{
@@ -23,18 +23,17 @@ S, T, N, etc.) and abcdef is the 6-digit identification number (or catalog
 number) of the sequence. Each sequence gets a unique A-number.
 }
 \examples{
-\dontrun{
 id <- "A000055"
 OEIS_internal_format(id)
-}
+
 }
 \references{
-\url{https://oeis.org/eishelp1.html}
+\href{https://oeis.org/eishelp1.html}{Internal Format Used In}
 }
 \seealso{
-\code{\link{OEIS_url}}
+* \code{\link{OEIS_url}}
 
-\code{\link{OEIS_xml}}
+* \code{\link{OEIS_xml}}
 
-\code{\link{OEIS_ID}}
+* \code{\link{OEIS_ID}}
 }

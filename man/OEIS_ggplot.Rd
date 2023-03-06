@@ -25,5 +25,7 @@ OEIS_ggplot(x)
 
 }
 \seealso{
-\code{\link{OEIS_bibtex}}
+* \code{\link{OEIS_bibtex}}
+
+* \code{\link{OEIS_sequence}}
 }

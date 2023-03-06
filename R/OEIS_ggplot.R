@@ -16,7 +16,8 @@
 #' @importFrom ggplot2 scale_y_continuous
 #' @return A graphic object of the classes `gg` and `ggplot`
 #'
-#' @seealso \code{\link{OEIS_bibtex}}
+#' @seealso * \code{\link{OEIS_bibtex}}
+#' @seealso * \code{\link{OEIS_sequence}}
 #' @examples
 #' # A123456: Ludwig van Beethoven, Bagatelle No. 25, Für Elise.
 #' id <- "A123456"

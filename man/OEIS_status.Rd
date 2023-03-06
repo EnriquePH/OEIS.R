@@ -10,11 +10,11 @@ OEIS_status(x)
 \item{x}{Can be one of the following:
 \itemize{
 \item A character string with sequence \code{ID}.
-\item A S3 object of classes \code{"OEIS_xml"} and \code{"xml_document"}, with
+\item A S3 object of classes \code{OEIS_xml} and \code{xml_document}, with
 the sequence content from OEIS web.
-\item An object of \code{"OEIS_sequence"} class, that contains all sequence
+\item An object of \code{OEIS_sequence} class, that contains all sequence
 related data.
-\item An object of \code{"OEIS_ID"} class.
+\item An object of \code{OEIS_ID} class.
 }}
 }
 \value{
@@ -41,9 +41,15 @@ OEIS_status(seq_df)
 }
 }
 \seealso{
-\code{\link{OEIS_check}}
+\itemize{
+\item \code{\link{OEIS_check}}
+}
 
-\code{\link{OEIS_df}}
+\itemize{
+\item \code{\link{OEIS_df}}
+}
 
-\code{\link{OEIS_xml}}
+\itemize{
+\item \code{\link{OEIS_xml}}
+}
 }

@@ -15,6 +15,7 @@
 #' @importFrom rvest html_nodes
 #' @importFrom rvest html_text
 #' @importFrom magrittr "%>%"
+#' @seealso * \code{\link{OEIS_sequence}}
 #'
 #' @export
 #'

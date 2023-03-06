@@ -27,8 +27,7 @@ properly acknowledged in other fields. The most common use is to acknowledge
 more terms for sequences that had only a few previously.
 }
 \note{
-\href{http://oeis.org/wiki/Style_Sheet}{OEIS Wiki: Style sheet for
-  Style sheet for contributors}
+\href{http://oeis.org/wiki/Style_Sheet}{OEIS Wiki: Style sheet for Style sheet for contributors}
 }
 \examples{
 # A008406: Triangle T(n,k) read by rows, giving number of graphs with n nodes

@@ -20,5 +20,7 @@ search_txt <- "Numbers n with property that in base 4 representation"
 OEIS_search_url(search_txt)
 }
 \seealso{
-\code{\link{OEIS_web_url}}
+* \code{\link{OEIS_web_url}}
+
+* \code{\link{OEIS_sequence}}
 }

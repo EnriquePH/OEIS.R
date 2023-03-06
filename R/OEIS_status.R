@@ -13,17 +13,17 @@
 #' Status depends on sequence information updates.
 #' @param x Can be one of the following:
 #' * A character string with sequence \code{ID}.
-#' * A S3 object of classes \code{"OEIS_xml"} and \code{"xml_document"}, with
+#' * A S3 object of classes \code{OEIS_xml} and \code{xml_document}, with
 #' the sequence content from OEIS web.
-#' * An object of \code{"OEIS_sequence"} class, that contains all sequence
+#' * An object of \code{OEIS_sequence} class, that contains all sequence
 #' related data.
-#' * An object of \code{"OEIS_ID"} class.
+#' * An object of \code{OEIS_ID} class.
 #' @importFrom magrittr "%>%"
 #' @md
 #'
-#' @seealso \code{\link{OEIS_check}}
-#' @seealso \code{\link{OEIS_df}}
-#' @seealso \code{\link{OEIS_xml}}
+#' @seealso * \code{\link{OEIS_check}}
+#' @seealso * \code{\link{OEIS_df}}
+#' @seealso * \code{\link{OEIS_xml}}
 #'
 #' @return A character string with the OEIS sequence status.
 #' @note Possible status can be:
