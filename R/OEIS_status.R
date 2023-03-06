@@ -35,10 +35,9 @@
 #' @examples
 #' \dontrun{
 #' id <- "A000108"
-#' test_seq_html <- OEIS_xml(id)
-#' seq_df <- OEIS_df(test_seq_html)
-#' OEIS_status(seq_df)
-#' }
+#' test_seq_xml <- OEIS_xml(id)
+#' OEIS_status(test_seq_xml)
+#'}
 #' @export
 OEIS_status <- function(x) {
   UseMethod("OEIS_status")
