@@ -10,10 +10,10 @@ OEIS_description(x)
 \item{x}{Can be one of the following:
 \itemize{
 \item A character string with sequence \code{ID}.
-\item A \code{"OEIS_internal"} S3 class object, with sequence internal format.
-\item A S3 classes object \code{"OEIS_xml"} and \code{"xml_document"}, with
+\item A \code{OEIS_internal} S3 class object, with sequence internal format.
+\item A S3 classes object \code{OEIS_xml} and \code{xml_document}, with
 sequence content from OEIS web.
-\item An object of \code{"OEIS_sequence"} class, that contains all sequence
+\item An object of \code{OEIS_sequence} class, that contains all sequence
 related data.
 }}
 }
