@@ -82,14 +82,8 @@ OEIS_description.OEIS_xml <- function(x) {
   . <- NULL
   x %>%
     rvest::html_table(., fill = TRUE) %>%
-    magrittr::extract2(6) %>% # Donations open?
-    magrittr::extract2(3) %>%
-    strsplit(., "\n") %>%
-    unlist %>%
-    magrittr::extract2(1) %>%
-    gsub("&lt;", "<", .) %>%
-    gsub("&gt;", ">", .) %>%
-    trimws
+    magrittr::extract2(5) %>% # Donations open?
+    magrittr::extract2(3)
 }
 
 #' @method OEIS_description OEIS_sequence
