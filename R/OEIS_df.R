@@ -11,8 +11,8 @@
 #' Get OEIS sequence information lines from XML document data
 #'
 #' This lines are useful to get all the sequence format data.
-#' @param seq_xml A class \code{"OEIS_xml"} document extracted from an OEIS
-#'   sequence.
+#' @param seq_xml A class \code{OEIS_xml} document extracted from an OEIS
+#' sequence.
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom magrittr extract2

@@ -7,7 +7,7 @@
 OEIS_df(seq_xml)
 }
 \arguments{
-\item{seq_xml}{A class \code{"OEIS_xml"} document extracted from an OEIS
+\item{seq_xml}{A class \code{OEIS_xml} document extracted from an OEIS
 sequence.}
 }
 \value{
