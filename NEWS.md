@@ -2,3 +2,4 @@
 
 * Added a `NEWS.md` file to track changes to the package.
 * Improved documentation 
+* Fixes to `OEIS_links`
