@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_functions.R
 \name{char0toNULL}
 \alias{char0toNULL}
-\title{Convert character(0) into NULL}
+\title{Convert character(0) or list() into NULL}
 \usage{
 char0toNULL(x)
 }

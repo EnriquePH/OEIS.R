@@ -74,7 +74,6 @@ OEIS_links.OEIS_xml <- function(x) {
   } else {
     lnks %<>%
       strsplit(., "\n") %>%
-      sapply(., trimws) %>%
       .[. != "", ]
   }
   lnks

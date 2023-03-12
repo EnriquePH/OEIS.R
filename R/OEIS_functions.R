@@ -7,7 +7,7 @@
 #  The MIT License (MIT)
 #  ---------------------------------------------------------------------------
 
-#' Convert character(0) into NULL
+#' Convert character(0) or list() into NULL
 #'
 #' Auxiliary internal function.
 #' @param x A character
@@ -16,6 +16,9 @@
 #'
 char0toNULL <- function(x) {
   if (identical(x, character(0))) {
+    x <- NULL
+  }
+  if (identical(x, list())) {
     x <- NULL
   }
   x

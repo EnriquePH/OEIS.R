@@ -58,6 +58,7 @@ OEIS_example.OEIS_internal <- function(x) {
   . <- NULL
   x[x$tag == "%e", ]$line %>%
     gsub("_", "", .) %>%
+    sapply(., trimws, USE.NAMES = FALSE) %>%
     char0toNULL
 }
 
@@ -67,7 +68,7 @@ OEIS_example.OEIS_xml <- function(x) {
   . <- NULL
   example <- x %>%
     OEIS_df %>%
-    .[. == "EXAMPLE", ] %>%
+    .[.$Line == "EXAMPLE", ] %>%
     .$Description
   if (identical(example, character(0))) {
     example <- NULL

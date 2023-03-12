@@ -67,7 +67,7 @@ OEIS_mathematica.OEIS_xml <- function(x) {
   . <- NULL
   mathematica <- x %>%
     OEIS_df %>%
-    .[. == "MATHEMATICA", ] %>%
+    .[.$Line == "MATHEMATICA", ] %>%
     .$Description
   if (identical(mathematica, character(0))) {
     mathematica <- NULL
