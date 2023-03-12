@@ -67,7 +67,7 @@ OEIS_links.OEIS_xml <- function(x) {
   . <- NULL
   lnks <- x %>%
     OEIS_df %>%
-    .[. == "LINKS", ] %>%
+    .[.$Line == "LINKS", ] %>%
     .$Description
   if (identical(lnks, character(0))) {
     lnks <- NULL
