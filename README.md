@@ -1,11 +1,12 @@
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/EnriquePH/OEIS.R/actions/workflows/R-CMD-check.yaml/badge.svg?branch=master)](https://github.com/EnriquePH/OEIS.R/actions/workflows/R-CMD-check.yml)
-[![test-coverage](https://github.com/EnriquePH/OEIS.R/actions/workflows/test-coverage.yaml/badge.svg?branch=master)](https://github.com/EnriquePH/OEIS.R/actions/workflows/test-coverage.yml)
-[![codecov](https://codecov.io/gh/EnriquePH/OEIS.R/branch/master/graph/badge.svg?token=SV878WO4DW)](https://codecov.io/gh/EnriquePH/OEIS.R)
+[![R-CMD-check](https://github.com/EnriquePH/OEIS.R/actions/workflows/R-CMD-check.yml/badge.svg?branch=master)](https://github.com/EnriquePH/OEIS.R/actions/workflows/R-CMD-check.yml)
+[![test-coverage](https://github.com/EnriquePH/OEIS.R/actions/workflows/test-coverage.yml/badge.svg?branch=master)](https://github.com/EnriquePH/OEIS.R/actions/workflows/test-coverage.yml)
+[![codecov](https://codecov.io/gh/EnriquePH/OEIS.R/branch/master/graph/badge.svg)](https://codecov.io/gh/EnriquePH/OEIS.R)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub stars](https://img.shields.io/github/stars/EnriquePH/OEIS.R?style=social)](https://github.com/EnriquePH/OEIS.R/stargazers)
-<!-- badges: endOEIS.R -->
+<!-- badges: end -->
 
+# OEIS.R
 
 <img src="https://raw.githubusercontent.com/EnriquePH/OEIS.R/master/sticker/OEIS.R-sticker.png" align="right" height="200"/>
 
