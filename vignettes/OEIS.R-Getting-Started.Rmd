@@ -24,7 +24,7 @@ devtools::install_github("EnriquePH/OEIS.R")
 
 ## Loading `OEIS.R` Package
 
-```{r eval=FALSE}
+```{r}
 library(OEIS.R)
 ```
 
