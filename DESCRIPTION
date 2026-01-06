@@ -29,3 +29,4 @@ Suggests:
     covr
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
+Config/Needs/website: oeis.org
