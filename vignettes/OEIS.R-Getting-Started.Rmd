@@ -24,7 +24,7 @@ devtools::install_github("EnriquePH/OEIS.R")
 
 ## Loading `OEIS.R` Package
 
-```{r}
+```{r eval=FALSE}
 library(OEIS.R)
 ```
 
@@ -37,7 +37,7 @@ OEIS_web_url(license = TRUE)
 
 ## Number of sequences in the encyclopedia
 
-```{r}
+```{r eval=FALSE}
 OEIS_total_sequences()
 ```
 
@@ -53,7 +53,7 @@ class(A001615)
 
 ## Basic sequence information 
 
-```{r}
+```{r eval=FALSE}
 A001615$ID
 A001615$description
 A001615$formerly
@@ -62,30 +62,30 @@ A001615$url
 
 ## Plotting the sequence
 
-```{r}
+```{r eval=FALSE}
 plot(A001615)
 ```
 
-```{r}
+```{r eval=FALSE}
 A001615$author
 ```
 
 
 ## Sequence's $Bib\TeX$ reference
-```{r}
+```{r eval=FALSE}
 bref <- OEIS_bibtex(A001615)
 print(bref, style = "Bibtex")
 ```
 
 ## Access $Bib\TeX$ fields
 
-```{r}
+```{r eval=FALSE}
 bref$note
 ```
 
 ## Plotting with `ggplot2`
 
-```{r}
+```{r eval=FALSE}
 library(ggplot2)
 OEIS_ggplot(A001615) + 
   geom_line()
@@ -94,10 +94,8 @@ OEIS_ggplot(A001615) +
 
 ## Links
 
-```{r}
+```{r eval=FALSE}
 library(knitr)
-
 kable(data.frame(A001615$links))
 ```
-
 
