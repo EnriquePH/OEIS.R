@@ -1,74 +1,94 @@
+---
+title: OEIS.R
+---
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/EnriquePH/OEIS.R/actions/workflows/R-CMD-check.yaml/badge.svg?branch=master)](https://github.com/EnriquePH/OEIS.R/actions/workflows/R-CMD-check.yaml)
 [![test-coverage](https://github.com/EnriquePH/OEIS.R/actions/workflows/test-coverage.yaml/badge.svg?branch=master)](https://github.com/EnriquePH/OEIS.R/actions/workflows/test-coverage.yaml)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/EnriquePH/OEIS.R?branch=master&svg=true)](https://ci.appveyor.com/project/EnriquePH/OEIS.R) [![codecov](https://codecov.io/gh/EnriquePH/OEIS.R/branch/master/graph/badge.svg?token=SV878WO4DW)](https://codecov.io/gh/EnriquePH/OEIS.R) ![License](https://img.shields.io/:license-mit-blue.svg)
- <!-- badges: end -->
-
-# OEIS.R Package
-
-Data from [The On-Line Encyclopedia of Integer Sequences](https://oeis.org/) in
-R
-
-<img src="https://raw.githubusercontent.com/EnriquePH/OEIS.R/master/sticker/OEIS.R-sticker.png" rel="OEIS.R-sticker" width="172" height="200">
-
-## Summary
-
-[The On-Line Encyclopedia of Integer Sequences](https://oeis.org/) is one of
-the most amazing projects to document and improve mathematical knowledge:
-formulas, comments, computer code, links, references...
-
-The database of integer sequences, OEIS records information about integer
-sequences of interest to both professional mathematicians and amateurs, and it
-is widely cited.
-
-Due to OEIS, many new mathematical truth has been found, more than 6000 articles
-are actually referencing OEIS.
-
-On the other hand, _R_ is an _open source programming language and software
-environment for statistical computing and graphics_, that is supported by the [R
-Foundation for Statistical Computing](https://www.r-project.org/foundation/).
-_R language_ is widely used among statisticians, data scientists, and data
-miners for developing statistical software and data analysis.
-
-This extension for _R_ helps to include organized data from the [The On-Line
-Encyclopedia of Integer Sequences](https://oeis.org/) in your code, and it can
-be used to find, visualize and test, new mathematical hypothesis and also can be
-used to improve the content of the data in OEIS.
+[![codecov](https://codecov.io/gh/EnriquePH/OEIS.R/branch/master/graph/badge.svg?token=SV878WO4DW)](https://codecov.io/gh/EnriquePH/OEIS.R)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/EnriquePH/OEIS.R?style=social)](https://github.com/EnriquePH/OEIS.R/stargazers)
+<!-- badges: endOEIS.R -->
 
 
-## Package installation:
+<img src="https://raw.githubusercontent.com/EnriquePH/OEIS.R/master/sticker/OEIS.R-sticker.png" align="right" height="200"/>
+
+**Access sequences from the [On-Line Encyclopedia of Integer Sequences (OEIS)](https://oeis.org/) directly from R**
+
+OEIS is one of the world's most valuable mathematical resources: thousands of
+integer sequences with formulas, comments, references, and code. It has
+contributed to mathematical discoveries and is cited in over 6000 articles.
+**OEIS.R** brings this data to R in a structured way, making it easy to
+visualize, analyze, and use in mathematical hypotheses or contributions to OEIS.
+
+## Installation
 
 ```r
-# install.packages("devtools")
-library(devtools)
+# install.packages("devtools")  # if you don't have it
 devtools::install_github("EnriquePH/OEIS.R")
 ```
 
-## Take the first steps with `OEIS.R`
+## Quick Start
 
 ```r
-# Loading packages
-library(OEIS.R)
+Rlibrary(OEIS.R)
 library(ggplot2)
 
-# Download sequence from OEIS
+# Download the Fibonacci sequence (A000045)
+fib <- OEIS_sequence("A000045")
+
+# Basic info
+OEIS_description(fib)
+OEIS_formula(fib)
+
+# Quick plot (add your own image here after generating it!)
+OEIS_plot(fib)
+```
+
+## Another example: Sequence A001615
+
+```r
 id <- "A001615"
 x <- OEIS_sequence(id)
 
-# Plot sequence
 OEIS_ggplot(x) +
- geom_line() +
- geom_point(size = 0.5, color = "green")
+  geom_line() +
+  geom_point(size = 0.5, color = "green") +
+  labs(title = paste("OEIS", id, "-", OEIS_name(x)))
 ```
-![](https://raw.githubusercontent.com/EnriquePH/OEIS.R/master/img/A001615.png)
 
-## OEIS.R App
-This a `shiny` application that makes use of OEIS.R package. 
-[shiny OEIS App](https://kikesoft.shinyapps.io/OEIS/)
+![A001615 plot](./img/A001615.png)
 
-## Links:
-* [OEIS: Explanation of Terms](https://oeis.org/eishelp2.html)
-* [THE OEIS TERMS OF USE AGREEMENT](https://oeis.org/OEISTermsOfUse.pdf)
-* [Wikipedia: On-Line Encyclopedia of Integer Sequences](https://en.wikipedia.org/wiki/On-Line_Encyclopedia_of_Integer_Sequences)
-* [The OEIS Foundation Inc](http://oeisf.org/)
+## Main Features
 
+Download and parsing of OEIS sequences (terms, description, formula, offset, etc.).
+Seamless integration with _ggplot2_ for visualization.
+Helper functions:
+
+* _OEIS_description()_
+* _OEIS_formula()_
+* _OEIS_keywords()_
+
+Respects OEIS terms of use (rate limiting recommended).
+Example Shiny app for interactive exploration.
+
+## Shiny App
+Try the interactive demo: OEIS.R Shiny App
+
+## Useful Links
+
+* [Official OEIS website](https://oeis.org/)
+* [OEIS Terms of Use](https://oeis.org/OEISTermsOfUse.pdf)
+* [Wikipedia: OEIS](https://en.wikipedia.org/wiki/On-Line_Encyclopedia_of_Integer_Sequences)
+* [OEIS Foundation](http://oeisf.org/)
+
+## Contributing
+Contributions are welcome! Feel free to open issues or pull requests for
+features like term-based search, caching, extended parsing, or vignettes.
+
+## Author
+Enrique Pérez Herrero
+
+* GitHub: [@EnriquePH](https://github.com/EnriquePH)
+* LinkedIn: [eph3000](https://www.linkedin.com/in/eph3000)
+
+**Built with [RStudio](https://posit.co/download/rstudio-desktop/)** • Licensed under the [MIT License](LICENSE)
