@@ -8,7 +8,12 @@
 #  ---------------------------------------------------------------------------
 
 .onAttach <- function(libname, pkgname) {
-  packageStartupMessage(paste("OEIS Contains",
-                              OEIS_total_sequences(),
-                              "sequences."))
+  if (interactive()) {
+    total <- try(OEIS_total_sequences(), silent = TRUE)
+    if (!inherits(total, "try-error")) {
+      packageStartupMessage(paste("OEIS contains", total, "sequences."))
+    } else {
+      packageStartupMessage("Welcome to OEIS.R!")
+    }
+  }
 }
