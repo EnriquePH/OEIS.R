@@ -19,7 +19,7 @@ related data.
 }
 \value{
 A character string with the OEIS sequence formula lines or
-  \code{NULL} if there are no formulae.
+\code{NULL} if there are no formulae.
 }
 \description{
 These lines give formulae, recurrences, generating functions, etc. for the
@@ -39,11 +39,11 @@ cat(formula, sep = "\n")
 \url{https://oeis.org/FAQ.html#Z08}
 }
 \seealso{
-\code{\link{OEIS_description}}
+\code{\link[=OEIS_description]{OEIS_description()}}
 
-\code{\link{OEIS_internal_format}}
+\code{\link[=OEIS_internal_format]{OEIS_internal_format()}}
 
-\code{\link{OEIS_sequence}}
+\code{\link[=OEIS_sequence]{OEIS_sequence()}}
 
-\code{\link{OEIS_example}}
+\code{\link[=OEIS_example]{OEIS_example()}}
 }

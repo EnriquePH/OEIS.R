@@ -34,7 +34,7 @@ Fields tags are separated by commas. The last tag finishes with a comma
 , although is not necessarily. The tag's name is not case-sensitive but
 caps are used.
 
-For more help on \code{bibentry} class, see: \code{\link[utils]{bibentry}}
+For more help on \code{bibentry} class, see: \code{\link[utils:bibentry]{utils::bibentry()}}
 }
 \examples{
 x <- OEIS_sequence("A170401")
@@ -55,14 +55,14 @@ print(bref, style = "citation")
 }
 \seealso{
 \itemize{
-\item \code{\link[utils]{person}}
+\item \code{\link[utils:person]{utils::person()}}
 }
 
 \itemize{
-\item \code{\link[utils]{toBibtex}}
+\item \code{\link[utils:toLatex]{utils::toBibtex()}}
 }
 
 \itemize{
-\item \code{\link{OEIS_author}}
+\item \code{\link[=OEIS_author]{OEIS_author()}}
 }
 }

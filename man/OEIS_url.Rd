@@ -16,7 +16,7 @@ url, if \code{FALSE} it returns full sequence url.}
 }
 \value{
 A string with the full sequence url, or the internal format url.
-\code{\link{OEIS_check}}
+\code{\link[=OEIS_check]{OEIS_check()}}
 }
 \description{
 Get sequence url in the OEIS server
@@ -30,5 +30,7 @@ OEIS_url("A000055", text = TRUE)
 \href{https://oeis.org/eishelp1.html}{Internal Format Used In}
 }
 \seealso{
-* \code{\link{OEIS_web_url}}
+\itemize{
+\item \code{\link[=OEIS_web_url]{OEIS_web_url()}}
+}
 }

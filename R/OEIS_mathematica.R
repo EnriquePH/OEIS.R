@@ -8,21 +8,20 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_mathematica
-#' OEIS Wolfram Mathematica code from sequence \code{internal_format}
+#' OEIS Wolfram Mathematica code from sequence `internal_format`
 #'
 #' These lines give `Mathematica` code to produce the sequence.
 #' @inheritParams OEIS_description
 #'
-#' @importFrom magrittr "%>%"
 #'
-#' @seealso * \code{\link{OEIS_description}}
-#' @seealso * \code{\link{OEIS_author}}
-#' @seealso * \code{\link{OEIS_internal_format}}
-#' @seealso * \code{\link{OEIS_formula}}
-#' @seealso * \code{\link{OEIS_sequence}}
-#' @seealso * \code{\link{OEIS_xml}}
+#' @seealso * [OEIS_description()]
+#' @seealso * [OEIS_author()]
+#' @seealso * [OEIS_internal_format()]
+#' @seealso * [OEIS_formula()]
+#' @seealso * [OEIS_sequence()]
+#' @seealso * [OEIS_xml()]
 #' @return A character string with the OEIS sequence lines of examples or
-#'   \code{NULL} if there are no examples.
+#'   `NULL` if there are no examples.
 #'
 #' @examples
 #'

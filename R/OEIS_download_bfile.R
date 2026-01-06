@@ -9,15 +9,15 @@
 
 #' Download bfile from the OEIS
 #'
-#' This function can be used to download a bfile from \url{https://oeis.org/}.
+#' This function can be used to download a bfile from <https://oeis.org/>.
 #' @inheritParams OEIS_check
 #' @param destpath A character string with the name where the downloaded
-#' \code{bfile} is saved
-#' @param ... Additional parameters (see \link[utils]{download.file})
+#' `bfile` is saved
+#' @param ... Additional parameters (see [download.file][utils::download.file])
 #'
 #' @return An (invisible) integer code, 0 for success and non-zero for failure.
-#' @seealso * \code{\link{OEIS_bfile_url}}
-#' @seealso * \code{\link{OEIS_bfile}}
+#' @seealso * [OEIS_bfile_url()]
+#' @seealso * [OEIS_bfile()]
 #'
 #' @export
 #'

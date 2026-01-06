@@ -13,16 +13,21 @@ sequence. It consists of "A" followed by 6 digits.}
 }
 \value{
 An object of class \code{"OEIS_ID"} or an error if \code{ID} is not
-  an OEIS valid ID
+an OEIS valid ID
 }
 \description{
 OEIS ID Validation
 }
 \examples{
 OEIS_check("A002000")
+
 }
 \seealso{
-* \code{\link{OEIS_url}}
+\itemize{
+\item \code{\link[=OEIS_url]{OEIS_url()}}
+}
 
-* \code{\link{OEIS_ID}}
+\itemize{
+\item \code{\link[=OEIS_ID]{OEIS_ID()}}
+}
 }

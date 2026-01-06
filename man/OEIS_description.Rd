@@ -45,18 +45,18 @@ OEIS_description(internal_format)
 }
 \seealso{
 \itemize{
-\item \code{\link{OEIS_internal_format}}
+\item \code{\link[=OEIS_internal_format]{OEIS_internal_format()}}
 }
 
 \itemize{
-\item \code{\link{OEIS_sequence}}
+\item \code{\link[=OEIS_sequence]{OEIS_sequence()}}
 }
 
 \itemize{
-\item \code{\link{OEIS_xml}}
+\item \code{\link[=OEIS_xml]{OEIS_xml()}}
 }
 
 \itemize{
-\item \code{\link{OEIS_check}}
+\item \code{\link[=OEIS_check]{OEIS_check()}}
 }
 }

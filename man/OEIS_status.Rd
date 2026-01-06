@@ -41,14 +41,14 @@ OEIS_status(test_seq_xml)
 }
 \seealso{
 \itemize{
-\item \code{\link{OEIS_check}}
+\item \code{\link[=OEIS_check]{OEIS_check()}}
 }
 
 \itemize{
-\item \code{\link{OEIS_df}}
+\item \code{\link[=OEIS_df]{OEIS_df()}}
 }
 
 \itemize{
-\item \code{\link{OEIS_xml}}
+\item \code{\link[=OEIS_xml]{OEIS_xml()}}
 }
 }

@@ -14,8 +14,7 @@
 #' @importFrom xml2 read_html
 #' @importFrom rvest html_nodes
 #' @importFrom rvest html_text
-#' @importFrom magrittr "%>%"
-#' @seealso * \code{\link{OEIS_sequence}}
+#' @seealso * [OEIS_sequence()]
 #'
 #' @export
 #'

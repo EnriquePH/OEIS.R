@@ -14,11 +14,10 @@
 #' the sequence.
 #' @inheritParams OEIS_check
 #'
-#' @importFrom magrittr "%>%"
 #' @importFrom xml2 read_html
-#' @seealso * \code{\link{OEIS_url}}
-#' @seealso * \code{\link{OEIS_check}}
-#' @return An \code{OEIS_xml} S3 class and \code{xml_document} from OEIS web
+#' @seealso * [OEIS_url()]
+#' @seealso * [OEIS_check()]
+#' @return An `OEIS_xml` S3 class and `xml_document` from OEIS web
 #'   with the sequence content.
 #'
 #' @examples

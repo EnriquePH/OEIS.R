@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_ID.R
 \name{OEIS_ID}
 \alias{OEIS_ID}
-\title{OEIS sequence authors from \code{internal format}, or from the sequence
+\title{OEIS sequence authors from \verb{internal format}, or from the sequence
 \code{ID}.}
 \usage{
 OEIS_ID(x)
@@ -33,18 +33,18 @@ OEIS_ID(id)
 }
 \seealso{
 \itemize{
-\item \code{\link{OEIS_description}}
+\item \code{\link[=OEIS_description]{OEIS_description()}}
 }
 
 \itemize{
-\item \code{\link{OEIS_internal_format}}
+\item \code{\link[=OEIS_internal_format]{OEIS_internal_format()}}
 }
 
 \itemize{
-\item \code{\link{OEIS_sequence}}
+\item \code{\link[=OEIS_sequence]{OEIS_sequence()}}
 }
 
 \itemize{
-\item \code{\link{OEIS_check}}
+\item \code{\link[=OEIS_check]{OEIS_check()}}
 }
 }

@@ -8,23 +8,22 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_author
-#' OEIS sequence authors from \code{internal format}, or from the sequence
-#' \code{ID}.
+#' OEIS sequence authors from `internal format`, or from the sequence
+#' `ID`.
 #'
 #' This function gives the name of the person, or persons, who contributed the
 #' sequence and their emails, if they are present and selected.
 #' @inheritParams OEIS_description
-#' @param email A logical, by specifying: \code{email = TRUE}, the
+#' @param email A logical, by specifying: `email = TRUE`, the
 #' author's email is returned, if present, with the author's name.
-#' The default value of \code{email} is \code{FALSE}.
+#' The default value of `email` is `FALSE`.
 #'
-#' @importFrom magrittr "%>%"
-#' @importFrom magrittr "%<>%"
+#' @importFrom magrittr %<>%
 #'
-#' @seealso * \code{\link{OEIS_description}}
-#' @seealso * \code{\link{OEIS_internal_format}}
-#' @seealso * \code{\link{OEIS_sequence}}
-#' @seealso * \code{\link{OEIS_check}}
+#' @seealso * [OEIS_description()]
+#' @seealso * [OEIS_internal_format()]
+#' @seealso * [OEIS_sequence()]
+#' @seealso * [OEIS_check()]
 #'
 #' @return A character vector with the OEIS sequence authors and emails.
 #'

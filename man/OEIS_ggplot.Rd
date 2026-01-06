@@ -11,7 +11,7 @@ OEIS_ggplot(x)
 \item{x}{An object of class \code{OEIS_sequence}}
 }
 \value{
-A graphic object of the classes `gg` and `ggplot`
+A graphic object of the classes \code{gg} and \code{ggplot}
 }
 \description{
 OEIS_ggplot
@@ -25,7 +25,11 @@ OEIS_ggplot(x)
 
 }
 \seealso{
-* \code{\link{OEIS_bibtex}}
+\itemize{
+\item \code{\link[=OEIS_bibtex]{OEIS_bibtex()}}
+}
 
-* \code{\link{OEIS_sequence}}
+\itemize{
+\item \code{\link[=OEIS_sequence]{OEIS_sequence()}}
+}
 }

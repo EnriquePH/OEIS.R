@@ -9,7 +9,7 @@
 
 
 #  OEIS_offset
-#' OEIS sequence offset from \code{xml2} data.
+#' OEIS sequence offset from `xml2` data.
 #'
 #' This line usually gives the subscript of the first term in the sequence. If
 #' the sequence gives the decimal expansion of a constant, the offset is the
@@ -20,16 +20,15 @@
 #'
 #' @inheritParams OEIS_description
 #'
-#' @importFrom magrittr "%>%"
 #' @importFrom magrittr extract2
 #' @importFrom rvest html_nodes
 #' @importFrom rvest html_text
-#' @seealso * \code{\link{OEIS_internal_format}}
-#' @seealso * \code{\link{OEIS_description}}
-#' @seealso * \code{\link{OEIS_xml}}
-#' @seealso * \code{\link{OEIS_sequence}}
-#' @references \href{https://oeis.org/eishelp2.html#RS}{Explanation of the Different Lines}
-#' @references \href{https://oeis.org/FAQ.html#Z23}{What does the "offset" mean?}
+#' @seealso * [OEIS_internal_format()]
+#' @seealso * [OEIS_description()]
+#' @seealso * [OEIS_xml()]
+#' @seealso * [OEIS_sequence()]
+#' @references [Explanation of the Different Lines](https://oeis.org/eishelp2.html#RS)
+#' @references [What does the "offset" mean?](https://oeis.org/FAQ.html#Z23)
 #'
 #' @note In the internal format for a sequence the offset line (the %O line)
 #'   contains two numbers. The first is the offset as just defined. The second

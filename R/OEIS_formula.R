@@ -8,25 +8,23 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_formula
-#' OEIS sequence formula lines from sequence \code{internal_format}
+#' OEIS sequence formula lines from sequence `internal_format`
 #'
 #' These lines give formulae, recurrences, generating functions, etc. for the
 #' sequence.
-#' \strong{a(n)} usually denotes the n-th term of the sequence, and \strong{n}
+#' **a(n)** usually denotes the n-th term of the sequence, and **n**
 #' is a typical subscript.
 #' @inheritParams OEIS_description
 #'
-#' @seealso \code{\link{OEIS_description}}
-#' @seealso \code{\link{OEIS_internal_format}}
-#' @seealso \code{\link{OEIS_sequence}}
-#' @seealso \code{\link{OEIS_example}}
-#' @importFrom magrittr "%>%"
-#' @importFrom magrittr "%<>%"
+#' @seealso [OEIS_description()]
+#' @seealso [OEIS_internal_format()]
+#' @seealso [OEIS_sequence()]
+#' @seealso [OEIS_example()]
 #'
-#' @references \url{https://oeis.org/FAQ.html#Z08}
+#' @references <https://oeis.org/FAQ.html#Z08>
 #'
 #' @return A character string with the OEIS sequence formula lines or
-#'   \code{NULL} if there are no formulae.
+#'   `NULL` if there are no formulae.
 #' @export
 #'
 #' @examples

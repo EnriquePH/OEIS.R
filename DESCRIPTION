@@ -13,7 +13,7 @@ Description: Integer sequences from OEIS in R.
 Depends: R (>= 3.3.3)
 License: MIT + file LICENSE
 Encoding: UTF-8
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.0
 Imports:
    xml2,
    rvest,
@@ -28,3 +28,4 @@ Suggests:
     qpdf,
     covr
 VignetteBuilder: knitr
+Roxygen: list(markdown = TRUE)

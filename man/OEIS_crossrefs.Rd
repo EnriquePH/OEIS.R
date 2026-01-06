@@ -19,7 +19,7 @@ related data.
 }
 \value{
 An object of the class \code{OEIS_crossrefs} including referenced
-  sequences, sequences in context and adjacent sequences.
+sequences, sequences in context and adjacent sequences.
 }
 \description{
 Cross references IDs
@@ -32,13 +32,13 @@ OEIS_crossrefs(seq_html)
 }
 }
 \seealso{
-\code{\link{OEIS_seqs_in_context}}
+\code{\link[=OEIS_seqs_in_context]{OEIS_seqs_in_context()}}
 
-\code{\link{OEIS_seqs_adjacent}}
+\code{\link[=OEIS_seqs_adjacent]{OEIS_seqs_adjacent()}}
 
-\code{\link{OEIS_cf}}
+\code{\link[=OEIS_cf]{OEIS_cf()}}
 
-\code{\link{OEIS_df}}
+\code{\link[=OEIS_df]{OEIS_df()}}
 
-\code{\link{OEIS_xml}}
+\code{\link[=OEIS_xml]{OEIS_xml()}}
 }

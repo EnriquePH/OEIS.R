@@ -8,22 +8,21 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_comments
-#' OEIS sequence comments lines from sequence \code{internal_format}
+#' OEIS sequence comments lines from sequence `internal_format`
 #'
 #' The comments field in OEIS sequence entries is for information that does
 #' not quite fit in other fields.
 #' @inheritParams OEIS_description
 #'
-#' @importFrom magrittr "%>%"
 #'
-#' @seealso * \code{\link{OEIS_description}}
-#' @seealso * \code{\link{OEIS_author}}
-#' @seealso * \code{\link{OEIS_internal_format}}
-#' @seealso * \code{\link{OEIS_formula}}
-#' @seealso * \code{\link{OEIS_sequence}}
-#' @seealso * \code{\link{OEIS_xml}}
+#' @seealso * [OEIS_description()]
+#' @seealso * [OEIS_author()]
+#' @seealso * [OEIS_internal_format()]
+#' @seealso * [OEIS_formula()]
+#' @seealso * [OEIS_sequence()]
+#' @seealso * [OEIS_xml()]
 #' @return A character string with the OEIS sequence comments lines from the
-#'    sequence or \code{NULL} if there are no comments.
+#'    sequence or `NULL` if there are no comments.
 #'
 #' @examples
 #' id <- "A105805"

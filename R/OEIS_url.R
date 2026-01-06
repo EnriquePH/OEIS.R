@@ -11,15 +11,14 @@
 #' Get sequence url in the OEIS server
 #'
 #' @inheritParams OEIS_check
-#' @param text A logical if \code{TRUE} the function returns the internal format
-#'   url, if \code{FALSE} it returns full sequence url.
+#' @param text A logical if `TRUE` the function returns the internal format
+#'   url, if `FALSE` it returns full sequence url.
 #'
-#' @seealso * \code{\link{OEIS_web_url}}
-#' @importFrom magrittr "%>%"
+#' @seealso * [OEIS_web_url()]
 #' @return A string with the full sequence url, or the internal format url.
-#' \code{\link{OEIS_check}}
+#' [OEIS_check()]
 #'
-#' @references \href{https://oeis.org/eishelp1.html}{Internal Format Used In}
+#' @references [Internal Format Used In](https://oeis.org/eishelp1.html)
 #'
 #' @examples
 #' OEIS_url("A000055")

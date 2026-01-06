@@ -8,22 +8,22 @@
 #  ----------------------------------------------------------------------------
 
 #  OEIS_sequence
-#' S3 class constructor for \code{OEIS_sequence}
+#' S3 class constructor for `OEIS_sequence`
 #'
 #' @inheritParams OEIS_check
 #'
-#' @return An object of the S3 class \code{OEIS_sequence}.
-#' @seealso * \code{\link{OEIS_check}}
-#' @seealso * \code{\link{OEIS_url}}
-#' @seealso * \code{\link{OEIS_description}}
-#' @seealso * \code{\link{OEIS_formerly}}
-#' @seealso * \code{\link{OEIS_bfile}}
-#' @seealso * \code{\link{OEIS_terms}}
-#' @seealso * \code{\link{OEIS_xml}}
-#' @seealso * \code{\link{OEIS_internal_format}}
-#' @seealso * \code{\link{OEIS_df}}
-#' @references \href{https://oeis.org/eishelp2.html#RS}{Explanation of Terms Used
-#'   in Reply From}
+#' @return An object of the S3 class `OEIS_sequence`.
+#' @seealso * [OEIS_check()]
+#' @seealso * [OEIS_url()]
+#' @seealso * [OEIS_description()]
+#' @seealso * [OEIS_formerly()]
+#' @seealso * [OEIS_bfile()]
+#' @seealso * [OEIS_terms()]
+#' @seealso * [OEIS_xml()]
+#' @seealso * [OEIS_internal_format()]
+#' @seealso * [OEIS_df()]
+#' @references [Explanation of Terms Used
+#'   in Reply From](https://oeis.org/eishelp2.html#RS)
 #'
 #' @examples
 #' id <- "A003456"
@@ -64,7 +64,7 @@ OEIS_sequence <- function(ID){
 
 #' Plot class OEIS_Sequence
 #'
-#' @param x An object of the S3 class \code{"OEIS_sequence"}
+#' @param x An object of the S3 class `"OEIS_sequence"`
 #' @param ... other arguments
 #' @importFrom graphics plot.default
 #' @return A plot of sequence terms

@@ -8,22 +8,21 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_keywords
-#' OEIS sequence keywords from sequence \code{internal_format}
+#' OEIS sequence keywords from sequence `internal_format`
 #'
 #' These lines give keywords describing the sequence.
 #' The actual keywords, in use, can be found at:
-#' \href{https://oeis.org/eishelp2.html}{Explanation of Terms Used}
+#' [Explanation of Terms Used](https://oeis.org/eishelp2.html)
 #'
 #' @inheritParams OEIS_author
 #'
-#' @importFrom magrittr "%>%"
 #' @importFrom rvest html_nodes
 #' @importFrom rvest html_text
 #'
-#' @seealso * \code{\link{OEIS_author}}
-#' @seealso * \code{\link{OEIS_sequence}}
-#' @seealso * \code{\link{OEIS_internal_format}}
-#' @seealso * \code{\link{OEIS_xml}}
+#' @seealso * [OEIS_author()]
+#' @seealso * [OEIS_sequence()]
+#' @seealso * [OEIS_internal_format()]
+#' @seealso * [OEIS_xml()]
 #' @return A character vector with the OEIS sequence keywords.
 #'
 #' @examples

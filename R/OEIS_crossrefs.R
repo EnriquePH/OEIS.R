@@ -9,19 +9,18 @@
 
 #  OEIS_cf
 #' OEIS sequence linked cross references from sequence information
-#' \code{data.frame}
+#' `data.frame`
 #'
 #' @inheritParams OEIS_description
 #'
-#' @importFrom magrittr "%>%"
 #' @importFrom magrittr extract2
-#' @seealso * \code{\link{OEIS_seqs_adjacent}}
-#' @seealso * \code{\link{OEIS_crossrefs}}
-#' @seealso * \code{\link{OEIS_xml}}
-#' @seealso * \code{\link{OEIS_df}}
+#' @seealso * [OEIS_seqs_adjacent()]
+#' @seealso * [OEIS_crossrefs()]
+#' @seealso * [OEIS_xml()]
+#' @seealso * [OEIS_df()]
 #'
 #' @return A character vector with OEIS sequence linked cross references
-#'   \code{ID}s.
+#'   `ID`s.
 #'
 #' @examples
 #' \dontrun{
@@ -78,21 +77,20 @@ OEIS_cf.OEIS_sequence <- function(x) {
 #  OEIS_seqs_in_context
 #' OEIS Sequences in context from from XML document
 #'
-#' This line show the three sequences \code{ID}s immediately before and after
+#' This line show the three sequences `ID`s immediately before and after
 #' the sequence in the lexicographic listing.
 #' @inheritParams OEIS_cf
 #'
-#' @importFrom magrittr "%>%"
 #' @importFrom rvest html_text
 #' @importFrom rvest html_nodes
 #'
 #' @return A character vector OEIS sequences in context IDs
-#' @seealso \code{\link{OEIS_seqs_adjacent}}
-#' @seealso \code{\link{OEIS_crossrefs}}
-#' @seealso \code{\link{OEIS_cf}}
-#' @seealso \code{\link{OEIS_xml}}
-#' @seealso \code{\link{OEIS_df}}
-#' @seealso \code{\link{OEIS_ID}}
+#' @seealso [OEIS_seqs_adjacent()]
+#' @seealso [OEIS_crossrefs()]
+#' @seealso [OEIS_cf()]
+#' @seealso [OEIS_xml()]
+#' @seealso [OEIS_df()]
+#' @seealso [OEIS_ID()]
 #'
 #' @examples
 #' \dontrun{
@@ -144,19 +142,18 @@ OEIS_seqs_in_context.OEIS_sequence <- function(x) {
 #  OEIS_seqs_adjacent
 #' OEIS Adjacent sequences from XML document
 #'
-#' Adjacent sequences IDs in OEIS. These are the three sequences whose A-numbers
-#' are immediately before and after the A-number of the sequence.
+#' Adjacent sequences `ID`s in OEIS. These are the three sequences whose
+#' A-numbers are immediately before and after the A-number of the sequence.
 #' @inheritParams OEIS_description
 #'
-#' @importFrom magrittr "%>%"
 #' @importFrom rvest html_text
 #' @importFrom rvest html_nodes
 #'
 #' @return A character vector OEIS sequences in context IDs
-#' @seealso \code{\link{OEIS_seqs_in_context}}
-#' @seealso \code{\link{OEIS_crossrefs}}
-#' @seealso \code{\link{OEIS_cf}}
-#' @seealso \code{\link{OEIS_xml}}
+#' @seealso [OEIS_seqs_in_context()]
+#' @seealso [OEIS_crossrefs()]
+#' @seealso [OEIS_cf()]
+#' @seealso [OEIS_xml()]
 #'
 #' @examples
 #' \dontrun{
@@ -212,13 +209,13 @@ OEIS_seqs_adjacent.OEIS_sequence <- function(x) {
 #' @inheritParams OEIS_description
 #'
 #'
-#' @return An object of the class \code{OEIS_crossrefs} including referenced
+#' @return An object of the class `OEIS_crossrefs` including referenced
 #'   sequences, sequences in context and adjacent sequences.
-#' @seealso \code{\link{OEIS_seqs_in_context}}
-#' @seealso \code{\link{OEIS_seqs_adjacent}}
-#' @seealso \code{\link{OEIS_cf}}
-#' @seealso \code{\link{OEIS_df}}
-#' @seealso \code{\link{OEIS_xml}}
+#' @seealso [OEIS_seqs_in_context()]
+#' @seealso [OEIS_seqs_adjacent()]
+#' @seealso [OEIS_cf()]
+#' @seealso [OEIS_df()]
+#' @seealso [OEIS_xml()]
 #'
 #' @examples
 #' \dontrun{

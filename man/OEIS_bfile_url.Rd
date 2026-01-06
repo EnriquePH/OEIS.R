@@ -16,7 +16,7 @@ the \code{bfile} file name.}
 }
 \value{
 A string with the sequence \strong{bfile} url, or the \strong{bfile}
-  file name
+file name
 }
 \description{
 A \strong{bfile} is a text formatted file that provides many more terms of a
@@ -29,7 +29,11 @@ OEIS_bfile_url(id, URL = FALSE)
 OEIS_bfile_url(id, URL = TRUE)
 }
 \seealso{
-* \code{\link{OEIS_url}}
+\itemize{
+\item \code{\link[=OEIS_url]{OEIS_url()}}
+}
 
-* \code{\link{OEIS_check}}
+\itemize{
+\item \code{\link[=OEIS_check]{OEIS_check()}}
+}
 }

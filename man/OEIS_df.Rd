@@ -28,7 +28,11 @@ df
 \url{https://oeis.org/eishelp2.html#RS}{Explanation of Terms Used in Reply From}
 }
 \seealso{
-* \code{\link{OEIS_xml}}
+\itemize{
+\item \code{\link[=OEIS_xml]{OEIS_xml()}}
+}
 
-* \code{\link{OEIS_sequence}}
+\itemize{
+\item \code{\link[=OEIS_sequence]{OEIS_sequence()}}
+}
 }

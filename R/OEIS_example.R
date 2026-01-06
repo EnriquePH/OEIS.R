@@ -8,22 +8,21 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_example
-#' OEIS sequence example lines from sequence \code{internal_format}
+#' OEIS sequence example lines from sequence `internal_format`
 #'
 #' These lines give expanded information or examples to illustrate the initial
 #' terms of the sequence.
 #' @inheritParams OEIS_description
 #'
-#' @importFrom magrittr "%>%"
 #'
-#' @seealso * \code{\link{OEIS_description}}
-#' @seealso * \code{\link{OEIS_author}}
-#' @seealso * \code{\link{OEIS_internal_format}}
-#' @seealso * \code{\link{OEIS_formula}}
-#' @seealso * \code{\link{OEIS_sequence}}
-#' @seealso * \code{\link{OEIS_xml}}
+#' @seealso * [OEIS_description()]
+#' @seealso * [OEIS_author()]
+#' @seealso * [OEIS_internal_format()]
+#' @seealso * [OEIS_formula()]
+#' @seealso * [OEIS_sequence()]
+#' @seealso * [OEIS_xml()]
 #' @return A character string with the OEIS sequence lines of examples or
-#'   \code{NULL} where no examples are available.
+#'   `NULL` where no examples are available.
 #'
 #' @examples
 #' id <- "A105805"

@@ -19,7 +19,7 @@ related data.
 }
 \value{
 A string with the OEIS former \code{ID} or \code{NULL}, if there is
-  no former sequence designation.
+no former sequence designation.
 }
 \description{
 This is an alternate \code{ID} for some sequences that also have a 4-digit
@@ -36,11 +36,19 @@ OEIS_formerly(internal_format)
 
 }
 \seealso{
-* \code{\link{OEIS_description}}
+\itemize{
+\item \code{\link[=OEIS_description]{OEIS_description()}}
+}
 
-* \code{\link{OEIS_internal_format}}
+\itemize{
+\item \code{\link[=OEIS_internal_format]{OEIS_internal_format()}}
+}
 
-* \code{\link{OEIS_sequence}}
+\itemize{
+\item \code{\link[=OEIS_sequence]{OEIS_sequence()}}
+}
 
-* \code{\link{OEIS_xml}}
+\itemize{
+\item \code{\link[=OEIS_xml]{OEIS_xml()}}
+}
 }

@@ -20,7 +20,7 @@ related data.
 }
 \value{
 A character vector with OEIS sequence linked cross references
-  \code{ID}s.
+\code{ID}s.
 }
 \description{
 OEIS sequence linked cross references from sequence information
@@ -35,11 +35,19 @@ OEIS_cf(seq_df)
 }
 }
 \seealso{
-* \code{\link{OEIS_seqs_adjacent}}
+\itemize{
+\item \code{\link[=OEIS_seqs_adjacent]{OEIS_seqs_adjacent()}}
+}
 
-* \code{\link{OEIS_crossrefs}}
+\itemize{
+\item \code{\link[=OEIS_crossrefs]{OEIS_crossrefs()}}
+}
 
-* \code{\link{OEIS_xml}}
+\itemize{
+\item \code{\link[=OEIS_xml]{OEIS_xml()}}
+}
 
-* \code{\link{OEIS_df}}
+\itemize{
+\item \code{\link[=OEIS_df]{OEIS_df()}}
+}
 }

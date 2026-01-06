@@ -8,18 +8,16 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_date
-#' OEIS sequence creation date from \code{data.frame}
+#' OEIS sequence creation date from `data.frame`
 #'
 #' Sequence creation date.
 #' @inheritParams OEIS_description
 #'
-#' @importFrom magrittr "%>%"
-#' @importFrom magrittr "%<>%"
 #' @importFrom magrittr extract
 #' @importFrom lubridate parse_date_time
 #'
-#' @return A \code{Date} object with the OEIS sequence creation date, or
-#'   \code{NA} if no date is found.
+#' @return A `Date` object with the OEIS sequence creation date, or
+#'   `NA` if no date is found.
 #'
 #' @examples
 #' id <- "A221863"

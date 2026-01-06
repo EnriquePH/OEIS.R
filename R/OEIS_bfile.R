@@ -8,17 +8,16 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_bfile
-#' S3 class constructor for \code{bfile} data.
+#' S3 class constructor for `bfile` data.
 #'
-#' A \code{bfile} is a text formatted file that provides many more terms of a
+#' A `bfile` is a text formatted file that provides many more terms of a
 #' sequence than the typical fifty to eighty terms that can be shown in the main
 #' sequence entry.
-#' @param ID A character string or an object of the class \code{OEIS_ID}
+#' @param ID A character string or an object of the class `OEIS_ID`
 #'
 #' @importFrom utils read.table
-#' @importFrom magrittr "%>%"
 #' @md
-#' @return A S3 object of the class \code{OEIS_bfile} with the following structure:
+#' @return A S3 object of the class `OEIS_bfile` with the following structure:
 #' * __bfile_name__: Name of `bfile`.
 #' * __bfile_url__: Url to `bfile` in the OEIS server.
 #' * __min_n__:  Minimum `n` position of the first term for available values of the sequence.
@@ -26,10 +25,10 @@
 #' * __comments__: Text comments included into the `bfile`
 #' * __data__: A data frame including all data within the `bfile` with two
 #'  columns: __n__ and other named as the sequence `ID` including sequence values for __a(n)__.
-#' @seealso * \code{\link{OEIS_bfile_url}}
-#' @seealso * \code{\link{OEIS_sequence}}
-#' @seealso * \code{\link{OEIS_check}}
-#' @seealso * \code{\link{OEIS_download_bfile}}
+#' @seealso * [OEIS_bfile_url()]
+#' @seealso * [OEIS_sequence()]
+#' @seealso * [OEIS_check()]
+#' @seealso * [OEIS_download_bfile()]
 #'
 #' @examples
 #' id <- "A000056"

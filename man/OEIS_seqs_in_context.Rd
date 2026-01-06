@@ -32,15 +32,15 @@ OEIS_seqs_in_context(seq_xml)
 }
 }
 \seealso{
-\code{\link{OEIS_seqs_adjacent}}
+\code{\link[=OEIS_seqs_adjacent]{OEIS_seqs_adjacent()}}
 
-\code{\link{OEIS_crossrefs}}
+\code{\link[=OEIS_crossrefs]{OEIS_crossrefs()}}
 
-\code{\link{OEIS_cf}}
+\code{\link[=OEIS_cf]{OEIS_cf()}}
 
-\code{\link{OEIS_xml}}
+\code{\link[=OEIS_xml]{OEIS_xml()}}
 
-\code{\link{OEIS_df}}
+\code{\link[=OEIS_df]{OEIS_df()}}
 
-\code{\link{OEIS_ID}}
+\code{\link[=OEIS_ID]{OEIS_ID()}}
 }

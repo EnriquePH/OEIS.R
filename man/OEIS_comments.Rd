@@ -19,7 +19,7 @@ related data.
 }
 \value{
 A character string with the OEIS sequence comments lines from the
-   sequence or \code{NULL} if there are no comments.
+sequence or \code{NULL} if there are no comments.
 }
 \description{
 The comments field in OEIS sequence entries is for information that does
@@ -33,15 +33,27 @@ cat(example, sep = "\n")
 
 }
 \seealso{
-* \code{\link{OEIS_description}}
+\itemize{
+\item \code{\link[=OEIS_description]{OEIS_description()}}
+}
 
-* \code{\link{OEIS_author}}
+\itemize{
+\item \code{\link[=OEIS_author]{OEIS_author()}}
+}
 
-* \code{\link{OEIS_internal_format}}
+\itemize{
+\item \code{\link[=OEIS_internal_format]{OEIS_internal_format()}}
+}
 
-* \code{\link{OEIS_formula}}
+\itemize{
+\item \code{\link[=OEIS_formula]{OEIS_formula()}}
+}
 
-* \code{\link{OEIS_sequence}}
+\itemize{
+\item \code{\link[=OEIS_sequence]{OEIS_sequence()}}
+}
 
-* \code{\link{OEIS_xml}}
+\itemize{
+\item \code{\link[=OEIS_xml]{OEIS_xml()}}
+}
 }

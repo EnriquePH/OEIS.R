@@ -14,7 +14,7 @@ sequence. It consists of "A" followed by 6 digits.}
 \item{destpath}{A character string with the name where the downloaded
 \code{bfile} is saved}
 
-\item{...}{Additional parameters (see \link[utils]{download.file})}
+\item{...}{Additional parameters (see \link[utils:download.file]{download.file})}
 }
 \value{
 An (invisible) integer code, 0 for success and non-zero for failure.
@@ -28,7 +28,11 @@ OEIS_download_bfile("A102030", "tests", quiet = TRUE)
 }
 }
 \seealso{
-* \code{\link{OEIS_bfile_url}}
+\itemize{
+\item \code{\link[=OEIS_bfile_url]{OEIS_bfile_url()}}
+}
 
-* \code{\link{OEIS_bfile}}
+\itemize{
+\item \code{\link[=OEIS_bfile]{OEIS_bfile()}}
+}
 }

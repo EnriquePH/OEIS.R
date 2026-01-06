@@ -19,17 +19,16 @@
 #'
 #' @inheritParams OEIS_description
 #'
-#' @importFrom magrittr "%>%"
 #' @importFrom magrittr extract2
 #' @importFrom rvest html_nodes
 #' @importFrom rvest html_text
-#' @seealso * \code{\link{OEIS_internal_format}}
-#' @seealso * \code{\link{OEIS_sequence}}
-#' @seealso * \code{\link{OEIS_bfile}}
-#' @seealso * \code{\link{OEIS_xml}}
+#' @seealso * [OEIS_internal_format()]
+#' @seealso * [OEIS_sequence()]
+#' @seealso * [OEIS_bfile()]
+#' @seealso * [OEIS_xml()]
 #' @return A character list with the OEIS sequence terms.
 #'
-#' @note For more terms see \code{\link{OEIS_bfile}}.
+#' @note For more terms see [OEIS_bfile()].
 #'
 #' @examples
 #' # Wieferich primes: primes p such that p^2 divides 2^(p-1) - 1.

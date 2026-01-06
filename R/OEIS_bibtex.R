@@ -36,7 +36,7 @@ author_list <- function(x) {
 
 #' Getting BibTeX citation from OEIS sequence
 #'
-#' @param x An object of class \code{OEIS_sequence}
+#' @param x An object of class `OEIS_sequence`
 #' @importFrom utils person
 #' @importFrom utils bibentry
 #' @md
@@ -56,17 +56,17 @@ author_list <- function(x) {
 #' @note Fields tags are separated by commas. The last tag finishes with a comma
 #' , although is not necessarily. The tag's name is not case-sensitive but
 #' caps are used.
-#' @note For more help on `bibentry` class, see: \code{\link[utils]{bibentry}}
+#' @note For more help on `bibentry` class, see: [utils::bibentry()]
 #'
-#' @seealso * \code{\link[utils]{person}}
-#' @seealso * \code{\link[utils]{toBibtex}}
-#' @seealso * \code{\link{OEIS_author}}
+#' @seealso * [utils::person()]
+#' @seealso * [utils::toBibtex()]
+#' @seealso * [OEIS_author()]
 #' @references
-#' * \href{http://www.bibtex.org/Format/}{BibTeX Format Description}
-#' * \href{http://psychedelic-geometry.blogspot.com.es/2010/02/bibtex-automatic-oeis-citations.html}{BibTeX AUTOMATIC OEIS CITATIONS}
-#' * \href{https://github.com/Psychedelic-Geometry/OEIS-Mathematica/wiki}{Mathematica OEIS Package}
-#' * \href{https://en.wikipedia.org/wiki/BibTeX}{Wikipedia: BibTex}
-#' * \href{https://oeis.org/wiki/Welcome#reference}{Referencing a Particular Sequence}
+#' * [BibTeX Format Description](http://www.bibtex.org/Format/)
+#' * [BibTeX AUTOMATIC OEIS CITATIONS](http://psychedelic-geometry.blogspot.com.es/2010/02/bibtex-automatic-oeis-citations.html)
+#' * [Mathematica OEIS Package](https://github.com/Psychedelic-Geometry/OEIS-Mathematica/wiki)
+#' * [Wikipedia: BibTex](https://en.wikipedia.org/wiki/BibTeX)
+#' * [Referencing a Particular Sequence](https://oeis.org/wiki/Welcome#reference)
 #' @export
 #'
 #' @examples

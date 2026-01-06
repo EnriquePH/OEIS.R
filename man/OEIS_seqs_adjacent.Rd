@@ -21,8 +21,8 @@ related data.
 A character vector OEIS sequences in context IDs
 }
 \description{
-Adjacent sequences IDs in OEIS. These are the three sequences whose A-numbers
-are immediately before and after the A-number of the sequence.
+Adjacent sequences \code{ID}s in OEIS. These are the three sequences whose
+A-numbers are immediately before and after the A-number of the sequence.
 }
 \examples{
 \dontrun{
@@ -32,11 +32,11 @@ OEIS_seqs_adjacent(seq_html)
 }
 }
 \seealso{
-\code{\link{OEIS_seqs_in_context}}
+\code{\link[=OEIS_seqs_in_context]{OEIS_seqs_in_context()}}
 
-\code{\link{OEIS_crossrefs}}
+\code{\link[=OEIS_crossrefs]{OEIS_crossrefs()}}
 
-\code{\link{OEIS_cf}}
+\code{\link[=OEIS_cf]{OEIS_cf()}}
 
-\code{\link{OEIS_xml}}
+\code{\link[=OEIS_xml]{OEIS_xml()}}
 }

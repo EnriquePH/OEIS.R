@@ -25,25 +25,42 @@ A003456
 
 }
 \references{
-\href{https://oeis.org/eishelp2.html#RS}{Explanation of Terms Used
-  in Reply From}
+\href{https://oeis.org/eishelp2.html#RS}{Explanation of Terms Used in Reply From}
 }
 \seealso{
-* \code{\link{OEIS_check}}
+\itemize{
+\item \code{\link[=OEIS_check]{OEIS_check()}}
+}
 
-* \code{\link{OEIS_url}}
+\itemize{
+\item \code{\link[=OEIS_url]{OEIS_url()}}
+}
 
-* \code{\link{OEIS_description}}
+\itemize{
+\item \code{\link[=OEIS_description]{OEIS_description()}}
+}
 
-* \code{\link{OEIS_formerly}}
+\itemize{
+\item \code{\link[=OEIS_formerly]{OEIS_formerly()}}
+}
 
-* \code{\link{OEIS_bfile}}
+\itemize{
+\item \code{\link[=OEIS_bfile]{OEIS_bfile()}}
+}
 
-* \code{\link{OEIS_terms}}
+\itemize{
+\item \code{\link[=OEIS_terms]{OEIS_terms()}}
+}
 
-* \code{\link{OEIS_xml}}
+\itemize{
+\item \code{\link[=OEIS_xml]{OEIS_xml()}}
+}
 
-* \code{\link{OEIS_internal_format}}
+\itemize{
+\item \code{\link[=OEIS_internal_format]{OEIS_internal_format()}}
+}
 
-* \code{\link{OEIS_df}}
+\itemize{
+\item \code{\link[=OEIS_df]{OEIS_df()}}
+}
 }

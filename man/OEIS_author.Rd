@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_author.R
 \name{OEIS_author}
 \alias{OEIS_author}
-\title{OEIS sequence authors from \code{internal format}, or from the sequence
+\title{OEIS sequence authors from \verb{internal format}, or from the sequence
 \code{ID}.}
 \usage{
 OEIS_author(x, email = FALSE)
@@ -35,11 +35,19 @@ OEIS_author(id, email = TRUE)
 
 }
 \seealso{
-* \code{\link{OEIS_description}}
+\itemize{
+\item \code{\link[=OEIS_description]{OEIS_description()}}
+}
 
-* \code{\link{OEIS_internal_format}}
+\itemize{
+\item \code{\link[=OEIS_internal_format]{OEIS_internal_format()}}
+}
 
-* \code{\link{OEIS_sequence}}
+\itemize{
+\item \code{\link[=OEIS_sequence]{OEIS_sequence()}}
+}
 
-* \code{\link{OEIS_check}}
+\itemize{
+\item \code{\link[=OEIS_check]{OEIS_check()}}
+}
 }

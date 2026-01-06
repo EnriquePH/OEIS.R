@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_terms.R
 \name{OEIS_terms}
 \alias{OEIS_terms}
-\title{Get OEIS sequence terms from `XML` document.}
+\title{Get OEIS sequence terms from \code{XML} document.}
 \usage{
 OEIS_terms(x)
 }
@@ -29,7 +29,7 @@ the Keyword "frac", and with links connecting the two sequences. Only
 sequences that are well-defined and of general interest are included
 }
 \note{
-For more terms see \code{\link{OEIS_bfile}}.
+For more terms see \code{\link[=OEIS_bfile]{OEIS_bfile()}}.
 }
 \examples{
 # Wieferich primes: primes p such that p^2 divides 2^(p-1) - 1.
@@ -39,11 +39,19 @@ OEIS_terms(internal_format)
 
 }
 \seealso{
-* \code{\link{OEIS_internal_format}}
+\itemize{
+\item \code{\link[=OEIS_internal_format]{OEIS_internal_format()}}
+}
 
-* \code{\link{OEIS_sequence}}
+\itemize{
+\item \code{\link[=OEIS_sequence]{OEIS_sequence()}}
+}
 
-* \code{\link{OEIS_bfile}}
+\itemize{
+\item \code{\link[=OEIS_bfile]{OEIS_bfile()}}
+}
 
-* \code{\link{OEIS_xml}}
+\itemize{
+\item \code{\link[=OEIS_xml]{OEIS_xml()}}
+}
 }

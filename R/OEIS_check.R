@@ -10,19 +10,20 @@
 #  OEIS_check
 #' OEIS ID Validation
 #'
-#' @param ID A string with the OEIS sequence identifier \code{ID} number.
-#' The A-number or sequence \code{ID} is the absolute catalog number of the
+#' @param ID A string with the OEIS sequence identifier `ID` number.
+#' The A-number or sequence `ID` is the absolute catalog number of the
 #' sequence. It consists of "A" followed by 6 digits.
 #'
-#' @seealso * \code{\link{OEIS_url}}
-#' @seealso * \code{\link{OEIS_ID}}
+#' @seealso * [OEIS_url()]
+#' @seealso * [OEIS_ID()]
 #'
-#' @return An object of class \code{"OEIS_ID"} or an error if \code{ID} is not
+#' @return An object of class `"OEIS_ID"` or an error if `ID` is not
 #'   an OEIS valid ID
 #' @export
 #'
 #' @examples
 #' OEIS_check("A002000")
+#'
 OEIS_check <- function(ID) {
   if (!grepl("^A\\d{6}$", ID)) {
     stop(paste0("\"", ID, "\" is not an OEIS valid ID"))

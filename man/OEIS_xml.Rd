@@ -2,7 +2,7 @@
 % Please edit documentation in R/OEIS_xml.R
 \name{OEIS_xml}
 \alias{OEIS_xml}
-\title{Retrieves content from OEIS web as an `XML` document}
+\title{Retrieves content from OEIS web as an \code{XML} document}
 \usage{
 OEIS_xml(ID)
 }
@@ -13,10 +13,10 @@ sequence. It consists of "A" followed by 6 digits.}
 }
 \value{
 An \code{OEIS_xml} S3 class and \code{xml_document} from OEIS web
-  with the sequence content.
+with the sequence content.
 }
 \description{
-The `XML` document contains all the information from the OEIS web related to
+The \code{XML} document contains all the information from the OEIS web related to
 the sequence.
 }
 \examples{
@@ -27,7 +27,11 @@ the sequence.
 
 }
 \seealso{
-* \code{\link{OEIS_url}}
+\itemize{
+\item \code{\link[=OEIS_url]{OEIS_url()}}
+}
 
-* \code{\link{OEIS_check}}
+\itemize{
+\item \code{\link[=OEIS_check]{OEIS_check()}}
+}
 }

@@ -19,7 +19,7 @@ related data.
 }
 \value{
 A character string with the OEIS sequence extensions lines or
-  \code{NULL} if there are no extensions.
+\code{NULL} if there are no extensions.
 }
 \description{
 This field is to claim credit for additions to the entry that can't be
@@ -38,11 +38,19 @@ extensions <- OEIS_extensions(internal_format)
 cat(extensions, sep = "\n")
 }
 \seealso{
-* \code{\link{OEIS_description}}
+\itemize{
+\item \code{\link[=OEIS_description]{OEIS_description()}}
+}
 
-* \code{\link{OEIS_internal_format}}
+\itemize{
+\item \code{\link[=OEIS_internal_format]{OEIS_internal_format()}}
+}
 
-* \code{\link{OEIS_sequence}}
+\itemize{
+\item \code{\link[=OEIS_sequence]{OEIS_sequence()}}
+}
 
-* \code{\link{OEIS_example}}
+\itemize{
+\item \code{\link[=OEIS_example]{OEIS_example()}}
+}
 }

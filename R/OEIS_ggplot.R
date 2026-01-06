@@ -10,14 +10,14 @@
 #' OEIS_ggplot
 #' Plot OEIS sequence with ggplot
 #'
-#' @param x An object of class \code{OEIS_sequence}
+#' @param x An object of class `OEIS_sequence`
 #'
 #' @importFrom ggplot2 ggplot aes xlab ylab ggtitle geom_point
 #' @importFrom ggplot2 scale_y_continuous
 #' @return A graphic object of the classes `gg` and `ggplot`
 #'
-#' @seealso * \code{\link{OEIS_bibtex}}
-#' @seealso * \code{\link{OEIS_sequence}}
+#' @seealso * [OEIS_bibtex()]
+#' @seealso * [OEIS_sequence()]
 #' @examples
 #' # A123456: Ludwig van Beethoven, Bagatelle No. 25, Für Elise.
 #' id <- "A123456"

@@ -8,7 +8,7 @@
 #  ---------------------------------------------------------------------------
 
 #  OEIS_extensions
-#' OEIS sequence extensions from sequence \code{internal_format}
+#' OEIS sequence extensions from sequence `internal_format`
 #'
 #' This field is to claim credit for additions to the entry that can't be
 #' properly acknowledged in other fields. The most common use is to acknowledge
@@ -16,15 +16,14 @@
 #'
 #' @inheritParams OEIS_description
 #'
-#' @seealso * \code{\link{OEIS_description}}
-#' @seealso * \code{\link{OEIS_internal_format}}
-#' @seealso * \code{\link{OEIS_sequence}}
-#' @seealso * \code{\link{OEIS_example}}
-#' @importFrom magrittr "%>%" "%<>%"
+#' @seealso * [OEIS_description()]
+#' @seealso * [OEIS_internal_format()]
+#' @seealso * [OEIS_sequence()]
+#' @seealso * [OEIS_example()]
 #'
-#' @note \href{http://oeis.org/wiki/Style_Sheet}{OEIS Wiki: Style sheet for Style sheet for contributors}
+#' @note [OEIS Wiki: Style sheet for Style sheet for contributors](http://oeis.org/wiki/Style_Sheet)
 #' @return A character string with the OEIS sequence extensions lines or
-#'   \code{NULL} if there are no extensions.
+#'   `NULL` if there are no extensions.
 #' @export
 #'
 #' @examples

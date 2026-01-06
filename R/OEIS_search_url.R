@@ -12,9 +12,8 @@
 #' @param txt A string with the text to search in OEIS web
 #'
 #' @return A string with the search url in OEIS
-#' @importFrom magrittr "%>%"
-#' @seealso * \code{\link{OEIS_web_url}}
-#' @seealso * \code{\link{OEIS_sequence}}
+#' @seealso * [OEIS_web_url()]
+#' @seealso * [OEIS_sequence()]
 #' @export
 #'
 #' @examples

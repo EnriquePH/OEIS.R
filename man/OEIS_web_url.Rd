@@ -11,7 +11,7 @@ OEIS_web_url(license = FALSE)
 }
 \value{
 A string with the main OEIS url: \url{https://oeis.org/},
-or the _OEIS End-User License Agreement_ url, if parameter \code{license}
+or the \emph{OEIS End-User License Agreement} url, if parameter \code{license}
 is \code{TRUE}
 }
 \description{

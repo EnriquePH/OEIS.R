@@ -16,5 +16,7 @@ Total Number of sequences in OEIS
 OEIS_total_sequences()
 }
 \seealso{
-* \code{\link{OEIS_sequence}}
+\itemize{
+\item \code{\link[=OEIS_sequence]{OEIS_sequence()}}
+}
 }

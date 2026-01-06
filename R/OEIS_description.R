@@ -11,25 +11,25 @@
 #' Get OEIS sequence description
 #'
 #' Sequence description gives a brief definition of the sequence.
-#' In the description, \emph{a(n)} usually denotes the n-th term of the
-#' sequence, and \emph{n} is a typical subscript.
-#' In some cases however \emph{n} denotes a typical term in the sequence.
+#' In the description, *a(n)* usually denotes the n-th term of the
+#' sequence, and *n* is a typical subscript.
+#' In some cases however *n* denotes a typical term in the sequence.
 #'
 #' @param x Can be one of the following:
-#' * A character string with sequence \code{ID}.
-#' * A \code{OEIS_internal} S3 class object, with sequence internal format.
-#' * A S3 classes object \code{OEIS_xml} and \code{xml_document}, with
+#' * A character string with sequence `ID`.
+#' * A `OEIS_internal` S3 class object, with sequence internal format.
+#' * A S3 classes object `OEIS_xml` and `xml_document`, with
 #' sequence content from OEIS web.
-#' * An object of \code{OEIS_sequence} class, that contains all sequence
+#' * An object of `OEIS_sequence` class, that contains all sequence
 #' related data.
 #' @md
 #'
-#' @seealso * \code{\link{OEIS_internal_format}}
-#' @seealso * \code{\link{OEIS_sequence}}
-#' @seealso * \code{\link{OEIS_xml}}
-#' @seealso * \code{\link{OEIS_check}}
+#' @seealso * [OEIS_internal_format()]
+#' @seealso * [OEIS_sequence()]
+#' @seealso * [OEIS_xml()]
+#' @seealso * [OEIS_check()]
 #'
-#' @importFrom magrittr "%>%" extract2
+#' @importFrom magrittr extract2
 #' @importFrom rvest html_table
 #'
 #' @return A string with the OEIS sequence description.

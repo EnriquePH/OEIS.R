@@ -29,12 +29,12 @@ starting with 1), first exceeds 1 in absolute value. This is set to 1 if all
 the terms are 0 or +-1
 }
 \note{
-In the internal format for a sequence the offset line (the %O line)
-  contains two numbers. The first is the offset as just defined. The second
-  gives the position of first entry greater than or equal to 2 in magnitude
-  in the sequence (or 1 if no such entry exists), starting counting at 1. The
-  second offset is used to determine the position of the sequence in the
-  lexicographic order in the database.
+In the internal format for a sequence the offset line (the \%O line)
+contains two numbers. The first is the offset as just defined. The second
+gives the position of first entry greater than or equal to 2 in magnitude
+in the sequence (or 1 if no such entry exists), starting counting at 1. The
+second offset is used to determine the position of the sequence in the
+lexicographic order in the database.
 }
 \examples{
 \dontrun{
@@ -49,11 +49,19 @@ OEIS_offset(internal_format)
 \href{https://oeis.org/FAQ.html#Z23}{What does the "offset" mean?}
 }
 \seealso{
-* \code{\link{OEIS_internal_format}}
+\itemize{
+\item \code{\link[=OEIS_internal_format]{OEIS_internal_format()}}
+}
 
-* \code{\link{OEIS_description}}
+\itemize{
+\item \code{\link[=OEIS_description]{OEIS_description()}}
+}
 
-* \code{\link{OEIS_xml}}
+\itemize{
+\item \code{\link[=OEIS_xml]{OEIS_xml()}}
+}
 
-* \code{\link{OEIS_sequence}}
+\itemize{
+\item \code{\link[=OEIS_sequence]{OEIS_sequence()}}
+}
 }

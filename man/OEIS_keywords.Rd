@@ -40,11 +40,19 @@ OEIS_keywords(frmt)
 
 }
 \seealso{
-* \code{\link{OEIS_author}}
+\itemize{
+\item \code{\link[=OEIS_author]{OEIS_author()}}
+}
 
-* \code{\link{OEIS_sequence}}
+\itemize{
+\item \code{\link[=OEIS_sequence]{OEIS_sequence()}}
+}
 
-* \code{\link{OEIS_internal_format}}
+\itemize{
+\item \code{\link[=OEIS_internal_format]{OEIS_internal_format()}}
+}
 
-* \code{\link{OEIS_xml}}
+\itemize{
+\item \code{\link[=OEIS_xml]{OEIS_xml()}}
+}
 }
