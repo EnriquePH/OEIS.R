@@ -1,6 +1,6 @@
-# test-coverage.yml
-# Compute test coverage and upload to Codecov
-# Derived from https://github.com/r-lib/actions/tree/v2/examples/test-coverage.yaml
+# .github/workflows/test-coverage.yml
+# Calcula cobertura de tests y la sube a Codecov
+# Basado en ejemplos oficiales de r-lib/actions v2
 
 name: test-coverage
 
@@ -31,17 +31,23 @@ jobs:
       - name: Install dependencies
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::covr, any::xml2
+          extra-packages: any::covr
           needs: coverage
 
-      - name: Test coverage
-        run: |
-          coverage <- covr::package_coverage(quiet = FALSE)
-          covr::codecov(coverage = coverage, quiet = FALSE)
+      - name: Install package
+        run: R CMD INSTALL .
 
-      - name: Upload to Codecov
-        uses: codecov/codecov-action@v4
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: true
-          verbose: true
+      - name: Calculate and upload coverage
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        run: |
+          Rscript -e "library(covr)" \
+                  -e "coverage <- package_coverage(quiet = FALSE)" \
+                  -e "codecov(coverage = coverage, quiet = FALSE, token = Sys.getenv('CODECOV_TOKEN'))"
+
+      # Opcional: usar codecov-action (más estable y con mejor logging)
+      # - name: Upload to Codecov
+      #   uses: codecov/codecov-action@v4
+      #   with:
+      #     token: ${{ secrets.CODECOV_TOKEN }}
+      #     fail_ci_if_error: true
