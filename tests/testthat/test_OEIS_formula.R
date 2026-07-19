@@ -1,4 +1,7 @@
 # A126669:		Erroneous version of A126668.
+
+skip_if_oeis_unreachable()
+
 id_no_formula <- "A126669"
 
 test_that("OEIS_formula returns NULL in a sequence without formula", {

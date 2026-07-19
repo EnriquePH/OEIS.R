@@ -6,6 +6,8 @@
 # A169888: _N. J. A. Sloane_, Jul 07 2010, based on a letter from _Jean-Claude
 # Babois_.
 
+skip_if_oeis_unreachable()
+
 id <- "A169890"
 
 test_that("OEIS sequence A169890 has three authors", {

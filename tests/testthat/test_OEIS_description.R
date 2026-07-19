@@ -1,5 +1,7 @@
 # Test OEIS_description
 
+skip_if_oeis_unreachable()
+
 id <- "A000056"
 internal_format <- OEIS_internal_format(id)
 seq <- OEIS_sequence(id)

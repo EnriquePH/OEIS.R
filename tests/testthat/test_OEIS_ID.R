@@ -1,5 +1,7 @@
 # test_OEIS_ID.R
 
+skip_if_oeis_unreachable()
+
 id_ok <- "A169890"
 seq <- OEIS_sequence(id_ok)
 

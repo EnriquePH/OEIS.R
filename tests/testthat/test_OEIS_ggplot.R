@@ -1,3 +1,5 @@
+skip_if_oeis_unreachable()
+
 id <- "A123456"
 x <- OEIS_sequence(id)
 

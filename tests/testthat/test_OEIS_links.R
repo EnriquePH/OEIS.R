@@ -1,5 +1,7 @@
 # test OEIS_links
 
+skip_if_oeis_unreachable()
+
 id <- "A105805"
 internal_format <- OEIS_internal_format(id)
 #xml <- OEIS_xml(id)

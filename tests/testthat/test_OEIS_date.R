@@ -1,5 +1,7 @@
 # test_OEIS_date.R
 
+skip_if_oeis_unreachable()
+
 id_date <- "A138240"
 id_no_date <- "A000240"
 

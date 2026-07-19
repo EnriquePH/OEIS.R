@@ -1,4 +1,7 @@
 # A100623: Erroneous version of A005649.
+
+skip_if_oeis_unreachable()
+
 id_no_examples <- "A100623"
 
 id_examples <- "A105805"

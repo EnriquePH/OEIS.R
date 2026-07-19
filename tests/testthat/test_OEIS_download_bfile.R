@@ -1,5 +1,7 @@
 # OEIS_download_bfile.R
 
+skip_if_oeis_unreachable()
+
 id <- "A102030"
 destpath <- "."
 

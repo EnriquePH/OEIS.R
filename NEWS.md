@@ -34,6 +34,10 @@ fixes a couple of latent parsing bugs found along the way.
   the new `CONTRIBUTING.md`.
 * Added `CONTRIBUTING.md` with development setup, test, and pull request
   guidelines.
+* Test files that talk to the live OEIS site now call
+  `skip_if_oeis_unreachable()` first, so a CI runner that can't reach
+  `oeis.org` (rate limiting, a transient block, no network) shows up as
+  SKIP rather than failing the whole suite.
 
 # OEIS.R 0.1.0.1
 

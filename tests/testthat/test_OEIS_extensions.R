@@ -1,4 +1,7 @@
 # A000055_
+
+skip_if_oeis_unreachable()
+
 id_no_extensions <- "A000055"
 
 test_that("OEIS_extensions returns NULL in a sequence without extensions", {

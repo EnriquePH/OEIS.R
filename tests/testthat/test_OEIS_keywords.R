@@ -1,4 +1,7 @@
 # A126669:		Erroneous version of A126668.
+
+skip_if_oeis_unreachable()
+
 id_dead_sequence <- "A126669"
 id_sequence <-"A000001"
 
