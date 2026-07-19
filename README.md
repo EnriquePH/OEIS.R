@@ -1,6 +1,7 @@
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/EnriquePH/OEIS.R/actions/workflows/R-CMD-check.yml/badge.svg?branch=master)](https://github.com/EnriquePH/OEIS.R/actions/workflows/R-CMD-check.yml)
 [![test-coverage](https://github.com/EnriquePH/OEIS.R/actions/workflows/test-coverage.yml/badge.svg?branch=master)](https://github.com/EnriquePH/OEIS.R/actions/workflows/test-coverage.yml)
+[![pkgdown](https://github.com/EnriquePH/OEIS.R/actions/workflows/pkgdown.yml/badge.svg?branch=master)](https://enriqueph.github.io/OEIS.R/)
 [![codecov](https://codecov.io/gh/EnriquePH/OEIS.R/branch/master/graph/badge.svg)](https://codecov.io/gh/EnriquePH/OEIS.R)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![GitHub stars](https://img.shields.io/github/stars/EnriquePH/OEIS.R?style=social)](https://github.com/EnriquePH/OEIS.R/stargazers)
@@ -8,7 +9,7 @@
 
 # OEIS.R
 
-<img src="https://raw.githubusercontent.com/EnriquePH/OEIS.R/master/sticker/OEIS.R-sticker.png" align="right" height="200"/>
+<img src="https://raw.githubusercontent.com/EnriquePH/OEIS.R/master/sticker/OEIS.R-sticker.png" align="right" height="200" alt="OEIS.R hexagon sticker"/>
 
 **Access sequences from the [On-Line Encyclopedia of Integer Sequences (OEIS)](https://oeis.org/) directly from R**
 
@@ -17,6 +18,8 @@ integer sequences with formulas, comments, references, and code. It has
 contributed to mathematical discoveries and is cited in over 6000 articles.
 **OEIS.R** brings this data to R in a structured way, making it easy to
 visualize, analyze, and use in mathematical hypotheses or contributions to OEIS.
+
+Full documentation and function reference: <https://enriqueph.github.io/OEIS.R/>
 
 ## Installation
 
@@ -55,7 +58,7 @@ OEIS_ggplot(x) +
   labs(title = paste("OEIS", id, "-", OEIS_description(x)))
 ```
 
-![A001615 plot](./img/A001615.png)
+![Plot of OEIS sequence A001615, the Dedekind psi function](https://raw.githubusercontent.com/EnriquePH/OEIS.R/master/img/A001615.png)
 
 ## Main Features
 

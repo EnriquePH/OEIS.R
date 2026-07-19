@@ -5,11 +5,11 @@ skip_if_oeis_unreachable()
 id <- "A102030"
 destpath <- "."
 
-download_delete <- function(ID, destpath){
+download_delete <- function(ID, destpath) {
   code <- OEIS_download_bfile(ID,
                               destpath,
                               quiet = TRUE)
-  if(code==0){
+  if (code == 0) {
     file.remove(paste0(destpath, "/", OEIS_bfile_url(ID)))
   }
   code

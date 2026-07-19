@@ -12,6 +12,8 @@ Description: Integer sequences from OEIS in R.
     and functions to use data from OEIS in R.
 Depends: R (>= 3.3.3)
 License: MIT + file LICENSE
+URL: https://github.com/EnriquePH/OEIS.R, https://enriqueph.github.io/OEIS.R/
+BugReports: https://github.com/EnriquePH/OEIS.R/issues
 Encoding: UTF-8
 RoxygenNote: 8.0.0
 Imports:
@@ -21,13 +23,13 @@ Imports:
    utils,
    lubridate,
    ggplot2
-Suggests: 
+Suggests:
     knitr,
     rmarkdown,
     testthat,
     qpdf,
-    covr
+    covr,
+    pkgdown
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
-Config/Needs/website: oeis.org
 Config/roxygen2/version: 8.0.0

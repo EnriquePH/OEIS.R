@@ -50,6 +50,21 @@ fixes a couple of latent parsing bugs found along the way.
 * Added `inst/CITATION` so `citation("OEIS.R")` works, a root-level
   `CITATION.cff` so GitHub's "Cite this repository" button works, and a
   Citation section to `README.md`.
+* Added a pkgdown site (`_pkgdown.yml`, `.github/workflows/pkgdown.yml`),
+  deployed to GitHub Pages from the `gh-pages` branch. Added `URL:` and
+  `BugReports:` to `DESCRIPTION`, removed the meaningless
+  `Config/Needs/website: oeis.org` line (that field lists R package
+  names, not URLs), and fixed two pkgdown accessibility warnings in
+  `README.md` (a relative image path pkgdown couldn't resolve, and
+  missing alt text on the sticker image).
+* Fixed the mechanical `lintr` findings across the package (long lines,
+  inconsistent indentation, missing spaces around operators/braces,
+  dead code, an unwrapped multi-line anonymous function, a stray unused
+  `. <- NULL`). Added `.lintr` documenting two *intentional* style
+  choices that default `lintr` flags but that this package deliberately
+  keeps: `OEIS_*`-style exported names (renaming would be a breaking API
+  change) and consistent use of the `magrittr` `%>%` pipe throughout
+  (rather than mixing in the base `|>` pipe).
 * Added `tests/testthat/test_offline_accessors.R`, covering the
   `OEIS_*.OEIS_sequence` accessor methods, `OEIS_bibtex()`, `OEIS_ggplot()`,
   `plot.OEIS_sequence()`, `OEIS_ID.OEIS_bfile()`, `OEIS_bfile_url()`,

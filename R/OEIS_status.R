@@ -62,7 +62,7 @@ OEIS_status.OEIS_ID <- function(x) {
 #' @export
 OEIS_status.OEIS_internal <- function(x) {
   x %>%
-  OEIS_ID %>%
+    OEIS_ID %>%
     OEIS_status
 }
 

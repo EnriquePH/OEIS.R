@@ -12,4 +12,3 @@ test_that("OEIS_date finds date", {
 test_that("OEIS_date works with a dateless sequence", {
   testthat::expect_true(id_no_date %>% OEIS_date %>% is.na)
 })
-

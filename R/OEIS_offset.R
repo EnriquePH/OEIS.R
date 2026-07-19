@@ -27,7 +27,8 @@
 #' @seealso * [OEIS_description()]
 #' @seealso * [OEIS_xml()]
 #' @seealso * [OEIS_sequence()]
-#' @references [Explanation of the Different Lines](https://oeis.org/eishelp2.html#RS)
+#' @references [Explanation of the Different
+#'   Lines](https://oeis.org/eishelp2.html#RS)
 #' @references [What does the "offset" mean?](https://oeis.org/FAQ.html#Z23)
 #'
 #' @note In the internal format for a sequence the offset line (the %O line)

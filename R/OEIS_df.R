@@ -38,7 +38,6 @@ OEIS_df <- function(seq_xml) {
 #' @method OEIS_df OEIS_xml
 #' @export
 OEIS_df.OEIS_xml <- function(seq_xml) {
-  . <- NULL
   sections <- rvest::html_nodes(seq_xml, css = "div.section")
   Line <- rvest::html_text(
     rvest::html_nodes(sections, css = "div.sectname"),

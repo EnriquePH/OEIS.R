@@ -1,0 +1,99 @@
+url: https://enriqueph.github.io/OEIS.R/
+
+template:
+  bootstrap: 5
+  bootswatch: flatly
+
+home:
+  title: "OEIS.R: The On-Line Encyclopedia of Integer Sequences in R"
+  description: >-
+    Download, parse, and use data from the On-Line Encyclopedia of Integer
+    Sequences (OEIS) directly from R.
+
+development:
+  mode: auto
+
+navbar:
+  structure:
+    left: [intro, reference, articles, news]
+    right: [search, github]
+
+articles:
+  - title: Articles
+    contents:
+      - OEIS.R-Getting-Started
+
+reference:
+  - title: Fetch a sequence
+    desc: >-
+      Validate an `ID` and download a complete sequence entry.
+    contents:
+      - OEIS_check
+      - OEIS_ID
+      - OEIS_sequence
+
+  - title: Sequence fields
+    desc: >-
+      Read individual fields from a sequence `ID`, its parsed internal
+      format, or an already-built `OEIS_sequence` object.
+    contents:
+      - OEIS_description
+      - OEIS_terms
+      - OEIS_offset
+      - OEIS_comments
+      - OEIS_links
+      - OEIS_example
+      - OEIS_formula
+      - OEIS_mathematica
+      - OEIS_keywords
+      - OEIS_author
+      - OEIS_date
+      - OEIS_extensions
+      - OEIS_formerly
+      - OEIS_status
+
+  - title: Cross references
+    desc: >-
+      Sequences referenced by, in context with, or adjacent to a sequence.
+    contents:
+      - OEIS_crossrefs
+      - OEIS_cf
+      - OEIS_seqs_in_context
+      - OEIS_seqs_adjacent
+
+  - title: B-files (extended term lists)
+    desc: >-
+      OEIS sequences show a limited number of terms; b-files provide many
+      more.
+    contents:
+      - OEIS_bfile
+      - OEIS_bfile_url
+      - OEIS_download_bfile
+
+  - title: Low-level access
+    desc: >-
+      URLs and raw document/format accessors used internally by the
+      higher-level functions above.
+    contents:
+      - OEIS_url
+      - OEIS_web_url
+      - OEIS_search_url
+      - OEIS_xml
+      - OEIS_df
+      - OEIS_internal_format
+      - OEIS_total_sequences
+
+  - title: Plotting
+    contents:
+      - OEIS_ggplot
+      - plot.OEIS_sequence
+
+  - title: Citing
+    contents:
+      - OEIS_bibtex
+      - author_list
+
+  - title: Utilities
+    contents:
+      - "%>%"
+      - char0toNULL

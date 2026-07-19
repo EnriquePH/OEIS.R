@@ -21,7 +21,8 @@
 #' @seealso * [OEIS_sequence()]
 #' @seealso * [OEIS_example()]
 #'
-#' @note [OEIS Wiki: Style sheet for Style sheet for contributors](http://oeis.org/wiki/Style_Sheet)
+#' @note [OEIS Wiki: Style sheet for
+#'   contributors](http://oeis.org/wiki/Style_Sheet)
 #' @return A character string with the OEIS sequence extensions lines or
 #'   `NULL` if there are no extensions.
 #' @export
@@ -77,8 +78,8 @@ OEIS_extensions.OEIS_xml <- function(x) {
     extensions <- NULL
   } else {
     extensions %<>%
-    strsplit(., "\n") %>%
-    sapply(., trimws)
+      strsplit(., "\n") %>%
+      sapply(., trimws)
   }
   extensions
 }

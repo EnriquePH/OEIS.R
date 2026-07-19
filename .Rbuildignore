@@ -13,3 +13,7 @@
 ^LICENSE\.md$
 ^CONTRIBUTING\.md$
 ^CITATION\.cff$
+^_pkgdown\.yml$
+^\.lintr$
+^docs$
+^pkgdown$

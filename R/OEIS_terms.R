@@ -64,8 +64,9 @@ OEIS_terms.OEIS_ID <- function(x) {
 OEIS_terms.OEIS_internal <- function(x) {
   . <- NULL
   tags <- c("%S", "%T", "%U")
-  sapply(tags, function(tag)
-    x[x$tag == tag, ]$line) %>%
+  sapply(tags, function(tag) {
+    x[x$tag == tag, ]$line
+  }) %>%
     unlist %>%
     paste0(., collapse = "") %>%
     strsplit(., ",") %>%
@@ -75,13 +76,13 @@ OEIS_terms.OEIS_internal <- function(x) {
 #' @method OEIS_terms OEIS_xml
 #' @export
 OEIS_terms.OEIS_xml <- function(x) {
-    . <- NULL
-    x %>%
-      rvest::html_nodes(., css = "div.seqdata") %>%
-      rvest::html_text(., trim = TRUE) %>%
-      strsplit(., ",") %>%
-      lapply(., trimws) %>%
-      unlist
+  . <- NULL
+  x %>%
+    rvest::html_nodes(., css = "div.seqdata") %>%
+    rvest::html_text(., trim = TRUE) %>%
+    strsplit(., ",") %>%
+    lapply(., trimws) %>%
+    unlist
 }
 
 #' @method OEIS_terms OEIS_sequence

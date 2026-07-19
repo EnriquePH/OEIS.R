@@ -78,7 +78,7 @@ test_that("OEIS_formula.OEIS_sequence returns the stored formula", {
   expect_equal(OEIS_formula(fake_seq), fake_seq$formula)
 })
 
-test_that("OEIS_mathematica.OEIS_sequence returns the stored Mathematica code", {
+test_that("OEIS_mathematica.OEIS_sequence returns the stored code", {
   expect_equal(OEIS_mathematica(fake_seq), fake_seq$mathematica)
 })
 
@@ -98,9 +98,12 @@ test_that("OEIS_status.OEIS_sequence returns the stored status", {
   expect_equal(OEIS_status(fake_seq), fake_seq$status)
 })
 
-test_that("OEIS_cf/seqs_in_context/seqs_adjacent.OEIS_sequence read from $crossrefs", {
+test_that("crossref accessors read from $crossrefs", {
   expect_equal(OEIS_cf(fake_seq), fake_seq$crossrefs$cf)
-  expect_equal(OEIS_seqs_in_context(fake_seq), fake_seq$crossrefs$seqs_in_context)
+  expect_equal(
+    OEIS_seqs_in_context(fake_seq),
+    fake_seq$crossrefs$seqs_in_context
+  )
   expect_equal(OEIS_seqs_adjacent(fake_seq), fake_seq$crossrefs$seqs_adjacent)
 })
 
@@ -169,7 +172,7 @@ test_that("author_list joins one, two, and several authors correctly", {
   )
 })
 
-test_that("char0toNULL converts character(0)/list() to NULL, passes through otherwise", {
+test_that("char0toNULL converts character(0)/list() to NULL, else passes", {
   expect_null(OEIS.R:::char0toNULL(character(0)))
   expect_null(OEIS.R:::char0toNULL(list()))
   expect_equal(OEIS.R:::char0toNULL("A000055"), "A000055")

@@ -3,7 +3,7 @@
 skip_if_oeis_unreachable()
 
 id_dead_sequence <- "A126669"
-id_sequence <-"A000001"
+id_sequence <- "A000001"
 
 test_that("OEIS_keywords does not return 'dead' from erroneous sequence", {
   testthat::expect_equal(id_dead_sequence  %>%

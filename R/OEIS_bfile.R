@@ -20,11 +20,14 @@
 #' @return A S3 object of the class `OEIS_bfile` with the following structure:
 #' * __bfile_name__: Name of `bfile`.
 #' * __bfile_url__: Url to `bfile` in the OEIS server.
-#' * __min_n__:  Minimum `n` position of the first term for available values of the sequence.
-#' * __max_n__:  Maximum `n` position of the last term for available values of the sequence.
+#' * __min_n__:  Minimum `n` position of the first term for available
+#'   values of the sequence.
+#' * __max_n__:  Maximum `n` position of the last term for available
+#'   values of the sequence.
 #' * __comments__: Text comments included into the `bfile`
 #' * __data__: A data frame including all data within the `bfile` with two
-#'  columns: __n__ and other named as the sequence `ID` including sequence values for __a(n)__.
+#'  columns: __n__ and other named as the sequence `ID` including sequence
+#'  values for __a(n)__.
 #' @seealso * [OEIS_bfile_url()]
 #' @seealso * [OEIS_sequence()]
 #' @seealso * [OEIS_check()]
@@ -45,7 +48,7 @@ OEIS_bfile <- function(ID) {
 #' @export
 OEIS_bfile.character <- function(ID) {
   ID %>%
-  OEIS_check %>%
+    OEIS_check %>%
     OEIS_bfile
 }
 

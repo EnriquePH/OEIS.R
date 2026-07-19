@@ -46,7 +46,8 @@ author_list <- function(x) {
 #' * __key__: a character string giving the citation key for the OEIS sequence.
 #' * __author__: The name(s) of the author(s) (in the case of more than one
 #'  author, separated by `and`).
-#' * __title__:  The **O**n-**L**ine **E**ncyclopedia of **I**nteger **S**equences.
+#' * __title__:  The **O**n-**L**ine **E**ncyclopedia of **I**nteger
+#'   **S**equences.
 #' * __url__: Link to sequence in OEIS.
 #' * __year__: The year of publication (or, if unpublished, the year of
 #'  creation).
@@ -66,7 +67,8 @@ author_list <- function(x) {
 #' * [BibTeX AUTOMATIC OEIS CITATIONS](http://psychedelic-geometry.blogspot.com.es/2010/02/bibtex-automatic-oeis-citations.html)
 #' * [Mathematica OEIS Package](https://github.com/Psychedelic-Geometry/OEIS-Mathematica/wiki)
 #' * [Wikipedia: BibTex](https://en.wikipedia.org/wiki/BibTeX)
-#' * [Referencing a Particular Sequence](https://oeis.org/wiki/Welcome#reference)
+#' * [Referencing a Particular
+#'   Sequence](https://oeis.org/wiki/Welcome#reference)
 #' @export
 #'
 #' @examples

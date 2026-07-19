@@ -34,7 +34,7 @@
 #' }
 #'
 #' @export
-OEIS_sequence <- function(ID){
+OEIS_sequence <- function(ID) {
   ID <- OEIS_check(ID)
   seq_xml <- OEIS_xml(ID)
   seq_df <- OEIS_df(seq_xml)

@@ -53,7 +53,7 @@
 #'
 #' @export
 OEIS_description <- function(x) {
-    UseMethod("OEIS_description")
+  UseMethod("OEIS_description")
 }
 
 #' @method OEIS_description character

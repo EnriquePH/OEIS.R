@@ -1,0 +1,12 @@
+linters: linters_with_defaults(
+    # This package's public API has always used OEIS_* / CamelCase-ish names
+    # (OEIS_check, OEIS_sequence, ...), matching OEIS's own terminology.
+    # Renaming exported functions to snake_case would be a breaking API
+    # change and is out of scope for lint cleanup.
+    object_name_linter = NULL,
+    # The codebase consistently uses the magrittr %>% pipe (including
+    # %<>% and the `.` placeholder), not the base R |> pipe. Keep it
+    # consistent rather than mixing the two.
+    pipe_consistency_linter = NULL
+  )
+encoding: "UTF-8"

@@ -76,9 +76,9 @@ OEIS_formula.OEIS_xml <- function(x) {
     formula <- NULL
   } else {
     formula %<>%
-    strsplit(., "\n") %>%
-    sapply(., trimws) %>%
-    .[. != "", ]
+      strsplit(., "\n") %>%
+      sapply(., trimws) %>%
+      .[. != "", ]
   }
   formula
 }

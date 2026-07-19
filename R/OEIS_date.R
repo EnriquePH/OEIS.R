@@ -49,7 +49,7 @@ OEIS_date.OEIS_ID <- function(x) {
 #' @export
 OEIS_date.OEIS_internal <- function(x) {
   . <- NULL
-  seq_date <- x[x$tag == "%A",]$line
+  seq_date <- x[x$tag == "%A", ]$line
   if (identical(seq_date, character(0))) {
     # 'dead' sequences have no author and no date
     seq_date <- NULL
