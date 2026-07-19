@@ -7,7 +7,7 @@
 ## Citation
 
 Source:
-[`inst/CITATION`](https://github.com/EnriquePH/OEIS.R/blob/master/inst/CITATION)
+[`inst/CITATION`](https://github.com/EnriquePH/OEIS.R/blob/0.2.0/inst/CITATION)
 
 Pérez Herrero E (2026). *OEIS.R: Data from the On-Line Encyclopedia of
 Integer Sequences in R*. R package version 0.2.0,
