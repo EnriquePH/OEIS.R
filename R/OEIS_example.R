@@ -25,10 +25,12 @@
 #'   `NULL` where no examples are available.
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A105805"
 #' internal_format <- OEIS_internal_format(id)
 #' example <- OEIS_example(internal_format)
 #' cat(example, sep = "\n")
+#' }
 #'
 #' @export
 OEIS_example <- function(x) {

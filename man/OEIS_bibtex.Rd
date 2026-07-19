@@ -37,11 +37,13 @@ caps are used.
 For more help on \code{bibentry} class, see: \code{\link[utils:bibentry]{utils::bibentry()}}
 }
 \examples{
+\dontrun{
 x <- OEIS_sequence("A170401")
 bref <- OEIS_bibtex(x)
 # BibTeX and citation.
 print(bref, style = "Bibtex")
 print(bref, style = "citation")
+}
 
 }
 \references{

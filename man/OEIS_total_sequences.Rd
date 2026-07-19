@@ -14,7 +14,9 @@ if the extraction fails or there is no internet connection.
 Retrieve the total number of sequences in the OEIS database
 }
 \examples{
+\dontrun{
 OEIS_total_sequences()
+}
 }
 \seealso{
 \itemize{

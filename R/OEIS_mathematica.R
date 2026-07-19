@@ -24,11 +24,12 @@
 #'   `NULL` if there are no examples.
 #'
 #' @examples
-#'
+#' \dontrun{
 #' id <- "A105805"
 #' internal_format <- OEIS_internal_format(id)
 #' mathematica <- OEIS_mathematica(internal_format)
 #' cat(mathematica, sep = "\n")
+#' }
 #'
 #' @export
 OEIS_mathematica <- function(x) {

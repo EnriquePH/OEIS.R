@@ -38,6 +38,13 @@ fixes a couple of latent parsing bugs found along the way.
   `skip_if_oeis_unreachable()` first, so a CI runner that can't reach
   `oeis.org` (rate limiting, a transient block, no network) shows up as
   SKIP rather than failing the whole suite.
+* GitHub Actions traffic is currently getting a `403 Forbidden` from
+  `oeis.org` (Cloudflare), which was crashing `R CMD check` outright
+  during `checking examples` (an `@examples` failure there aborts the
+  whole check, unlike a test failure). Every `@examples` block that hits
+  the network is now wrapped in `\dontrun{}`, and the vignette probes
+  `oeis.org` once up front and skips evaluating its (also live) code
+  chunks if it's unreachable, instead of failing the build.
 
 # OEIS.R 0.1.0.1
 

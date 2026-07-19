@@ -18,10 +18,12 @@ An object of the S3 class \code{OEIS_sequence}.
 S3 class constructor for \code{OEIS_sequence}
 }
 \examples{
+\dontrun{
 id <- "A003456"
 A003456 <- OEIS_sequence(id)
 class(A003456)
 A003456
+}
 
 }
 \references{

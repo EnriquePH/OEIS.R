@@ -25,11 +25,12 @@ A character string with the OEIS sequence lines of examples or
 These lines give \code{Mathematica} code to produce the sequence.
 }
 \examples{
-
+\dontrun{
 id <- "A105805"
 internal_format <- OEIS_internal_format(id)
 mathematica <- OEIS_mathematica(internal_format)
 cat(mathematica, sep = "\n")
+}
 
 }
 \seealso{

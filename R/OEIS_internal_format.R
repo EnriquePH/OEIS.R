@@ -32,8 +32,10 @@
 #' @references [Internal Format Used In](https://oeis.org/eishelp1.html)
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A000055"
 #' OEIS_internal_format(id)
+#' }
 #'
 #' @export
 OEIS_internal_format <- function(ID) {

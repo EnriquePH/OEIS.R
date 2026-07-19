@@ -32,9 +32,11 @@
 #' @seealso * [OEIS_xml()]
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A000056"
 #' internal_format <- OEIS_internal_format(id)
 #' OEIS_formerly(internal_format)
+#' }
 #'
 #' @export
 OEIS_formerly <- function(x) {

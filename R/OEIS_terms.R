@@ -31,10 +31,12 @@
 #' @note For more terms see [OEIS_bfile()].
 #'
 #' @examples
+#' \dontrun{
 #' # Wieferich primes: primes p such that p^2 divides 2^(p-1) - 1.
 #' id <- "A001220"
 #' internal_format <- OEIS_internal_format(id)
 #' OEIS_terms(internal_format)
+#' }
 #'
 #' @export
 OEIS_terms <- function(x) {

@@ -24,10 +24,12 @@
 #'   `NULL` if there are no links
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A105805"
 #' internal_format <- OEIS_internal_format(id)
 #' lnks <- OEIS_links(internal_format)
 #' cat(lnks, sep = "\n")
+#' }
 #'
 #' @export
 OEIS_links <- function(x) {

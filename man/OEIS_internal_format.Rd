@@ -23,8 +23,10 @@ S, T, N, etc.) and abcdef is the 6-digit identification number (or catalog
 number) of the sequence. Each sequence gets a unique A-number.
 }
 \examples{
+\dontrun{
 id <- "A000055"
 OEIS_internal_format(id)
+}
 
 }
 \references{

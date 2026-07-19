@@ -17,11 +17,12 @@ A \code{data.frame} with the sequence information lines.
 This lines are useful to get all the sequence format data.
 }
 \examples{
-
+\dontrun{
 id <- "A008406"
 xml <- OEIS_xml(id)
 df <- OEIS_df(xml)
 df
+}
 
 }
 \references{

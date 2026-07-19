@@ -27,12 +27,14 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # A008406: Triangle T(n,k) read by rows, giving number of graphs with n nodes
 #' # (n >= 1) and k edges (0 <= k <= n(n-1)/2).
 #' id <- "A008406"
 #' internal_format <- OEIS_internal_format(id)
 #' extensions <- OEIS_extensions(internal_format)
 #' cat(extensions, sep = "\n")
+#' }
 
 OEIS_extensions <- function(x) {
   UseMethod("OEIS_extensions", x)

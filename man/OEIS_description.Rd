@@ -27,7 +27,7 @@ sequence, and \emph{n} is a typical subscript.
 In some cases however \emph{n} denotes a typical term in the sequence.
 }
 \examples{
-
+\dontrun{
 # Sequence description from ID
 id <- "A000056"
 OEIS_description(id)
@@ -41,6 +41,7 @@ OEIS_description(internal_format)
  id <- "A002315"
  seq <- OEIS_sequence(id)
  OEIS_description(seq)
+}
 
 }
 \seealso{

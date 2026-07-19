@@ -25,10 +25,12 @@ A character string with the OEIS sequence lines of links or
 Links related to the sequence.
 }
 \examples{
+\dontrun{
 id <- "A105805"
 internal_format <- OEIS_internal_format(id)
 lnks <- OEIS_links(internal_format)
 cat(lnks, sep = "\n")
+}
 
 }
 \seealso{

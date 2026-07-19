@@ -18,7 +18,9 @@
 #' @seealso * [OEIS_sequence()]
 #'
 #' @examples
+#' \dontrun{
 #' OEIS_total_sequences()
+#' }
 #' @export
 OEIS_total_sequences <- function() {
   . <- NULL

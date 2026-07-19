@@ -35,7 +35,7 @@
 #' @return A string with the OEIS sequence description.
 #'
 #' @examples
-#'
+#' \dontrun{
 #' # Sequence description from ID
 #' id <- "A000056"
 #' OEIS_description(id)
@@ -49,6 +49,7 @@
 #'  id <- "A002315"
 #'  seq <- OEIS_sequence(id)
 #'  OEIS_description(seq)
+#' }
 #'
 #' @export
 OEIS_description <- function(x) {

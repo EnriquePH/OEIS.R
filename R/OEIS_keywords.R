@@ -26,6 +26,7 @@
 #' @return A character vector with the OEIS sequence keywords.
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A049323"
 #' seq <- OEIS_sequence(id)
 #' xml <- OEIS_xml(id)
@@ -38,6 +39,7 @@
 #' OEIS_keywords(xml)
 #' # Keywords from internal format: "OEIS_internal" class
 #' OEIS_keywords(frmt)
+#' }
 #'
 #' @export
 OEIS_keywords <- function(x) {

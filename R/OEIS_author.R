@@ -28,8 +28,10 @@
 #' @return A character vector with the OEIS sequence authors and emails.
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A169890"
 #' OEIS_author(id, email = TRUE)
+#' }
 #'
 #' @export
 OEIS_author <- function(x, email = FALSE) {

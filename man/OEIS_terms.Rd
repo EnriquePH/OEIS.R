@@ -32,10 +32,12 @@ sequences that are well-defined and of general interest are included
 For more terms see \code{\link[=OEIS_bfile]{OEIS_bfile()}}.
 }
 \examples{
+\dontrun{
 # Wieferich primes: primes p such that p^2 divides 2^(p-1) - 1.
 id <- "A001220"
 internal_format <- OEIS_internal_format(id)
 OEIS_terms(internal_format)
+}
 
 }
 \seealso{

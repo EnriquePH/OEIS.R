@@ -34,8 +34,10 @@
 #' @return A character string with the OEIS sequence `ID`.
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A169890"
 #' OEIS_ID(id)
+#' }
 #'
 #' @export
 OEIS_ID <- function(x) {

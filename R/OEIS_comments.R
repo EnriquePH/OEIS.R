@@ -25,10 +25,12 @@
 #'    sequence or `NULL` if there are no comments.
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A105805"
 #' internal_format <- OEIS_internal_format(id)
 #' example <- OEIS_comments(internal_format)
 #' cat(example, sep = "\n")
+#' }
 #'
 #' @export
 OEIS_comments <- function(x) {

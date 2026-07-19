@@ -27,8 +27,10 @@ This function gives the name of the person, or persons, who contributed the
 sequence and their emails, if they are present and selected.
 }
 \examples{
+\dontrun{
 id <- "A169890"
 OEIS_ID(id)
+}
 
 }
 \seealso{

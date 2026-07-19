@@ -70,11 +70,13 @@ author_list <- function(x) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' x <- OEIS_sequence("A170401")
 #' bref <- OEIS_bibtex(x)
 #' # BibTeX and citation.
 #' print(bref, style = "Bibtex")
 #' print(bref, style = "citation")
+#' }
 #'
 OEIS_bibtex <- function(x) {
   UseMethod("OEIS_bibtex")

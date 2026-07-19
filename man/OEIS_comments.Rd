@@ -26,10 +26,12 @@ The comments field in OEIS sequence entries is for information that does
 not quite fit in other fields.
 }
 \examples{
+\dontrun{
 id <- "A105805"
 internal_format <- OEIS_internal_format(id)
 example <- OEIS_comments(internal_format)
 cat(example, sep = "\n")
+}
 
 }
 \seealso{

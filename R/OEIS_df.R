@@ -23,11 +23,12 @@
 #'   From](https://oeis.org/eishelp2.html#RS)
 #' @return A `data.frame` with the sequence information lines.
 #' @examples
-#'
+#' \dontrun{
 #' id <- "A008406"
 #' xml <- OEIS_xml(id)
 #' df <- OEIS_df(xml)
 #' df
+#' }
 #'
 #' @export
 OEIS_df <- function(seq_xml) {

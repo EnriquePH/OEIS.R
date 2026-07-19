@@ -26,10 +26,12 @@
 #'   in Reply From](https://oeis.org/eishelp2.html#RS)
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A003456"
 #' A003456 <- OEIS_sequence(id)
 #' class(A003456)
 #' A003456
+#' }
 #'
 #' @export
 OEIS_sequence <- function(ID){

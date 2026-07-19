@@ -20,10 +20,11 @@ The \code{XML} document contains all the information from the OEIS web related t
 the sequence.
 }
 \examples{
-
+\dontrun{
  id <- "A000156"
  test_seq_xml <- OEIS_xml(id)
  class(test_seq_xml)
+}
 
 }
 \seealso{

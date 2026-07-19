@@ -31,8 +31,10 @@
 #' @seealso * [OEIS_download_bfile()]
 #'
 #' @examples
+#' \dontrun{
 #' id <- "A000056"
 #' OEIS_bfile(id)
+#' }
 #'
 #' @export
 OEIS_bfile <- function(ID) {

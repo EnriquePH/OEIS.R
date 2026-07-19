@@ -26,10 +26,12 @@ These lines give expanded information or examples to illustrate the initial
 terms of the sequence.
 }
 \examples{
+\dontrun{
 id <- "A105805"
 internal_format <- OEIS_internal_format(id)
 example <- OEIS_example(internal_format)
 cat(example, sep = "\n")
+}
 
 }
 \seealso{

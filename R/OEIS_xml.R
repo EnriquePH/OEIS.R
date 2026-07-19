@@ -21,10 +21,11 @@
 #'   with the sequence content.
 #'
 #' @examples
-#'
+#' \dontrun{
 #'  id <- "A000156"
 #'  test_seq_xml <- OEIS_xml(id)
 #'  class(test_seq_xml)
+#' }
 #'
 #' @export
 OEIS_xml <- function(ID) {

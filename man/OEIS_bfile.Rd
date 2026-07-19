@@ -27,8 +27,10 @@ sequence than the typical fifty to eighty terms that can be shown in the main
 sequence entry.
 }
 \examples{
+\dontrun{
 id <- "A000056"
 OEIS_bfile(id)
+}
 
 }
 \seealso{

@@ -19,10 +19,12 @@
 #' @seealso * [OEIS_bibtex()]
 #' @seealso * [OEIS_sequence()]
 #' @examples
+#' \dontrun{
 #' # A123456: Ludwig van Beethoven, Bagatelle No. 25, Für Elise.
 #' id <- "A123456"
 #' x <- OEIS_sequence(id)
 #' OEIS_ggplot(x)
+#' }
 #'
 #' @export
 OEIS_ggplot <- function(x) {

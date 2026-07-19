@@ -30,9 +30,11 @@ N-number, such as N0577, which is the number they carried in the "Handbook of
 Integer Sequences", by N. J. A. Sloane, Academic Press, NY, 1973
 }
 \examples{
+\dontrun{
 id <- "A000056"
 internal_format <- OEIS_internal_format(id)
 OEIS_formerly(internal_format)
+}
 
 }
 \seealso{

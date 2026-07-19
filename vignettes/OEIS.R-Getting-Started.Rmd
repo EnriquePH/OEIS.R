@@ -10,10 +10,36 @@ vignette: >
 ---
 
 ```{r, include = FALSE}
+# This vignette talks to the live oeis.org for every example. When it's
+# reachable (e.g. building locally or on pkgdown), chunks evaluate for real
+# and show live output. When it isn't (a CI runner with no route to
+# oeis.org, or one OEIS/Cloudflare is currently blocking), chunks are shown
+# but not evaluated, so the vignette still builds instead of failing
+# R CMD check.
+oeis_up <- local({
+  old_timeout <- getOption("timeout")
+  on.exit(options(timeout = old_timeout), add = TRUE)
+  options(timeout = 5)
+  tryCatch({
+    con <- url("https://oeis.org/", open = "rb")
+    close(con)
+    TRUE
+  }, error = function(e) FALSE, warning = function(w) FALSE)
+})
+
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  error = TRUE
+  error = TRUE,
+  eval = oeis_up
+)
+```
+
+```{r, echo = FALSE, eval = !oeis_up, results = "asis"}
+cat(
+  "**Note:** `oeis.org` was not reachable while this copy of the vignette",
+  "was built, so the code chunks below are shown but were not run and",
+  "display no output."
 )
 ```
 
