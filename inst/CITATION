@@ -1,0 +1,19 @@
+citHeader("To cite OEIS.R in publications, use:")
+
+bibentry(
+  bibtype = "Manual",
+  title   = "{OEIS.R}: Data from the On-Line Encyclopedia of Integer Sequences in {R}",
+  author  = person("Enrique", "Pérez Herrero",
+                    email = "energycode.org@gmail.com",
+                    role  = c("aut", "cre", "cph")),
+  year    = "2026",
+  note    = "R package version 0.2.0",
+  url     = "https://github.com/EnriquePH/OEIS.R"
+)
+
+citFooter(
+  "OEIS.R only provides access to data from the On-Line Encyclopedia of",
+  "Integer Sequences; it is not affiliated with the OEIS Foundation.",
+  "To cite an individual sequence, use OEIS_bibtex() instead, or see",
+  "https://oeis.org/wiki/Welcome#reference."
+)

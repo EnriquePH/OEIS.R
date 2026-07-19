@@ -2,7 +2,7 @@
 [![R-CMD-check](https://github.com/EnriquePH/OEIS.R/actions/workflows/R-CMD-check.yml/badge.svg?branch=master)](https://github.com/EnriquePH/OEIS.R/actions/workflows/R-CMD-check.yml)
 [![test-coverage](https://github.com/EnriquePH/OEIS.R/actions/workflows/test-coverage.yml/badge.svg?branch=master)](https://github.com/EnriquePH/OEIS.R/actions/workflows/test-coverage.yml)
 [![codecov](https://codecov.io/gh/EnriquePH/OEIS.R/branch/master/graph/badge.svg)](https://codecov.io/gh/EnriquePH/OEIS.R)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![GitHub stars](https://img.shields.io/github/stars/EnriquePH/OEIS.R?style=social)](https://github.com/EnriquePH/OEIS.R/stargazers)
 <!-- badges: end -->
 
@@ -75,6 +75,22 @@ Respects OEIS terms of use (rate limiting recommended).
 * [OEIS Terms of Use](https://oeis.org/OEISTermsOfUse.pdf)
 * [Wikipedia: OEIS](https://en.wikipedia.org/wiki/On-Line_Encyclopedia_of_Integer_Sequences)
 * [OEIS Foundation](http://oeisf.org/)
+
+## Citation
+
+To cite the **OEIS.R** package itself:
+
+```r
+citation("OEIS.R")
+```
+
+To cite an individual OEIS sequence you've fetched (e.g. in a paper), use
+[`OEIS_bibtex()`](https://github.com/EnriquePH/OEIS.R) instead:
+
+```r
+x <- OEIS_sequence("A001615")
+print(OEIS_bibtex(x), style = "Bibtex")
+```
 
 ## Contributing
 Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for how to

@@ -45,6 +45,18 @@ fixes a couple of latent parsing bugs found along the way.
   the network is now wrapped in `\dontrun{}`, and the vignette probes
   `oeis.org` once up front and skips evaluating its (also live) code
   chunks if it's unreachable, instead of failing the build.
+* Fixed `OEIS_comments.OEIS_sequence()`, which returned `x$example`
+  instead of `x$comments` (copy-paste bug).
+* Added `inst/CITATION` so `citation("OEIS.R")` works, and a Citation
+  section to `README.md`.
+* Added `tests/testthat/test_offline_accessors.R`, covering the
+  `OEIS_*.OEIS_sequence` accessor methods, `OEIS_bibtex()`, `OEIS_ggplot()`,
+  `plot.OEIS_sequence()`, `OEIS_ID.OEIS_bfile()`, `OEIS_bfile_url()`,
+  `author_list()`, and `char0toNULL()` against a hand-built fake
+  `OEIS_sequence` object. Unlike the rest of the suite, these tests need no
+  network access at all, so they keep running (and keep contributing to
+  coverage) even while `oeis.org` is blocking CI traffic — this is what
+  caught the `OEIS_comments()` bug above.
 
 # OEIS.R 0.1.0.1
 

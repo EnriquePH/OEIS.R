@@ -71,3 +71,6 @@ shiny_bookmarks/
 
 # Reverse dependency check directory (revdepcheck package)
 revdep/
+
+/.quarto/
+**/*.quarto_ipynb

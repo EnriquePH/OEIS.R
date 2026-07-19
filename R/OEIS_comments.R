@@ -84,5 +84,5 @@ OEIS_comments.OEIS_xml <- function(x) {
 #' @method OEIS_comments OEIS_sequence
 #' @export
 OEIS_comments.OEIS_sequence <- function(x) {
-  x$example
+  x$comments
 }
