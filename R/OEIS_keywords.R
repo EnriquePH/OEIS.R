@@ -3,7 +3,7 @@
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_keywords.R
 #  (c) 2017 - Enrique Pérez Herrero
-#  email: eph.project1500@gmail.com
+#  email: energycode.org@gmail.com
 #  The MIT License (MIT)
 #  ---------------------------------------------------------------------------
 
@@ -72,9 +72,10 @@ OEIS_keywords.OEIS_internal <- function(x) {
 #' @export
 OEIS_keywords.OEIS_xml <- function(x) {
   . <- NULL
-  x %>%
-    rvest::html_nodes(., xpath = "//tt/span") %>%
-    rvest::html_text(.)
+  seq_df <- OEIS_df(x)
+  seq_df[seq_df$Line == "KEYWORD", ]$Description %>%
+    strsplit(., ",") %>%
+    unlist
 }
 
 #' @method OEIS_keywords OEIS_sequence

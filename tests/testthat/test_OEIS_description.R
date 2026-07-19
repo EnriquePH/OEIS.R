@@ -19,13 +19,3 @@ test_that("OEIS_description works with xml and id", {
   testthat::expect_equal(OEIS_description(xml),
                          OEIS_description(id))
 })
-
-
-OEIS_description(xml)
-
-library(magrittr)
-
-xml %>%
-  rvest::html_table(., fill = TRUE) %>%
-  magrittr::extract2(5) %>%
-  magrittr::extract2(3)

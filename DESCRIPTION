@@ -1,10 +1,10 @@
 Package: OEIS.R
 Title: Data from the on-Line Encyclopedia of Integer Sequences in R
-Version: 0.1.0.1
-Date: 2023-03-03
+Version: 0.2.0
+Date: 2026-07-19
 Language: en-US
 Authors@R: person("Enrique", "Pérez Herrero",
-    email = "eph.project1500@gmail.com",
+    email = "energycode.org@gmail.com",
     role = c("aut", "cre", "cph"))
 Description: Integer sequences from OEIS in R.
     The on-Line Encyclopedia of Integer Sequences (OEIS), <https://oeis.org/>,
@@ -13,7 +13,7 @@ Description: Integer sequences from OEIS in R.
 Depends: R (>= 3.3.3)
 License: MIT + file LICENSE
 Encoding: UTF-8
-RoxygenNote: 7.3.0
+RoxygenNote: 8.0.0
 Imports:
    xml2,
    rvest,
@@ -30,3 +30,4 @@ Suggests:
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
 Config/Needs/website: oeis.org
+Config/roxygen2/version: 8.0.0

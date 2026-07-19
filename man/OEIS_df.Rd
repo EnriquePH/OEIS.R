@@ -25,7 +25,7 @@ df
 
 }
 \references{
-\url{https://oeis.org/eishelp2.html#RS}{Explanation of Terms Used in Reply From}
+\href{https://oeis.org/eishelp2.html#RS}{Explanation of Terms Used in Reply From}
 }
 \seealso{
 \itemize{

@@ -2,15 +2,16 @@
 % Please edit documentation in R/OEIS_total_sequences.R
 \name{OEIS_total_sequences}
 \alias{OEIS_total_sequences}
-\title{Total Number of sequences in OEIS}
+\title{Retrieve the total number of sequences in the OEIS database}
 \usage{
 OEIS_total_sequences()
 }
 \value{
-An integer with the total number of sequences in the Encyclopedia.
+An integer with the total number of sequences, or \code{NA_integer_}
+if the extraction fails or there is no internet connection.
 }
 \description{
-Total Number of sequences in OEIS
+Retrieve the total number of sequences in the OEIS database
 }
 \examples{
 OEIS_total_sequences()

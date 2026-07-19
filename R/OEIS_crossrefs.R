@@ -3,7 +3,7 @@
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_crossrefs.R
 #  (c) 2017 - Enrique Pérez Herrero
-#  email: eph.project1500@gmail.com
+#  email: energycode.org@gmail.com
 #  The MIT License (MIT)
 #  ---------------------------------------------------------------------------
 
@@ -124,10 +124,11 @@ OEIS_seqs_in_context.OEIS_internal <- function(x) {
 #' @export
 OEIS_seqs_in_context.OEIS_xml <- function(x) {
   . <- NULL
-  x %>%
-    rvest::html_nodes(., xpath = "//tt") %>%
-    rvest::html_text(.) %>%
-    .[grep("Sequence in context:*", .)] %>%
+  seq_df <- OEIS_df(x)
+  seq_df[seq_df$Line == "CROSSREFS", ]$Description %>%
+    strsplit(., "\n") %>%
+    unlist %>%
+    .[grep("^Sequence in context:", .)] %>%
     regmatches(., gregexpr("(A\\d{6})", .)) %>%
     unlist
 }
@@ -187,10 +188,11 @@ OEIS_seqs_adjacent.OEIS_internal <- function(x) {
 #' @export
 OEIS_seqs_adjacent.OEIS_xml <- function(x) {
   . <- NULL
-  x %>%
-    rvest::html_nodes(., xpath = "//tt") %>%
-    rvest::html_text(.) %>%
-    .[grep("Adjacent sequences:*", .)] %>%
+  seq_df <- OEIS_df(x)
+  seq_df[seq_df$Line == "CROSSREFS", ]$Description %>%
+    strsplit(., "\n") %>%
+    unlist %>%
+    .[grep("^Adjacent sequences:", .)] %>%
     regmatches(., gregexpr("(A\\d{6})", .)) %>%
     unlist
 }

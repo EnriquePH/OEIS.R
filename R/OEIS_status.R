@@ -3,7 +3,7 @@
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_status.R
 #  (c) 2017 - Enrique Pérez Herrero
-#  email: eph.project1500@gmail.com
+#  email: energycode.org@gmail.com
 #  The MIT License (MIT)
 #  ---------------------------------------------------------------------------
 
@@ -58,7 +58,7 @@ OEIS_status.OEIS_ID <- function(x) {
     OEIS_status
 }
 
-#' @method OEIS_ID OEIS_internal
+#' @method OEIS_status OEIS_internal
 #' @export
 OEIS_status.OEIS_internal <- function(x) {
   x %>%

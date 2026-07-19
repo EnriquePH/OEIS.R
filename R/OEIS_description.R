@@ -3,7 +3,7 @@
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_description.R
 #  (c) 2017 - Enrique Pérez Herrero
-#  email: eph.project1500@gmail.com
+#  email: energycode.org@gmail.com
 #  GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
 #  ---------------------------------------------------------------------------
 
@@ -29,8 +29,8 @@
 #' @seealso * [OEIS_xml()]
 #' @seealso * [OEIS_check()]
 #'
-#' @importFrom magrittr extract2
-#' @importFrom rvest html_table
+#' @importFrom rvest html_nodes
+#' @importFrom rvest html_text
 #'
 #' @return A string with the OEIS sequence description.
 #'
@@ -81,9 +81,9 @@ OEIS_description.OEIS_internal <- function(x) {
 OEIS_description.OEIS_xml <- function(x) {
   . <- NULL
   x %>%
-    rvest::html_table(., fill = TRUE) %>%
-    magrittr::extract2(5) %>% # Donations open?
-    magrittr::extract2(3)
+    rvest::html_nodes(., css = "div.seqname") %>%
+    rvest::html_text(., trim = TRUE) %>%
+    sub("\\s*\\(Formerly[^)]*\\)\\s*$", "", .)
 }
 
 #' @method OEIS_description OEIS_sequence

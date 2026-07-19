@@ -3,7 +3,7 @@
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_bibtex.R
 #  (c) 2017 - Enrique Pérez Herrero
-#  email: eph.project1500@gmail.com
+#  email: energycode.org@gmail.com
 #  The MIT License (MIT)
 #  ---------------------------------------------------------------------------
 
@@ -46,7 +46,7 @@ author_list <- function(x) {
 #' * __key__: a character string giving the citation key for the OEIS sequence.
 #' * __author__: The name(s) of the author(s) (in the case of more than one
 #'  author, separated by `and`).
-#' * __title__:  The {O}n-{L}ine {E}ncyclopedia of {I}nteger {S}equences.
+#' * __title__:  The **O**n-**L**ine **E**ncyclopedia of **I**nteger **S**equences.
 #' * __url__: Link to sequence in OEIS.
 #' * __year__: The year of publication (or, if unpublished, the year of
 #'  creation).

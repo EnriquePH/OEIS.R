@@ -3,7 +3,7 @@
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_formerly.R
 #  (c) 2017 - Enrique Pérez Herrero
-#  email: eph.project1500@gmail.com
+#  email: energycode.org@gmail.com
 #  The MIT License (MIT)
 #  ---------------------------------------------------------------------------
 
@@ -60,15 +60,10 @@ OEIS_formerly.OEIS_ID <- function(x) {
 #' @export
 OEIS_formerly.OEIS_internal <- function(x) {
   . <- NULL
-  formerly <- x[x$tag == "%I", ]$line %>%
-    strsplit(., " ") %>%
+  x[x$tag == "%I", ]$line %>%
+    regmatches(., gregexpr("\\b[A-Z]\\d{4}\\b", .)) %>%
     unlist %>%
     char0toNULL
-    # Detect wrong ID in formerly label: sequence A050055
-    if ("%I" %in% formerly) {
-      formerly <- NULL
-    }
-  formerly
 }
 
 #' @method OEIS_formerly OEIS_xml
@@ -76,10 +71,9 @@ OEIS_formerly.OEIS_internal <- function(x) {
 OEIS_formerly.OEIS_xml <- function(x) {
   . <- NULL
   x %>%
-    rvest::html_nodes(., xpath = "//td/font/text()") %>%
-    rvest::html_text(.) %>%
-    magrittr::extract2(5) %>%
-    regmatches(., gregexpr("(\\w\\d{4})", .)) %>%
+    rvest::html_nodes(., css = "div.seqname font") %>%
+    rvest::html_text(., trim = TRUE) %>%
+    regmatches(., gregexpr("\\b[A-Z]\\d{4}\\b", .)) %>%
     unlist %>%
     char0toNULL
 }

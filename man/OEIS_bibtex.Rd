@@ -17,7 +17,7 @@ the following fields:
 \item \strong{key}: a character string giving the citation key for the OEIS sequence.
 \item \strong{author}: The name(s) of the author(s) (in the case of more than one
 author, separated by \code{and}).
-\item \strong{title}:  The {O}n-{L}ine {E}ncyclopedia of {I}nteger {S}equences.
+\item \strong{title}:  The \strong{O}n-\strong{L}ine \strong{E}ncyclopedia of \strong{I}nteger \strong{S}equences.
 \item \strong{url}: Link to sequence in OEIS.
 \item \strong{year}: The year of publication (or, if unpublished, the year of
 creation).
@@ -59,7 +59,7 @@ print(bref, style = "citation")
 }
 
 \itemize{
-\item \code{\link[utils:toLatex]{utils::toBibtex()}}
+\item \code{\link[utils:toBibtex]{utils::toBibtex()}}
 }
 
 \itemize{

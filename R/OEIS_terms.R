@@ -3,7 +3,7 @@
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_terms.R
 #  (c) 2017 - Enrique Pérez Herrero
-#  email: eph.project1500@gmail.com
+#  email: energycode.org@gmail.com
 #  The MIT License (MIT)
 #  ---------------------------------------------------------------------------
 
@@ -75,9 +75,8 @@ OEIS_terms.OEIS_internal <- function(x) {
 OEIS_terms.OEIS_xml <- function(x) {
     . <- NULL
     x %>%
-      rvest::html_nodes(., xpath = "//tt/text()") %>%
-      magrittr::extract2(1) %>%
-      rvest::html_text(.) %>%
+      rvest::html_nodes(., css = "div.seqdata") %>%
+      rvest::html_text(., trim = TRUE) %>%
       strsplit(., ",") %>%
       lapply(., trimws) %>%
       unlist

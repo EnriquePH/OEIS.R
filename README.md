@@ -28,8 +28,7 @@ devtools::install_github("EnriquePH/OEIS.R")
 ## Quick Start
 
 ```r
-Rlibrary(OEIS.R)
-library(ggplot2)
+library(OEIS.R)
 
 # Download the Fibonacci sequence (A000045)
 fib <- OEIS_sequence("A000045")
@@ -38,20 +37,22 @@ fib <- OEIS_sequence("A000045")
 OEIS_description(fib)
 OEIS_formula(fib)
 
-# Quick plot (add your own image here after generating it!)
-OEIS_plot(fib)
+# Quick base R plot
+plot(fib)
 ```
 
 ## Another example: Sequence A001615
 
 ```r
+library(ggplot2)
+
 id <- "A001615"
 x <- OEIS_sequence(id)
 
 OEIS_ggplot(x) +
   geom_line() +
   geom_point(size = 0.5, color = "green") +
-  labs(title = paste("OEIS", id, "-", OEIS_name(x)))
+  labs(title = paste("OEIS", id, "-", OEIS_description(x)))
 ```
 
 ![A001615 plot](./img/A001615.png)
@@ -67,10 +68,6 @@ Helper functions:
 * _OEIS_keywords()_
 
 Respects OEIS terms of use (rate limiting recommended).
-Example Shiny app for interactive exploration.
-
-## Shiny App
-Try the interactive demo: OEIS.R Shiny App
 
 ## Useful Links
 
@@ -80,8 +77,9 @@ Try the interactive demo: OEIS.R Shiny App
 * [OEIS Foundation](http://oeisf.org/)
 
 ## Contributing
-Contributions are welcome! Feel free to open issues or pull requests for
-features like term-based search, caching, extended parsing, or vignettes.
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for how to
+set up a development environment, run the test suite, and submit pull
+requests.
 
 ## Author
 Enrique Pérez Herrero
@@ -89,4 +87,4 @@ Enrique Pérez Herrero
 * GitHub: [@EnriquePH](https://github.com/EnriquePH)
 * LinkedIn: [eph3000](https://www.linkedin.com/in/eph3000)
 
-**Built with [RStudio](https://posit.co/download/rstudio-desktop/)** • Licensed under the [MIT License](LICENSE)
+**Built with [RStudio](https://posit.co/download/rstudio-desktop/)** • Licensed under the [MIT License](LICENSE.md)

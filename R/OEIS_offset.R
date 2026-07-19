@@ -3,7 +3,7 @@
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_offset.R
 #  (c) 2017 - Enrique Pérez Herrero
-#  email: eph.project1500@gmail.com
+#  email: energycode.org@gmail.com
 #  The MIT License (MIT)
 #  ---------------------------------------------------------------------------
 
@@ -79,10 +79,8 @@ OEIS_offset.OEIS_ID <- function(x) {
 #' @export
 OEIS_offset.OEIS_xml <- function(x) {
   . <- NULL
-  x %>%
-    rvest::html_nodes(., xpath = "//tt/text()") %>%
-    magrittr::extract2(2) %>%
-    rvest::html_text(., trim = TRUE) %>%
+  seq_df <- OEIS_df(x)
+  seq_df[seq_df$Line == "OFFSET", ]$Description %>%
     strsplit(., ",") %>%
     unlist
 }

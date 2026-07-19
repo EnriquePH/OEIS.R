@@ -3,7 +3,7 @@
 #  Data from The On-Line Encyclopedia of Integer Sequences in R
 #  File: OEIS_df.R
 #  (c) 2017 - Enrique Pérez Herrero
-#  email: eph.project1500@gmail.com
+#  email: energycode.org@gmail.com
 #  The MIT License (MIT)
 #  ---------------------------------------------------------------------------
 
@@ -14,13 +14,13 @@
 #' @param seq_xml A class `OEIS_xml` document extracted from an OEIS
 #' sequence.
 #'
-#' @importFrom magrittr extract2
-#' @importFrom rvest html_table
 #' @importFrom rvest html_nodes
+#' @importFrom rvest html_text
 #'
 #' @seealso * [OEIS_xml()]
 #' @seealso * [OEIS_sequence()]
-#' @references <https://oeis.org/eishelp2.html#RS>{Explanation of Terms Used in Reply From}
+#' @references [Explanation of Terms Used in Reply
+#'   From](https://oeis.org/eishelp2.html#RS)
 #' @return A `data.frame` with the sequence information lines.
 #' @examples
 #'
@@ -38,11 +38,18 @@ OEIS_df <- function(seq_xml) {
 #' @export
 OEIS_df.OEIS_xml <- function(seq_xml) {
   . <- NULL
-  seq_df <- seq_xml %>%
-    rvest::html_nodes(., xpath = "//tr[5]/td/table") %>%
-    rvest::html_table(.) %>%
-    magrittr::extract2(1)
-  seq_df$X1 <- NULL
-  names(seq_df) <- c("Line", "Description")
-  seq_df
+  sections <- rvest::html_nodes(seq_xml, css = "div.section")
+  Line <- rvest::html_text(
+    rvest::html_nodes(sections, css = "div.sectname"),
+    trim = TRUE
+  )
+  Description <- vapply(sections, function(section) {
+    lines <- rvest::html_text(
+      rvest::html_nodes(section, css = "div.sectline"),
+      trim = TRUE
+    )
+    paste(lines, collapse = "\n")
+  }, character(1), USE.NAMES = FALSE)
+  data.frame(Line = Line, Description = Description,
+             stringsAsFactors = FALSE)
 }
