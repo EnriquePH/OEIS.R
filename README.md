@@ -84,6 +84,9 @@ To cite the **OEIS.R** package itself:
 citation("OEIS.R")
 ```
 
+(GitHub's "Cite this repository" button on this repo's page uses
+[`CITATION.cff`](CITATION.cff) and gives the same citation in APA/BibTeX.)
+
 To cite an individual OEIS sequence you've fetched (e.g. in a paper), use
 [`OEIS_bibtex()`](https://github.com/EnriquePH/OEIS.R) instead:
 

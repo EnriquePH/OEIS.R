@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "OEIS.R: Data from the On-Line Encyclopedia of Integer Sequences in R"
+version: 0.2.0
+date-released: 2026-07-19
+license: MIT
+authors:
+  - family-names: "Pérez Herrero"
+    given-names: "Enrique"
+    email: energycode.org@gmail.com
+repository-code: "https://github.com/EnriquePH/OEIS.R"
+url: "https://github.com/EnriquePH/OEIS.R"
+abstract: >-
+  Integer sequences from the On-Line Encyclopedia of Integer Sequences
+  (OEIS, <https://oeis.org/>) in R. Provides classes and functions to
+  download, parse, and use OEIS sequence data in R.
+keywords:
+  - R
+  - OEIS
+  - integer-sequences
+  - mathematics

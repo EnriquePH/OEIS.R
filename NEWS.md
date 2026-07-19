@@ -47,8 +47,9 @@ fixes a couple of latent parsing bugs found along the way.
   chunks if it's unreachable, instead of failing the build.
 * Fixed `OEIS_comments.OEIS_sequence()`, which returned `x$example`
   instead of `x$comments` (copy-paste bug).
-* Added `inst/CITATION` so `citation("OEIS.R")` works, and a Citation
-  section to `README.md`.
+* Added `inst/CITATION` so `citation("OEIS.R")` works, a root-level
+  `CITATION.cff` so GitHub's "Cite this repository" button works, and a
+  Citation section to `README.md`.
 * Added `tests/testthat/test_offline_accessors.R`, covering the
   `OEIS_*.OEIS_sequence` accessor methods, `OEIS_bibtex()`, `OEIS_ggplot()`,
   `plot.OEIS_sequence()`, `OEIS_ID.OEIS_bfile()`, `OEIS_bfile_url()`,
